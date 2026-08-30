@@ -49,3 +49,31 @@ def test_save_is_valid_json(tmp_path, monkeypatch):
     data = json.loads(storage.save_path().read_text(encoding="utf-8"))
     assert data["name"] == "JSON"
     assert data["schema"] == 2
+
+
+def test_backup_copies_the_save(tmp_path, monkeypatch):
+    import json as _json
+    from rpglifer import storage
+    from rpglifer.character import Character
+    monkeypatch.setenv("RPGLIFER_DATA_DIR", str(tmp_path))
+    c = Character(name="Backup Hero")
+    from rpglifer.activities import activity_by_name
+    c.log_activity(activity_by_name("Reading"), 30)
+    storage.save(c)
+    dst = storage.backup()
+    assert dst is not None and dst.exists()
+    assert dst.name.startswith("save.backup-")
+    # The backup is a faithful copy that reloads to an equivalent character.
+    data = _json.loads(dst.read_text(encoding="utf-8"))
+    restored = Character.from_dict(data)
+    assert restored.name == "Backup Hero"
+    assert restored.overall_level() == c.overall_level()
+    # The live save is untouched.
+    assert storage.save_path().exists()
+
+
+def test_backup_without_save_returns_none(tmp_path, monkeypatch):
+    from rpglifer import storage
+    monkeypatch.setenv("RPGLIFER_DATA_DIR", str(tmp_path))
+    # Nothing saved yet.
+    assert storage.backup() is None

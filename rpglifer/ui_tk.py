@@ -1871,9 +1871,30 @@ class RPGLiferApp:
                      font=self.fonts["h1"]).pack(padx=56, pady=(28, 4))
         ctk.CTkLabel(card, text=f"RPG Lifer   ·   v{__version__}", text_color=MUTED,
                      font=self.fonts["section"]).pack()
-        ctk.CTkLabel(card, text="Your progress is saved locally in your user data "
-                     "folder.", text_color=FAINT, font=self.fonts["small"],
-                     wraplength=360, justify="center").pack(pady=(6, 18))
+
+        ctk.CTkLabel(card, text="Your save lives at", text_color=FAINT,
+                     font=self.fonts["small"]).pack(pady=(10, 1))
+        ctk.CTkLabel(card, text=str(storage.save_path()), text_color=MUTED,
+                     font=self.fonts["small"], wraplength=380,
+                     justify="center").pack()
+        backup_status = ctk.CTkLabel(card, text="", text_color=OVER,
+                                     font=self.fonts["small"], wraplength=380,
+                                     justify="center")
+
+        def do_backup():
+            dst = storage.backup()
+            if dst is None:
+                backup_status.configure(
+                    text="Nothing to back up yet — log something first.",
+                    text_color=FAINT)
+            else:
+                backup_status.configure(text=f"Backed up a copy →  {dst.name}",
+                                        text_color=OVER)
+
+        ctk.CTkButton(card, text="Back up a copy", command=do_backup, height=40,
+                      corner_radius=12, fg_color=SURFACE_2, hover_color=TRACK,
+                      text_color=TEAL, font=self.fonts["btn"]).pack(pady=(12, 2))
+        backup_status.pack(pady=(2, 16))
 
         reset_holder = ctk.CTkFrame(card, fg_color="transparent")
         reset_holder.pack(padx=56)

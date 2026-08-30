@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -69,6 +70,22 @@ def save(character: Character) -> Path:
     tmp.write_text(payload, encoding="utf-8")
     os.replace(tmp, path)  # atomic on the same filesystem
     return path
+
+
+def backup() -> Path | None:
+    """Copy the current save to ``save.backup-<timestamp>.json`` beside it.
+
+    Returns the backup's path, or ``None`` if there is no save yet. A plain file
+    copy so the original keeps being the live save — peace of mind for a
+    local-only tracker.
+    """
+    src = save_path()
+    if not src.exists():
+        return None
+    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    dst = src.with_name(f"save.backup-{stamp}.json")
+    shutil.copy2(src, dst)
+    return dst
 
 
 def _quarantine(path: Path) -> None:
