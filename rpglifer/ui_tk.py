@@ -1531,6 +1531,12 @@ class RPGLiferApp:
                           font=self.fonts["menu"],
                           command=lambda s=section: self._menu_pick(s)).pack(
                 fill="x", padx=8, pady=2)
+        ctk.CTkFrame(panel, height=1, fg_color=SURFACE).pack(fill="x", padx=12,
+                                                             pady=4)
+        ctk.CTkButton(panel, text="⚙  Settings", width=180, height=38, anchor="w",
+                      corner_radius=10, fg_color="transparent", hover_color=SURFACE,
+                      text_color=MUTED, font=self.fonts["menu"],
+                      command=self._menu_settings).pack(fill="x", padx=8, pady=(2, 4))
         m.bind("<FocusOut>", lambda e: self._close_menu())
         m.focus_set()
         self._menu = m
@@ -1546,6 +1552,69 @@ class RPGLiferApp:
     def _menu_pick(self, section):
         self._close_menu()
         self.show(section)
+
+    def _menu_settings(self):
+        self._close_menu()
+        self._open_settings()
+
+    def _open_settings(self):
+        from . import __version__
+        ov = ctk.CTkFrame(self.content, fg_color=BG)
+        ov.place(relx=0, rely=0, relwidth=1, relheight=1)
+        card = ctk.CTkFrame(ov, corner_radius=20, fg_color=SURFACE)
+        card.place(relx=0.5, rely=0.5, anchor="center")
+        ctk.CTkLabel(card, text="⚙  SETTINGS", text_color=GOLD,
+                     font=self.fonts["h1"]).pack(padx=56, pady=(28, 4))
+        ctk.CTkLabel(card, text=f"RPG Lifer   ·   v{__version__}", text_color=MUTED,
+                     font=self.fonts["section"]).pack()
+        ctk.CTkLabel(card, text="Your progress is saved locally in your user data "
+                     "folder.", text_color=FAINT, font=self.fonts["small"],
+                     wraplength=360, justify="center").pack(pady=(6, 18))
+
+        reset_holder = ctk.CTkFrame(card, fg_color="transparent")
+        reset_holder.pack(padx=56)
+
+        def show_confirm():
+            for w in reset_holder.winfo_children():
+                w.destroy()
+            ctk.CTkLabel(reset_holder, text="This wipes ALL progress. Sure?",
+                         text_color="#d9574f", font=self.fonts["small"]).pack(
+                pady=(0, 6))
+            ctk.CTkButton(reset_holder, text="Yes, wipe everything", height=40,
+                          corner_radius=12, fg_color="#d9574f", hover_color="#c14b44",
+                          text_color=BG, font=self.fonts["btn"],
+                          command=do_reset).pack()
+
+        def do_reset():
+            ov.destroy()
+            self._reset_character()
+
+        ctk.CTkButton(reset_holder, text="Reset character…", height=40,
+                      corner_radius=12, fg_color=SURFACE_2, hover_color=TRACK,
+                      text_color="#d9574f", font=self.fonts["btn"],
+                      command=show_confirm).pack()
+
+        ctk.CTkButton(card, text="Close", command=ov.destroy, height=40, width=120,
+                      corner_radius=12, fg_color=SURFACE_2, hover_color=TRACK,
+                      text_color=MUTED, font=self.fonts["btn"]).pack(padx=56,
+                                                                     pady=(18, 28))
+        ov.tkraise()
+
+    def _reset_character(self):
+        self.character = Character()
+        storage.save(self.character)
+        self.name_var.set(self.character.name)
+        for v in self.views.values():
+            try:
+                v.refresh()
+            except TypeError:
+                v.refresh(animate=False)
+            except Exception:
+                pass
+        self.refresh_points()
+        self.level_value.configure(text=f"Lv {self.character.overall_level()}")
+        self.show("Character")
+        self._show_onboarding()
 
     def show(self, section):
         self.section_lbl.configure(text=f"·   {section}")
