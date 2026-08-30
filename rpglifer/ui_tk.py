@@ -806,6 +806,7 @@ class HistoryView(ctk.CTkFrame):
             stripe = SURFACE if idx % 2 == 0 else "transparent"
             rowf = ctk.CTkFrame(self.scroll, fg_color=stripe, corner_radius=10)
             rowf.pack(fill="x", pady=1)
+            self._add_delete(rowf, e)  # trailing ✕ (right side)
             when = e.when[:16].replace("T", "  ")
             gained = ", ".join(f"+{round(v)} {k}" for k, v in
                                sorted(e.xp.items(), key=lambda kv: -kv[1]) if round(v))
@@ -817,6 +818,30 @@ class HistoryView(ctk.CTkFrame):
                 ctk.CTkLabel(rowf, text=text, text_color=color,
                              font=self.app.fonts["list"], width=w, anchor="w").pack(
                     side="left", padx=(10, 0), pady=7)
+
+    def _add_delete(self, rowf, entry):
+        """A two-step ✕ → 'Remove?' delete, so a stray click never undoes a log."""
+        btn = ctk.CTkButton(rowf, text="✕", width=30, height=26, corner_radius=8,
+                            fg_color="transparent", hover_color=SURFACE_2,
+                            text_color=FAINT, font=self.app.fonts["small"])
+
+        def arm():
+            btn.configure(text="Remove?", width=84, text_color="#d9574f",
+                          fg_color=SURFACE_2, command=confirm)
+
+        def confirm():
+            self._delete(entry)
+
+        btn.configure(command=arm)
+        btn.pack(side="right", padx=(6, 10), pady=6)
+
+    def _delete(self, entry):
+        c = self.app.character
+        if c.delete_log_entry(entry):
+            storage.save(c)
+            self.app.refresh_points()
+            self.app.level_value.configure(text=f"Lv {c.overall_level()}")
+            self.refresh()
 
 
 # ---------------------------------------------------------------------------

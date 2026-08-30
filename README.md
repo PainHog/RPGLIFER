@@ -53,6 +53,8 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   weekly challenge give you goals that pay out.
 - **A clean, sectioned interface.** Navigation lives behind a hamburger menu:
   **Character, Activities, Quests, Trophies, History, Shop, Adventure, Gear**.
+  The **History** screen shows a journey heatmap and every session — and lets
+  you **undo a mis-logged entry** (its XP is rolled back too).
 - **Time → XP → levels.** Dedicate minutes to an activity; that time becomes XP,
   split across the activity's stats by weight. Each stat levels on its own
   curve — the first level is quick, but real growth takes *weeks* of dedication,

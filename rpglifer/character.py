@@ -584,6 +584,25 @@ class Character:
     def recent(self, count: int = 10) -> list[LogEntry]:
         return list(reversed(self.log[-count:]))
 
+    def delete_log_entry(self, entry: LogEntry) -> bool:
+        """Undo a logged session: remove it and subtract the XP it granted.
+
+        Because each entry records the exact XP it produced and ``stat_xp`` is
+        the single source of truth, undoing is just a subtraction (clamped at 0,
+        so a manually-edited save can't drive a stat negative). Points, streaks,
+        counters, and already-unlocked trophies are intentionally left as they
+        were — this rolls back the XP, not the whole history.
+        """
+        try:
+            self.log.remove(entry)
+        except ValueError:
+            return False
+        for key, amount in entry.xp.items():
+            if key in self.stat_xp:
+                self.stat_xp[key] = max(0.0, self.stat_xp[key] - amount)
+        self.updated_at = _now_iso()
+        return True
+
     # --- Persistence -------------------------------------------------------
     def to_dict(self) -> dict:
         return {
