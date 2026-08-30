@@ -584,6 +584,37 @@ class Character:
     def recent(self, count: int = 10) -> list[LogEntry]:
         return list(reversed(self.log[-count:]))
 
+    def level_trajectory(self) -> list[int]:
+        """Your overall level at the end of each day you logged, oldest→newest.
+
+        Replays the log chronologically so the climb can be drawn as a
+        sparkline. Empty when nothing has been logged. (Reflects logged XP; a
+        directly-seeded save is an edge case only tests hit.)
+        """
+        entries = sorted(self.log, key=lambda e: e.when)
+        if not entries:
+            return []
+        acc = {k: 0.0 for k in STAT_KEYS}
+
+        def overall() -> int:
+            total = 0
+            for key, xp in acc.items():
+                total += int(xp // STAR_XP) * 100 + leveling.level_of(xp % STAR_XP)
+            return total
+
+        out: list[int] = []
+        cur_day = entries[0].when[:10]
+        for e in entries:
+            day = e.when[:10]
+            if day != cur_day:
+                out.append(overall())
+                cur_day = day
+            for key, amount in e.xp.items():
+                if key in acc:
+                    acc[key] += amount
+        out.append(overall())
+        return out
+
     def delete_log_entry(self, entry: LogEntry) -> bool:
         """Undo a logged session: remove it and subtract the XP it granted.
 

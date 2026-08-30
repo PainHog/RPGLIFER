@@ -757,7 +757,14 @@ class HistoryView(ctk.CTkFrame):
         self.summary.pack(side="right")
         self.heat = tk.Canvas(card, height=7 * 18 + 4, bg=SURFACE,
                               highlightthickness=0, bd=0)
-        self.heat.pack(fill="x", padx=18, pady=(2, 16))
+        self.heat.pack(fill="x", padx=18, pady=(2, 10))
+        # Overall-level trajectory — a sparkline of your climb.
+        self.spark_lbl = ctk.CTkLabel(card, text="", text_color=FAINT,
+                                      font=fonts["small"], anchor="w")
+        self.spark_lbl.pack(fill="x", padx=18, pady=(0, 0))
+        self.spark = tk.Canvas(card, height=48, bg=SURFACE, highlightthickness=0, bd=0)
+        self.spark.pack(fill="x", padx=18, pady=(0, 14))
+        self.spark.bind("<Configure>", lambda e: self._draw_spark())
 
         head = ctk.CTkFrame(self, fg_color="transparent")
         head.pack(fill="x", padx=18, pady=(2, 2))
@@ -797,6 +804,37 @@ class HistoryView(ctk.CTkFrame):
                  else 3 if mins <= 90 else 4)
             round_rect(c, x, y, x + cell, y + cell, 3, fill=HEAT_COLORS[b], outline="")
 
+    def _draw_spark(self):
+        c = self.spark
+        c.delete("all")
+        traj = self.app.character.level_trajectory()
+        w = max(c.winfo_width(), 2)
+        h = 48
+        if len(traj) < 2:
+            self.spark_lbl.configure(text="")
+            return
+        self.spark_lbl.configure(
+            text=f"OVERALL LEVEL  ·  {traj[0]} → {traj[-1]}")
+        lo, hi = min(traj), max(traj)
+        rng = (hi - lo) or 1
+        n = len(traj)
+        pad = 7
+
+        def pt(i, v):
+            x = pad + (w - 2 * pad) * (i / (n - 1))
+            y = h - pad - (h - 2 * pad) * ((v - lo) / rng)
+            return x, y
+
+        coords = []
+        for i, v in enumerate(traj):
+            coords.extend(pt(i, v))
+        # faint area under the line, then the line, then the endpoint
+        area = [pad, h - pad] + coords + [w - pad, h - pad]
+        c.create_polygon(*area, fill=TRACK, outline="")
+        c.create_line(*coords, fill=GOLD, width=2, smooth=True)
+        ex, ey = pt(n - 1, traj[-1])
+        c.create_oval(ex - 3, ey - 3, ex + 3, ey + 3, fill=GOLD, outline="")
+
     def refresh(self):
         c = self.app.character
         total_min = sum(e.minutes for e in c.log)
@@ -805,6 +843,7 @@ class HistoryView(ctk.CTkFrame):
             text=f"{len(c.log)} activities   ·   {total_min/60:.0f} h   ·   "
             f"{streak}-day streak")
         self._draw_heat()
+        self._draw_spark()
         for w in self.scroll.winfo_children():
             w.destroy()
         entries = list(reversed(self.app.character.log))[:200]
