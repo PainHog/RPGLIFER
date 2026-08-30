@@ -23,7 +23,7 @@ from .activities import ACTIVITIES, Activity, activity_by_name
 from .character import ARENA_RUNS_PER_DAY, Character
 from .recommend import recommendations, top_activities_for_stat
 from .stats import STAT_KEYS, STATS, stat
-from .titles import next_title
+from .titles import TITLES, next_title
 
 # --- Palette ---------------------------------------------------------------
 BG = "#15171d"
@@ -311,9 +311,10 @@ def line_icon(parent, kind, size=64, color=GOLD, bg=BG):
 # Character screen
 # ---------------------------------------------------------------------------
 class StatRow:
-    def __init__(self, parent, s, row, fonts):
+    def __init__(self, parent, s, row, fonts, app=None):
         self.stat = s
         self.char = None
+        self.app = app
         self.target = 0.0
         self.shown = 0.0
 
@@ -324,6 +325,17 @@ class StatRow:
         self.title_lbl = ctk.CTkLabel(cell, text="", text_color=GOLD_DIM,
                                       font=fonts["title_small"], anchor="w", height=15)
         self.title_lbl.pack(anchor="w")
+
+        # Click a stat to open its full progression (title ladder + how to train).
+        if app is not None:
+            def _open(_e=None, key=s.key):
+                app._open_stat_detail(key)
+            for w in (cell, *cell.winfo_children()):
+                w.bind("<Button-1>", _open, add="+")
+                try:
+                    w.configure(cursor="hand2")
+                except Exception:
+                    pass
 
         self.level_lbl = ctk.CTkLabel(parent, text="Lv 1", text_color=GOLD,
                                       font=fonts["level"], width=82, anchor="w",
@@ -409,7 +421,7 @@ class CharacterView(ctk.CTkFrame):
         inner = ctk.CTkFrame(list_card, fg_color="transparent")
         inner.pack(fill="both", expand=True, padx=24, pady=20)
         inner.grid_columnconfigure(2, weight=1)
-        self.rows = [StatRow(inner, s, i, fonts) for i, s in enumerate(STATS)]
+        self.rows = [StatRow(inner, s, i, fonts, app) for i, s in enumerate(STATS)]
         self._gen = 0
 
     def _chip(self, name, value):
@@ -1703,6 +1715,77 @@ class RPGLiferApp:
                       corner_radius=12, fg_color=SURFACE_2, hover_color=TRACK,
                       text_color=MUTED, font=self.fonts["btn"]).pack(padx=56,
                                                                      pady=(18, 28))
+        ov.tkraise()
+
+    def _open_stat_detail(self, stat_key):
+        """A focused look at one stat: its title ladder and how to train it."""
+        c = self.character
+        s = stat(stat_key)
+        f = self.fonts
+        p = c.progress(stat_key)
+        stars = c.stars(stat_key)
+        eff = c.effective_level(stat_key)
+
+        ov = ctk.CTkFrame(self.content, fg_color=BG)
+        ov.place(relx=0, rely=0, relwidth=1, relheight=1)
+        ov.bind("<Button-1>", lambda e: ov.destroy())
+        card = ctk.CTkFrame(ov, corner_radius=20, fg_color=SURFACE)
+        card.place(relx=0.5, rely=0.5, anchor="center")
+        pad = ctk.CTkFrame(card, fg_color="transparent")
+        pad.pack(padx=44, pady=(26, 22))
+
+        star_txt = f"★{stars}   " if stars else ""
+        ctk.CTkLabel(pad, text=s.name, text_color=TEXT,
+                     font=f["h1"]).pack(anchor="w")
+        ctk.CTkLabel(pad, text=f"{star_txt}Level {p.level}   ·   "
+                     f"{c.title(stat_key) or 'Unranked'}", text_color=GOLD,
+                     font=f["hero_class"]).pack(anchor="w", pady=(0, 2))
+        ctk.CTkLabel(pad, text=s.blurb, text_color=MUTED, font=f["small"],
+                     wraplength=420, justify="left").pack(anchor="w", pady=(2, 12))
+
+        bar = RoundedBar(pad, width=420, height=13, bg=SURFACE_2, fill=GOLD)
+        bar.canvas.pack(anchor="w")
+        bar.set(p.fraction)
+        ctk.CTkLabel(pad, text=f"{p.xp_into_level} / {p.xp_for_level} XP to "
+                     f"Level {p.level + 1}", text_color=FAINT,
+                     font=f["small"]).pack(anchor="w", pady=(3, 14))
+
+        ctk.CTkLabel(pad, text="TITLE LADDER", text_color=MUTED,
+                     font=f["kicker"]).pack(anchor="w", pady=(0, 4))
+        nxt = next_title(stat_key, eff)
+        next_lvl = nxt[0] if nxt else None
+        for lvl, name in TITLES.get(stat_key, ()):
+            earned = eff >= lvl
+            is_next = lvl == next_lvl
+            mark = "✓" if earned else ("◆" if is_next else "○")
+            mcol = GOLD if earned else (TEAL if is_next else FAINT)
+            tcol = TEXT if earned else (TEAL if is_next else FAINT)
+            row = ctk.CTkFrame(pad, fg_color="transparent")
+            row.pack(fill="x", pady=1)
+            ctk.CTkLabel(row, text=mark, text_color=mcol, font=f["list_b"],
+                         width=24).pack(side="left")
+            ctk.CTkLabel(row, text=f"Lv {lvl}", text_color=mcol, font=f["small"],
+                         width=54, anchor="w").pack(side="left")
+            ctk.CTkLabel(row, text=name, text_color=tcol, font=f["list"],
+                         anchor="w").pack(side="left")
+            if is_next:
+                ctk.CTkLabel(row, text="next", text_color=TEAL, font=f["small"]
+                             ).pack(side="right")
+
+        raise_with = top_activities_for_stat(stat_key, 5)
+        if raise_with:
+            ctk.CTkLabel(pad, text="TRAIN IT WITH", text_color=MUTED,
+                         font=f["kicker"]).pack(anchor="w", pady=(14, 4))
+            chips = ctk.CTkFrame(pad, fg_color="transparent")
+            chips.pack(anchor="w")
+            for a in raise_with:
+                ctk.CTkLabel(chips, text=a.name, text_color=MUTED, font=f["small"],
+                             fg_color=TRACK, corner_radius=10, padx=10, pady=3
+                             ).pack(side="left", padx=(0, 6))
+
+        ctk.CTkButton(pad, text="Close", command=ov.destroy, height=40, width=120,
+                      corner_radius=12, fg_color=SURFACE_2, hover_color=TRACK,
+                      text_color=MUTED, font=f["btn"]).pack(pady=(20, 0))
         ov.tkraise()
 
     def _reset_character(self):

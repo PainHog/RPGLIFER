@@ -22,7 +22,9 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 - **Eight stats that define you.** Strength, Agility, Endurance, Intellect,
   Wisdom, Charisma, **Discipline**, and **Creativity** — shown as a character
   **web (radar)** so your shape is obvious at a glance. Hover any stat to see
-  what it means and how to raise it.
+  what it means and how to raise it, or **click a stat** to open its full
+  **title ladder** — a skill-tree of milestones from your first rank to mastery,
+  with the best activities to train it.
 - **A living character.** A hero **avatar in a level ring**, and a **class that
   evolves** with your two strongest stats (a *Steadfast Sage* today, an
   *Inventive Rogue* next month). Logging throws up a juicy **"+XP" burst**, and
