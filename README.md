@@ -244,16 +244,18 @@ python -m pytest -q
 ## Roadmap
 
 Already in: the core, a Windows `.exe` **and installer** build, a **900+ multi-stat activity
-catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
-combat/shop stats** and an **evolving class**, **consistency streaks**,
-**milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
-(Hero + Overachiever), three **Adventure** mini-games (the **Arena** auto-battle
-with foe archetypes + **boss battles**, a **Treasure Vault**, and a
-**Dungeon Dive** push-your-luck run) with **Gear/loot drops**, a working
-**Shop** of boosts, **daily quests** + a weekly challenge board,
-**achievement trophies**, **first-run onboarding**, **one-tap quick-log**, a
-**journey heatmap** of your consistency, and a gamified GUI (level ring, XP
-bursts, mastery celebrations, hamburger nav).
+catalog**, **eight core stats** with a radar/web and **clickable title ladders**,
+**prestige stars**, **derived combat/shop stats** and an **evolving class**, a
+**daily streak** plus per-activity **consistency streaks**, **milestone titles**,
+a front-loaded 1–100 XP curve, a **points economy** (Hero + Overachiever), three
+**Adventure** mini-games (the **Arena** auto-battle with foe archetypes +
+**boss battles**, a **Treasure Vault**, and a **Dungeon Dive** push-your-luck
+run) with **Gear/loot drops**, a working **Shop** of boosts and cosmetics,
+**daily quests** + a **weekly well-rounded challenge** that shows what you still
+need to train, **achievement trophies** with progress bars, **first-run
+onboarding**, **one-tap quick-log**, **undo** for mis-logged entries, a one-click
+**save backup**, a **journey heatmap** of your consistency, and a gamified GUI
+(level ring, XP bursts, mastery celebrations, hamburger nav).
 
 Planned next:
 
@@ -261,9 +263,7 @@ Planned next:
   the Arena, Vault, and Dungeon Dive.
 - **Signed builds** — code-sign the `.exe`/installer so Windows SmartScreen is
   friendlier.
-- **Weekly challenge board** — surface the well-rounded challenge and its
-  progress in-app, plus more challenge types.
-- **A real installer** — Start-menu shortcut and an icon.
+- **More challenge types** — beyond the weekly well-rounded challenge.
 
 ## License
 
