@@ -505,11 +505,19 @@ class ActivitiesView(ctk.CTkFrame):
                                      font=fonts["btn"])
         self.log_btn.pack(side="right")
 
+        self.boost_lbl = ctk.CTkLabel(col, text="", text_color=OVER,
+                                      font=fonts["small"], anchor="w")
+        self.boost_lbl.pack(fill="x", pady=(10, 0))
         self.list_head = ctk.CTkLabel(col, text="", text_color=FAINT,
                                       font=fonts["kicker"], anchor="w")
-        self.list_head.pack(fill="x", pady=(22, 6))
+        self.list_head.pack(fill="x", pady=(16, 6))
         self.list_frame = ctk.CTkFrame(col, fg_color="transparent")
         self.list_frame.pack(fill="x")
+
+    def _update_boost(self):
+        m = self.app.character.xp_multiplier()
+        self.boost_lbl.configure(
+            text=f"⚡ +{int(round((m - 1) * 100))}% XP boost active" if m > 1.0 else "")
 
     def _fuzzy(self):
         return fuzzy.rank(self.activity_var.get(), ACTIVITIES,
@@ -594,6 +602,7 @@ class ActivitiesView(ctk.CTkFrame):
         return m[0] if m else None
 
     def refresh(self):
+        self._update_boost()
         if self.activity_var.get().strip() and self.selected is None:
             self._matches = self._fuzzy()
             self._show_matches()
@@ -827,9 +836,12 @@ class AdventureView(ctk.CTkFrame):
 
         # --- Arena panel ---
         self.arena = ctk.CTkFrame(card, fg_color="transparent")
+        self.power_lbl = ctk.CTkLabel(self.arena, text="", text_color=MUTED,
+                                      font=fonts["small"], anchor="w")
+        self.power_lbl.pack(fill="x", padx=24, pady=(8, 2))
         self.foe_lbl = ctk.CTkLabel(self.arena, text="", text_color=TEXT,
                                     font=fonts["stat"], anchor="w")
-        self.foe_lbl.pack(fill="x", padx=24, pady=(8, 2))
+        self.foe_lbl.pack(fill="x", padx=24, pady=(6, 2))
         self.foe_bar = RoundedBar(self.arena, width=560, height=14, bg=SURFACE,
                                   segments=0, fill=HP_FOE)
         self.foe_bar.canvas.pack(padx=24, anchor="w")
@@ -913,6 +925,8 @@ class AdventureView(ctk.CTkFrame):
         c = self.app.character
         d = derived.compute(c)
         if not self._playing:
+            self.power_lbl.configure(text=f"Your power —  {d['HP']} HP   ·   "
+                                     f"{d['PWR']} Power   ·   {d['FOC']} Focus")
             self._hp(self.you_lbl, self.you_bar, c.name, d["HP"], d["HP"], HP_YOU)
             self.foe_lbl.configure(text="A foe awaits…")
             self.foe_bar.set(0)
