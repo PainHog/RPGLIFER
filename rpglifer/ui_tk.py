@@ -1499,6 +1499,15 @@ class AchievementsView(ctk.CTkFrame):
             ctk.CTkLabel(txt, text=a.desc, text_color=MUTED if got else FAINT,
                          font=fonts["small"], anchor="w", justify="left",
                          wraplength=300).pack(anchor="w")
+            # A "so close!" progress hint on measurable, still-locked trophies.
+            if not got and a.progress is not None:
+                cur, tgt = a.progress(c)
+                cur = max(0, min(cur, tgt))
+                pbar = RoundedBar(txt, width=210, height=8, bg=SURFACE, fill=GOLD_DIM)
+                pbar.canvas.pack(anchor="w", pady=(6, 1))
+                pbar.set(cur / tgt if tgt else 0)
+                ctk.CTkLabel(txt, text=f"{cur} / {tgt}", text_color=FAINT,
+                             font=fonts["small"], anchor="w").pack(anchor="w")
 
 
 # ---------------------------------------------------------------------------

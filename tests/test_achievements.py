@@ -53,3 +53,20 @@ def test_counters_survive_roundtrip():
     c.bump_counter("vaults", 7)
     c2 = Character.from_dict(c.to_dict())
     assert c2.counters == {"bosses": 3, "vaults": 7}
+
+
+def test_progress_functions_are_consistent_with_check():
+    from rpglifer import achievements
+    from rpglifer.character import Character
+    c = Character()
+    for a in achievements.ACHIEVEMENTS:
+        if a.progress is None:
+            continue
+        cur, tgt = a.progress(c)
+        assert isinstance(cur, int) and isinstance(tgt, int)
+        assert tgt > 0
+        assert cur >= 0
+        # On a fresh character nothing measurable is complete yet.
+        assert cur < tgt
+        # Progress reaching the target must agree with the unlock predicate.
+        assert a.check(c) == (cur >= tgt)
