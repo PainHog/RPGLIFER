@@ -18,7 +18,7 @@ import tkinter as tk
 import customtkinter as ctk
 
 from . import achievements as achievements_mod
-from . import adventure, derived, economy, fuzzy, shop, storage, ventures
+from . import adventure, derived, dungeon, economy, fuzzy, shop, storage, ventures
 from .activities import ACTIVITIES, Activity, activity_by_name
 from .character import ARENA_RUNS_PER_DAY, Character
 from .recommend import recommendations, top_activities_for_stat
@@ -839,6 +839,7 @@ class AdventureView(ctk.CTkFrame):
         self._playing = False
         self._chests = None
         self._vault_done = False
+        self._dive = None
 
         card = ctk.CTkFrame(self, corner_radius=18, fg_color=SURFACE)
         card.place(relx=0.5, rely=0.03, anchor="n", relwidth=0.82)
@@ -856,6 +857,12 @@ class AdventureView(ctk.CTkFrame):
                                        font=fonts["btn"],
                                        command=lambda: self._switch("vault"))
         self.vault_btn.pack(side="left", padx=8)
+        self.dungeon_btn = ctk.CTkButton(head, text="🕯  Dungeon", width=120,
+                                         height=34, corner_radius=10,
+                                         fg_color=SURFACE_2, text_color=MUTED,
+                                         hover_color=SURFACE, font=fonts["btn"],
+                                         command=lambda: self._switch("dungeon"))
+        self.dungeon_btn.pack(side="left")
         self.energy_lbl = ctk.CTkLabel(head, text="", text_color=HERO,
                                        font=fonts["kicker"])
         self.energy_lbl.pack(side="right")
@@ -914,25 +921,65 @@ class AdventureView(ctk.CTkFrame):
                                          font=fonts["btn"])
         self.vault_again.pack(pady=(4, 20))
 
+        # --- Dungeon panel (push-your-luck dive) ---
+        self.dungeon = ctk.CTkFrame(card, fg_color="transparent")
+        ctk.CTkLabel(self.dungeon, text="Descend for escalating loot — but each "
+                     "floor risks a trap that forfeits everything unbanked. "
+                     "Cash out to keep it. Luck softens the odds.",
+                     text_color=MUTED, font=fonts["small"], wraplength=580,
+                     justify="left").pack(fill="x", padx=24, pady=(14, 8))
+        stat_row = ctk.CTkFrame(self.dungeon, fg_color="transparent")
+        stat_row.pack(fill="x", padx=24, pady=(2, 2))
+        self.dive_depth = ctk.CTkLabel(stat_row, text="Depth 0", text_color=TEXT,
+                                       font=fonts["stat"])
+        self.dive_depth.pack(side="left")
+        self.dive_bank = ctk.CTkLabel(stat_row, text="", text_color=GOLD,
+                                      font=fonts["stat"])
+        self.dive_bank.pack(side="right")
+        self.dive_risk = ctk.CTkLabel(self.dungeon, text="", text_color=MUTED,
+                                      font=fonts["small"], anchor="w")
+        self.dive_risk.pack(fill="x", padx=24, pady=(2, 6))
+        btn_row = ctk.CTkFrame(self.dungeon, fg_color="transparent")
+        btn_row.pack(pady=(4, 6))
+        self.descend_btn = ctk.CTkButton(btn_row, text="Enter the Dungeon",
+                                         command=self._dive_action, height=46,
+                                         width=210, corner_radius=14, fg_color=HERO,
+                                         hover_color="#e6c079", text_color=BG,
+                                         font=fonts["btn"])
+        self.descend_btn.pack(side="left", padx=8)
+        self.cash_btn = ctk.CTkButton(btn_row, text="Cash out", command=self._dive_cash,
+                                      height=46, width=150, corner_radius=14,
+                                      fg_color=SURFACE_2, hover_color=SURFACE,
+                                      text_color=OVER, font=fonts["btn"])
+        self.cash_btn.pack(side="left", padx=8)
+        self.dive_log = ctk.CTkTextbox(self.dungeon, height=150, fg_color=TRACK,
+                                       text_color=MUTED, font=fonts["list"],
+                                       corner_radius=12, activate_scrollbars=True)
+        self.dive_log.pack(fill="x", padx=24, pady=(8, 20))
+        self.dive_log.configure(state="disabled")
+
     def _switch(self, mode):
         self.mode = mode
-        self.arena_btn.configure(fg_color=HERO if mode == "arena" else SURFACE_2,
-                                 text_color=BG if mode == "arena" else MUTED)
-        self.vault_btn.configure(fg_color=HERO if mode == "vault" else SURFACE_2,
-                                 text_color=BG if mode == "vault" else MUTED)
+        for m, btn in (("arena", self.arena_btn), ("vault", self.vault_btn),
+                       ("dungeon", self.dungeon_btn)):
+            btn.configure(fg_color=HERO if mode == m else SURFACE_2,
+                          text_color=BG if mode == m else MUTED)
         self.refresh()
 
     def refresh(self):
         c = self.app.character
         self.energy_lbl.configure(text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+        for panel in (self.arena, self.vault, self.dungeon):
+            panel.pack_forget()
         if self.mode == "arena":
-            self.vault.pack_forget()
             self.arena.pack(fill="both", expand=True)
             self._refresh_arena()
-        else:
-            self.arena.pack_forget()
+        elif self.mode == "vault":
             self.vault.pack(fill="both", expand=True)
             self._refresh_vault()
+        else:
+            self.dungeon.pack(fill="both", expand=True)
+            self._refresh_dungeon()
 
     # --- Arena ---
     def _log(self, text, clear=False):
@@ -1081,6 +1128,92 @@ class AdventureView(ctk.CTkFrame):
         storage.save(c)
         self.app.refresh_points()
         self.refresh()
+
+    # --- Dungeon Dive ---
+    def _dlog(self, text, clear=False):
+        self.dive_log.configure(state="normal")
+        if clear:
+            self.dive_log.delete("1.0", "end")
+        self.dive_log.insert("end", text + "\n")
+        self.dive_log.see("end")
+        self.dive_log.configure(state="disabled")
+
+    def _refresh_dungeon(self):
+        c = self.app.character
+        active = self._dive is not None and not self._dive.over
+        if active:
+            d = self._dive
+            self.dive_depth.configure(text=f"Depth {d.floor}")
+            gear_txt = f"   ·   {len(d.pending_gear)} gear" if d.pending_gear else ""
+            self.dive_bank.configure(text=f"At risk: +{d.pending_hero} Hero{gear_txt}")
+            risk = round(d.next_trap_chance() * 100)
+            self.dive_risk.configure(
+                text=f"Next descent to Depth {d.floor + 1}:  ~{risk}% trap risk")
+            self.descend_btn.configure(text="Descend deeper", state="normal",
+                                       fg_color=HERO)
+            self.cash_btn.configure(state="normal", fg_color=SURFACE_2)
+        else:
+            self.dive_depth.configure(text="Depth 0")
+            self.dive_bank.configure(text="")
+            self.cash_btn.configure(state="disabled", fg_color=SURFACE)
+            if c.arena_energy() <= 0:
+                self.dive_risk.configure(text="No energy — the dungeon resets tomorrow.")
+                self.descend_btn.configure(text="No energy", state="disabled",
+                                           fg_color=SURFACE_2)
+            else:
+                self.dive_risk.configure(text="Your Luck lowers the trap odds. "
+                                         "How deep will you dare?")
+                self.descend_btn.configure(text="Enter the Dungeon", state="normal",
+                                           fg_color=HERO)
+
+    def _dive_action(self):
+        c = self.app.character
+        if self._dive is None or self._dive.over:
+            if c.arena_energy() <= 0:
+                return
+            c.spend_arena_energy()
+            self._dive = dungeon.DungeonRun.for_character(c)
+            self._dlog("🕯  You step into the dark…", clear=True)
+            self.energy_lbl.configure(
+                text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+            self._refresh_dungeon()
+            return
+        step = self._dive.descend()
+        if step.trapped:
+            self._dlog(f"  Depth {step.floor}:  ☠  A trap! Your haul is lost.")
+            self._dlog("The dungeon claims what you couldn't carry out.")
+            c.bump_counter("dungeon_traps")
+            storage.save(c)
+        else:
+            line = f"  Depth {step.floor}:  +{step.reward} Hero"
+            if step.gear is not None:
+                line += f"   🎁 {step.gear.summary()}"
+            self._dlog(line)
+        self._refresh_dungeon()
+
+    def _dive_cash(self):
+        c = self.app.character
+        if self._dive is None or self._dive.over:
+            return
+        floor = self._dive.floor
+        hero, loot = self._dive.cash_out()
+        c.hero_points += hero
+        for g in loot:
+            c.add_gear(g)
+        c.bump_counter("dungeon_runs")
+        if floor > c.counters.get("dungeon_best", 0):
+            c.counters["dungeon_best"] = floor
+        msg = f"🕯  Escaped from Depth {floor} with +{hero} Hero"
+        if loot:
+            msg += f" and {len(loot)} gear (equip it in Gear)"
+        self._dlog(msg + ".")
+        for ach in c.check_achievements():
+            self._dlog(f"🏆  Achievement unlocked: {ach.name}")
+        storage.save(c)
+        self.app.refresh_points()
+        self._refresh_dungeon()
+        self.energy_lbl.configure(
+            text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
 
 
 # ---------------------------------------------------------------------------

@@ -82,4 +82,8 @@ ACHIEVEMENTS: tuple[Achievement, ...] = (
                 lambda c: c.counters.get("bosses", 0) >= 10),
     Achievement("vault_raider", "Vault Raider", "Open 15 Treasure Vault chests.",
                 lambda c: c.counters.get("vaults", 0) >= 15),
+    Achievement("delver", "Delver", "Escape a Dungeon Dive from Depth 8 or deeper.",
+                lambda c: c.counters.get("dungeon_best", 0) >= 8),
+    Achievement("dungeoneer", "Dungeoneer", "Bank 20 Dungeon Dive runs.",
+                lambda c: c.counters.get("dungeon_runs", 0) >= 20),
 )

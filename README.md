@@ -46,9 +46,11 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   reaching outside your comfort zone) and **Overachiever points** (from a weekly
   *well-rounded* challenge). Spend them in the **Shop** on temporary boosts
   (never on stats), and play the **Adventure** mini-games — the **Arena**
-  auto-battle (uses your derived combat stats) and the **Treasure Vault** (pick a
-  chest; your Luck skews the odds) — for Hero points and the **Gear** they drop.
-  **Daily quests** and the weekly challenge give you goals that pay out.
+  auto-battle (uses your derived combat stats), the **Treasure Vault** (pick a
+  chest; your Luck skews the odds), and the **Dungeon Dive** (a push-your-luck
+  descent: go deeper for escalating loot or cash out before a trap takes it
+  all) — for Hero points and the **Gear** they drop. **Daily quests** and the
+  weekly challenge give you goals that pay out.
 - **A clean, sectioned interface.** Navigation lives behind a hamburger menu:
   **Character, Activities, Quests, Trophies, History, Shop, Adventure, Gear**.
 - **Time → XP → levels.** Dedicate minutes to an activity; that time becomes XP,
@@ -74,6 +76,9 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 <p align="center">
   <img src="docs/arena.png" width="32%" alt="The Arena" />
   <img src="docs/vault.png" width="32%" alt="Treasure Vault" />
+  <img src="docs/dungeon.png" width="32%" alt="Dungeon Dive" />
+</p>
+<p align="center">
   <img src="docs/shop.png" width="32%" alt="Shop" />
 </p>
 
@@ -208,6 +213,8 @@ rpglifer/
   recommend.py          "explore" suggestions + per-stat activity lookups
   economy.py            Hero / Overachiever point rules
   adventure.py          the Arena auto-battle engine (seedable, pure)
+  ventures.py           the Treasure Vault chest game (seedable, pure)
+  dungeon.py            the Dungeon Dive push-your-luck run (seedable, pure)
   shop.py               the Shop catalog + purchase logic
   character.py          the character model: XP, logging, streaks, points,
                         bonuses, prestige, save shape
@@ -237,17 +244,18 @@ Already in: the core, a Windows `.exe` **and installer** build, a **900+ multi-s
 catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
 combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
-(Hero + Overachiever), two **Adventure** mini-games (the **Arena** auto-battle
-with foe archetypes + **boss battles**, and a **Treasure Vault**) with
-**Gear/loot drops**, a working **Shop** of boosts, **daily quests** + a weekly
-challenge board,
+(Hero + Overachiever), three **Adventure** mini-games (the **Arena** auto-battle
+with foe archetypes + **boss battles**, a **Treasure Vault**, and a
+**Dungeon Dive** push-your-luck run) with **Gear/loot drops**, a working
+**Shop** of boosts, **daily quests** + a weekly challenge board,
 **achievement trophies**, **first-run onboarding**, **one-tap quick-log**, a
 **journey heatmap** of your consistency, and a gamified GUI (level ring, XP
 bursts, mastery celebrations, hamburger nav).
 
 Planned next:
 
-- **More Adventure content** — quests/runs and other mini-games beyond the Arena.
+- **More Adventure content** — multi-encounter runs and more mini-games to join
+  the Arena, Vault, and Dungeon Dive.
 - **Signed builds** — code-sign the `.exe`/installer so Windows SmartScreen is
   friendlier.
 - **Weekly challenge board** — surface the well-rounded challenge and its
