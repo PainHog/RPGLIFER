@@ -1225,7 +1225,51 @@ class RPGLiferApp:
         for v in self.views.values():
             v.grid(row=0, column=0, sticky="nsew")
         self.show("Character")
+        if not self.character.log:  # a brand-new hero gets a welcome
+            self._show_onboarding()
         root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+    def _show_onboarding(self):
+        ov = ctk.CTkFrame(self.content, fg_color=BG)
+        ov.place(relx=0, rely=0, relwidth=1, relheight=1)
+        card = ctk.CTkFrame(ov, corner_radius=20, fg_color=SURFACE)
+        card.place(relx=0.5, rely=0.5, anchor="center")
+        ctk.CTkLabel(card, text="⚔  WELCOME TO RPG LIFER", text_color=GOLD,
+                     font=self.fonts["h1"]).pack(padx=52, pady=(30, 4))
+        ctk.CTkLabel(card, text="Turn what you actually do into a leveling RPG hero.",
+                     text_color=MUTED, font=self.fonts["section"]).pack(padx=52)
+        steps = ctk.CTkFrame(card, fg_color="transparent")
+        steps.pack(padx=52, pady=18, fill="x")
+        for n, t in [("1", "Log an activity — a workout, reading, the dishes…"),
+                     ("2", "It becomes XP across eight life stats."),
+                     ("3", "Level up, earn titles and gear, and go on adventures.")]:
+            row = ctk.CTkFrame(steps, fg_color="transparent")
+            row.pack(fill="x", pady=5, anchor="w")
+            ctk.CTkLabel(row, text=n, text_color=BG, fg_color=TEAL, corner_radius=13,
+                         width=26, height=26, font=self.fonts["btn"]).pack(side="left",
+                                                                           padx=(0, 12))
+            ctk.CTkLabel(row, text=t, text_color=TEXT, font=self.fonts["section"],
+                         anchor="w").pack(side="left")
+        nm = ctk.CTkFrame(card, fg_color="transparent")
+        nm.pack(padx=52, pady=(4, 2))
+        ctk.CTkLabel(nm, text="Name your hero", text_color=MUTED,
+                     font=self.fonts["small"], anchor="w").pack(anchor="w")
+        ctk.CTkEntry(nm, textvariable=self.name_var, width=300, height=42,
+                     corner_radius=12, fg_color=SURFACE_2, border_width=0,
+                     justify="center", font=self.fonts["search"]).pack()
+
+        def begin():
+            ov.destroy()
+            self.show("Activities")
+            try:
+                self.views["Activities"].entry.focus_set()
+            except Exception:
+                pass
+
+        ctk.CTkButton(card, text="Begin your journey", command=begin, height=46,
+                      corner_radius=14, fg_color=TEAL, hover_color=TEAL_HOVER,
+                      text_color=BG, font=self.fonts["btn"]).pack(padx=52, pady=(16, 30))
+        ov.tkraise()
 
     def _build_topbar(self):
         bar = ctk.CTkFrame(self.root, fg_color="transparent", height=54)

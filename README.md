@@ -223,14 +223,14 @@ combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
 (Hero + Overachiever), the **Arena** auto-battle with **Gear/loot drops**, a
 working **Shop** of boosts, **daily quests** + a weekly challenge board,
-**achievement trophies**, and a gamified GUI (level ring, XP bursts, mastery
-celebrations, hamburger nav).
+**achievement trophies**, **first-run onboarding**, and a gamified GUI (level
+ring, XP bursts, mastery celebrations, hamburger nav).
 
 Planned next:
 
 - **More Adventure content** — varied foes, quests/runs, and mini-games beyond
   the Arena.
-- **First-run onboarding** — a friendly welcome for a brand-new hero.
+- **Quick-log** — one-tap re-logging of your recent activities.
 - **Weekly challenge board** — surface the well-rounded challenge and its
   progress in-app, plus more challenge types.
 - **A real installer** — Start-menu shortcut and an icon.
