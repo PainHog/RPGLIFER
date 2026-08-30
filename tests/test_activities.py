@@ -1,9 +1,28 @@
+import json
+
+from rpglifer import activities as activities_mod
 from rpglifer.activities import ACTIVITIES, DEFAULT_XP_PER_MINUTE, activity_by_name
 from rpglifer.stats import STAT_KEYS
 
 
-def test_catalog_is_nonempty():
-    assert len(ACTIVITIES) >= 30
+def test_data_file_is_clean():
+    """The shipped catalog file itself has unique names and valid stat keys."""
+    raw = json.loads(activities_mod._data_file().read_text(encoding="utf-8"))
+    names = [str(r["name"]).strip().lower() for r in raw]
+    assert len(names) == len(set(names)), "duplicate activity names in data file"
+    for r in raw:
+        for key in r.get("weights", {}):
+            assert key in STAT_KEYS, f"{r['name']} references unknown stat {key}"
+
+
+def test_most_activities_touch_multiple_stats():
+    multi = sum(1 for a in ACTIVITIES if len(a.weights) >= 2)
+    assert multi / len(ACTIVITIES) > 0.7  # the catalog is deliberately multi-stat
+
+
+def test_catalog_is_large():
+    # The catalog is meant to be comprehensive (500+ activities).
+    assert len(ACTIVITIES) >= 500
 
 
 def test_activity_names_are_unique():

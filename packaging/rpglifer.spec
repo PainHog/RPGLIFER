@@ -13,16 +13,24 @@ plain top-level script) keeps PyInstaller's import analysis simple.
 
 import os
 
+from PyInstaller.utils.hooks import collect_data_files, collect_submodules
+
 ROOT = os.path.dirname(SPECPATH)  # noqa: F821 - SPECPATH is provided by PyInstaller
+
+# CustomTkinter ships theme JSON and assets that must be bundled, plus its
+# submodules need to be collected so PyInstaller doesn't miss them.
+ctk_datas = collect_data_files("customtkinter")
+ctk_hidden = collect_submodules("customtkinter")
 
 a = Analysis(
     [os.path.join(ROOT, "run.py")],
     pathex=[ROOT],
     binaries=[],
-    datas=[],
-    # Tkinter is discovered automatically, but naming it is harmless and makes
-    # the dependency explicit for readers.
-    hiddenimports=["tkinter"],
+    # Bundle the activity catalog so the frozen app can find it at runtime
+    # (activities.py looks under sys._MEIPASS/rpglifer/data first).
+    datas=[(os.path.join(ROOT, "rpglifer", "data", "activities.json"),
+            "rpglifer/data")] + ctk_datas,
+    hiddenimports=["tkinter", "darkdetect"] + ctk_hidden,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

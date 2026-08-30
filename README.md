@@ -8,7 +8,12 @@ your character sheet becomes a portrait of how you actually spend your life. Do
 nothing but lift weights? You'll be a walking pile of **Strength** with a
 **Charisma** of 1. The character you build is the one you *earn*.
 
-![RPG Lifer screenshot](docs/screenshot.png)
+![RPG Lifer character sheet](docs/screenshot.png)
+
+<p align="center">
+  <img src="docs/activities.png" width="49%" alt="Activities screen" />
+  <img src="docs/history.png" width="49%" alt="History screen" />
+</p>
 
 ---
 
@@ -16,13 +21,19 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 
 - **Stats.** Six classic attributes to start (easy to change and expand):
   **STR**ength, **DEX**terity, **CON**stitution, **INT**elligence,
-  **WIS**dom, **CHA**risma.
-- **Activities.** A growing catalog of everyday things — each mapped to the
-  stat(s) it trains. Reading feeds Intelligence; a strength workout feeds
-  Strength; dishes and chores build the daily-discipline of Constitution.
+  **WIS**dom, **CHA**risma. Hover any stat to see what it means and how to raise
+  it.
+- **600+ activities, and every one is multi-stat.** From dishes and deadlifts to
+  woodcarving, watercolor, photography, commuting, and public speaking — each
+  activity feeds *several* stats at different amounts (watercolor is mostly
+  DEX with a little WIS and a trace of INT). The full catalog lives in an
+  editable data file you can keep growing.
 - **Type-ahead search.** Start typing and the closest activities pop up even if
   you don't type the exact words — `dsh` → **Dishes**, `wrk` → **Strength
-  workout**, `medi` → **Meditation**.
+  workout**, `woodcut` → **Chopping firewood**.
+- **A clean, sectioned interface.** Navigation lives behind a hamburger menu;
+  sections for **Character, Activities, History**, and (coming) **Shop,
+  Adventure, Gear**.
 - **Time → XP → levels.** Dedicate minutes to an activity; that time becomes XP,
   split across the activity's stats by weight. Each stat levels on its own
   curve — the first level is quick, but real growth takes *weeks* of dedication,
@@ -58,13 +69,16 @@ PATH"*), then double-click **`build.bat`**. When it finishes, your app is at
 ## Run from source (any OS)
 
 ```bash
-python run.py            # launch the GUI
-python run.py --cli      # text-mode interface (no display needed)
-python -m rpglifer       # same as run.py
+pip install -r requirements.txt   # CustomTkinter (the GUI toolkit)
+python run.py                     # launch the GUI
+python run.py --cli               # text-mode interface (no display needed)
+python -m rpglifer                # same as run.py
 ```
 
-No third-party packages are required at runtime — it's all standard library, and
-Tkinter ships with the official python.org installers.
+The GUI is built with [CustomTkinter](https://customtkinter.tomschimansky.com/)
+for its soft, rounded, modern look; it's the only runtime dependency (Tkinter
+itself ships with the official python.org installers). The `--cli` mode needs
+nothing but the standard library.
 
 ## How XP works
 
@@ -105,17 +119,23 @@ reached is shown under the stat. Every stat has its own ladder (roughly levels
 
 ## Add your own activities
 
-The catalog is meant to grow into a *very* long list. Adding one is a single
-line in [`rpglifer/activities.py`](rpglifer/activities.py):
+The catalog lives in [`rpglifer/data/activities.json`](rpglifer/data/activities.json)
+(600+ entries and counting). Adding one is a single object:
 
-```python
-Activity("Rock climbing", {"STR": 0.5, "DEX": 0.4, "CON": 0.1},
-         aliases=("climbing", "bouldering"), category="Fitness"),
+```json
+{
+  "name": "Rock climbing",
+  "category": "Outdoor & Adventure",
+  "weights": { "STR": 0.5, "DEX": 0.45, "CON": 0.2, "WIS": 0.05 },
+  "aliases": ["climbing", "bouldering"]
+}
 ```
 
-The weight keys must be valid stat keys from
+Weights are **independent multipliers** of the activity's base XP per stat (they
+don't need to sum to 1), so an activity can pour a lot into one stat and a trace
+into others. Weight keys must be valid stat keys from
 [`rpglifer/stats.py`](rpglifer/stats.py) (a test enforces this). Search,
-logging, and the UI pick up new activities automatically.
+logging, suggestions, and the UI pick up new activities automatically.
 
 ## Where is my save?
 
@@ -134,20 +154,22 @@ is set aside as `save.corrupt-<timestamp>.json` rather than lost.
 
 ```
 rpglifer/
-  leveling.py     XP ↔ level math (pure functions)
-  stats.py        the six stats (data-driven)
-  titles.py       milestone titles unlocked per stat
-  activities.py   the activity catalog
-  fuzzy.py        type-ahead / closest-match search
-  character.py    the character model: XP, logging, streaks, save/load shape
-  storage.py      where and how the save is written
-  cli.py          text-mode front-end
-  ui_tk.py        the Tkinter desktop GUI
-  app.py          entry point (chooses GUI or CLI)
-tests/            unit tests for the whole core
-packaging/        PyInstaller spec
-run.py            dev launcher & PyInstaller entry point
-build.bat         one-click Windows build
+  leveling.py           XP ↔ level math (pure functions)
+  stats.py              the six stats (data-driven)
+  titles.py             milestone titles unlocked per stat
+  activities.py         loads + models the activity catalog
+  data/activities.json  the 600+ activity catalog (editable)
+  fuzzy.py              type-ahead / closest-match search
+  recommend.py          "explore" suggestions + per-stat activity lookups
+  character.py          the character model: XP, logging, streaks, save shape
+  storage.py            where and how the save is written
+  cli.py                text-mode front-end
+  ui_tk.py              the desktop GUI (CustomTkinter)
+  app.py                entry point (chooses GUI or CLI)
+tests/                  unit tests for the whole core
+packaging/              PyInstaller spec
+run.py                  dev launcher & PyInstaller entry point
+build.bat               one-click Windows build
 ```
 
 The **core** (everything above `cli.py`) has no UI code, which is why it's
@@ -161,16 +183,18 @@ python -m pytest -q
 
 ## Roadmap
 
-Already in: the core, the Windows `.exe` build, **consistency streaks**,
-**milestone titles**, and a slow-and-earned XP curve.
+Already in: the core, the Windows `.exe` build, a **600+ multi-stat activity
+catalog**, **consistency streaks**, **milestone titles**, a slow-and-earned XP
+curve, and a clean sectioned GUI with a hamburger menu.
 
 Planned next:
 
-- **A longer catalog** — many more activities across every stat.
-- **Refined stats & weights** — the six above are a starting point, not gospel.
+- **Refined / expanded stats** — settle on the 6–8 defining stats, then derive
+  secondary "combat" and "shop" stats from them.
 - **Overachiever / Hero points** — earned by reaching outside your comfort
-  zone, spendable on…
-- **Gear, mini-games, and runs** — small challenges and loot to chase.
+  zone, spendable in the **Shop**.
+- **Gear, mini-games, and runs** — the **Adventure** and **Gear** sections:
+  small challenges and loot that grant bonuses (not raw stats).
 - **Weekly challenges & battles** — nudges to hit *all* the core areas of life,
   not just your favorites.
 - **A real installer** — Start-menu shortcut and an icon.

@@ -1,4 +1,4 @@
-# Development / build tooling only. The app itself needs no third-party
-# packages at runtime.
+# Development / build tooling, plus the runtime deps from requirements.txt.
+-r requirements.txt
 pytest>=7
 pyinstaller>=6.6

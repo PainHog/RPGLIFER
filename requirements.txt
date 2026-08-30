@@ -1,0 +1,4 @@
+# Runtime dependencies.
+# The GUI uses CustomTkinter for its modern, rounded, themeable widgets.
+# (Tkinter itself ships with the official python.org installers.)
+customtkinter>=5.2.0

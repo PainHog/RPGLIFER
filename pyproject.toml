@@ -11,10 +11,9 @@ requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [{ name = "PainHog" }]
 keywords = ["rpg", "gamification", "habit", "tracker", "life", "tkinter"]
-# The runtime has zero third-party dependencies — everything is standard library
-# (Tkinter ships with the official python.org installers). That keeps the .exe
-# small and the build bulletproof.
-dependencies = []
+# The GUI uses CustomTkinter for modern rounded widgets and theming; the rest is
+# standard library (Tkinter ships with the official python.org installers).
+dependencies = ["customtkinter>=5.2.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7", "pyinstaller>=6.6"]
