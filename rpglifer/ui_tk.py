@@ -499,6 +499,14 @@ class ActivitiesView(ctk.CTkFrame):
         ctk.CTkEntry(row, textvariable=self.minutes_var, width=74, height=44,
                      corner_radius=12, fg_color=SURFACE, border_width=0,
                      justify="center", font=fonts["search"]).pack(side="left")
+        chips = ctk.CTkFrame(row, fg_color="transparent")
+        chips.pack(side="left", padx=(10, 0))
+        for m in (15, 30, 45, 60, 90):
+            ctk.CTkButton(chips, text=str(m), width=40, height=32, corner_radius=9,
+                          fg_color=SURFACE, hover_color=SURFACE_2, text_color=MUTED,
+                          font=fonts["small"],
+                          command=lambda m=m: self._set_minutes(m)).pack(side="left",
+                                                                         padx=3)
         self.log_btn = ctk.CTkButton(row, text="Log", command=self.do_log, width=130,
                                      height=44, corner_radius=14, fg_color=TEAL,
                                      hover_color=TEAL_HOVER, text_color=BG,
@@ -513,6 +521,11 @@ class ActivitiesView(ctk.CTkFrame):
         self.list_head.pack(fill="x", pady=(16, 6))
         self.list_frame = ctk.CTkFrame(col, fg_color="transparent")
         self.list_frame.pack(fill="x")
+
+    def _set_minutes(self, m):
+        self.minutes_var.set(str(m))
+        if not self.activity_var.get().strip():
+            self._show_idle()  # refresh the "tap to log N min" quick-log header
 
     def _update_boost(self):
         m = self.app.character.xp_multiplier()
