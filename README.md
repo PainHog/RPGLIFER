@@ -221,15 +221,15 @@ Already in: the core, the Windows `.exe` build, a **600+ multi-stat activity
 catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
 combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
-(Hero + Overachiever), the **Arena** auto-battle with **Gear/loot drops**, a
-working **Shop** of boosts, **daily quests** + a weekly challenge board,
+(Hero + Overachiever), the **Arena** auto-battle (foe archetypes + **boss
+battles**) with **Gear/loot drops**, a working **Shop** of boosts, **daily
+quests** + a weekly challenge board,
 **achievement trophies**, **first-run onboarding**, **one-tap quick-log**, and a
 gamified GUI (level ring, XP bursts, mastery celebrations, hamburger nav).
 
 Planned next:
 
-- **More Adventure content** — varied foes, quests/runs, and mini-games beyond
-  the Arena.
+- **More Adventure content** — quests/runs and other mini-games beyond the Arena.
 - **A real installer** — Start-menu shortcut and an icon.
 - **Weekly challenge board** — surface the well-rounded challenge and its
   progress in-app, plus more challenge types.

@@ -39,3 +39,16 @@ def test_combat_bonus_raises_win_rate():
     boosted = sum(adventure.simulate(c, combat_bonus=0.5, seed=s).won
                   for s in range(80))
     assert boosted >= base
+
+
+def test_bosses_appear_and_drop_good_loot():
+    c = _fighter()
+    battles = [adventure.simulate(c, seed=s) for s in range(200)]
+    bosses = [b for b in battles if b.is_boss]
+    assert bosses  # bosses show up sometimes
+    # Any boss loot is at least Rare, and boss rewards beat the base payout.
+    for b in bosses:
+        if b.loot is not None:
+            assert b.loot.rarity in ("Rare", "Epic", "Legendary")
+        if b.won:
+            assert b.reward >= (5 + b.foe_level) * 2

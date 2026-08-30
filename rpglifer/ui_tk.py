@@ -811,7 +811,12 @@ class AdventureView(ctk.CTkFrame):
         self._round_i = 0
         self.fight_btn.configure(state="disabled", fg_color=SURFACE_2)
         boost = "   (+Power boost!)" if combat else ""
-        self._log(f"⚔  You face a {b.foe_name}  (Lv {b.foe_level}){boost}", clear=True)
+        if b.is_boss:
+            self._log(f"☠  BOSS BATTLE —  {b.foe_name}!  (Lv {b.foe_level}){boost}",
+                      clear=True)
+        else:
+            self._log(f"⚔  You face a {b.foe_name}  (Lv {b.foe_level}){boost}",
+                      clear=True)
         self._hp(self.foe_lbl, self.foe_bar, b.foe_name, b.foe_max_hp, b.foe_max_hp, HP_FOE)
         self._hp(self.you_lbl, self.you_bar, c.name, b.you_max_hp, b.you_max_hp, HP_YOU)
         self.app.root.after(500, self._step)
@@ -839,7 +844,8 @@ class AdventureView(ctk.CTkFrame):
         self._playing = False
         c.hero_points += b.reward
         if b.won:
-            self._log(f"★  Victory!  +{b.reward} Hero points")
+            head = "☠  BOSS DEFEATED!" if b.is_boss else "★  Victory!"
+            self._log(f"{head}  +{b.reward} Hero points")
             if b.loot is not None:
                 c.add_gear(b.loot)
                 self._log(f"🎁  Loot!  {b.loot.summary()}   (equip it in Gear)")
