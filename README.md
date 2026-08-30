@@ -101,7 +101,11 @@ after week.
 Each stat runs on a **0–100 mastery scale** with a deliberately **front-loaded**
 curve — `level = 100 × (xp / XP_TO_MAX)^0.4` — so your first session is worth
 several levels and the bar moves every time you log, then the climb slows toward
-mastery. Real numbers for one stat trained **30 minutes a day**:
+mastery. Reach **100** and the stat earns a **★** (prestige): the bar resets to 0
+into a new star tier and keeps stacking (★1, ★2, …), so nothing is ever capped
+and the fast early-levelling loop restarts each star. The capstone title is kept
+and the ★ count becomes the prestige signal. Real numbers for one stat trained
+**30 minutes a day**:
 
 | Time in        | Stat level | Overall level* |
 | -------------- | ---------: | -------------: |
@@ -112,10 +116,10 @@ mastery. Real numbers for one stat trained **30 minutes a day**:
 | 6 months       |         58 |             91 |
 | 1 year         |         78 |            122 |
 
-\*Your **overall level** is the sum of all eight stats (0–800), so it climbs
-with *every* activity even once a single stat slows near the top — there is
-always a number going up. Hitting **100** in a stat is a real, multi-year goal
-for a single focused pursuit; `XP_TO_MAX` in
+\*Your **overall level** is the sum of every stat's *effective* level
+(stars × 100 + level), so it climbs with *every* activity — and with prestige it
+is **uncapped**, so there is always a number going up. Hitting **100** in a stat
+is a real, multi-year goal for a single focused pursuit; `XP_TO_MAX` in
 [`rpglifer/leveling.py`](rpglifer/leveling.py) is the one knob that makes
 mastery faster or slower.
 

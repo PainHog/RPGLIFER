@@ -18,6 +18,10 @@ from .titles import title_for
 
 SCHEMA_VERSION = 1
 
+# Prestige: XP earned per ★. Completing a full 0→100 mastery climb (this much XP)
+# resets the visible bar to 0 and grants a star; XP itself is never lost.
+STAR_XP = leveling.XP_TO_MAX
+
 # --- Consistency (weekly-streak) rewards -----------------------------------
 # Doing the same activity in consecutive calendar weeks builds a streak. Each
 # week of the streak beyond the first adds a flat bonus to the XP that activity
@@ -110,6 +114,14 @@ class TitleUnlock:
 
 
 @dataclass
+class StarUp:
+    """A stat crossed a mastery boundary and earned a ★ (prestige)."""
+
+    stat: str
+    star: int
+
+
+@dataclass
 class LogResult:
     """What happened when an activity was logged — for UI feedback."""
 
@@ -120,6 +132,7 @@ class LogResult:
     streak: int = 1
     bonus: float = 0.0
     titles: list[TitleUnlock] = field(default_factory=list)
+    star_ups: list[StarUp] = field(default_factory=list)
 
 
 class Character:
@@ -149,22 +162,31 @@ class Character:
         self.overachiever_points = int(overachiever_points)
 
     # --- Derived views -----------------------------------------------------
+    # Prestige: a stat's XP never resets. Each full 0→100 climb (STAR_XP worth of
+    # XP) earns a ★. `progress`/`level` describe the CURRENT star's 0–99 climb
+    # (the bar you're filling); `stars` and `effective_level` describe the
+    # uncapped whole — so nothing is ever walled off.
+    def stars(self, stat_key: str) -> int:
+        return int(self.stat_xp.get(stat_key, 0.0) // STAR_XP)
+
     def progress(self, stat_key: str) -> leveling.LevelProgress:
-        return leveling.level_for_xp(self.stat_xp.get(stat_key, 0.0))
+        xp_in_star = self.stat_xp.get(stat_key, 0.0) % STAR_XP
+        return leveling.level_for_xp(xp_in_star)
 
     def level(self, stat_key: str) -> int:
+        """Level within the current star (0–99)."""
         return self.progress(stat_key).level
+
+    def effective_level(self, stat_key: str) -> int:
+        """Uncapped level: stars × 100 + level in the current star."""
+        return self.stars(stat_key) * 100 + self.level(stat_key)
 
     def total_xp(self) -> float:
         return sum(self.stat_xp.values())
 
     def overall_level(self) -> int:
-        """The character's headline level: the sum of every stat's level.
-
-        With six stats each starting at level 1, a brand-new character sits at
-        level 6 — a nudge that a hero is more than any single attribute.
-        """
-        return sum(self.level(key) for key in STAT_KEYS)
+        """Headline level: the sum of every stat's *effective* level (uncapped)."""
+        return sum(self.effective_level(key) for key in STAT_KEYS)
 
     # --- Consistency -------------------------------------------------------
     def _activity_weeks(self, activity_name: str) -> set[tuple[int, int]]:
@@ -196,8 +218,12 @@ class Character:
         return streak, consistency_bonus(streak)
 
     def title(self, stat_key: str) -> str | None:
-        """Current earned title for ``stat_key`` (``None`` if none yet)."""
-        return title_for(stat_key, self.level(stat_key))
+        """Current earned title (``None`` if none yet) — based on effective level.
+
+        Titles top out at the capstone (level 100); beyond that the ★ count is
+        the prestige signal, and the title stays maxed.
+        """
+        return title_for(stat_key, self.effective_level(stat_key))
 
     # --- Mutation ----------------------------------------------------------
     def log_activity(
@@ -216,7 +242,8 @@ class Character:
         streak, bonus = self.consistency(activity.name, at=ref_dt)
         multiplier = 1.0 + bonus
 
-        before = {key: self.level(key) for key in STAT_KEYS}
+        eff_before = {key: self.effective_level(key) for key in STAT_KEYS}
+        star_before = {key: self.stars(key) for key in STAT_KEYS}
         gains = {k: v * multiplier for k, v in activity.xp_split(minutes).items()}
         for key, amount in gains.items():
             if key in self.stat_xp:
@@ -228,18 +255,23 @@ class Character:
         self.updated_at = timestamp
 
         level_ups: list[LevelUp] = []
+        star_ups: list[StarUp] = []
         titles: list[TitleUnlock] = []
         for key in STAT_KEYS:
-            after = self.level(key)
-            if after > before[key]:
-                level_ups.append(LevelUp(key, before[key], after))
-                old_title = title_for(key, before[key])
-                new_title = title_for(key, after)
-                if new_title is not None and new_title != old_title:
-                    titles.append(TitleUnlock(key, new_title, after))
+            stars_after = self.stars(key)
+            if stars_after > star_before[key]:
+                # Crossed one (or more) mastery boundaries — that's the headline.
+                star_ups.append(StarUp(key, stars_after))
+            elif self.effective_level(key) > eff_before[key]:
+                level_ups.append(LevelUp(key, eff_before[key] % 100,
+                                         self.effective_level(key) % 100))
+            old_title = title_for(key, eff_before[key])
+            new_title = title_for(key, self.effective_level(key))
+            if new_title is not None and new_title != old_title:
+                titles.append(TitleUnlock(key, new_title, self.effective_level(key)))
 
         return LogResult(activity.name, float(minutes), dict(gains), level_ups,
-                         streak=streak, bonus=bonus, titles=titles)
+                         streak=streak, bonus=bonus, titles=titles, star_ups=star_ups)
 
     def recent(self, count: int = 10) -> list[LogEntry]:
         return list(reversed(self.log[-count:]))

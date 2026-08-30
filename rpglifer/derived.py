@@ -34,8 +34,12 @@ DERIVED: tuple[DerivedStat, ...] = (
 
 
 def compute(character) -> dict[str, int]:
-    """Compute all derived stats from a character's core stat levels."""
-    L = {k: character.level(k) for k in STAT_KEYS}
+    """Compute all derived stats from a character's core stat levels.
+
+    Uses *effective* levels (stars × 100 + level), so prestige keeps your combat
+    stats climbing past mastery.
+    """
+    L = {k: character.effective_level(k) for k in STAT_KEYS}
     return {
         "HP": 20 + 6 * L["CON"] + 3 * L["STR"] + 2 * L["DIS"],
         "PWR": 5 + 2 * (L["STR"] + L["DEX"]),

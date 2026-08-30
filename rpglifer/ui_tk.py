@@ -180,7 +180,9 @@ class RadarChart:
     def render(self):
         c = self.canvas
         c.delete("web")
-        cap = 100.0  # stats are on a 0–100 mastery scale; the web fills toward it
+        # 0–100 mastery scale; if any stat has prestiged past 100, grow the cap
+        # so the web keeps showing relative shape.
+        cap = max(100.0, max(self.disp.values()) if self.disp else 100.0)
         # concentric grid octagons
         for ring in (0.25, 0.5, 0.75, 1.0):
             pts = []
@@ -314,7 +316,7 @@ class StatRow:
         self.title_lbl.pack(anchor="w")
 
         self.level_lbl = ctk.CTkLabel(parent, text="Lv 1", text_color=GOLD,
-                                      font=fonts["level"], width=48, anchor="w",
+                                      font=fonts["level"], width=82, anchor="w",
                                       height=20)
         self.level_lbl.grid(row=row, column=1, sticky="w", pady=2)
         self.bar = RoundedBar(parent, width=150, height=13, bg=SURFACE)
@@ -331,10 +333,13 @@ class StatRow:
         s, c = self.stat, self.char
         lvl = c.level(s.key)
         title = c.title(s.key) or "Unranked"
+        stars = c.stars(s.key)
+        star_txt = f"★{stars} · " if stars else ""
         raise_with = ", ".join(a.name for a in top_activities_for_stat(s.key, 3))
-        lines = [f"{s.name} — Level {lvl}  ·  {title}", "", s.blurb, "",
+        lines = [f"{s.name} — {star_txt}Level {lvl}  ·  {title}", "", s.blurb, "",
                  f"Raise it with:  {raise_with}"]
-        nxt = next_title(s.key, lvl)
+        eff = c.effective_level(s.key)
+        nxt = next_title(s.key, eff)
         if nxt:
             lines.append(f"Next title:  {nxt[1]}  at Lv {nxt[0]}")
         return "\n".join(lines)
@@ -343,7 +348,9 @@ class StatRow:
         self.char = character
         p = character.progress(self.stat.key)
         self.target = p.fraction
-        self.level_lbl.configure(text=f"Lv {p.level}")
+        stars = character.stars(self.stat.key)
+        star_txt = f"★{stars}  " if stars else ""
+        self.level_lbl.configure(text=f"{star_txt}Lv {p.level}")
         self.xp_lbl.configure(text=f"{p.xp_into_level}/{p.xp_for_level}")
         title = character.title(self.stat.key)
         self.title_lbl.configure(text=title or "Unranked",
@@ -421,7 +428,8 @@ class CharacterView(ctk.CTkFrame):
 
         for row in self.rows:
             row.update_labels(c)
-        self.radar.set_levels({k: c.level(k) for k in STAT_KEYS}, animate=animate)
+        self.radar.set_levels({k: c.effective_level(k) for k in STAT_KEYS},
+                              animate=animate)
 
         self._gen += 1
         gen = self._gen
@@ -595,6 +603,9 @@ class ActivitiesView(ctk.CTkFrame):
             ctk.CTkLabel(pop, text=f"🔥  {result.streak}-week streak  ·  "
                          f"+{int(result.bonus*100)}% XP", text_color=STREAK,
                          font=self.app.fonts["small"]).pack(padx=22)
+        for su in result.star_ups:
+            ctk.CTkLabel(pop, text=f"★  MASTERY —  {stat(su.stat).name}  ★{su.star}",
+                         text_color=GOLD, font=self.app.fonts["burst"]).pack(padx=22)
         for lu in result.level_ups:
             ctk.CTkLabel(pop, text=f"LEVEL UP —  {stat(lu.stat).name}  {lu.to_level}",
                          text_color=GOLD, font=self.app.fonts["burst"]).pack(padx=22)
@@ -819,23 +830,29 @@ class RPGLiferApp:
         return result
 
     def celebrate(self, result):
-        """A centered pop with a gold particle burst for level-ups / new titles."""
-        if not (result.level_ups or result.titles):
+        """A centered pop with a gold particle burst for stars / level-ups / titles."""
+        if not (result.star_ups or result.level_ups or result.titles):
             return
         f = "Segoe UI"
-        if result.titles:
+        if result.star_ups:
+            su = result.star_ups[0]
+            head = "★  MASTERY  ★"
+            detail, sub = stat(su.stat).name, f"Star {su.star}"
+            n_parts = 34
+        elif result.titles:
             head, detail = "NEW TITLE!", f"“{result.titles[0].title}”"
-            sub = stat(result.titles[0].stat).name
+            sub, n_parts = stat(result.titles[0].stat).name, 20
         else:
             lu = result.level_ups[0]
             head, detail, sub = "LEVEL UP!", f"{stat(lu.stat).name}  {lu.to_level}", ""
+            n_parts = 20
 
         card = ctk.CTkFrame(self.content, corner_radius=20, fg_color=SURFACE_2)
         cv = tk.Canvas(card, width=340, height=170, bg=SURFACE_2,
                        highlightthickness=0, bd=0)
         cv.pack(padx=6, pady=6)
-        parts = [(random.uniform(0, 2 * math.pi), random.uniform(45, 105))
-                 for _ in range(20)]
+        parts = [(random.uniform(0, 2 * math.pi), random.uniform(45, 120))
+                 for _ in range(n_parts)]
         dots = [cv.create_oval(170, 70, 170, 70, fill=GOLD, outline="")
                 for _ in parts]
         cv.create_text(170, 60, text=head, fill=GOLD, font=(f, 26, "bold"))
