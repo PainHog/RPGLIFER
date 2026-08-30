@@ -57,9 +57,10 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   split across the activity's stats by weight. Each stat levels on its own
   curve — the first level is quick, but real growth takes *weeks* of dedication,
   by design.
-- **Consistency pays.** Do the same activity in back-to-back weeks and it earns a
-  growing XP bonus (+10% per week, up to +50%). Your current streak is shown so
-  you can protect it. 🔥
+- **Consistency pays.** A **daily streak** (shown as a flame in the top bar)
+  counts every day you log *something* — miss a day and it resets, so there's
+  always a reason to show up. On top of that, doing the *same* activity in
+  back-to-back weeks earns a growing XP bonus (+10% per week, up to +50%).
 - **Titles to chase.** Hit milestone levels in a stat and you earn a title —
   STR 10 → *Iron-Willed*, INT 10 → *Scholar*, WIS 20 → *Guru* — so every
   attribute is worth pushing on its own.

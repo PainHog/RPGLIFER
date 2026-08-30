@@ -328,6 +328,38 @@ class Character:
         """The core stat keys trained so far in the current calendar week."""
         return self.stats_trained_in_week(_week_key(at or _now())) & set(STAT_KEYS)
 
+    # --- Daily streak (the headline habit flame) ---------------------------
+    def active_dates(self) -> set[date]:
+        """Distinct calendar dates on which at least one activity was logged."""
+        out: set[date] = set()
+        for e in self.log:
+            dt = _parse_dt(e.when)
+            if dt is not None:
+                out.add(dt.date())
+        return out
+
+    def daily_streak(self, at: datetime | None = None) -> int:
+        """Consecutive days logged, ending today — or yesterday if today is
+        still empty, so the streak you can *still extend today* is what shows.
+
+        Zero when neither today nor yesterday has any activity.
+        """
+        dates = self.active_dates()
+        if not dates:
+            return 0
+        today = (at or _now()).date()
+        if today in dates:
+            cur = today
+        elif (today - timedelta(days=1)) in dates:
+            cur = today - timedelta(days=1)
+        else:
+            return 0
+        streak = 0
+        while cur in dates:
+            streak += 1
+            cur -= timedelta(days=1)
+        return streak
+
     def weekly_wellrounded(self, at: datetime | None = None):
         """Return ``(stats_covered, target, complete, week_key_str)``."""
         wk = _week_key(at or _now())

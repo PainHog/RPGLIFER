@@ -108,4 +108,10 @@ ACHIEVEMENTS: tuple[Achievement, ...] = (
     Achievement("dungeoneer", "Dungeoneer", "Bank 20 Dungeon Dive runs.",
                 lambda c: c.counters.get("dungeon_runs", 0) >= 20,
                 progress=lambda c: (c.counters.get("dungeon_runs", 0), 20)),
+    Achievement("on_fire", "On Fire", "Keep a 7-day activity streak.",
+                lambda c: c.daily_streak() >= 7,
+                progress=lambda c: (c.daily_streak(), 7)),
+    Achievement("unstoppable_habit", "Unstoppable", "Keep a 30-day activity streak.",
+                lambda c: c.daily_streak() >= 30,
+                progress=lambda c: (c.daily_streak(), 30)),
 )

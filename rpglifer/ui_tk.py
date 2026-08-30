@@ -304,6 +304,14 @@ def line_icon(parent, kind, size=64, color=GOLD, bg=BG):
             x1, y1 = pts[i]
             x2, y2 = pts[(i + 1) % len(pts)]
             c.create_line(s*x1, s*y1, s*x2, s*y2, fill=color, width=w)
+    elif kind == "flame":  # a flat streak flame (single-colour outline)
+        outer = [(.50, .10), (.70, .44), (.63, .74), (.50, .87),
+                 (.37, .74), (.30, .44)]
+        c.create_polygon(*[s*v for pt in outer for v in pt], outline=color,
+                         fill="", width=w, smooth=True)
+        inner = [(.50, .44), (.60, .60), (.50, .80), (.40, .60)]
+        c.create_polygon(*[s*v for pt in inner for v in pt], outline=color,
+                         fill="", width=max(1, w - 1), smooth=True)
     return c
 
 
@@ -1764,7 +1772,17 @@ class RPGLiferApp:
         self.level_value.pack(side="right", padx=(0, 4))
         self.points_lbl = ctk.CTkLabel(bar, text="", text_color=MUTED,
                                        font=self.fonts["section"])
-        self.points_lbl.pack(side="right", padx=(0, 18))
+        self.points_lbl.pack(side="right", padx=(14, 18))
+        self.streak_holder = ctk.CTkFrame(bar, fg_color="transparent")
+        self.streak_flame = line_icon(self.streak_holder, "flame", size=18,
+                                      color=STREAK, bg=BG)
+        self.streak_lbl = ctk.CTkLabel(self.streak_holder, text="", text_color=STREAK,
+                                       font=self.fonts["section"])
+        self.streak_holder.pack(side="right", padx=0)
+        Tooltip(self.streak_holder,
+                lambda: (f"{self.character.daily_streak()}-day streak — you've "
+                         "logged an activity every day. Log something today to "
+                         "keep it alive!"), self.fonts["tip"])
         self.name_var = tk.StringVar(value=self.character.name)
         ctk.CTkEntry(bar, textvariable=self.name_var, width=170, height=40,
                      corner_radius=12, fg_color=SURFACE, border_width=0,
@@ -1960,6 +1978,15 @@ class RPGLiferApp:
     def refresh_points(self):
         c = self.character
         self.points_lbl.configure(text=f"◆ {c.hero_points}   ✦ {c.overachiever_points}")
+        streak = c.daily_streak()
+        if streak >= 2:
+            self.streak_lbl.configure(text=f"{streak}")
+            if not self.streak_flame.winfo_ismapped():
+                self.streak_flame.pack(side="left", padx=(0, 4))
+                self.streak_lbl.pack(side="left")
+        else:
+            self.streak_flame.pack_forget()
+            self.streak_lbl.pack_forget()
 
     def log_activity(self, activity, minutes):
         result = self.character.log_activity(activity, minutes)
