@@ -1187,7 +1187,9 @@ class AdventureView(ctk.CTkFrame):
             self.cash_btn.configure(state="normal", fg_color=SURFACE_2)
         else:
             self.dive_depth.configure(text="Depth 0")
-            self.dive_bank.configure(text="")
+            best = c.counters.get("dungeon_best", 0)
+            self.dive_bank.configure(
+                text=f"Best depth: {best}" if best else "")
             self.cash_btn.configure(state="disabled", fg_color=SURFACE)
             if c.arena_energy() <= 0:
                 self.dive_risk.configure(text="No energy — the dungeon resets tomorrow.")
