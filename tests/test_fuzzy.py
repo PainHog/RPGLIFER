@@ -62,3 +62,11 @@ def test_results_are_sorted_by_score():
 
 def test_reading_is_top_hit_for_read():
     assert _names("read")[0] == "Reading"
+
+
+def test_mid_word_alias_fragment_does_not_beat_real_match():
+    # "dsh" lives inside aliases like "hea<dsh>ots"/"frien<dsh>ip"; the real
+    # intent (Dishes) must win over those mid-word fragments.
+    names = _names("dsh", limit=3)
+    assert names[0] == "Dishes"
+    assert "Portrait photography" not in names[:2]

@@ -68,7 +68,9 @@ def _subsequence_in_word(query: str, word: str) -> float | None:
     span = positions[-1] - positions[0] + 1
     compactness = len(query) / span if span else 1.0
     early = max(0.0, 1.0 - positions[0] / (len(word) or 1))
-    return compactness * 120.0 + early * 60.0
+    # Where the match starts matters most: "dsh" opens "dishes" but sits mid-word
+    # in "hea<dsh>ots", so the latter scores lower even though it's contiguous.
+    return compactness * 80.0 + early * 140.0
 
 
 def score_text(query: str, text: str) -> float:
@@ -96,12 +98,17 @@ def score_text(query: str, text: str) -> float:
         else:
             in_word = _subsequence_in_word(q, word)
             if in_word is not None:
-                best = max(best, 300.0 + in_word)
+                best = max(best, 190.0 + in_word)
 
-    # Substring anywhere — earlier and more complete scores higher.
+    # Substring anywhere. A match at a word boundary is a strong signal; a
+    # fragment buried mid-word (e.g. "dsh" inside "hea<dsh>ots") is weak and must
+    # not outrank a real subsequence match on a short name.
     idx = t.find(q)
     if idx != -1:
-        best = max(best, 520.0 + (len(q) / len(t)) * 100.0 - idx * 2.0)
+        at_word_start = idx == 0 or t[idx - 1] in " /-"
+        coverage = len(q) / len(t)
+        base = 470.0 if at_word_start else 285.0
+        best = max(best, base + coverage * 120.0 - idx * 1.5)
 
     # Subsequence (handles dropped letters like "dsh" -> "dishes").
     sub = _subsequence_score(q, t)

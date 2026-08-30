@@ -33,12 +33,16 @@ def format_sheet(character: Character) -> str:
     ]
     for s in STATS:
         p = character.progress(s.key)
+        stars = character.stars(s.key)
+        star = f"★{stars} " if stars else "   "
         title = character.title(s.key)
         tag = f"  · {title}" if title else ""
         lines.append(
-            f"{s.emoji} {s.name:<13} Lv {p.level:>3}  {bar(p.fraction)} "
+            f"{s.name:<13} {star}Lv {p.level:>3}  {bar(p.fraction)} "
             f"{p.xp_into_level:>6}/{p.xp_for_level:<6} XP{tag}"
         )
+    d = character.hero_points, character.overachiever_points
+    lines.append(f"\nHero points: {d[0]}   Overachiever points: {d[1]}")
     return "\n".join(lines)
 
 
@@ -71,11 +75,19 @@ def format_log_result(result) -> str:
     gains = ", ".join(f"+{round(v)} {stat(k).name}" for k, v in result.gains.items() if v)
     msg = f"Logged {int(result.minutes)}m of {result.activity}: {gains}"
     if result.bonus > 0:
-        msg += f"  🔥 {result.streak}-week streak (+{int(result.bonus * 100)}% XP)"
+        msg += f"  * {result.streak}-week streak (+{int(result.bonus * 100)}% XP)"
+    if result.hero_gain:
+        msg += f"  (+{result.hero_gain} Hero)"
+    for su in getattr(result, "star_ups", []):
+        msg += f"\n  ** MASTERY! {stat(su.stat).name} reached star {su.star}!"
     for lu in result.level_ups:
-        msg += f"\n  ⭐ {stat(lu.stat).name} reached level {lu.to_level}!"
+        msg += f"\n  + {stat(lu.stat).name} reached level {lu.to_level}!"
     for t in result.titles:
-        msg += f'\n  🏅 New title: "{t.title}" ({stat(t.stat).name} {t.level})'
+        msg += f'\n  * New title: "{t.title}" ({stat(t.stat).name})'
+    for q in getattr(result, "quests_done", []):
+        msg += f"\n  * Quest complete: {q.text}"
+    for a in getattr(result, "achievements", []):
+        msg += f"\n  * Achievement: {a.name}"
     return msg
 
 
