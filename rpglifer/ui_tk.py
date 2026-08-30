@@ -17,7 +17,7 @@ import tkinter as tk
 
 import customtkinter as ctk
 
-from . import adventure, derived, fuzzy, shop, storage
+from . import adventure, derived, economy, fuzzy, shop, storage
 from .activities import ACTIVITIES, Activity
 from .character import ARENA_RUNS_PER_DAY, Character
 from .recommend import recommendations, top_activities_for_stat
@@ -48,7 +48,8 @@ HP_FOE = "#d9574f"
 
 DEFAULT_MINUTES = 30
 SUGGESTION_LIMIT = 7
-SECTIONS = ["Character", "Activities", "History", "Shop", "Adventure", "Gear"]
+SECTIONS = ["Character", "Activities", "Quests", "History", "Shop", "Adventure",
+            "Gear"]
 
 ctk.set_appearance_mode("dark")
 
@@ -616,6 +617,9 @@ class ActivitiesView(ctk.CTkFrame):
         if pts:
             ctk.CTkLabel(pop, text="   ".join(pts), text_color=HERO,
                          font=self.app.fonts["small"]).pack(padx=22)
+        for q in result.quests_done:
+            ctk.CTkLabel(pop, text=f"✔  Quest complete: {q.text}", text_color=OVER,
+                         font=self.app.fonts["small"]).pack(padx=22)
         for su in result.star_ups:
             ctk.CTkLabel(pop, text=f"★  MASTERY —  {stat(su.stat).name}  ★{su.star}",
                          text_color=GOLD, font=self.app.fonts["burst"]).pack(padx=22)
@@ -805,6 +809,8 @@ class AdventureView(ctk.CTkFrame):
             if b.loot is not None:
                 c.add_gear(b.loot)
                 self._log(f"🎁  Loot!  {b.loot.summary()}   (equip it in Gear)")
+            for q in c.record_arena_win():
+                self._log(f"✔  Quest complete: {q.text}  (+{q.reward} Hero)")
         else:
             self._log(f"✕  Defeated…  +{b.reward} Hero points for trying")
         storage.save(c)
@@ -899,6 +905,75 @@ class ShopView(ctk.CTkFrame):
                          text=f"◆  {b.name}  ·  +{int(b.magnitude*100)}%  ·  {tail}",
                          text_color=OVER, font=fonts["small"], anchor="w").pack(
                 fill="x", padx=6, pady=1)
+
+
+# ---------------------------------------------------------------------------
+# Quests — daily goals + the weekly challenge
+# ---------------------------------------------------------------------------
+class QuestsView(ctk.CTkFrame):
+    def __init__(self, parent, app):
+        super().__init__(parent, fg_color="transparent")
+        self.app = app
+        fonts = app.fonts
+        col = ctk.CTkFrame(self, fg_color="transparent")
+        col.place(relx=0.5, rely=0.04, anchor="n", relwidth=0.74)
+
+        head = ctk.CTkFrame(col, fg_color="transparent")
+        head.pack(fill="x", pady=(4, 8))
+        ctk.CTkLabel(head, text="TODAY'S QUESTS", text_color=MUTED,
+                     font=fonts["kicker"]).pack(side="left")
+        self.date_lbl = ctk.CTkLabel(head, text="", text_color=FAINT,
+                                     font=fonts["kicker"])
+        self.date_lbl.pack(side="right")
+        self.quest_box = ctk.CTkFrame(col, fg_color="transparent")
+        self.quest_box.pack(fill="x")
+
+        ctk.CTkLabel(col, text="WEEKLY CHALLENGE", text_color=MUTED,
+                     font=fonts["kicker"], anchor="w").pack(fill="x", pady=(22, 6))
+        self.week_card = ctk.CTkFrame(col, corner_radius=16, fg_color=SURFACE)
+        self.week_card.pack(fill="x")
+
+    def refresh(self):
+        import datetime as _dt
+        c = self.app.character
+        fonts = self.app.fonts
+        self.date_lbl.configure(text=_dt.datetime.now(_dt.timezone.utc)
+                                .date().isoformat())
+
+        for w in self.quest_box.winfo_children():
+            w.destroy()
+        for q, complete, claimed in c.quest_status():
+            card = ctk.CTkFrame(self.quest_box, corner_radius=14, fg_color=SURFACE)
+            card.pack(fill="x", pady=4)
+            mark = "✓" if claimed else ("◆" if complete else "○")
+            mcol = OVER if claimed else (HERO if complete else FAINT)
+            ctk.CTkLabel(card, text=mark, text_color=mcol, font=fonts["list_b"],
+                         width=28).pack(side="left", padx=(16, 6), pady=15)
+            ctk.CTkLabel(card, text=q.text,
+                         text_color=MUTED if claimed else TEXT, font=fonts["list"],
+                         anchor="w").pack(side="left", fill="x", expand=True)
+            ctk.CTkLabel(card, text=f"◆ {q.reward}", text_color=HERO,
+                         font=fonts["list_b"]).pack(side="right", padx=16)
+
+        for w in self.week_card.winfo_children():
+            w.destroy()
+        covered, target, _complete, wk = c.weekly_wellrounded()
+        claimed = wk in c.challenges_claimed
+        top = ctk.CTkFrame(self.week_card, fg_color="transparent")
+        top.pack(fill="x", padx=18, pady=(14, 4))
+        ctk.CTkLabel(top, text=f"Well-Rounded — train {target} different stats "
+                     "this week", text_color=TEXT, font=fonts["list_b"],
+                     anchor="w").pack(side="left")
+        ctk.CTkLabel(top, text="✓ Claimed" if claimed
+                     else f"✦ {economy.OVERACHIEVER_WEEKLY}", text_color=OVER,
+                     font=fonts["list_b"]).pack(side="right")
+        bar = RoundedBar(self.week_card, width=560, height=14, bg=SURFACE,
+                         segments=target, fill=OVER)
+        bar.canvas.pack(padx=18, anchor="w", pady=(2, 4))
+        bar.set(min(1.0, covered / target if target else 0))
+        ctk.CTkLabel(self.week_card, text=f"{covered} / {target} stats trained "
+                     "this week", text_color=MUTED, font=fonts["small"],
+                     anchor="w").pack(fill="x", padx=18, pady=(0, 14))
 
 
 # ---------------------------------------------------------------------------
@@ -1080,6 +1155,7 @@ class RPGLiferApp:
         self.views = {
             "Character": CharacterView(self.content, self),
             "Activities": ActivitiesView(self.content, self),
+            "Quests": QuestsView(self.content, self),
             "History": HistoryView(self.content, self),
             "Shop": ShopView(self.content, self),
             "Adventure": AdventureView(self.content, self),

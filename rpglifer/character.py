@@ -11,9 +11,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
 
-from . import economy, leveling
-from .activities import Activity
+from . import economy, leveling, quests
+from .activities import Activity, activity_by_name
 from .gear import SLOTS, Gear
+from .recommend import weakest_stats
 from .stats import STAT_KEYS
 from .titles import title_for
 
@@ -168,6 +169,7 @@ class LogResult:
     star_ups: list[StarUp] = field(default_factory=list)
     hero_gain: int = 0
     overachiever_gain: int = 0
+    quests_done: list = field(default_factory=list)
 
 
 class Character:
@@ -186,6 +188,8 @@ class Character:
         arena_used: int = 0,
         inventory: list["Gear"] | None = None,
         equipped: dict[str, str] | None = None,
+        daily: dict | None = None,
+        quests_claimed: list[str] | None = None,
     ) -> None:
         self.name = name or "Adventurer"
         # Always keep an entry for every known stat so the UI can render all of
@@ -206,6 +210,10 @@ class Character:
         self.arena_used = int(arena_used)  # runs used on arena_day
         self.inventory: list[Gear] = list(inventory or [])
         self.equipped: dict[str, str] = dict(equipped or {})  # slot -> gear id
+        # Per-day counters the log can't show (level-ups, Arena wins) + claimed
+        # daily quests ("YYYY-MM-DD:questid").
+        self.daily: dict[str, dict] = dict(daily or {})
+        self.quests_claimed: list[str] = list(quests_claimed or [])
 
     # --- Derived views -----------------------------------------------------
     # Prestige: a stat's XP never resets. Each full 0→100 climb (STAR_XP worth of
@@ -342,6 +350,61 @@ class Character:
                 total[k] = total.get(k, 0) + int(v)
         return total
 
+    # --- Daily quests ------------------------------------------------------
+    def _bump_daily(self, at: datetime, key: str, n: int) -> None:
+        d = self.daily.setdefault(at.date().isoformat(), {})
+        d[key] = d.get(key, 0) + n
+
+    def daily_metrics(self, date_str: str) -> dict:
+        entries = [e for e in self.log if e.when[:10] == date_str]
+        stats: set[str] = set()
+        weak = set(weakest_stats(self, 3))
+        weak_hit = new = False
+        max_minutes = 0.0
+        for e in entries:
+            stats.update(k for k, v in e.xp.items() if v > 0)
+            max_minutes = max(max_minutes, e.minutes)
+            a = activity_by_name(e.activity)
+            if a and a.primary_stats() and a.primary_stats()[0] in weak:
+                weak_hit = True
+            first = min((x.when for x in self.log if x.activity == e.activity),
+                        default=e.when)
+            if first[:10] == date_str:
+                new = True
+        d = self.daily.get(date_str, {})
+        return {"count": len(entries), "stats": len(stats), "weak": weak_hit,
+                "new": new, "max_minutes": max_minutes,
+                "levelups": d.get("levelups", 0), "arena_wins": d.get("arena_wins", 0)}
+
+    def quest_status(self, at: datetime | None = None) -> list[tuple]:
+        """Today's quests as ``(quest, complete, claimed)`` triples."""
+        date_str = (at or _now()).date().isoformat()
+        m = self.daily_metrics(date_str)
+        out = []
+        for q in quests.daily_quests(date_str):
+            claimed = f"{date_str}:{q.id}" in self.quests_claimed
+            out.append((q, q.check(m), claimed))
+        return out
+
+    def evaluate_daily_quests(self, at: datetime | None = None) -> list:
+        """Award any newly completed daily quests; return the completed list."""
+        date_str = (at or _now()).date().isoformat()
+        m = self.daily_metrics(date_str)
+        done = []
+        for q in quests.daily_quests(date_str):
+            key = f"{date_str}:{q.id}"
+            if key in self.quests_claimed:
+                continue
+            if q.check(m):
+                self.hero_points += q.reward
+                self.quests_claimed.append(key)
+                done.append(q)
+        return done
+
+    def record_arena_win(self, at: datetime | None = None) -> list:
+        self._bump_daily(at or _now(), "arena_wins", 1)
+        return self.evaluate_daily_quests(at)
+
     # --- Consistency -------------------------------------------------------
     def _activity_weeks(self, activity_name: str) -> set[tuple[int, int]]:
         weeks: set[tuple[int, int]] = set()
@@ -439,11 +502,17 @@ class Character:
             self.overachiever_points += overachiever_gain
             self.challenges_claimed.append(week_key)
 
+        # Daily quests — record level-ups, then award any that just completed.
+        self._bump_daily(ref_dt, "levelups", len(level_ups) + len(star_ups))
+        quests_done = self.evaluate_daily_quests(ref_dt)
+        hero_gain += sum(q.reward for q in quests_done)
+
         self.prune_bonuses(ref_dt)
 
         return LogResult(activity.name, float(minutes), dict(gains), level_ups,
                          streak=streak, bonus=bonus, titles=titles, star_ups=star_ups,
-                         hero_gain=hero_gain, overachiever_gain=overachiever_gain)
+                         hero_gain=hero_gain, overachiever_gain=overachiever_gain,
+                         quests_done=quests_done)
 
     def recent(self, count: int = 10) -> list[LogEntry]:
         return list(reversed(self.log[-count:]))
@@ -465,6 +534,8 @@ class Character:
             "arena_used": self.arena_used,
             "inventory": [g.to_dict() for g in self.inventory],
             "equipped": dict(self.equipped),
+            "daily": dict(self.daily),
+            "quests_claimed": list(self.quests_claimed),
         }
 
     @classmethod
@@ -483,4 +554,6 @@ class Character:
             arena_used=int(data.get("arena_used", 0)),
             inventory=[Gear.from_dict(g) for g in data.get("inventory", [])],
             equipped={str(k): str(v) for k, v in dict(data.get("equipped", {})).items()},
+            daily={str(k): dict(v) for k, v in dict(data.get("daily", {})).items()},
+            quests_claimed=[str(q) for q in data.get("quests_claimed", [])],
         )

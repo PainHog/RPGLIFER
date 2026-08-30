@@ -45,7 +45,8 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   *well-rounded* challenge). Spend them in the **Shop** on temporary boosts
   (never on stats), fight in the **Arena** — an auto-battle that uses your
   derived combat stats to win more Hero points — and equip the **Gear** it
-  drops for combat bonuses.
+  drops for combat bonuses. **Daily quests** and the weekly challenge give you
+  goals that pay out.
 - **A clean, sectioned interface.** Navigation lives behind a hamburger menu;
   sections for **Character, Activities, History, Shop, Adventure**, and (coming)
   **Gear**.
@@ -221,12 +222,11 @@ catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
 combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
 (Hero + Overachiever), the **Arena** auto-battle with **Gear/loot drops**, a
-working **Shop** of boosts, and a gamified GUI (level ring, XP bursts, mastery
-celebrations, hamburger nav).
+working **Shop** of boosts, **daily quests** + a weekly challenge board, and a
+gamified GUI (level ring, XP bursts, mastery celebrations, hamburger nav).
 
 Planned next:
 
-- **Daily quests & a challenge board** — surface goals in-app that pay points.
 - **Achievements** — collectible badges for milestones.
 - **More Adventure content** — varied foes, quests/runs, and mini-games beyond
   the Arena.
