@@ -201,10 +201,12 @@ class RadarChart:
         for i in range(len(STAT_KEYS)):
             x, y = self._point(i, self.R)
             c.create_line(self.cx, self.cy, x, y, fill=GRID, width=1, tags="web")
-        # data polygon
+        # data polygon — square-root scale so one prestiged stat doesn't flatten
+        # the rest; smaller stats stay readable while the top stat fills the web.
         pts, dots = [], []
+        denom = math.sqrt(cap) or 1.0
         for i, k in enumerate(STAT_KEYS):
-            frac = min(1.0, self.disp[k] / cap)
+            frac = min(1.0, math.sqrt(max(0.0, self.disp[k])) / denom)
             x, y = self._point(i, self.R * frac)
             pts += [x, y]
             dots.append((x, y))
