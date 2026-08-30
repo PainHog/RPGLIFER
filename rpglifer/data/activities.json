@@ -3,7 +3,8 @@
   "name": "Strength workout",
   "category": "Fitness",
   "weights": {
-   "STR": 1.0
+   "STR": 1.0,
+   "DIS": 0.25
   },
   "aliases": [
    "weightlifting",
@@ -18,7 +19,8 @@
   "category": "Fitness",
   "weights": {
    "STR": 0.7,
-   "CON": 0.3
+   "CON": 0.3,
+   "DIS": 0.25
   },
   "aliases": [
    "pushups",
@@ -30,7 +32,8 @@
   "category": "Fitness",
   "weights": {
    "STR": 0.8,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "pullups",
@@ -42,7 +45,8 @@
   "category": "Fitness",
   "weights": {
    "STR": 0.8,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "moving boxes",
@@ -56,7 +60,8 @@
   "weights": {
    "STR": 0.4,
    "DEX": 0.4,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "boxing",
@@ -71,7 +76,8 @@
   "category": "Fitness",
   "weights": {
    "DEX": 0.8,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "mobility",
@@ -84,7 +90,8 @@
   "weights": {
    "DEX": 0.5,
    "WIS": 0.3,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "pilates"
@@ -96,7 +103,9 @@
   "weights": {
    "DEX": 0.6,
    "CHA": 0.3,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "dance"
@@ -108,7 +117,8 @@
   "weights": {
    "DEX": 0.5,
    "CON": 0.4,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "basketball",
@@ -124,7 +134,8 @@
   "weights": {
    "DEX": 0.6,
    "INT": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.6
   },
   "aliases": [
    "art",
@@ -139,7 +150,9 @@
   "weights": {
    "DEX": 0.4,
    "INT": 0.4,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.6
   },
   "aliases": [
    "guitar",
@@ -154,7 +167,8 @@
   "category": "Creative",
   "weights": {
    "DEX": 0.6,
-   "INT": 0.4
+   "INT": 0.4,
+   "CRE": 0.6
   },
   "aliases": [
    "woodworking",
@@ -168,7 +182,8 @@
   "category": "Leisure",
   "weights": {
    "DEX": 0.7,
-   "INT": 0.3
+   "INT": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "gaming",
@@ -180,7 +195,9 @@
   "category": "Skill",
   "weights": {
    "DEX": 0.7,
-   "INT": 0.3
+   "INT": 0.3,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "typing"
@@ -191,7 +208,8 @@
   "category": "Fitness",
   "weights": {
    "CON": 0.6,
-   "DEX": 0.4
+   "DEX": 0.4,
+   "DIS": 0.25
   },
   "aliases": [
    "jogging",
@@ -205,7 +223,8 @@
   "category": "Fitness",
   "weights": {
    "CON": 0.7,
-   "DEX": 0.3
+   "DEX": 0.3,
+   "DIS": 0.25
   },
   "aliases": [
    "walk",
@@ -217,7 +236,8 @@
   "category": "Fitness",
   "weights": {
    "CON": 0.6,
-   "DEX": 0.4
+   "DEX": 0.4,
+   "DIS": 0.25
   },
   "aliases": [
    "biking",
@@ -231,7 +251,8 @@
   "weights": {
    "CON": 0.5,
    "STR": 0.3,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "swim",
@@ -244,7 +265,8 @@
   "weights": {
    "CON": 0.6,
    "STR": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "hike",
@@ -256,7 +278,8 @@
   "category": "Chores",
   "weights": {
    "CON": 0.6,
-   "WIS": 0.4
+   "WIS": 0.4,
+   "DIS": 0.4
   },
   "aliases": [
    "washing up",
@@ -269,7 +292,8 @@
   "category": "Chores",
   "weights": {
    "CON": 0.6,
-   "WIS": 0.4
+   "WIS": 0.4,
+   "DIS": 0.4
   },
   "aliases": [
    "tidying",
@@ -283,7 +307,8 @@
   "category": "Chores",
   "weights": {
    "CON": 0.7,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.4
   },
   "aliases": [
    "washing",
@@ -296,7 +321,8 @@
   "weights": {
    "CON": 0.4,
    "INT": 0.3,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.4
   },
   "aliases": [
    "cooking",
@@ -310,7 +336,8 @@
   "category": "Health",
   "weights": {
    "CON": 0.8,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "sleep",
@@ -323,7 +350,8 @@
   "category": "Health",
   "weights": {
    "CON": 0.7,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "eating well",
@@ -335,7 +363,8 @@
   "name": "Hydration",
   "category": "Health",
   "weights": {
-   "CON": 1.0
+   "CON": 1.0,
+   "DIS": 0.3
   },
   "aliases": [
    "drinking water",
@@ -347,7 +376,8 @@
   "category": "Learning",
   "weights": {
    "INT": 0.8,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "read",
@@ -359,7 +389,8 @@
   "name": "Studying",
   "category": "Learning",
   "weights": {
-   "INT": 1.0
+   "INT": 1.0,
+   "DIS": 0.3
   },
   "aliases": [
    "study",
@@ -372,7 +403,8 @@
   "category": "Learning",
   "weights": {
    "INT": 0.9,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "coding",
@@ -387,7 +419,8 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.2,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.6
   },
   "aliases": [
    "blogging",
@@ -399,7 +432,8 @@
   "name": "Online course",
   "category": "Learning",
   "weights": {
-   "INT": 1.0
+   "INT": 1.0,
+   "DIS": 0.3
   },
   "aliases": [
    "course",
@@ -413,7 +447,8 @@
   "category": "Learning",
   "weights": {
    "INT": 0.7,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "language learning",
@@ -439,7 +474,8 @@
   "name": "Meditation",
   "category": "Mindfulness",
   "weights": {
-   "WIS": 1.0
+   "WIS": 1.0,
+   "DIS": 0.3
   },
   "aliases": [
    "meditate",
@@ -452,7 +488,8 @@
   "category": "Mindfulness",
   "weights": {
    "WIS": 0.6,
-   "INT": 0.4
+   "INT": 0.4,
+   "DIS": 0.3
   },
   "aliases": [
    "journal",
@@ -464,7 +501,8 @@
   "name": "Prayer / reflection",
   "category": "Mindfulness",
   "weights": {
-   "WIS": 1.0
+   "WIS": 1.0,
+   "DIS": 0.3
   },
   "aliases": [
    "prayer",
@@ -477,7 +515,8 @@
   "category": "Mindfulness",
   "weights": {
    "WIS": 0.6,
-   "CON": 0.4
+   "CON": 0.4,
+   "DIS": 0.3
   },
   "aliases": [
    "nature",
@@ -491,7 +530,8 @@
   "category": "Health",
   "weights": {
    "WIS": 0.7,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "counseling",
@@ -503,7 +543,8 @@
   "category": "Admin",
   "weights": {
    "WIS": 0.5,
-   "INT": 0.5
+   "INT": 0.5,
+   "DIS": 0.45
   },
   "aliases": [
    "budget",
@@ -593,7 +634,8 @@
   "category": "Work",
   "weights": {
    "CHA": 0.6,
-   "INT": 0.4
+   "INT": 0.4,
+   "DIS": 0.3
   },
   "aliases": [
    "meeting",
@@ -607,7 +649,8 @@
   "weights": {
    "CON": 0.5,
    "DEX": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.4
   },
   "aliases": [
    "garden",
@@ -621,7 +664,8 @@
   "weights": {
    "STR": 0.9,
    "CON": 0.3,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "lifting weights",
@@ -635,7 +679,8 @@
   "weights": {
    "STR": 1.0,
    "CON": 0.25,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "deadlift",
@@ -648,7 +693,8 @@
   "weights": {
    "STR": 0.9,
    "CON": 0.3,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "squats",
@@ -662,7 +708,8 @@
   "weights": {
    "STR": 0.9,
    "CON": 0.2,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "benching",
@@ -675,7 +722,8 @@
   "weights": {
    "STR": 0.6,
    "CON": 0.5,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "kettlebell workout",
@@ -688,7 +736,8 @@
   "weights": {
    "STR": 0.7,
    "DEX": 0.05,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "arm curls",
@@ -701,7 +750,8 @@
   "weights": {
    "STR": 0.5,
    "CON": 0.5,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "plank hold",
@@ -714,7 +764,8 @@
   "weights": {
    "STR": 0.6,
    "CON": 0.35,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "lunges",
@@ -727,7 +778,8 @@
   "weights": {
    "STR": 0.85,
    "CON": 0.2,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "shoulder press",
@@ -740,7 +792,8 @@
   "weights": {
    "STR": 0.5,
    "CON": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "band workout",
@@ -753,7 +806,8 @@
   "weights": {
    "STR": 0.8,
    "CON": 0.4,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "farmer's walk",
@@ -766,7 +820,8 @@
   "weights": {
    "STR": 0.5,
    "DEX": 0.4,
-   "CON": 0.35
+   "CON": 0.35,
+   "DIS": 0.28
   },
   "aliases": [
    "plyometric jumps",
@@ -779,7 +834,8 @@
   "weights": {
    "STR": 0.75,
    "CON": 0.25,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "tricep dips",
@@ -792,7 +848,8 @@
   "weights": {
    "CON": 0.7,
    "STR": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "light run",
@@ -805,7 +862,8 @@
   "weights": {
    "CON": 1.0,
    "STR": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "long-distance training",
@@ -818,7 +876,8 @@
   "weights": {
    "CON": 0.7,
    "DEX": 0.4,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "jump rope",
@@ -831,7 +890,8 @@
   "weights": {
    "CON": 0.7,
    "STR": 0.5,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "indoor rowing",
@@ -844,7 +904,8 @@
   "weights": {
    "CON": 0.8,
    "STR": 0.3,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.25
   },
   "aliases": [
    "stairmaster",
@@ -857,7 +918,8 @@
   "weights": {
    "CON": 0.8,
    "STR": 0.4,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "high intensity interval training",
@@ -870,7 +932,8 @@
   "weights": {
    "CON": 0.7,
    "STR": 0.15,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.3
   },
   "aliases": [
    "elliptical machine",
@@ -883,7 +946,8 @@
   "weights": {
    "CON": 0.6,
    "STR": 0.4,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "speed running",
@@ -896,7 +960,8 @@
   "weights": {
    "CON": 0.8,
    "STR": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "indoor cycling",
@@ -909,7 +974,8 @@
   "weights": {
    "CON": 0.75,
    "STR": 0.15,
-   "WIS": 0.05
+   "WIS": 0.05,
+   "DIS": 0.25
   },
   "aliases": [
    "treadmill run",
@@ -922,7 +988,8 @@
   "weights": {
    "CON": 0.5,
    "WIS": 0.15,
-   "STR": 0.05
+   "STR": 0.05,
+   "DIS": 0.25
   },
   "aliases": [
    "power walking",
@@ -936,7 +1003,8 @@
    "CON": 0.85,
    "DEX": 0.3,
    "STR": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "off-road running",
@@ -949,7 +1017,8 @@
   "weights": {
    "CON": 0.7,
    "DEX": 0.3,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "aerobic exercise",
@@ -963,7 +1032,8 @@
    "CON": 0.6,
    "DEX": 0.5,
    "STR": 0.2,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.2
   },
   "aliases": [
    "hoops",
@@ -978,7 +1048,8 @@
    "CON": 0.7,
    "DEX": 0.5,
    "STR": 0.15,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "football",
@@ -993,7 +1064,8 @@
    "DEX": 0.6,
    "CON": 0.5,
    "STR": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "playing tennis",
@@ -1007,7 +1079,8 @@
    "DEX": 0.5,
    "WIS": 0.3,
    "STR": 0.15,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "playing golf",
@@ -1021,7 +1094,8 @@
    "DEX": 0.6,
    "STR": 0.3,
    "CON": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "playing baseball",
@@ -1035,7 +1109,8 @@
    "DEX": 0.6,
    "CON": 0.4,
    "STR": 0.2,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.2
   },
   "aliases": [
    "beach volleyball",
@@ -1049,7 +1124,8 @@
    "DEX": 0.7,
    "CON": 0.2,
    "WIS": 0.1,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "ping pong",
@@ -1062,7 +1138,8 @@
   "weights": {
    "DEX": 0.6,
    "CON": 0.45,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "playing badminton",
@@ -1076,7 +1153,8 @@
    "DEX": 0.5,
    "STR": 0.15,
    "CHA": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "ten-pin bowling",
@@ -1090,7 +1168,8 @@
    "DEX": 0.5,
    "CON": 0.3,
    "STR": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "playing cricket",
@@ -1104,7 +1183,8 @@
    "STR": 0.6,
    "CON": 0.6,
    "DEX": 0.3,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "playing rugby",
@@ -1118,7 +1198,8 @@
    "STR": 0.6,
    "CON": 0.55,
    "DEX": 0.35,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "gridiron",
@@ -1131,7 +1212,8 @@
   "weights": {
    "DEX": 0.6,
    "CON": 0.6,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "playing squash",
@@ -1145,7 +1227,8 @@
    "CON": 0.6,
    "DEX": 0.5,
    "STR": 0.15,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.2
   },
   "aliases": [
    "ultimate",
@@ -1160,7 +1243,8 @@
    "CON": 0.6,
    "DEX": 0.55,
    "STR": 0.35,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "hockey",
@@ -1174,7 +1258,8 @@
    "CON": 0.6,
    "STR": 0.5,
    "DEX": 0.4,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "sparring",
@@ -1190,7 +1275,8 @@
    "CON": 0.5,
    "STR": 0.4,
    "WIS": 0.25,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.28
   },
   "aliases": [
    "bjj",
@@ -1205,7 +1291,8 @@
    "DEX": 0.5,
    "CON": 0.4,
    "STR": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.28
   },
   "aliases": [
    "karate class",
@@ -1219,7 +1306,8 @@
    "DEX": 0.55,
    "CON": 0.45,
    "STR": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.28
   },
   "aliases": [
    "tae kwon do",
@@ -1233,7 +1321,8 @@
    "CON": 0.6,
    "STR": 0.5,
    "DEX": 0.4,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "thai boxing",
@@ -1247,7 +1336,8 @@
    "STR": 0.5,
    "DEX": 0.45,
    "CON": 0.45,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.28
   },
   "aliases": [
    "judo throws",
@@ -1261,7 +1351,8 @@
    "CON": 0.6,
    "STR": 0.45,
    "DEX": 0.4,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "cardio kickboxing",
@@ -1275,7 +1366,8 @@
    "STR": 0.6,
    "CON": 0.55,
    "DEX": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "freestyle wrestling",
@@ -1290,7 +1382,8 @@
    "DEX": 0.45,
    "STR": 0.4,
    "WIS": 0.2,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "self-defense training",
@@ -1304,7 +1397,8 @@
    "DEX": 0.5,
    "WIS": 0.4,
    "CON": 0.3,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "aikido practice",
@@ -1318,7 +1412,8 @@
    "DEX": 0.55,
    "CON": 0.4,
    "STR": 0.3,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.28
   },
   "aliases": [
    "wushu",
@@ -1333,7 +1428,8 @@
    "DEX": 0.7,
    "CON": 0.4,
    "WIS": 0.2,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "sword fighting",
@@ -1348,7 +1444,8 @@
    "DEX": 0.6,
    "CON": 0.5,
    "STR": 0.25,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.28
   },
   "aliases": [
    "brazilian martial art",
@@ -1362,7 +1459,8 @@
    "WIS": 0.6,
    "DEX": 0.35,
    "CON": 0.25,
-   "CHA": 0.05
+   "CHA": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "tai chi chuan",
@@ -1377,7 +1475,8 @@
    "DEX": 0.55,
    "CON": 0.4,
    "WIS": 0.3,
-   "STR": 0.2
+   "STR": 0.2,
+   "DIS": 0.28
   },
   "aliases": [
    "japanese fencing",
@@ -1391,7 +1490,8 @@
    "CON": 0.5,
    "STR": 0.4,
    "DEX": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "pilates class",
@@ -1406,7 +1506,8 @@
    "DEX": 0.45,
    "WIS": 0.45,
    "CON": 0.4,
-   "STR": 0.2
+   "STR": 0.2,
+   "DIS": 0.25
   },
   "aliases": [
    "vinyasa",
@@ -1420,7 +1521,8 @@
    "CON": 0.5,
    "WIS": 0.4,
    "DEX": 0.4,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "bikram yoga",
@@ -1433,7 +1535,8 @@
   "weights": {
    "WIS": 0.6,
    "DEX": 0.4,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "restorative yoga",
@@ -1447,7 +1550,8 @@
    "CON": 0.45,
    "STR": 0.4,
    "DEX": 0.4,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.25
   },
   "aliases": [
    "ashtanga",
@@ -1461,7 +1565,8 @@
    "DEX": 0.7,
    "STR": 0.5,
    "CON": 0.35,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "tumbling",
@@ -1474,7 +1579,8 @@
   "weights": {
    "DEX": 0.3,
    "WIS": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "myofascial release",
@@ -1487,7 +1593,9 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "front splits",
@@ -1501,7 +1609,8 @@
    "DEX": 0.5,
    "STR": 0.35,
    "CON": 0.4,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "barre class",
@@ -1514,7 +1623,8 @@
   "weights": {
    "DEX": 0.5,
    "CON": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "joint mobility",
@@ -1527,7 +1637,9 @@
   "weights": {
    "DEX": 0.8,
    "WIS": 0.3,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "backbending",
@@ -1541,7 +1653,8 @@
    "DEX": 0.6,
    "STR": 0.55,
    "CON": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "aerial yoga",
@@ -1556,7 +1669,8 @@
    "WIS": 0.45,
    "DEX": 0.4,
    "CON": 0.25,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "surya namaskar",
@@ -1569,7 +1683,8 @@
   "weights": {
    "STR": 0.8,
    "CON": 0.3,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "woodcutting",
@@ -1584,7 +1699,8 @@
    "CON": 0.8,
    "STR": 0.4,
    "WIS": 0.25,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "thru-hiking",
@@ -1600,7 +1716,8 @@
    "STR": 0.6,
    "CON": 0.4,
    "WIS": 0.2,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "climbing",
@@ -1615,7 +1732,8 @@
    "DEX": 0.6,
    "STR": 0.55,
    "CON": 0.3,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "boulder problems",
@@ -1629,7 +1747,8 @@
    "CON": 0.85,
    "STR": 0.5,
    "WIS": 0.3,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "alpinism",
@@ -1643,7 +1762,8 @@
   "weights": {
    "DEX": 0.3,
    "WIS": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "ziplining",
@@ -1658,7 +1778,8 @@
    "INT": 0.2,
    "STR": 0.2,
    "CON": 0.2,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "tent camping",
@@ -1673,7 +1794,8 @@
    "INT": 0.4,
    "CON": 0.5,
    "WIS": 0.25,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "map and compass",
@@ -1687,7 +1809,8 @@
    "INT": 0.35,
    "CON": 0.35,
    "WIS": 0.2,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "gps treasure hunt",
@@ -1702,7 +1825,8 @@
    "STR": 0.4,
    "DEX": 0.4,
    "WIS": 0.2,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "spelunking",
@@ -1716,7 +1840,8 @@
    "STR": 0.5,
    "DEX": 0.5,
    "CON": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "abseiling",
@@ -1730,7 +1855,8 @@
    "DEX": 0.7,
    "WIS": 0.35,
    "CON": 0.3,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "slackline",
@@ -1744,7 +1870,8 @@
    "DEX": 0.5,
    "STR": 0.5,
    "CON": 0.5,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.15
   },
   "aliases": [
    "iron path",
@@ -1758,7 +1885,8 @@
    "DEX": 0.35,
    "INT": 0.25,
    "WIS": 0.15,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "making a fire",
@@ -1772,7 +1900,8 @@
   "weights": {
    "WIS": 0.5,
    "INT": 0.3,
-   "CON": 0.05
+   "CON": 0.05,
+   "DIS": 0.12
   },
   "aliases": [
    "birding",
@@ -1786,7 +1915,8 @@
    "INT": 0.4,
    "WIS": 0.35,
    "DEX": 0.2,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.12
   },
   "aliases": [
    "mushroom hunting",
@@ -1800,7 +1930,8 @@
   "weights": {
    "WIS": 0.5,
    "INT": 0.35,
-   "CON": 0.05
+   "CON": 0.05,
+   "DIS": 0.12
   },
   "aliases": [
    "astronomy",
@@ -1814,7 +1945,9 @@
    "DEX": 0.35,
    "WIS": 0.4,
    "INT": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.45
   },
   "aliases": [
    "landscape photography",
@@ -1828,7 +1961,8 @@
    "WIS": 0.35,
    "CON": 0.2,
    "DEX": 0.1,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.12
   },
   "aliases": [
    "shell collecting",
@@ -1840,7 +1974,8 @@
   "category": "Nature",
   "weights": {
    "WIS": 0.7,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.12
   },
   "aliases": [
    "shinrin-yoku",
@@ -1855,7 +1990,8 @@
    "INT": 0.4,
    "WIS": 0.4,
    "CON": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "animal tracking",
@@ -1868,7 +2004,8 @@
   "weights": {
    "WIS": 0.3,
    "INT": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.12
   },
   "aliases": [
    "pressing leaves",
@@ -1882,7 +2019,8 @@
    "WIS": 0.35,
    "INT": 0.3,
    "DEX": 0.15,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.12
   },
   "aliases": [
    "rock pooling",
@@ -1895,7 +2033,8 @@
   "weights": {
    "WIS": 0.45,
    "INT": 0.35,
-   "DEX": 0.25
+   "DEX": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "field sketching",
@@ -1908,7 +2047,8 @@
   "weights": {
    "WIS": 0.45,
    "INT": 0.25,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.12
   },
   "aliases": [
    "butterfly spotting",
@@ -1923,7 +2063,8 @@
    "CON": 0.25,
    "STR": 0.2,
    "WIS": 0.25,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.12
   },
   "aliases": [
    "rock collecting",
@@ -1936,7 +2077,8 @@
   "category": "Nature",
   "weights": {
    "WIS": 0.6,
-   "CON": 0.05
+   "CON": 0.05,
+   "DIS": 0.12
   },
   "aliases": [
    "dawn watching",
@@ -1948,7 +2090,8 @@
   "category": "Nature",
   "weights": {
    "WIS": 0.55,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.12
   },
   "aliases": [
    "sky gazing",
@@ -1961,7 +2104,8 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.35,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.12
   },
   "aliases": [
    "botany walk",
@@ -1976,7 +2120,8 @@
    "CON": 0.55,
    "STR": 0.35,
    "WIS": 0.2,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "catching waves",
@@ -1990,7 +2135,8 @@
    "CON": 0.55,
    "STR": 0.45,
    "DEX": 0.3,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "sea kayaking",
@@ -2004,7 +2150,8 @@
    "STR": 0.5,
    "CON": 0.5,
    "DEX": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "paddling a canoe",
@@ -2018,7 +2165,8 @@
    "DEX": 0.5,
    "CON": 0.45,
    "STR": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "sup",
@@ -2033,7 +2181,8 @@
    "CON": 0.4,
    "WIS": 0.35,
    "INT": 0.35,
-   "DEX": 0.25
+   "DEX": 0.25,
+   "DIS": 0.15
   },
   "aliases": [
    "diving",
@@ -2047,7 +2196,8 @@
   "weights": {
    "CON": 0.4,
    "WIS": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "reef snorkeling",
@@ -2061,7 +2211,8 @@
    "CON": 0.7,
    "STR": 0.4,
    "DEX": 0.4,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "playing water polo"
@@ -2074,7 +2225,8 @@
    "CON": 0.75,
    "STR": 0.55,
    "DEX": 0.15,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "sculling",
@@ -2089,7 +2241,8 @@
    "DEX": 0.55,
    "CON": 0.5,
    "STR": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "sailboarding",
@@ -2104,7 +2257,8 @@
    "DEX": 0.35,
    "WIS": 0.3,
    "STR": 0.25,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "yachting",
@@ -2118,7 +2272,8 @@
    "CON": 0.6,
    "STR": 0.2,
    "DEX": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "aqua aerobics",
@@ -2131,7 +2286,8 @@
   "weights": {
    "CON": 0.5,
    "DEX": 0.4,
-   "STR": 0.25
+   "STR": 0.25,
+   "DIS": 0.15
   },
   "aliases": [
    "boogie boarding",
@@ -2146,7 +2302,8 @@
    "CON": 0.55,
    "DEX": 0.35,
    "WIS": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "whitewater rafting",
@@ -2159,7 +2316,8 @@
   "weights": {
    "CON": 0.5,
    "WIS": 0.5,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "breath-hold diving",
@@ -2173,7 +2331,8 @@
    "CON": 0.6,
    "DEX": 0.55,
    "STR": 0.3,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "downhill skiing",
@@ -2188,7 +2347,8 @@
    "DEX": 0.6,
    "CON": 0.5,
    "STR": 0.3,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "riding the mountain",
@@ -2202,7 +2362,8 @@
    "DEX": 0.6,
    "CON": 0.4,
    "STR": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "skating",
@@ -2215,7 +2376,8 @@
   "weights": {
    "CON": 0.85,
    "STR": 0.4,
-   "DEX": 0.3
+   "DEX": 0.3,
+   "DIS": 0.15
   },
   "aliases": [
    "nordic skiing",
@@ -2229,7 +2391,8 @@
    "CON": 0.3,
    "STR": 0.25,
    "DEX": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "sledging",
@@ -2242,7 +2405,8 @@
   "weights": {
    "CON": 0.7,
    "STR": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "snowshoe hiking",
@@ -2256,7 +2420,8 @@
    "STR": 0.6,
    "DEX": 0.5,
    "CON": 0.5,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.15
   },
   "aliases": [
    "frozen waterfall climbing",
@@ -2269,7 +2434,8 @@
   "weights": {
    "STR": 0.6,
    "CON": 0.5,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.15
   },
   "aliases": [
    "snow shoveling",
@@ -2283,7 +2449,8 @@
    "STR": 0.25,
    "DEX": 0.25,
    "CHA": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "making a snowman",
@@ -2298,7 +2465,8 @@
    "CON": 0.45,
    "STR": 0.25,
    "CHA": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "ice dancing",
@@ -2313,7 +2481,8 @@
    "WIS": 0.25,
    "INT": 0.2,
    "STR": 0.15,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "playing curling",
@@ -2327,7 +2496,8 @@
    "CON": 0.8,
    "STR": 0.4,
    "DEX": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "backcountry skiing",
@@ -2340,7 +2510,8 @@
   "weights": {
    "CON": 0.3,
    "STR": 0.25,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.15
   },
   "aliases": [
    "toboggan run",
@@ -2354,7 +2525,8 @@
    "WIS": 0.4,
    "CON": 0.25,
    "INT": 0.2,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "fishing on ice",
@@ -2368,7 +2540,8 @@
    "DEX": 0.4,
    "CON": 0.35,
    "CHA": 0.2,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "snowball battle",
@@ -2381,7 +2554,8 @@
   "weights": {
    "DEX": 0.3,
    "CON": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "doing the dishes",
@@ -2395,7 +2569,8 @@
   "weights": {
    "CON": 0.2,
    "DEX": 0.15,
-   "INT": 0.05
+   "INT": 0.05,
+   "DIS": 0.4
   },
   "aliases": [
    "laundry",
@@ -2408,7 +2583,8 @@
   "weights": {
    "CON": 0.3,
    "STR": 0.2,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "hoovering",
@@ -2421,7 +2597,8 @@
   "weights": {
    "CON": 0.35,
    "STR": 0.25,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "mopping",
@@ -2433,7 +2610,8 @@
   "category": "Chores & Housework",
   "weights": {
    "DEX": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.4
   },
   "aliases": [
    "dusting shelves",
@@ -2446,7 +2624,8 @@
   "weights": {
    "DEX": 0.4,
    "WIS": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "ironing",
@@ -2458,7 +2637,8 @@
   "category": "Chores & Housework",
   "weights": {
    "DEX": 0.3,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "folding clothes",
@@ -2471,7 +2651,8 @@
   "weights": {
    "STR": 0.3,
    "CON": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.4
   },
   "aliases": [
    "cleaning the bathroom",
@@ -2484,7 +2665,8 @@
   "weights": {
    "DEX": 0.15,
    "CON": 0.1,
-   "WIS": 0.05
+   "WIS": 0.05,
+   "DIS": 0.4
   },
   "aliases": [
    "bed making",
@@ -2496,7 +2678,8 @@
   "category": "Chores & Housework",
   "weights": {
    "STR": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.4
   },
   "aliases": [
    "taking out the garbage",
@@ -2509,7 +2692,8 @@
   "weights": {
    "DEX": 0.3,
    "STR": 0.2,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.4
   },
   "aliases": [
    "washing windows",
@@ -2523,7 +2707,8 @@
    "INT": 0.3,
    "DEX": 0.15,
    "WIS": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "closet organization",
@@ -2536,7 +2721,8 @@
   "weights": {
    "CON": 0.25,
    "STR": 0.15,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "sweeping the floor",
@@ -2550,7 +2736,8 @@
    "INT": 0.3,
    "WIS": 0.3,
    "DEX": 0.1,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "tidying up",
@@ -2564,7 +2751,8 @@
   "weights": {
    "STR": 0.3,
    "CON": 0.35,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.4
   },
   "aliases": [
    "car wash",
@@ -2578,7 +2766,9 @@
    "DEX": 0.4,
    "CON": 0.3,
    "STR": 0.3,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "wall painting",
@@ -2593,7 +2783,9 @@
    "DEX": 0.5,
    "INT": 0.35,
    "STR": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "flat-pack assembly",
@@ -2607,7 +2799,9 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.4,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "repairing a tap",
@@ -2622,7 +2816,9 @@
    "STR": 0.45,
    "DEX": 0.4,
    "CON": 0.35,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "installing drywall",
@@ -2635,7 +2831,9 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.3,
-   "STR": 0.25
+   "STR": 0.25,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "mounting shelves",
@@ -2649,7 +2847,9 @@
    "DEX": 0.55,
    "INT": 0.35,
    "STR": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "laying tile",
@@ -2663,7 +2863,9 @@
    "DEX": 0.6,
    "INT": 0.4,
    "STR": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "carpentry",
@@ -2677,7 +2879,9 @@
   "weights": {
    "DEX": 0.6,
    "INT": 0.5,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "circuit soldering",
@@ -2691,7 +2895,9 @@
    "DEX": 0.45,
    "CON": 0.25,
    "STR": 0.3,
-   "INT": 0.3
+   "INT": 0.3,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "installing flooring",
@@ -2704,7 +2910,9 @@
   "weights": {
    "INT": 0.55,
    "DEX": 0.45,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "electrical wiring",
@@ -2718,7 +2926,9 @@
    "DEX": 0.55,
    "INT": 0.4,
    "STR": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "making a bookcase",
@@ -2732,7 +2942,9 @@
    "CON": 0.3,
    "STR": 0.3,
    "DEX": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "refinishing furniture",
@@ -2745,7 +2957,9 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "sealing a tub",
@@ -2759,7 +2973,9 @@
    "DEX": 0.55,
    "INT": 0.25,
    "WIS": 0.2,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "wallpapering",
@@ -2772,7 +2988,9 @@
   "weights": {
    "DEX": 0.35,
    "INT": 0.3,
-   "STR": 0.2
+   "STR": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "clearing a blocked drain",
@@ -2785,7 +3003,9 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.25,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.2
   },
   "aliases": [
    "spackling",
@@ -2800,7 +3020,9 @@
    "DEX": 0.35,
    "INT": 0.3,
    "WIS": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "making dinner",
@@ -2815,7 +3037,9 @@
    "INT": 0.35,
    "DEX": 0.3,
    "CON": 0.15,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "meal prepping",
@@ -2830,7 +3054,9 @@
    "DEX": 0.4,
    "INT": 0.35,
    "WIS": 0.3,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "breadmaking",
@@ -2845,7 +3071,9 @@
    "DEX": 0.3,
    "INT": 0.25,
    "WIS": 0.15,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "barbecuing",
@@ -2859,7 +3087,9 @@
   "weights": {
    "DEX": 0.5,
    "WIS": 0.1,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "knife work",
@@ -2874,7 +3104,9 @@
    "DEX": 0.5,
    "INT": 0.3,
    "WIS": 0.2,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "fresh pasta",
@@ -2888,7 +3120,9 @@
    "DEX": 0.6,
    "INT": 0.2,
    "WIS": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "cake decorating",
@@ -2902,7 +3136,9 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "making sauerkraut",
@@ -2916,7 +3152,9 @@
   "weights": {
    "DEX": 0.6,
    "INT": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "rolling sushi",
@@ -2929,7 +3167,9 @@
   "weights": {
    "DEX": 0.3,
    "INT": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "making coffee",
@@ -2944,7 +3184,9 @@
    "INT": 0.5,
    "DEX": 0.25,
    "WIS": 0.25,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "homebrewing",
@@ -2959,7 +3201,9 @@
    "INT": 0.35,
    "DEX": 0.3,
    "CON": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "jarring food",
@@ -2974,7 +3218,9 @@
    "STR": 0.3,
    "DEX": 0.35,
    "CON": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "working dough",
@@ -2988,7 +3234,9 @@
    "INT": 0.45,
    "DEX": 0.3,
    "WIS": 0.3,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "cheesemaking",
@@ -3002,7 +3250,9 @@
    "WIS": 0.4,
    "INT": 0.35,
    "DEX": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.2,
+   "CRE": 0.25
   },
   "aliases": [
    "smoking meat",
@@ -3017,7 +3267,9 @@
    "CON": 0.35,
    "STR": 0.25,
    "DEX": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "pulling weeds",
@@ -3030,7 +3282,9 @@
   "weights": {
    "CON": 0.45,
    "STR": 0.35,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "mowing",
@@ -3044,7 +3298,9 @@
   "weights": {
    "CON": 0.45,
    "STR": 0.35,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "leaf raking",
@@ -3058,7 +3314,9 @@
    "DEX": 0.35,
    "WIS": 0.3,
    "INT": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.18
   },
   "aliases": [
    "sowing seeds",
@@ -3072,7 +3330,9 @@
    "DEX": 0.4,
    "INT": 0.25,
    "WIS": 0.2,
-   "STR": 0.2
+   "STR": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "pruning",
@@ -3086,7 +3346,9 @@
   "weights": {
    "WIS": 0.25,
    "DEX": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.18
   },
   "aliases": [
    "watering the garden",
@@ -3100,7 +3362,9 @@
    "INT": 0.35,
    "CON": 0.2,
    "WIS": 0.2,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.45
   },
   "aliases": [
    "making compost",
@@ -3115,7 +3379,9 @@
    "DEX": 0.35,
    "INT": 0.25,
    "WIS": 0.2,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.18
   },
   "aliases": [
    "potting plants",
@@ -3129,7 +3395,9 @@
   "weights": {
    "STR": 0.6,
    "CON": 0.5,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "digging",
@@ -3145,7 +3413,9 @@
    "STR": 0.4,
    "INT": 0.3,
    "DEX": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "yard landscaping",
@@ -3160,7 +3430,9 @@
    "INT": 0.35,
    "WIS": 0.3,
    "CON": 0.25,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "vegetable gardening",
@@ -3175,7 +3447,9 @@
    "DEX": 0.5,
    "WIS": 0.5,
    "INT": 0.35,
-   "CON": 0.05
+   "CON": 0.05,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "bonsai",
@@ -3189,7 +3463,9 @@
   "weights": {
    "STR": 0.45,
    "CON": 0.4,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "spreading mulch",
@@ -3203,7 +3479,9 @@
    "DEX": 0.4,
    "CON": 0.3,
    "STR": 0.3,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.18
   },
   "aliases": [
    "hedge trimming",
@@ -3217,7 +3495,8 @@
    "CON": 0.4,
    "WIS": 0.2,
    "CHA": 0.15,
-   "DEX": 0.05
+   "DEX": 0.05,
+   "DIS": 0.25
   },
   "aliases": [
    "dog walking",
@@ -3230,7 +3509,8 @@
   "weights": {
    "WIS": 0.2,
    "DEX": 0.1,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "feeding the cat",
@@ -3245,7 +3525,8 @@
    "DEX": 0.4,
    "WIS": 0.25,
    "CHA": 0.2,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "brushing the dog",
@@ -3260,7 +3541,8 @@
    "CHA": 0.4,
    "WIS": 0.35,
    "INT": 0.35,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "dog training",
@@ -3275,7 +3557,8 @@
    "STR": 0.3,
    "DEX": 0.3,
    "CON": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "washing the dog",
@@ -3288,7 +3571,8 @@
   "weights": {
    "DEX": 0.15,
    "CON": 0.1,
-   "WIS": 0.05
+   "WIS": 0.05,
+   "DIS": 0.3
   },
   "aliases": [
    "scooping litter",
@@ -3302,7 +3586,8 @@
    "CON": 0.3,
    "DEX": 0.3,
    "CHA": 0.2,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "throwing the ball",
@@ -3317,7 +3602,8 @@
    "CON": 0.4,
    "STR": 0.25,
    "WIS": 0.25,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "horse riding",
@@ -3331,7 +3617,8 @@
   "weights": {
    "STR": 0.55,
    "CON": 0.55,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.25
   },
   "aliases": [
    "cleaning stables",
@@ -3345,7 +3632,8 @@
   "weights": {
    "DEX": 0.35,
    "INT": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "aquarium maintenance",
@@ -3358,7 +3646,8 @@
   "weights": {
    "DEX": 0.5,
    "WIS": 0.3,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "trimming dog nails",
@@ -3372,7 +3661,8 @@
    "CHA": 0.4,
    "WIS": 0.45,
    "INT": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "animal fostering",
@@ -3385,7 +3675,8 @@
   "weights": {
    "DEX": 0.25,
    "CON": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "birdcage cleaning",
@@ -3400,7 +3691,8 @@
    "WIS": 0.35,
    "INT": 0.3,
    "DEX": 0.15,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "puppy training",
@@ -3414,7 +3706,8 @@
    "WIS": 0.35,
    "CHA": 0.3,
    "INT": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.25
   },
   "aliases": [
    "vet visit",
@@ -3428,7 +3721,8 @@
   "weights": {
    "DEX": 0.2,
    "WIS": 0.1,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "toothbrushing",
@@ -3441,7 +3735,8 @@
   "weights": {
    "DEX": 0.3,
    "WIS": 0.25,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "skin care",
@@ -3454,7 +3749,8 @@
   "category": "Self-Care & Health",
   "weights": {
    "CON": 0.35,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "going for a walk",
@@ -3467,7 +3763,8 @@
   "category": "Self-Care & Health",
   "weights": {
    "WIS": 0.4,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "power nap",
@@ -3480,7 +3777,8 @@
   "category": "Self-Care & Health",
   "weights": {
    "CON": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "hydrating",
@@ -3493,7 +3791,8 @@
   "category": "Self-Care & Health",
   "weights": {
    "WIS": 0.6,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "breathwork",
@@ -3507,7 +3806,9 @@
   "weights": {
    "DEX": 0.25,
    "WIS": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "flossing teeth",
@@ -3519,7 +3820,8 @@
   "category": "Self-Care & Health",
   "weights": {
    "CON": 0.4,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "sleeping well",
@@ -3533,7 +3835,8 @@
   "weights": {
    "CON": 0.2,
    "WIS": 0.1,
-   "INT": 0.05
+   "INT": 0.05,
+   "DIS": 0.3
   },
   "aliases": [
    "taking supplements",
@@ -3546,7 +3849,8 @@
   "weights": {
    "DEX": 0.3,
    "WIS": 0.3,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "bedtime stretch",
@@ -3559,7 +3863,8 @@
   "weights": {
    "WIS": 0.4,
    "CON": 0.35,
-   "STR": 0.05
+   "STR": 0.05,
+   "DIS": 0.3
   },
   "aliases": [
    "cold shower",
@@ -3572,7 +3877,9 @@
   "category": "Self-Care & Health",
   "weights": {
    "WIS": 0.6,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "gratitude journaling",
@@ -3585,7 +3892,8 @@
   "weights": {
    "WIS": 0.55,
    "CHA": 0.3,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "counseling",
@@ -3599,7 +3907,8 @@
   "weights": {
    "DEX": 0.4,
    "WIS": 0.1,
-   "CON": 0.05
+   "CON": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "shaving my face",
@@ -3613,7 +3922,8 @@
    "DEX": 0.5,
    "CHA": 0.2,
    "WIS": 0.15,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "doing makeup",
@@ -3627,7 +3937,8 @@
   "weights": {
    "DEX": 0.45,
    "CHA": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "doing my hair",
@@ -3641,7 +3952,8 @@
   "weights": {
    "DEX": 0.55,
    "WIS": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "manicure",
@@ -3655,7 +3967,9 @@
   "weights": {
    "DEX": 0.55,
    "WIS": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.28,
+   "CRE": 0.45
   },
   "aliases": [
    "doing nails",
@@ -3669,7 +3983,8 @@
   "weights": {
    "DEX": 0.45,
    "WIS": 0.1,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "beard trim",
@@ -3682,7 +3997,8 @@
   "weights": {
    "DEX": 0.35,
    "STR": 0.05,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "blow dry",
@@ -3695,7 +4011,8 @@
   "weights": {
    "DEX": 0.2,
    "WIS": 0.3,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "face mask",
@@ -3708,7 +4025,8 @@
   "category": "Beauty & Grooming",
   "weights": {
    "DEX": 0.55,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.28
   },
   "aliases": [
    "tweezing eyebrows",
@@ -3722,7 +4040,8 @@
    "DEX": 0.6,
    "INT": 0.2,
    "CHA": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "haircutting",
@@ -3736,7 +4055,8 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.15,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "hair braiding",
@@ -3750,7 +4070,8 @@
   "weights": {
    "CHA": 0.2,
    "DEX": 0.1,
-   "WIS": 0.05
+   "WIS": 0.05,
+   "DIS": 0.28
   },
   "aliases": [
    "spraying perfume",
@@ -3763,7 +4084,8 @@
   "weights": {
    "DEX": 0.25,
    "WIS": 0.15,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "scrubbing skin",
@@ -3776,7 +4098,8 @@
   "category": "Beauty & Grooming",
   "weights": {
    "CHA": 0.15,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.28
   },
   "aliases": [
    "salon visit",
@@ -3790,7 +4113,8 @@
   "weights": {
    "DEX": 0.2,
    "WIS": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.28
   },
   "aliases": [
    "applying lotion",
@@ -3805,7 +4129,8 @@
    "WIS": 0.2,
    "DEX": 0.15,
    "CON": 0.15,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.18
   },
   "aliases": [
    "the commute",
@@ -3821,7 +4146,8 @@
    "WIS": 0.25,
    "DEX": 0.2,
    "INT": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.18
   },
   "aliases": [
    "long drive",
@@ -3836,7 +4162,8 @@
    "STR": 0.5,
    "DEX": 0.35,
    "INT": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.18
   },
   "aliases": [
    "changing a flat",
@@ -3850,7 +4177,8 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.18
   },
   "aliases": [
    "parking the car",
@@ -3864,7 +4192,8 @@
    "DEX": 0.55,
    "WIS": 0.3,
    "CON": 0.25,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.18
   },
   "aliases": [
    "motorcycling",
@@ -3879,7 +4208,8 @@
    "CON": 0.5,
    "DEX": 0.25,
    "STR": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.18
   },
   "aliases": [
    "bike commuting",
@@ -3892,7 +4222,8 @@
   "weights": {
    "INT": 0.35,
    "DEX": 0.3,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.18
   },
   "aliases": [
    "jump starting a battery",
@@ -3906,7 +4237,8 @@
    "DEX": 0.5,
    "INT": 0.35,
    "WIS": 0.2,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.18
   },
   "aliases": [
    "driving manual",
@@ -3919,7 +4251,8 @@
   "category": "Driving & Transport",
   "weights": {
    "INT": 0.5,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.18
   },
   "aliases": [
    "map reading",
@@ -3933,7 +4266,8 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.18
   },
   "aliases": [
    "reversing a trailer",
@@ -3945,7 +4279,8 @@
   "category": "Driving & Transport",
   "weights": {
    "DEX": 0.25,
-   "INT": 0.25
+   "INT": 0.25,
+   "DIS": 0.18
   },
   "aliases": [
    "inflating tires",
@@ -3957,7 +4292,8 @@
   "category": "Driving & Transport",
   "weights": {
    "DEX": 0.15,
-   "INT": 0.05
+   "INT": 0.05,
+   "DIS": 0.18
   },
   "aliases": [
    "filling up the tank",
@@ -3972,7 +4308,8 @@
    "WIS": 0.4,
    "DEX": 0.3,
    "INT": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.18
   },
   "aliases": [
    "rush hour driving",
@@ -3986,7 +4323,8 @@
   "weights": {
    "WIS": 0.2,
    "INT": 0.2,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.18
   },
   "aliases": [
    "riding the bus",
@@ -4000,7 +4338,8 @@
   "weights": {
    "DEX": 0.4,
    "CON": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.18
   },
   "aliases": [
    "kick scooter",
@@ -4015,7 +4354,8 @@
    "INT": 0.25,
    "CON": 0.2,
    "WIS": 0.15,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "food shopping",
@@ -4029,7 +4369,8 @@
   "weights": {
    "INT": 0.25,
    "CON": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "doing errands",
@@ -4043,7 +4384,8 @@
   "weights": {
    "STR": 0.5,
    "CON": 0.35,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "hauling groceries",
@@ -4055,7 +4397,8 @@
   "category": "Shopping & Errands",
   "weights": {
    "INT": 0.4,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "planning meals",
@@ -4069,7 +4412,8 @@
    "CHA": 0.2,
    "INT": 0.15,
    "WIS": 0.15,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "shopping for clothes",
@@ -4083,7 +4427,8 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.25,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "thrifting",
@@ -4096,7 +4441,8 @@
   "category": "Shopping & Errands",
   "weights": {
    "INT": 0.45,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.2
   },
   "aliases": [
    "price comparison",
@@ -4109,7 +4455,8 @@
   "weights": {
    "CHA": 0.3,
    "INT": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.2
   },
   "aliases": [
    "making a return",
@@ -4124,7 +4471,8 @@
    "WIS": 0.25,
    "CHA": 0.25,
    "INT": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "farmers market",
@@ -4138,7 +4486,8 @@
   "weights": {
    "INT": 0.2,
    "DEX": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "shipping a parcel",
@@ -4151,7 +4500,8 @@
   "category": "Shopping & Errands",
   "weights": {
    "INT": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.2
   },
   "aliases": [
    "pharmacy pickup",
@@ -4165,7 +4515,8 @@
    "INT": 0.3,
    "CHA": 0.15,
    "WIS": 0.15,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "furniture shopping",
@@ -4177,7 +4528,8 @@
   "category": "Shopping & Errands",
   "weights": {
    "INT": 0.3,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.2
   },
   "aliases": [
    "shopping online",
@@ -4192,7 +4544,8 @@
    "INT": 0.3,
    "CON": 0.2,
    "DEX": 0.15,
-   "STR": 0.1
+   "STR": 0.1,
+   "DIS": 0.2
   },
   "aliases": [
    "stocking up",
@@ -4206,7 +4559,8 @@
   "weights": {
    "CON": 0.1,
    "WIS": 0.05,
-   "INT": 0.05
+   "INT": 0.05,
+   "DIS": 0.3
   },
   "aliases": [
    "dry cleaner run",
@@ -4391,7 +4745,8 @@
   "weights": {
    "DEX": 0.35,
    "WIS": 0.3,
-   "INT": 0.3
+   "INT": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "travel photography",
@@ -4433,7 +4788,8 @@
    "DEX": 0.4,
    "WIS": 0.35,
    "CHA": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "baby bath",
@@ -4447,7 +4803,8 @@
   "weights": {
    "DEX": 0.4,
    "WIS": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "diaper change",
@@ -4462,7 +4819,8 @@
    "CHA": 0.4,
    "CON": 0.3,
    "WIS": 0.3,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.35
   },
   "aliases": [
    "playing with children",
@@ -4477,7 +4835,8 @@
    "WIS": 0.35,
    "DEX": 0.3,
    "CHA": 0.25,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.35
   },
   "aliases": [
    "spoon-feeding a toddler",
@@ -4490,7 +4849,8 @@
   "weights": {
    "CHA": 0.4,
    "WIS": 0.35,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.35
   },
   "aliases": [
    "bedtime reading",
@@ -4504,7 +4864,8 @@
   "weights": {
    "INT": 0.5,
    "CHA": 0.3,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.35
   },
   "aliases": [
    "homework help",
@@ -4518,7 +4879,8 @@
   "weights": {
    "CON": 0.35,
    "STR": 0.15,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "stroller walk",
@@ -4533,7 +4895,8 @@
    "CHA": 0.35,
    "WIS": 0.35,
    "DEX": 0.25,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.35
   },
   "aliases": [
    "bike lessons for kids",
@@ -4546,7 +4909,8 @@
   "weights": {
    "WIS": 0.55,
    "CHA": 0.35,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "calming a baby",
@@ -4559,7 +4923,8 @@
   "weights": {
    "STR": 0.5,
    "CON": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "shoulder ride",
@@ -4574,7 +4939,8 @@
    "CHA": 0.3,
    "DEX": 0.3,
    "INT": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.35
   },
   "aliases": [
    "playing with blocks",
@@ -4589,7 +4955,8 @@
    "WIS": 0.5,
    "CHA": 0.35,
    "INT": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "toilet training",
@@ -4603,7 +4970,8 @@
    "INT": 0.3,
    "DEX": 0.25,
    "WIS": 0.15,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.35
   },
   "aliases": [
    "making lunchboxes",
@@ -4618,7 +4986,8 @@
    "WIS": 0.35,
    "CON": 0.3,
    "INT": 0.2,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "coaching youth sports",
@@ -4632,7 +5001,8 @@
    "WIS": 0.5,
    "CHA": 0.3,
    "CON": 0.25,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.35
   },
   "aliases": [
    "rocking the baby",
@@ -4738,7 +5108,8 @@
   "weights": {
    "CHA": 0.4,
    "WIS": 0.4,
-   "INT": 0.25
+   "INT": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "letter to a loved one",
@@ -4790,7 +5161,8 @@
   "weights": {
    "CHA": 0.4,
    "WIS": 0.35,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "gift giving",
@@ -4816,7 +5188,8 @@
   "weights": {
    "WIS": 0.55,
    "CHA": 0.4,
-   "INT": 0.05
+   "INT": 0.05,
+   "DIS": 0.3
   },
   "aliases": [
    "apology",
@@ -4880,7 +5253,8 @@
   "weights": {
    "CHA": 0.6,
    "WIS": 0.35,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "storytelling",
@@ -4893,7 +5267,8 @@
   "weights": {
    "CHA": 0.6,
    "INT": 0.3,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "podcast hosting",
@@ -4959,7 +5334,8 @@
   "weights": {
    "INT": 0.5,
    "CHA": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "speechwriting",
@@ -5012,7 +5388,8 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.35,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "CRE": 0.45
   },
   "aliases": [
    "explainer",
@@ -5066,7 +5443,8 @@
   "weights": {
    "CON": 0.45,
    "STR": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "litter pickup",
@@ -5107,7 +5485,8 @@
   "weights": {
    "INT": 0.4,
    "CHA": 0.4,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "fundraiser",
@@ -5146,7 +5525,8 @@
   "category": "Community & Volunteering",
   "weights": {
    "CHA": 0.5,
-   "WIS": 0.45
+   "WIS": 0.45,
+   "CRE": 0.45
   },
   "aliases": [
    "nursing home visit",
@@ -5201,7 +5581,8 @@
   "weights": {
    "CHA": 0.5,
    "CON": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "door knocking",
@@ -5216,7 +5597,8 @@
    "INT": 0.4,
    "CHA": 0.35,
    "WIS": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "food drive",
@@ -5229,7 +5611,8 @@
   "weights": {
    "INT": 0.4,
    "CON": 0.3,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "desk job",
@@ -5244,7 +5627,8 @@
   "weights": {
    "STR": 0.5,
    "CON": 0.45,
-   "DEX": 0.25
+   "DEX": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "manual labor",
@@ -5259,7 +5643,8 @@
   "weights": {
    "CHA": 0.5,
    "INT": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "interview",
@@ -5272,7 +5657,8 @@
   "weights": {
    "CHA": 0.65,
    "INT": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "networking",
@@ -5286,7 +5672,8 @@
   "weights": {
    "CHA": 0.4,
    "WIS": 0.4,
-   "INT": 0.25
+   "INT": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "mentoring at work",
@@ -5299,7 +5686,9 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.35,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "performance review",
@@ -5312,7 +5701,8 @@
   "weights": {
    "INT": 0.45,
    "CHA": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "project management",
@@ -5325,7 +5715,8 @@
   "weights": {
    "CHA": 0.5,
    "WIS": 0.35,
-   "INT": 0.25
+   "INT": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "leadership",
@@ -5338,7 +5729,8 @@
   "weights": {
    "CHA": 0.55,
    "CON": 0.3,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "cold calling",
@@ -5352,7 +5744,8 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.3,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "resume",
@@ -5365,7 +5758,8 @@
   "category": "Work & Career",
   "weights": {
    "INT": 0.4,
-   "WIS": 0.45
+   "WIS": 0.45,
+   "DIS": 0.3
   },
   "aliases": [
    "career planning",
@@ -5379,7 +5773,8 @@
   "weights": {
    "CHA": 0.4,
    "INT": 0.35,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "training a new employee",
@@ -5393,7 +5788,8 @@
    "CHA": 0.5,
    "CON": 0.35,
    "WIS": 0.2,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "retail shift",
@@ -5408,7 +5804,8 @@
    "CHA": 0.4,
    "CON": 0.4,
    "DEX": 0.3,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "serving",
@@ -5423,7 +5820,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.35,
-   "CON": 0.25
+   "CON": 0.25,
+   "DIS": 0.4
   },
   "aliases": [
    "budgeting",
@@ -5437,7 +5835,8 @@
   "weights": {
    "INT": 0.55,
    "WIS": 0.3,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.4
   },
   "aliases": [
    "tax return",
@@ -5450,7 +5849,8 @@
   "category": "Business & Finance",
   "weights": {
    "INT": 0.55,
-   "WIS": 0.35
+   "WIS": 0.35,
+   "DIS": 0.4
   },
   "aliases": [
    "stock research",
@@ -5463,7 +5863,8 @@
   "category": "Business & Finance",
   "weights": {
    "INT": 0.65,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.4
   },
   "aliases": [
    "balance sheet",
@@ -5478,7 +5879,8 @@
    "INT": 0.4,
    "CHA": 0.35,
    "WIS": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.4
   },
   "aliases": [
    "side hustle",
@@ -5491,7 +5893,9 @@
   "weights": {
    "INT": 0.55,
    "WIS": 0.3,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.4,
+   "CRE": 0.45
   },
   "aliases": [
    "business plan",
@@ -5505,7 +5909,8 @@
    "INT": 0.5,
    "DEX": 0.2,
    "CON": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.4
   },
   "aliases": [
    "accounting",
@@ -5519,7 +5924,8 @@
   "weights": {
    "INT": 0.7,
    "WIS": 0.15,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "spreadsheet model",
@@ -5533,7 +5939,8 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.35,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.4
   },
   "aliases": [
    "salary negotiation",
@@ -5547,7 +5954,8 @@
    "INT": 0.4,
    "CHA": 0.35,
    "WIS": 0.3,
-   "CON": 0.25
+   "CON": 0.25,
+   "DIS": 0.4
   },
   "aliases": [
    "small business",
@@ -5561,7 +5969,8 @@
    "INT": 0.4,
    "CHA": 0.3,
    "DEX": 0.15,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.4
   },
   "aliases": [
    "flipping",
@@ -5574,7 +5983,8 @@
   "category": "Business & Finance",
   "weights": {
    "INT": 0.55,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.4
   },
   "aliases": [
    "crypto research",
@@ -5588,7 +5998,8 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.35,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.4
   },
   "aliases": [
    "property research",
@@ -5601,7 +6012,8 @@
   "weights": {
    "INT": 0.35,
    "WIS": 0.3,
-   "CON": 0.3
+   "CON": 0.3,
+   "DIS": 0.4
   },
   "aliases": [
    "paying bills",
@@ -5613,7 +6025,8 @@
   "category": "Business & Finance",
   "weights": {
    "INT": 0.45,
-   "WIS": 0.45
+   "WIS": 0.45,
+   "DIS": 0.4
   },
   "aliases": [
    "retirement planning",
@@ -5627,7 +6040,8 @@
   "weights": {
    "INT": 0.55,
    "CON": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "exam prep",
@@ -5641,7 +6055,8 @@
   "category": "Study & Learning",
   "weights": {
    "INT": 0.55,
-   "CON": 0.3
+   "CON": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "mooc",
@@ -5656,7 +6071,8 @@
   "weights": {
    "INT": 0.5,
    "CON": 0.35,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "anki",
@@ -5670,7 +6086,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.3,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "note taking",
@@ -5683,7 +6100,8 @@
   "category": "Study & Learning",
   "weights": {
    "INT": 0.4,
-   "WIS": 0.35
+   "WIS": 0.35,
+   "DIS": 0.3
   },
   "aliases": [
    "documentary",
@@ -5696,7 +6114,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.3,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "lecture",
@@ -5709,7 +6128,8 @@
   "category": "Study & Learning",
   "weights": {
    "INT": 0.6,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "academic paper",
@@ -5723,7 +6143,8 @@
   "weights": {
    "INT": 0.4,
    "DEX": 0.3,
-   "CON": 0.25
+   "CON": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "youtube tutorial",
@@ -5737,7 +6158,8 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.3,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.3
   },
   "aliases": [
    "mind map",
@@ -5751,7 +6173,9 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.3,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "memorizing",
@@ -5764,7 +6188,9 @@
   "category": "Study & Learning",
   "weights": {
    "INT": 0.75,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "math practice",
@@ -5778,7 +6204,8 @@
   "weights": {
    "INT": 0.5,
    "CON": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "deep work",
@@ -5792,7 +6219,8 @@
   "weights": {
    "INT": 0.4,
    "CHA": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "study group",
@@ -5805,7 +6233,8 @@
   "weights": {
    "INT": 0.55,
    "CON": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "certification prep",
@@ -5818,7 +6247,9 @@
   "category": "Study & Learning",
   "weights": {
    "INT": 0.5,
-   "WIS": 0.35
+   "WIS": 0.35,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "history reading",
@@ -5832,7 +6263,8 @@
    "INT": 0.5,
    "CHA": 0.25,
    "WIS": 0.2,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "spanish",
@@ -5846,7 +6278,9 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "language partner",
@@ -5861,7 +6295,9 @@
    "INT": 0.5,
    "DEX": 0.3,
    "WIS": 0.2,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "japanese",
@@ -5877,7 +6313,9 @@
    "INT": 0.45,
    "DEX": 0.25,
    "WIS": 0.2,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "mandarin",
@@ -5891,7 +6329,9 @@
   "category": "Languages",
   "weights": {
    "INT": 0.45,
-   "CON": 0.35
+   "CON": 0.35,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "duolingo",
@@ -5905,7 +6345,8 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.25,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "foreign language reading",
@@ -5918,7 +6359,9 @@
   "weights": {
    "INT": 0.4,
    "DEX": 0.3,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "french",
@@ -5932,7 +6375,9 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.3,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "subtitles",
@@ -5946,7 +6391,8 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.35,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "asl",
@@ -5960,7 +6406,8 @@
   "category": "Languages",
   "weights": {
    "INT": 0.55,
-   "CON": 0.3
+   "CON": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "vocab",
@@ -5973,7 +6420,8 @@
   "category": "Languages",
   "weights": {
    "INT": 0.65,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "grammar exercises",
@@ -5986,7 +6434,8 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.35,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "language exchange",
@@ -5999,7 +6448,8 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.25,
-   "CHA": 0.05
+   "CHA": 0.05,
+   "DIS": 0.3
   },
   "aliases": [
    "translation",
@@ -6011,7 +6461,8 @@
   "category": "Languages",
   "weights": {
    "INT": 0.6,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "latin",
@@ -6025,7 +6476,9 @@
    "DEX": 0.4,
    "INT": 0.35,
    "CHA": 0.25,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "shadowing",
@@ -6038,7 +6491,8 @@
   "category": "Reading & Writing",
   "weights": {
    "INT": 0.4,
-   "WIS": 0.4
+   "WIS": 0.4,
+   "CRE": 0.45
   },
   "aliases": [
    "novel",
@@ -6065,7 +6519,8 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.4,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "fiction writing",
@@ -6079,7 +6534,9 @@
   "weights": {
    "INT": 0.4,
    "CHA": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "blog post",
@@ -6093,7 +6550,8 @@
   "weights": {
    "WIS": 0.5,
    "INT": 0.35,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "poetry",
@@ -6106,7 +6564,8 @@
   "category": "Reading & Writing",
   "weights": {
    "WIS": 0.5,
-   "INT": 0.35
+   "INT": 0.35,
+   "CRE": 0.45
   },
   "aliases": [
    "poems",
@@ -6119,7 +6578,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.35,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "short story",
@@ -6171,7 +6631,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.3,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "screenplay",
@@ -6198,7 +6659,8 @@
   "weights": {
    "WIS": 0.45,
    "INT": 0.4,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "memoir",
@@ -6212,7 +6674,9 @@
   "weights": {
    "INT": 0.5,
    "CON": 0.2,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "speed reading",
@@ -6225,7 +6689,9 @@
   "weights": {
    "INT": 0.6,
    "CON": 0.2,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "programming",
@@ -6240,7 +6706,9 @@
   "weights": {
    "INT": 0.55,
    "WIS": 0.3,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "debugging",
@@ -6255,7 +6723,9 @@
    "INT": 0.45,
    "DEX": 0.25,
    "CHA": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "web development",
@@ -6268,7 +6738,9 @@
   "category": "Technology & Coding",
   "weights": {
    "INT": 0.6,
-   "CON": 0.25
+   "CON": 0.25,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "learn to code",
@@ -6283,7 +6755,9 @@
    "INT": 0.5,
    "CHA": 0.2,
    "CON": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "open source",
@@ -6297,7 +6771,9 @@
   "weights": {
    "INT": 0.5,
    "DEX": 0.25,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "home server",
@@ -6311,7 +6787,9 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.15,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "automation",
@@ -6324,7 +6802,9 @@
   "category": "Technology & Coding",
   "weights": {
    "INT": 0.65,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "data science",
@@ -6338,7 +6818,9 @@
   "weights": {
    "INT": 0.65,
    "WIS": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.3,
+   "CRE": 0.25
   },
   "aliases": [
    "machine learning",
@@ -6353,7 +6835,9 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.25,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.45
   },
   "aliases": [
    "docs",
@@ -6367,7 +6851,9 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.3,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "code review",
@@ -6380,7 +6866,9 @@
   "weights": {
    "INT": 0.55,
    "DEX": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "linux",
@@ -6396,7 +6884,9 @@
    "INT": 0.5,
    "DEX": 0.25,
    "CHA": 0.15,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.25
   },
   "aliases": [
    "app development",
@@ -6410,7 +6900,9 @@
   "weights": {
    "INT": 0.55,
    "WIS": 0.25,
-   "CON": 0.2
+   "CON": 0.2,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "cybersecurity",
@@ -6424,7 +6916,9 @@
   "category": "Technology & Coding",
   "weights": {
    "INT": 0.65,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.45
   },
   "aliases": [
    "database design",
@@ -6438,7 +6932,9 @@
   "weights": {
    "INT": 0.45,
    "DEX": 0.4,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "pc build",
@@ -6452,7 +6948,9 @@
   "weights": {
    "INT": 0.4,
    "DEX": 0.35,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "3d print",
@@ -6466,7 +6964,9 @@
   "weights": {
    "INT": 0.5,
    "DEX": 0.35,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "arduino",
@@ -6482,7 +6982,9 @@
    "INT": 0.5,
    "DEX": 0.3,
    "WIS": 0.2,
-   "CON": 0.1
+   "CON": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "chemistry experiment",
@@ -6496,7 +6998,9 @@
   "weights": {
    "WIS": 0.45,
    "INT": 0.35,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "astronomy",
@@ -6510,7 +7014,9 @@
   "weights": {
    "INT": 0.5,
    "DEX": 0.35,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "robotics",
@@ -6525,7 +7031,9 @@
    "DEX": 0.45,
    "STR": 0.3,
    "INT": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "woodworking",
@@ -6539,7 +7047,9 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.35,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "electronics repair",
@@ -6553,7 +7063,9 @@
   "weights": {
    "STR": 0.35,
    "DEX": 0.35,
-   "INT": 0.3
+   "INT": 0.3,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "home improvement",
@@ -6568,7 +7080,9 @@
   "weights": {
    "INT": 0.45,
    "DEX": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "model rockets",
@@ -6583,7 +7097,9 @@
    "INT": 0.45,
    "DEX": 0.2,
    "CHA": 0.2,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "ham radio",
@@ -6598,7 +7114,9 @@
    "WIS": 0.4,
    "INT": 0.35,
    "CON": 0.25,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "hydroponics",
@@ -6613,7 +7131,9 @@
    "WIS": 0.4,
    "CON": 0.3,
    "INT": 0.25,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "bees",
@@ -6628,7 +7148,9 @@
    "INT": 0.4,
    "WIS": 0.3,
    "DEX": 0.2,
-   "CON": 0.15
+   "CON": 0.15,
+   "DIS": 0.22,
+   "CRE": 0.3
   },
   "aliases": [
    "homebrew",
@@ -6644,7 +7166,8 @@
    "DEX": 0.6,
    "WIS": 0.3,
    "INT": 0.12,
-   "CHA": 0.03
+   "CHA": 0.03,
+   "CRE": 0.6
   },
   "aliases": [
    "watercolors",
@@ -6659,7 +7182,8 @@
    "DEX": 0.55,
    "INT": 0.3,
    "WIS": 0.25,
-   "CHA": 0.03
+   "CHA": 0.03,
+   "CRE": 0.6
   },
   "aliases": [
    "oils",
@@ -6673,7 +7197,8 @@
    "DEX": 0.6,
    "WIS": 0.22,
    "INT": 0.18,
-   "CHA": 0.03
+   "CHA": 0.03,
+   "CRE": 0.6
   },
   "aliases": [
    "acrylics",
@@ -6687,7 +7212,8 @@
    "DEX": 0.5,
    "INT": 0.35,
    "WIS": 0.15,
-   "CHA": 0.05
+   "CHA": 0.05,
+   "CRE": 0.6
   },
   "aliases": [
    "digital art",
@@ -6701,7 +7227,8 @@
   "weights": {
    "DEX": 0.55,
    "WIS": 0.35,
-   "INT": 0.18
+   "INT": 0.18,
+   "CRE": 0.6
   },
   "aliases": [
    "charcoal drawing",
@@ -6714,7 +7241,8 @@
   "weights": {
    "DEX": 0.7,
    "INT": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.6
   },
   "aliases": [
    "ink drawing",
@@ -6728,7 +7256,8 @@
   "weights": {
    "DEX": 0.62,
    "INT": 0.22,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.6
   },
   "aliases": [
    "pencil drawing",
@@ -6742,7 +7271,8 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.28,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.6
   },
   "aliases": [
    "pastels",
@@ -6756,7 +7286,8 @@
   "weights": {
    "DEX": 0.55,
    "INT": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.6
   },
   "aliases": [
    "drawing portraits",
@@ -6769,7 +7300,8 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.28,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.6
   },
   "aliases": [
    "figure drawing",
@@ -6783,7 +7315,8 @@
   "weights": {
    "DEX": 0.58,
    "WIS": 0.24,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.6
   },
   "aliases": [
    "gouache",
@@ -6797,7 +7330,8 @@
    "DEX": 0.5,
    "STR": 0.25,
    "CHA": 0.2,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.6
   },
   "aliases": [
    "graffiti",
@@ -6810,7 +7344,9 @@
   "category": "Visual Arts",
   "weights": {
    "INT": 0.65,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3,
+   "CRE": 0.6
   },
   "aliases": [
    "color theory",
@@ -6824,7 +7360,8 @@
    "DEX": 0.5,
    "INT": 0.3,
    "WIS": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.6
   },
   "aliases": [
    "comics",
@@ -6838,7 +7375,8 @@
   "weights": {
    "INT": 0.45,
    "DEX": 0.4,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.6
   },
   "aliases": [
    "concept design",
@@ -6852,7 +7390,8 @@
   "weights": {
    "DEX": 0.65,
    "WIS": 0.3,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.55
   },
   "aliases": [
    "hand lettering",
@@ -6867,7 +7406,8 @@
    "DEX": 0.55,
    "WIS": 0.3,
    "STR": 0.15,
-   "CON": 0.15
+   "CON": 0.15,
+   "CRE": 0.55
   },
   "aliases": [
    "pottery",
@@ -6881,7 +7421,8 @@
   "weights": {
    "DEX": 0.55,
    "WIS": 0.3,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "clay sculpting",
@@ -6896,7 +7437,8 @@
    "DEX": 0.55,
    "STR": 0.2,
    "WIS": 0.25,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.55
   },
   "aliases": [
    "wood carving",
@@ -6908,7 +7450,8 @@
   "category": "Crafts & Handwork",
   "weights": {
    "DEX": 0.6,
-   "WIS": 0.35
+   "WIS": 0.35,
+   "CRE": 0.55
   },
   "aliases": [
    "whittle",
@@ -6921,7 +7464,8 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.3,
-   "CON": 0.1
+   "CON": 0.1,
+   "CRE": 0.55
   },
   "aliases": [
    "knit",
@@ -6933,7 +7477,8 @@
   "category": "Crafts & Handwork",
   "weights": {
    "DEX": 0.6,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "crochet",
@@ -6946,7 +7491,8 @@
   "weights": {
    "DEX": 0.55,
    "INT": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "sew",
@@ -6959,7 +7505,8 @@
   "category": "Crafts & Handwork",
   "weights": {
    "DEX": 0.65,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "hand embroidery",
@@ -6972,7 +7519,8 @@
   "weights": {
    "DEX": 0.55,
    "INT": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "paper folding",
@@ -6985,7 +7533,8 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.2,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "beading",
@@ -7000,7 +7549,8 @@
    "DEX": 0.5,
    "STR": 0.2,
    "INT": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "leathercraft",
@@ -7014,7 +7564,8 @@
   "weights": {
    "DEX": 0.4,
    "INT": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "candles",
@@ -7029,7 +7580,8 @@
    "INT": 0.4,
    "DEX": 0.35,
    "WIS": 0.2,
-   "CON": 0.1
+   "CON": 0.1,
+   "CRE": 0.55
   },
   "aliases": [
    "soapmaking",
@@ -7043,7 +7595,8 @@
    "DEX": 0.55,
    "INT": 0.25,
    "WIS": 0.25,
-   "CON": 0.1
+   "CON": 0.1,
+   "CRE": 0.55
   },
   "aliases": [
    "quilt",
@@ -7056,7 +7609,8 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.3,
-   "INT": 0.1
+   "INT": 0.1,
+   "CRE": 0.55
   },
   "aliases": [
    "cross stitch",
@@ -7069,7 +7623,8 @@
   "weights": {
    "DEX": 0.55,
    "INT": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "guitar",
@@ -7083,7 +7638,8 @@
   "weights": {
    "DEX": 0.55,
    "INT": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "piano",
@@ -7098,7 +7654,8 @@
    "CHA": 0.45,
    "CON": 0.3,
    "DEX": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "vocals",
@@ -7112,7 +7669,8 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.3,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "dj",
@@ -7128,7 +7686,8 @@
    "DEX": 0.6,
    "INT": 0.25,
    "WIS": 0.2,
-   "CON": 0.1
+   "CON": 0.1,
+   "CRE": 0.55
   },
   "aliases": [
    "violin",
@@ -7142,7 +7701,8 @@
    "DEX": 0.5,
    "CON": 0.3,
    "STR": 0.2,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "drums",
@@ -7156,7 +7716,8 @@
   "weights": {
    "INT": 0.45,
    "DEX": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "music production",
@@ -7171,7 +7732,8 @@
   "weights": {
    "WIS": 0.45,
    "INT": 0.35,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "writing songs",
@@ -7184,7 +7746,9 @@
   "category": "Music",
   "weights": {
    "INT": 0.6,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "music theory",
@@ -7198,7 +7762,8 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "bass",
@@ -7211,7 +7776,8 @@
   "weights": {
    "DEX": 0.5,
    "CON": 0.3,
-   "INT": 0.25
+   "INT": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "sax",
@@ -7224,7 +7790,8 @@
   "weights": {
    "DEX": 0.55,
    "CON": 0.25,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "flute"
@@ -7237,7 +7804,8 @@
    "DEX": 0.4,
    "CHA": 0.35,
    "INT": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "band practice",
@@ -7251,7 +7819,8 @@
   "weights": {
    "INT": 0.5,
    "DEX": 0.35,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "CRE": 0.55
   },
   "aliases": [
    "sight reading",
@@ -7264,7 +7833,8 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.2,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "ukulele",
@@ -7278,7 +7848,8 @@
    "CHA": 0.5,
    "WIS": 0.3,
    "INT": 0.2,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "CRE": 0.55
   },
   "aliases": [
    "theater",
@@ -7293,7 +7864,8 @@
   "weights": {
    "CHA": 0.55,
    "WIS": 0.3,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "improv",
@@ -7306,7 +7878,8 @@
   "weights": {
    "CHA": 0.55,
    "WIS": 0.3,
-   "INT": 0.25
+   "INT": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "stand up",
@@ -7321,7 +7894,8 @@
    "CHA": 0.45,
    "CON": 0.3,
    "DEX": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "musical theater",
@@ -7335,7 +7909,8 @@
   "weights": {
    "DEX": 0.5,
    "CHA": 0.35,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "puppets",
@@ -7348,7 +7923,8 @@
   "weights": {
    "DEX": 0.6,
    "CHA": 0.3,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "magic tricks",
@@ -7363,7 +7939,8 @@
   "weights": {
    "CHA": 0.45,
    "DEX": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "voiceover",
@@ -7377,7 +7954,8 @@
   "weights": {
    "DEX": 0.5,
    "CHA": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "mime",
@@ -7390,7 +7968,8 @@
   "weights": {
    "CHA": 0.45,
    "WIS": 0.4,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "poetry slam",
@@ -7404,7 +7983,8 @@
   "weights": {
    "INT": 0.4,
    "CHA": 0.35,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "theater directing",
@@ -7417,7 +7997,8 @@
   "weights": {
    "DEX": 0.6,
    "CON": 0.25,
-   "STR": 0.15
+   "STR": 0.15,
+   "CRE": 0.55
   },
   "aliases": [
    "juggling",
@@ -7432,7 +8013,8 @@
    "DEX": 0.45,
    "STR": 0.3,
    "CON": 0.25,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "fight choreography",
@@ -7446,7 +8028,8 @@
    "CHA": 0.4,
    "CON": 0.35,
    "DEX": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "opera",
@@ -7460,7 +8043,8 @@
   "weights": {
    "DEX": 0.45,
    "CHA": 0.4,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "clowning",
@@ -7474,7 +8058,8 @@
   "weights": {
    "CHA": 0.5,
    "WIS": 0.3,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.55
   },
   "aliases": [
    "readers theater",
@@ -7489,7 +8074,8 @@
    "DEX": 0.5,
    "CON": 0.3,
    "STR": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "ballet",
@@ -7504,7 +8090,8 @@
    "DEX": 0.45,
    "CON": 0.3,
    "STR": 0.2,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "hip hop dance",
@@ -7517,7 +8104,8 @@
   "weights": {
    "DEX": 0.45,
    "CON": 0.3,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "salsa",
@@ -7531,7 +8119,8 @@
    "DEX": 0.45,
    "CHA": 0.3,
    "CON": 0.25,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "CRE": 0.45
   },
   "aliases": [
    "ballroom",
@@ -7546,7 +8135,8 @@
    "DEX": 0.45,
    "WIS": 0.3,
    "CON": 0.25,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "contemporary",
@@ -7559,7 +8149,8 @@
   "weights": {
    "STR": 0.4,
    "DEX": 0.4,
-   "CON": 0.3
+   "CON": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "breaking",
@@ -7573,7 +8164,8 @@
   "weights": {
    "DEX": 0.5,
    "CON": 0.25,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "tap",
@@ -7586,7 +8178,8 @@
   "weights": {
    "DEX": 0.45,
    "CON": 0.3,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "lindy hop",
@@ -7601,7 +8194,8 @@
    "DEX": 0.45,
    "CHA": 0.3,
    "WIS": 0.25,
-   "CON": 0.2
+   "CON": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "tango"
@@ -7613,7 +8207,8 @@
   "weights": {
    "DEX": 0.45,
    "CON": 0.3,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "bollywood",
@@ -7626,7 +8221,8 @@
   "weights": {
    "DEX": 0.4,
    "CON": 0.25,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "line dance",
@@ -7639,7 +8235,8 @@
   "weights": {
    "DEX": 0.5,
    "CON": 0.25,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "belly dance",
@@ -7652,7 +8249,8 @@
   "weights": {
    "STR": 0.45,
    "DEX": 0.35,
-   "CON": 0.3
+   "CON": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "pole fitness",
@@ -7665,7 +8263,8 @@
   "weights": {
    "CON": 0.45,
    "DEX": 0.3,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "zumba",
@@ -7679,7 +8278,8 @@
    "DEX": 0.4,
    "CON": 0.3,
    "CHA": 0.25,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "traditional dance",
@@ -7693,7 +8293,8 @@
   "weights": {
    "DEX": 0.4,
    "INT": 0.35,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "photo",
@@ -7708,7 +8309,8 @@
    "DEX": 0.35,
    "CHA": 0.35,
    "INT": 0.25,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "portraits",
@@ -7722,7 +8324,8 @@
   "weights": {
    "DEX": 0.4,
    "INT": 0.35,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "analog photography",
@@ -7736,7 +8339,8 @@
   "weights": {
    "INT": 0.45,
    "DEX": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "editing video",
@@ -7751,7 +8355,8 @@
    "WIS": 0.4,
    "INT": 0.3,
    "CON": 0.25,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "landscapes",
@@ -7766,7 +8371,8 @@
    "WIS": 0.35,
    "DEX": 0.3,
    "CHA": 0.25,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "street photos",
@@ -7780,7 +8386,8 @@
    "INT": 0.45,
    "WIS": 0.3,
    "DEX": 0.2,
-   "CON": 0.2
+   "CON": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "astro photography",
@@ -7795,7 +8402,8 @@
    "WIS": 0.4,
    "CON": 0.3,
    "DEX": 0.25,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "wildlife photos",
@@ -7808,7 +8416,8 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "macro",
@@ -7822,7 +8431,8 @@
    "INT": 0.4,
    "CHA": 0.3,
    "WIS": 0.25,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "directing a film",
@@ -7836,7 +8446,8 @@
   "weights": {
    "INT": 0.4,
    "DEX": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "photo editing",
@@ -7850,7 +8461,8 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.35,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.55
   },
   "aliases": [
    "drone",
@@ -7864,7 +8476,8 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.35,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "CRE": 0.55
   },
   "aliases": [
    "documentary",
@@ -7877,7 +8490,8 @@
   "weights": {
    "DEX": 0.4,
    "INT": 0.4,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "CRE": 0.55
   },
   "aliases": [
    "product photos",
@@ -7891,7 +8505,8 @@
   "weights": {
    "INT": 0.4,
    "DEX": 0.3,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.55
   },
   "aliases": [
    "camera work",
@@ -7904,7 +8519,8 @@
   "category": "Games & Puzzles",
   "weights": {
    "INT": 0.6,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.15
   },
   "aliases": [
    "chess game",
@@ -7916,7 +8532,8 @@
   "category": "Games & Puzzles",
   "weights": {
    "INT": 0.7,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "sudoku puzzle",
@@ -7928,7 +8545,8 @@
   "category": "Games & Puzzles",
   "weights": {
    "INT": 0.55,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.15
   },
   "aliases": [
    "crossword",
@@ -7941,7 +8559,8 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.3,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.15
   },
   "aliases": [
    "dnd",
@@ -7955,7 +8574,8 @@
   "category": "Games & Puzzles",
   "weights": {
    "DEX": 0.45,
-   "INT": 0.35
+   "INT": 0.35,
+   "CRE": 0.45
   },
   "aliases": [
    "gaming",
@@ -7969,7 +8589,8 @@
   "weights": {
    "DEX": 0.35,
    "WIS": 0.35,
-   "INT": 0.3
+   "INT": 0.3,
+   "CRE": 0.15
   },
   "aliases": [
    "jigsaw",
@@ -7983,7 +8604,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.3,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "CRE": 0.15
   },
   "aliases": [
    "texas holdem",
@@ -7996,7 +8618,8 @@
   "category": "Games & Puzzles",
   "weights": {
    "INT": 0.6,
-   "WIS": 0.35
+   "WIS": 0.35,
+   "CRE": 0.15
   },
   "aliases": [
    "go game",
@@ -8009,7 +8632,8 @@
   "category": "Games & Puzzles",
   "weights": {
    "DEX": 0.45,
-   "INT": 0.4
+   "INT": 0.4,
+   "CRE": 0.15
   },
   "aliases": [
    "rubiks cube",
@@ -8023,7 +8647,8 @@
   "weights": {
    "INT": 0.5,
    "CHA": 0.25,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.15
   },
   "aliases": [
    "eurogames",
@@ -8037,7 +8662,8 @@
   "weights": {
    "INT": 0.5,
    "CHA": 0.3,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "pub quiz",
@@ -8052,7 +8678,8 @@
    "INT": 0.4,
    "CHA": 0.3,
    "WIS": 0.2,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "CRE": 0.15
   },
   "aliases": [
    "escape room",
@@ -8066,7 +8693,8 @@
    "DEX": 0.45,
    "INT": 0.3,
    "CON": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.15
   },
   "aliases": [
    "esports",
@@ -8080,7 +8708,8 @@
   "weights": {
    "INT": 0.5,
    "CHA": 0.25,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "bridge",
@@ -8092,7 +8721,8 @@
   "category": "Games & Puzzles",
   "weights": {
    "INT": 0.6,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "CRE": 0.15
   },
   "aliases": [
    "riddles",
@@ -8106,7 +8736,8 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.35,
-   "CON": 0.2
+   "CON": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "speedrun",
@@ -8120,7 +8751,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.3,
-   "DEX": 0.15
+   "DEX": 0.15,
+   "CRE": 0.15
   },
   "aliases": [
    "philately",
@@ -8134,7 +8766,8 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.3,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "numismatics",
@@ -8148,7 +8781,8 @@
   "weights": {
    "DEX": 0.5,
    "INT": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.15
   },
   "aliases": [
    "model kits",
@@ -8163,7 +8797,8 @@
   "weights": {
    "WIS": 0.4,
    "INT": 0.35,
-   "CON": 0.2
+   "CON": 0.2,
+   "CRE": 0.15
   },
   "aliases": [
    "fishkeeping",
@@ -8178,7 +8813,8 @@
    "DEX": 0.4,
    "INT": 0.3,
    "WIS": 0.25,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "cooking",
@@ -8193,7 +8829,8 @@
    "DEX": 0.4,
    "INT": 0.35,
    "WIS": 0.2,
-   "CON": 0.1
+   "CON": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "baking bread",
@@ -8207,7 +8844,8 @@
   "weights": {
    "DEX": 0.4,
    "INT": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.15
   },
   "aliases": [
    "pour over",
@@ -8221,7 +8859,8 @@
   "category": "Collecting & Hobbies",
   "weights": {
    "WIS": 0.4,
-   "INT": 0.35
+   "INT": 0.35,
+   "CRE": 0.15
   },
   "aliases": [
    "vinyl",
@@ -8235,7 +8874,8 @@
   "weights": {
    "WIS": 0.45,
    "CON": 0.3,
-   "DEX": 0.25
+   "DEX": 0.25,
+   "CRE": 0.15
   },
   "aliases": [
    "angling",
@@ -8249,7 +8889,8 @@
   "weights": {
    "WIS": 0.4,
    "INT": 0.35,
-   "CON": 0.25
+   "CON": 0.25,
+   "CRE": 0.15
   },
   "aliases": [
    "mushroom hunting",
@@ -8264,7 +8905,8 @@
    "WIS": 0.45,
    "DEX": 0.3,
    "INT": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "CRE": 0.15
   },
   "aliases": [
    "bonsai",
@@ -8277,7 +8919,9 @@
   "weights": {
    "DEX": 0.4,
    "INT": 0.3,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "DIS": 0.3,
+   "CRE": 0.15
   },
   "aliases": [
    "cocktails",
@@ -8290,7 +8934,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.6,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "praying",
@@ -8302,7 +8947,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.55,
-   "CON": 0.35
+   "CON": 0.35,
+   "DIS": 0.3
   },
   "aliases": [
    "breathing exercises",
@@ -8315,7 +8961,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.6,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "gratitude",
@@ -8330,7 +8977,8 @@
    "WIS": 0.45,
    "DEX": 0.3,
    "CON": 0.3,
-   "STR": 0.2
+   "STR": 0.2,
+   "DIS": 0.3
   },
   "aliases": [
    "yoga",
@@ -8343,7 +8991,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.55,
-   "CON": 0.3
+   "CON": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "walking meditation",
@@ -8355,7 +9004,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.5,
-   "INT": 0.35
+   "INT": 0.35,
+   "DIS": 0.3
   },
   "aliases": [
    "scripture",
@@ -8368,7 +9018,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.6,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "DIS": 0.3
   },
   "aliases": [
    "metta",
@@ -8381,7 +9032,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.45,
-   "CHA": 0.3
+   "CHA": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "church",
@@ -8395,7 +9047,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.55,
-   "CON": 0.3
+   "CON": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "digital detox",
@@ -8408,7 +9061,8 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.6,
-   "INT": 0.3
+   "INT": 0.3,
+   "DIS": 0.3
   },
   "aliases": [
    "self reflection",
@@ -8421,7 +9075,9 @@
   "category": "Mindfulness & Spirituality",
   "weights": {
    "WIS": 0.5,
-   "INT": 0.3
+   "INT": 0.3,
+   "DIS": 0.3,
+   "CRE": 0.45
   },
   "aliases": [
    "visualization",
@@ -8435,7 +9091,8 @@
   "weights": {
    "WIS": 0.55,
    "CON": 0.25,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "DIS": 0.3
   },
   "aliases": [
    "mantra",
@@ -8450,7 +9107,8 @@
    "INT": 0.4,
    "DEX": 0.3,
    "WIS": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "podcast editing",
@@ -8465,7 +9123,8 @@
    "CHA": 0.45,
    "DEX": 0.3,
    "INT": 0.2,
-   "CON": 0.2
+   "CON": 0.2,
+   "CRE": 0.3
   },
   "aliases": [
    "twitch",
@@ -8480,7 +9139,8 @@
    "CHA": 0.4,
    "INT": 0.3,
    "DEX": 0.25,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "CRE": 0.45
   },
   "aliases": [
    "youtube",
@@ -8494,7 +9154,8 @@
   "weights": {
    "CHA": 0.4,
    "DEX": 0.3,
-   "INT": 0.25
+   "INT": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "tiktok",
@@ -8510,7 +9171,8 @@
    "DEX": 0.4,
    "INT": 0.35,
    "WIS": 0.25,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "CRE": 0.45
   },
   "aliases": [
    "graphic design",
@@ -8524,7 +9186,8 @@
   "weights": {
    "INT": 0.4,
    "CHA": 0.35,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.3
   },
   "aliases": [
    "memes",
@@ -8538,7 +9201,8 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.3
   },
   "aliases": [
    "social media",
@@ -8552,7 +9216,8 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.3
   },
   "aliases": [
    "personal branding",
@@ -8565,7 +9230,8 @@
   "weights": {
    "INT": 0.45,
    "CHA": 0.3,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "newsletter",
@@ -8580,7 +9246,8 @@
    "DEX": 0.45,
    "INT": 0.35,
    "WIS": 0.15,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "CRE": 0.3
   },
   "aliases": [
    "vector art",
@@ -8594,7 +9261,8 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "animation",
@@ -8608,7 +9276,8 @@
   "weights": {
    "INT": 0.4,
    "DEX": 0.35,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "motion graphics",
@@ -8622,7 +9291,8 @@
   "weights": {
    "WIS": 0.4,
    "INT": 0.3,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.45
   },
   "aliases": [
    "playlist",
@@ -8636,7 +9306,8 @@
   "weights": {
    "INT": 0.4,
    "CHA": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.45
   },
   "aliases": [
    "product reviews",
@@ -8651,7 +9322,8 @@
    "INT": 0.4,
    "DEX": 0.3,
    "WIS": 0.25,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.45
   },
   "aliases": [
    "ux design",

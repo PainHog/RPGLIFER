@@ -11,7 +11,7 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 ![RPG Lifer character sheet](docs/screenshot.png)
 
 <p align="center">
-  <img src="docs/activities.png" width="49%" alt="Activities screen" />
+  <img src="docs/burst.png" width="49%" alt="Logging an activity" />
   <img src="docs/history.png" width="49%" alt="History screen" />
 </p>
 
@@ -19,14 +19,22 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 
 ## The idea
 
-- **Stats.** Six classic attributes to start (easy to change and expand):
-  **STR**ength, **DEX**terity, **CON**stitution, **INT**elligence,
-  **WIS**dom, **CHA**risma. Hover any stat to see what it means and how to raise
-  it.
+- **Eight stats that define you.** Strength, Agility, Endurance, Intellect,
+  Wisdom, Charisma, **Discipline**, and **Creativity** — shown as a character
+  **web (radar)** so your shape is obvious at a glance. Hover any stat to see
+  what it means and how to raise it.
+- **A living character.** A **level ring**, and a **class that evolves** with
+  your two strongest stats (a *Steadfast Scholar* today, an *Inventive Rogue*
+  next month). Logging an activity throws up a juicy **"+XP" burst** with any
+  level-ups and new titles.
+- **Two stat layers.** The eight core stats are trained *only* by real
+  activities. From them we compute **derived combat/shop stats** — Vitality,
+  Power, Focus, Insight, Influence, Luck — which future gear and adventures will
+  buff, keeping your real-life stats pure.
 - **600+ activities, and every one is multi-stat.** From dishes and deadlifts to
   woodcarving, watercolor, photography, commuting, and public speaking — each
-  activity feeds *several* stats at different amounts (watercolor is mostly
-  DEX with a little WIS and a trace of INT). The full catalog lives in an
+  activity feeds *several* stats at different amounts (watercolor: mostly Agility,
+  some Wisdom and Creativity, a trace of Intellect). The full catalog lives in an
   editable data file you can keep growing.
 - **Type-ahead search.** Start typing and the closest activities pop up even if
   you don't type the exact words — `dsh` → **Dishes**, `wrk` → **Strength
@@ -155,8 +163,9 @@ is set aside as `save.corrupt-<timestamp>.json` rather than lost.
 ```
 rpglifer/
   leveling.py           XP ↔ level math (pure functions)
-  stats.py              the six stats (data-driven)
+  stats.py              the eight core stats (data-driven)
   titles.py             milestone titles unlocked per stat
+  derived.py            combat/shop stats + evolving class, from core stats
   activities.py         loads + models the activity catalog
   data/activities.json  the 600+ activity catalog (editable)
   fuzzy.py              type-ahead / closest-match search
@@ -164,7 +173,8 @@ rpglifer/
   character.py          the character model: XP, logging, streaks, save shape
   storage.py            where and how the save is written
   cli.py                text-mode front-end
-  ui_tk.py              the desktop GUI (CustomTkinter)
+  ui_tk.py              the gamified desktop GUI (CustomTkinter): radar,
+                        level ring, class, XP bursts
   app.py                entry point (chooses GUI or CLI)
 tests/                  unit tests for the whole core
 packaging/              PyInstaller spec
@@ -184,19 +194,18 @@ python -m pytest -q
 ## Roadmap
 
 Already in: the core, the Windows `.exe` build, a **600+ multi-stat activity
-catalog**, **consistency streaks**, **milestone titles**, a slow-and-earned XP
-curve, and a clean sectioned GUI with a hamburger menu.
+catalog**, **eight core stats** with a radar/web, **derived combat/shop stats**
+and an **evolving class**, **consistency streaks**, **milestone titles**, a
+slow-and-earned XP curve, and a gamified GUI (level ring, XP bursts, hamburger nav).
 
 Planned next:
 
-- **Refined / expanded stats** — settle on the 6–8 defining stats, then derive
-  secondary "combat" and "shop" stats from them.
-- **Overachiever / Hero points** — earned by reaching outside your comfort
-  zone, spendable in the **Shop**.
-- **Gear, mini-games, and runs** — the **Adventure** and **Gear** sections:
-  small challenges and loot that grant bonuses (not raw stats).
-- **Weekly challenges & battles** — nudges to hit *all* the core areas of life,
-  not just your favorites.
+- **Shop** — spend Hero / Overachiever points on boosts and cosmetics.
+- **Adventure** — quests, runs, and mini-games that grant bonuses (never raw
+  stats) for reaching outside your comfort zone.
+- **Gear** — equippable items that buff your *derived* combat stats.
+- **Weekly challenges & battles** — nudges to hit *all* areas of life, using
+  the derived combat stats.
 - **A real installer** — Start-menu shortcut and an icon.
 
 ## License

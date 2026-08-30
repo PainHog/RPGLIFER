@@ -26,6 +26,10 @@ TITLES: dict[str, tuple[tuple[int, str], ...]] = {
             (15, "Enlightened"), (20, "Guru"), (30, "Oracle")),
     "CHA": ((3, "Friendly"), (5, "Well-Liked"), (10, "Charmer"),
             (15, "Silver-Tongued"), (20, "Magnetic"), (30, "Legendary Presence")),
+    "DIS": ((3, "Consistent"), (5, "Focused"), (10, "Iron Habit"),
+            (15, "Unwavering"), (20, "Unstoppable"), (30, "Relentless")),
+    "CRE": ((3, "Doodler"), (5, "Maker"), (10, "Artisan"),
+            (15, "Visionary"), (20, "Virtuoso"), (30, "Muse")),
 }
 
 
