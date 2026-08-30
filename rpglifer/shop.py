@@ -10,8 +10,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+from typing import Callable
 
 from .character import Bonus
+from .stats import STAT_KEYS
 
 
 @dataclass(frozen=True)
@@ -45,23 +47,70 @@ ITEMS: tuple[ShopItem, ...] = (
 
 @dataclass(frozen=True)
 class Cosmetic:
+    """A purely visual level-ring color. Never affects stats or the games.
+
+    Three ways to get one, matching the plan: the free default; **earned** by
+    playing (``unlock`` predicate — quests, streaks, prestige, or a timed
+    event); or **bought** with Overachiever points (``cost`` > 0). ``how`` is the
+    short label the Shop shows for how to obtain it.
+    """
+
     id: str
     name: str
     color: str  # hex for the level-ring arc
-    cost: int  # Overachiever points (0 = owned by default)
+    cost: int = 0  # Overachiever points to buy (0 = not for sale)
+    how: str = ""  # short label shown in the Shop
+    # Earned cosmetics carry a predicate over the (duck-typed) character; when it
+    # first returns True the cosmetic is granted for keeps (see check_unlocks).
+    unlock: "Callable[[object], bool] | None" = None
+
+
+def _stars(c) -> int:
+    return sum(c.stars(k) for k in STAT_KEYS)
 
 
 COSMETICS: tuple[Cosmetic, ...] = (
-    Cosmetic("ring_gold", "Gold Ring", "#d9b26a", 0),
-    Cosmetic("ring_emerald", "Emerald Ring", "#6bb39b", 30),
-    Cosmetic("ring_crimson", "Crimson Ring", "#d9574f", 30),
-    Cosmetic("ring_amethyst", "Amethyst Ring", "#b07de0", 40),
-    Cosmetic("ring_azure", "Azure Ring", "#5aa9e6", 40),
+    Cosmetic("ring_gold", "Gold Ring", "#d9b26a", how="Default"),
+    # Bought with Overachiever points (from the weekly challenge).
+    Cosmetic("ring_emerald", "Emerald Ring", "#6bb39b", cost=30, how="30 ✦"),
+    Cosmetic("ring_crimson", "Crimson Ring", "#d9574f", cost=30, how="30 ✦"),
+    Cosmetic("ring_amethyst", "Amethyst Ring", "#b07de0", cost=40, how="40 ✦"),
+    Cosmetic("ring_azure", "Azure Ring", "#5aa9e6", cost=40, how="40 ✦"),
+    # Earned by tracking — no points, you unlock them by showing up.
+    Cosmetic("ring_ember", "Ember Ring", "#e08a3c", how="Earn: 7-day streak",
+             unlock=lambda c: c.daily_streak() >= 7),
+    Cosmetic("ring_prestige", "Prestige Ring", "#f2d38a", how="Earn: first ★",
+             unlock=lambda c: _stars(c) >= 1),
+    Cosmetic("ring_diligence", "Diligence Ring", "#9db06b",
+             how="Earn: 15 quests done",
+             unlock=lambda c: len(getattr(c, "quests_claimed", [])) >= 15),
 )
 
 
 def owns_cosmetic(character, item: Cosmetic) -> bool:
-    return item.cost == 0 or item.id in character.owned_cosmetics
+    if item.id in character.owned_cosmetics:
+        return True
+    # The free default (Gold) is owned outright; earned/bought ones are not.
+    return item.cost == 0 and item.unlock is None
+
+
+def check_cosmetic_unlocks(character) -> list:
+    """Grant (and keep) any earned cosmetics whose condition is now met.
+
+    Idempotent, like achievements: once unlocked a cosmetic is persisted into
+    ``owned_cosmetics`` so it stays yours even if the streak later lapses.
+    """
+    newly = []
+    for item in COSMETICS:
+        if item.unlock is None or item.id in character.owned_cosmetics:
+            continue
+        try:
+            if item.unlock(character):
+                character.owned_cosmetics.append(item.id)
+                newly.append(item)
+        except Exception:
+            pass
+    return newly
 
 
 def is_selected(character, item: Cosmetic) -> bool:
@@ -71,9 +120,11 @@ def is_selected(character, item: Cosmetic) -> bool:
 
 
 def buy_cosmetic(character, item: Cosmetic) -> bool:
-    """Unlock a cosmetic with Overachiever points (idempotent if already owned)."""
+    """Buy a cosmetic with Overachiever points (idempotent if already owned)."""
     if owns_cosmetic(character, item):
         return True
+    if item.unlock is not None or item.cost <= 0:
+        return False  # earned-only cosmetics aren't for sale
     if character.overachiever_points < item.cost:
         return False
     character.overachiever_points -= item.cost

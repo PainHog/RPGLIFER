@@ -1374,6 +1374,7 @@ class ShopView(ctk.CTkFrame):
     def refresh(self):
         c = self.app.character
         fonts = self.app.fonts
+        shop.check_cosmetic_unlocks(c)  # catch anything earned since last view
         self.bal_lbl.configure(
             text=f"◆ {c.hero_points} Hero      ✦ {c.overachiever_points} Overachiever")
         for w in self.items_box.winfo_children():
@@ -1434,6 +1435,10 @@ class ShopView(ctk.CTkFrame):
                               text_color=MUTED, font=fonts["btn"],
                               command=lambda it=cm: self._select_cosmetic(it)).pack(
                     side="right", padx=16)
+            elif cm.unlock is not None:
+                # Earned-only, still locked — show how to unlock it by playing.
+                ctk.CTkLabel(row, text=cm.how or "Locked", text_color=FAINT,
+                             font=fonts["small"]).pack(side="right", padx=16)
             else:
                 afford = c.overachiever_points >= cm.cost
                 ctk.CTkButton(row, text=f"✦ {cm.cost}", width=84, height=36,
@@ -2102,12 +2107,27 @@ class RPGLiferApp:
 
     def log_activity(self, activity, minutes):
         result = self.character.log_activity(activity, minutes)
+        # Cosmetics are earned by playing — check after each log (streak/quest/★).
+        unlocked = shop.check_cosmetic_unlocks(self.character)
         storage.save(self.character)
         self.level_value.configure(text=f"Lv {self.character.overall_level()}")
         self.refresh_points()
         self.views["Character"].refresh(animate=False)
         self.views["History"].refresh()
+        if unlocked:
+            self._cosmetic_toast(unlocked)
         return result
+
+    def _cosmetic_toast(self, items):
+        names = ", ".join(i.name for i in items)
+        card = ctk.CTkFrame(self.content, corner_radius=16, fg_color=SURFACE_2)
+        card.place(relx=0.5, rely=0.12, anchor="n")
+        ctk.CTkLabel(card, text="✦  New look unlocked", text_color=OVER,
+                     font=self.fonts["list_b"]).pack(padx=24, pady=(12, 2))
+        ctk.CTkLabel(card, text=f"{names} — equip it in Shop › Cosmetics",
+                     text_color=MUTED, font=self.fonts["small"]).pack(padx=24,
+                                                                      pady=(0, 12))
+        card.after(2800, lambda: card.winfo_exists() and card.destroy())
 
     def celebrate(self, result):
         """A centered pop with a gold particle burst for stars / level-ups / titles."""
