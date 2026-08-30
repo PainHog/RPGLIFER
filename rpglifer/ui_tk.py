@@ -19,7 +19,7 @@ import customtkinter as ctk
 
 from . import achievements as achievements_mod
 from . import adventure, derived, economy, fuzzy, shop, storage
-from .activities import ACTIVITIES, Activity
+from .activities import ACTIVITIES, Activity, activity_by_name
 from .character import ARENA_RUNS_PER_DAY, Character
 from .recommend import recommendations, top_activities_for_stat
 from .stats import STAT_KEYS, STATS, stat
@@ -535,11 +535,39 @@ class ActivitiesView(ctk.CTkFrame):
             self._item(f"   {a.name}       {'  ·  '.join(a.primary_stats())}",
                        lambda e, act=a: self._pick(act))
 
-    def _show_explore(self):
+    def _group(self, text):
+        ctk.CTkLabel(self.list_frame, text=text, text_color=FAINT,
+                     font=self.app.fonts["kicker"], anchor="w").pack(
+            fill="x", pady=(12, 2), padx=4)
+
+    def _recent_distinct(self, n=5):
+        seen, out = set(), []
+        for e in self.app.character.recent(30):
+            if e.activity in seen:
+                continue
+            a = activity_by_name(e.activity)
+            if a is not None:
+                out.append(a)
+                seen.add(e.activity)
+            if len(out) >= n:
+                break
+        return out
+
+    def _show_idle(self):
         self._clear_list()
-        self.list_head.configure(text="EXPLORE  ·  grow your weakest stats")
-        for a in recommendations(self.app.character, count=6):
-            self._item(f"   {a.name}", lambda e, act=a: self._pick(act))
+        self.list_head.configure(text="")
+        recents = self._recent_distinct()
+        if recents:
+            self._group(f"QUICK LOG  ·  tap to log {self._minutes_str()} min")
+            for a in recents:
+                self._item(f"   ⚡  {a.name}", lambda e, act=a: self._do_log(act))
+        self._group("EXPLORE  ·  grow your weakest stats")
+        for a in recommendations(self.app.character, count=5):
+            self._item(f"   ›  {a.name}", lambda e, act=a: self._pick(act))
+
+    def _minutes_str(self):
+        m = self.minutes_var.get().strip()
+        return m if m else str(DEFAULT_MINUTES)
 
     def _on_key(self, event=None):
         self.selected = None
@@ -547,7 +575,7 @@ class ActivitiesView(ctk.CTkFrame):
             self._matches = self._fuzzy()
             self._show_matches()
         else:
-            self._show_explore()
+            self._show_idle()
 
     def _pick(self, activity):
         self.activity_var.set(activity.name)
@@ -568,13 +596,16 @@ class ActivitiesView(ctk.CTkFrame):
             self._matches = self._fuzzy()
             self._show_matches()
         elif not self.activity_var.get().strip():
-            self._show_explore()
+            self._show_idle()
 
     def do_log(self):
         activity = self._resolve()
         if activity is None:
             self._flash("No match — try different words.", GOLD)
             return
+        self._do_log(activity)
+
+    def _do_log(self, activity):
         try:
             minutes = float(self.minutes_var.get())
         except ValueError:
@@ -583,13 +614,12 @@ class ActivitiesView(ctk.CTkFrame):
         if minutes <= 0:
             self._flash("Minutes must be more than zero.", GOLD)
             return
-
         result = self.app.log_activity(activity, minutes)
         self._burst(activity, minutes, result)
         self.app.celebrate(result)  # no-op unless a level-up / new title happened
         self.activity_var.set("")
         self.selected = None
-        self._show_explore()
+        self._show_idle()
         self.entry.focus_set()
 
     def _flash(self, text, color):
