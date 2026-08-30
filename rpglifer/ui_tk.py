@@ -17,6 +17,7 @@ import tkinter as tk
 
 import customtkinter as ctk
 
+from . import achievements as achievements_mod
 from . import adventure, derived, economy, fuzzy, shop, storage
 from .activities import ACTIVITIES, Activity
 from .character import ARENA_RUNS_PER_DAY, Character
@@ -48,8 +49,8 @@ HP_FOE = "#d9574f"
 
 DEFAULT_MINUTES = 30
 SUGGESTION_LIMIT = 7
-SECTIONS = ["Character", "Activities", "Quests", "History", "Shop", "Adventure",
-            "Gear"]
+SECTIONS = ["Character", "Activities", "Quests", "Trophies", "History", "Shop",
+            "Adventure", "Gear"]
 
 ctk.set_appearance_mode("dark")
 
@@ -620,6 +621,9 @@ class ActivitiesView(ctk.CTkFrame):
         for q in result.quests_done:
             ctk.CTkLabel(pop, text=f"✔  Quest complete: {q.text}", text_color=OVER,
                          font=self.app.fonts["small"]).pack(padx=22)
+        for ach in result.achievements:
+            ctk.CTkLabel(pop, text=f"🏆  Achievement: {ach.name}", text_color=GOLD,
+                         font=self.app.fonts["small"]).pack(padx=22)
         for su in result.star_ups:
             ctk.CTkLabel(pop, text=f"★  MASTERY —  {stat(su.stat).name}  ★{su.star}",
                          text_color=GOLD, font=self.app.fonts["burst"]).pack(padx=22)
@@ -811,6 +815,8 @@ class AdventureView(ctk.CTkFrame):
                 self._log(f"🎁  Loot!  {b.loot.summary()}   (equip it in Gear)")
             for q in c.record_arena_win():
                 self._log(f"✔  Quest complete: {q.text}  (+{q.reward} Hero)")
+            for ach in c.check_achievements():
+                self._log(f"🏆  Achievement unlocked: {ach.name}")
         else:
             self._log(f"✕  Defeated…  +{b.reward} Hero points for trying")
         storage.save(c)
@@ -977,6 +983,59 @@ class QuestsView(ctk.CTkFrame):
 
 
 # ---------------------------------------------------------------------------
+# Trophies — collectible achievements
+# ---------------------------------------------------------------------------
+class AchievementsView(ctk.CTkFrame):
+    COLS = 2
+
+    def __init__(self, parent, app):
+        super().__init__(parent, fg_color="transparent")
+        self.app = app
+        fonts = app.fonts
+        outer = ctk.CTkScrollableFrame(self, fg_color="transparent")
+        outer.pack(fill="both", expand=True, padx=8, pady=6)
+        head = ctk.CTkFrame(outer, fg_color="transparent")
+        head.pack(fill="x", padx=6, pady=(4, 8))
+        ctk.CTkLabel(head, text="TROPHIES", text_color=MUTED,
+                     font=fonts["kicker"]).pack(side="left")
+        self.count_lbl = ctk.CTkLabel(head, text="", text_color=GOLD,
+                                      font=fonts["kicker"])
+        self.count_lbl.pack(side="right")
+        self.grid_box = ctk.CTkFrame(outer, fg_color="transparent")
+        self.grid_box.pack(fill="both", expand=True)
+        for i in range(self.COLS):
+            self.grid_box.grid_columnconfigure(i, weight=1, uniform="ach")
+
+    def refresh(self):
+        c = self.app.character
+        fonts = self.app.fonts
+        unlocked = set(c.achievements)
+        alls = achievements_mod.ACHIEVEMENTS
+        self.count_lbl.configure(text=f"{len(unlocked & {a.id for a in alls})} "
+                                 f"/ {len(alls)} unlocked")
+        for w in self.grid_box.winfo_children():
+            w.destroy()
+        for i, a in enumerate(alls):
+            got = a.id in unlocked
+            card = ctk.CTkFrame(self.grid_box, corner_radius=14,
+                                fg_color=SURFACE if got else TRACK)
+            card.grid(row=i // self.COLS, column=i % self.COLS, sticky="ew",
+                      padx=6, pady=6)
+            row = ctk.CTkFrame(card, fg_color="transparent")
+            row.pack(fill="x", padx=14, pady=12)
+            ctk.CTkLabel(row, text="🏆" if got else "🔒",
+                         text_color=GOLD if got else FAINT,
+                         font=fonts["list_b"], width=30).pack(side="left")
+            txt = ctk.CTkFrame(row, fg_color="transparent")
+            txt.pack(side="left", fill="x", expand=True, padx=(6, 0))
+            ctk.CTkLabel(txt, text=a.name, text_color=GOLD if got else MUTED,
+                         font=fonts["list_b"], anchor="w").pack(anchor="w")
+            ctk.CTkLabel(txt, text=a.desc, text_color=MUTED if got else FAINT,
+                         font=fonts["small"], anchor="w", justify="left",
+                         wraplength=300).pack(anchor="w")
+
+
+# ---------------------------------------------------------------------------
 # Gear — equip loot found in the Arena
 # ---------------------------------------------------------------------------
 class GearView(ctk.CTkFrame):
@@ -1020,6 +1079,7 @@ class GearView(ctk.CTkFrame):
         self._after_change()
 
     def _after_change(self):
+        self.app.character.check_achievements()  # e.g. "Fully Equipped"
         storage.save(self.app.character)
         self.app.views["Character"].refresh()  # derived combat stats changed
         self.refresh()
@@ -1156,6 +1216,7 @@ class RPGLiferApp:
             "Character": CharacterView(self.content, self),
             "Activities": ActivitiesView(self.content, self),
             "Quests": QuestsView(self.content, self),
+            "Trophies": AchievementsView(self.content, self),
             "History": HistoryView(self.content, self),
             "Shop": ShopView(self.content, self),
             "Adventure": AdventureView(self.content, self),

@@ -11,6 +11,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
 
+from . import achievements as achievements_mod
 from . import economy, leveling, quests
 from .activities import Activity, activity_by_name
 from .gear import SLOTS, Gear
@@ -170,6 +171,7 @@ class LogResult:
     hero_gain: int = 0
     overachiever_gain: int = 0
     quests_done: list = field(default_factory=list)
+    achievements: list = field(default_factory=list)
 
 
 class Character:
@@ -190,6 +192,7 @@ class Character:
         equipped: dict[str, str] | None = None,
         daily: dict | None = None,
         quests_claimed: list[str] | None = None,
+        achievements: list[str] | None = None,
     ) -> None:
         self.name = name or "Adventurer"
         # Always keep an entry for every known stat so the UI can render all of
@@ -214,6 +217,7 @@ class Character:
         # daily quests ("YYYY-MM-DD:questid").
         self.daily: dict[str, dict] = dict(daily or {})
         self.quests_claimed: list[str] = list(quests_claimed or [])
+        self.achievements: list[str] = list(achievements or [])
 
     # --- Derived views -----------------------------------------------------
     # Prestige: a stat's XP never resets. Each full 0→100 climb (STAR_XP worth of
@@ -405,6 +409,21 @@ class Character:
         self._bump_daily(at or _now(), "arena_wins", 1)
         return self.evaluate_daily_quests(at)
 
+    # --- Achievements ------------------------------------------------------
+    def check_achievements(self) -> list:
+        """Unlock any newly-earned achievements; return the list unlocked now."""
+        newly = []
+        for a in achievements_mod.ACHIEVEMENTS:
+            if a.id in self.achievements:
+                continue
+            try:
+                if a.check(self):
+                    self.achievements.append(a.id)
+                    newly.append(a)
+            except Exception:
+                pass
+        return newly
+
     # --- Consistency -------------------------------------------------------
     def _activity_weeks(self, activity_name: str) -> set[tuple[int, int]]:
         weeks: set[tuple[int, int]] = set()
@@ -506,13 +525,14 @@ class Character:
         self._bump_daily(ref_dt, "levelups", len(level_ups) + len(star_ups))
         quests_done = self.evaluate_daily_quests(ref_dt)
         hero_gain += sum(q.reward for q in quests_done)
+        unlocked = self.check_achievements()
 
         self.prune_bonuses(ref_dt)
 
         return LogResult(activity.name, float(minutes), dict(gains), level_ups,
                          streak=streak, bonus=bonus, titles=titles, star_ups=star_ups,
                          hero_gain=hero_gain, overachiever_gain=overachiever_gain,
-                         quests_done=quests_done)
+                         quests_done=quests_done, achievements=unlocked)
 
     def recent(self, count: int = 10) -> list[LogEntry]:
         return list(reversed(self.log[-count:]))
@@ -536,6 +556,7 @@ class Character:
             "equipped": dict(self.equipped),
             "daily": dict(self.daily),
             "quests_claimed": list(self.quests_claimed),
+            "achievements": list(self.achievements),
         }
 
     @classmethod
@@ -556,4 +577,5 @@ class Character:
             equipped={str(k): str(v) for k, v in dict(data.get("equipped", {})).items()},
             daily={str(k): dict(v) for k, v in dict(data.get("daily", {})).items()},
             quests_claimed=[str(q) for q in data.get("quests_claimed", [])],
+            achievements=[str(a) for a in data.get("achievements", [])],
         )
