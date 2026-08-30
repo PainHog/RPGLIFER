@@ -1,0 +1,4 @@
+# Development / build tooling only. The app itself needs no third-party
+# packages at runtime.
+pytest>=7
+pyinstaller>=6.6

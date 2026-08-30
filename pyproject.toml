@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rpglifer"
+version = "0.1.0"
+description = "Turn the things you do every day into a leveling RPG character."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "PainHog" }]
+keywords = ["rpg", "gamification", "habit", "tracker", "life", "tkinter"]
+# The runtime has zero third-party dependencies — everything is standard library
+# (Tkinter ships with the official python.org installers). That keeps the .exe
+# small and the build bulletproof.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pyinstaller>=6.6"]
+
+[project.scripts]
+rpglifer = "rpglifer.app:main"
+
+[project.gui-scripts]
+rpglifer-gui = "rpglifer.app:main"
+
+[tool.setuptools]
+packages = ["rpglifer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
