@@ -787,20 +787,10 @@ class HistoryView(ctk.CTkFrame):
                  else 3 if mins <= 90 else 4)
             round_rect(c, x, y, x + cell, y + cell, 3, fill=HEAT_COLORS[b], outline="")
 
-    def _current_streak_days(self):
-        import datetime as _dt
-        days = {e.when[:10] for e in self.app.character.log}
-        d = _dt.datetime.now(_dt.timezone.utc).date()
-        streak = 0
-        while d.isoformat() in days:
-            streak += 1
-            d -= _dt.timedelta(days=1)
-        return streak
-
     def refresh(self):
         c = self.app.character
         total_min = sum(e.minutes for e in c.log)
-        streak = self._current_streak_days()
+        streak = c.daily_streak()  # same figure as the top-bar flame
         self.summary.configure(
             text=f"{len(c.log)} activities   ·   {total_min/60:.0f} h   ·   "
             f"{streak}-day streak")
