@@ -224,8 +224,9 @@ combat/shop stats** and an **evolving class**, **consistency streaks**,
 (Hero + Overachiever), the **Arena** auto-battle (foe archetypes + **boss
 battles**) with **Gear/loot drops**, a working **Shop** of boosts, **daily
 quests** + a weekly challenge board,
-**achievement trophies**, **first-run onboarding**, **one-tap quick-log**, and a
-gamified GUI (level ring, XP bursts, mastery celebrations, hamburger nav).
+**achievement trophies**, **first-run onboarding**, **one-tap quick-log**, a
+**journey heatmap** of your consistency, and a gamified GUI (level ring, XP
+bursts, mastery celebrations, hamburger nav).
 
 Planned next:
 

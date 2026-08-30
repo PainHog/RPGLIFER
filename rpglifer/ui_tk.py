@@ -679,13 +679,33 @@ class ActivitiesView(ctk.CTkFrame):
 # ---------------------------------------------------------------------------
 # History
 # ---------------------------------------------------------------------------
+HEAT_COLORS = ["#171a22", "#2b4c40", "#3f6f5b", "#54987e", "#6bd3aa"]
+
+
 class HistoryView(ctk.CTkFrame):
+    WEEKS = 14
+
     def __init__(self, parent, app):
         super().__init__(parent, fg_color="transparent")
         self.app = app
         fonts = app.fonts
+
+        # Journey card: at-a-glance stats + a contribution heatmap.
+        card = ctk.CTkFrame(self, corner_radius=16, fg_color=SURFACE)
+        card.pack(fill="x", padx=8, pady=(6, 8))
+        top = ctk.CTkFrame(card, fg_color="transparent")
+        top.pack(fill="x", padx=18, pady=(14, 4))
+        ctk.CTkLabel(top, text="YOUR JOURNEY", text_color=MUTED,
+                     font=fonts["kicker"]).pack(side="left")
+        self.summary = ctk.CTkLabel(top, text="", text_color=TEXT,
+                                    font=fonts["kicker"])
+        self.summary.pack(side="right")
+        self.heat = tk.Canvas(card, height=7 * 18 + 4, bg=SURFACE,
+                              highlightthickness=0, bd=0)
+        self.heat.pack(fill="x", padx=18, pady=(2, 16))
+
         head = ctk.CTkFrame(self, fg_color="transparent")
-        head.pack(fill="x", padx=18, pady=(10, 2))
+        head.pack(fill="x", padx=18, pady=(2, 2))
         for text, w in [("WHEN", 150), ("ACTIVITY", 220), ("MIN", 60),
                         ("XP GAINED", 250)]:
             ctk.CTkLabel(head, text=text, text_color=FAINT, font=fonts["kicker"],
@@ -695,7 +715,51 @@ class HistoryView(ctk.CTkFrame):
         self.scroll = ctk.CTkScrollableFrame(self, fg_color="transparent")
         self.scroll.pack(fill="both", expand=True, padx=8, pady=(4, 8))
 
+    def _daily_minutes(self):
+        by_day: dict[str, float] = {}
+        for e in self.app.character.log:
+            day = e.when[:10]
+            by_day[day] = by_day.get(day, 0.0) + e.minutes
+        return by_day
+
+    def _draw_heat(self):
+        import datetime as _dt
+        c = self.heat
+        c.delete("all")
+        by_day = self._daily_minutes()
+        today = _dt.datetime.now(_dt.timezone.utc).date()
+        start = today - _dt.timedelta(days=today.weekday() + 7 * (self.WEEKS - 1))
+        cell, gap = 15, 3
+        step = cell + gap
+        for i in range(self.WEEKS * 7):
+            day = start + _dt.timedelta(days=i)
+            if day > today:
+                break
+            col, rowd = i // 7, i % 7
+            x, y = 2 + col * step, 2 + rowd * step
+            mins = by_day.get(day.isoformat(), 0)
+            b = (0 if mins <= 0 else 1 if mins <= 20 else 2 if mins <= 45
+                 else 3 if mins <= 90 else 4)
+            round_rect(c, x, y, x + cell, y + cell, 3, fill=HEAT_COLORS[b], outline="")
+
+    def _current_streak_days(self):
+        import datetime as _dt
+        days = {e.when[:10] for e in self.app.character.log}
+        d = _dt.datetime.now(_dt.timezone.utc).date()
+        streak = 0
+        while d.isoformat() in days:
+            streak += 1
+            d -= _dt.timedelta(days=1)
+        return streak
+
     def refresh(self):
+        c = self.app.character
+        total_min = sum(e.minutes for e in c.log)
+        streak = self._current_streak_days()
+        self.summary.configure(
+            text=f"{len(c.log)} activities   ·   {total_min/60:.0f} h   ·   "
+            f"{streak}-day streak")
+        self._draw_heat()
         for w in self.scroll.winfo_children():
             w.destroy()
         entries = list(reversed(self.app.character.log))[:200]
