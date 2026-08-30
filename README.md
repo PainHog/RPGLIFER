@@ -89,7 +89,7 @@ for its soft, rounded, modern look; it's the only runtime dependency (Tkinter
 itself ships with the official python.org installers). The `--cli` mode needs
 nothing but the standard library.
 
-## How XP works
+## How XP and leveling work
 
 Logging `minutes` of an activity grants `minutes × xp_per_minute` of base XP
 (default **2**/min), divided among the activity's stats by their weights, then
@@ -98,18 +98,26 @@ scaled by your current consistency bonus. For example **Reading** is
 **48 INT** and **12 WIS** — plus a streak bonus if you've been reading week
 after week.
 
-Each stat's level is derived purely from its total XP, so the numbers can never
-drift out of sync with your log. The first level-up costs 100 XP and each one
-after costs 40% more than the last. That curve is deliberately slow:
+Each stat runs on a **0–100 mastery scale** with a deliberately **front-loaded**
+curve — `level = 100 × (xp / XP_TO_MAX)^0.4` — so your first session is worth
+several levels and the bar moves every time you log, then the climb slows toward
+mastery. Real numbers for one stat trained **30 minutes a day**:
 
-| Stat level | ~Total XP | ~Hours of the activity |
-| ---------: | --------: | ---------------------: |
-|          3 |       240 |   ~2 h (a first title) |
-|          5 |       710 |                  ~6 h  |
-|         10 |     4,900 |    ~41 h (weeks of it) |
-|         20 |   149,000 |     a long-haul grind  |
+| Time in        | Stat level | Overall level* |
+| -------------- | ---------: | -------------: |
+| day 1          |          6 |              9 |
+| week 1         |         13 |             21 |
+| 1 month        |         26 |             41 |
+| 3 months       |         43 |             68 |
+| 6 months       |         58 |             91 |
+| 1 year         |         78 |            122 |
 
-No level-10-by-Friday. Building a real character is meant to take real time.
+\*Your **overall level** is the sum of all eight stats (0–800), so it climbs
+with *every* activity even once a single stat slows near the top — there is
+always a number going up. Hitting **100** in a stat is a real, multi-year goal
+for a single focused pursuit; `XP_TO_MAX` in
+[`rpglifer/leveling.py`](rpglifer/leveling.py) is the one knob that makes
+mastery faster or slower.
 
 ### Consistency streaks
 
@@ -122,9 +130,9 @@ marks streak-boosted entries with 🔥.
 ### Titles
 
 Reaching a milestone level in a stat unlocks a title — the highest one you've
-reached is shown under the stat. Every stat has its own ladder (roughly levels
-3 / 5 / 10 / 15 / 20 / 30), so there's always a next rank to chase. See
-[`rpglifer/titles.py`](rpglifer/titles.py) to tune them.
+reached is shown under the stat. Every stat has its own ladder (levels
+10 / 25 / 40 / 55 / 75 / 100), so the first rank lands in week one and the last
+is mastery. See [`rpglifer/titles.py`](rpglifer/titles.py) to tune them.
 
 ## Add your own activities
 

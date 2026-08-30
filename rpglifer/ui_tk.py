@@ -180,7 +180,7 @@ class RadarChart:
     def render(self):
         c = self.canvas
         c.delete("web")
-        cap = max(8.0, max(self.disp.values()) if self.disp else 8.0)
+        cap = 100.0  # stats are on a 0–100 mastery scale; the web fills toward it
         # concentric grid octagons
         for ring in (0.25, 0.5, 0.75, 1.0):
             pts = []

@@ -12,24 +12,25 @@ week or two; later rungs are spaced out to reward the long haul.
 
 from __future__ import annotations
 
-# stat key -> ascending ladder of (level, title). Keep each ladder sorted.
+# stat key -> ascending ladder of (level, title) on the 0–100 scale. The first
+# rung (10) lands in the first week; the last (100) is mastery. Keep sorted.
 TITLES: dict[str, tuple[tuple[int, str], ...]] = {
-    "STR": ((3, "Gym Rookie"), (5, "Weight Hauler"), (10, "Iron-Willed"),
-            (15, "Powerhouse"), (20, "Titan"), (30, "Colossus")),
-    "DEX": ((3, "Fumbler No More"), (5, "Nimble"), (10, "Quick-Handed"),
-            (15, "Acrobat"), (20, "Blur"), (30, "Untouchable")),
-    "CON": ((3, "Steady"), (5, "Enduring"), (10, "Tireless"),
-            (15, "Ironclad"), (20, "Unbreakable"), (30, "Immortal")),
-    "INT": ((3, "Curious"), (5, "Bookworm"), (10, "Scholar"),
-            (15, "Sage"), (20, "Genius"), (30, "Polymath")),
-    "WIS": ((3, "Reflective"), (5, "Level-Headed"), (10, "Insightful"),
-            (15, "Enlightened"), (20, "Guru"), (30, "Oracle")),
-    "CHA": ((3, "Friendly"), (5, "Well-Liked"), (10, "Charmer"),
-            (15, "Silver-Tongued"), (20, "Magnetic"), (30, "Legendary Presence")),
-    "DIS": ((3, "Consistent"), (5, "Focused"), (10, "Iron Habit"),
-            (15, "Unwavering"), (20, "Unstoppable"), (30, "Relentless")),
-    "CRE": ((3, "Doodler"), (5, "Maker"), (10, "Artisan"),
-            (15, "Visionary"), (20, "Virtuoso"), (30, "Muse")),
+    "STR": ((10, "Gym Rookie"), (25, "Weight Hauler"), (40, "Iron-Willed"),
+            (55, "Powerhouse"), (75, "Titan"), (100, "Colossus")),
+    "DEX": ((10, "Fumbler No More"), (25, "Nimble"), (40, "Quick-Handed"),
+            (55, "Acrobat"), (75, "Blur"), (100, "Untouchable")),
+    "CON": ((10, "Steady"), (25, "Enduring"), (40, "Tireless"),
+            (55, "Ironclad"), (75, "Unbreakable"), (100, "Immortal")),
+    "INT": ((10, "Curious"), (25, "Bookworm"), (40, "Scholar"),
+            (55, "Sage"), (75, "Genius"), (100, "Polymath")),
+    "WIS": ((10, "Reflective"), (25, "Level-Headed"), (40, "Insightful"),
+            (55, "Enlightened"), (75, "Guru"), (100, "Oracle")),
+    "CHA": ((10, "Friendly"), (25, "Well-Liked"), (40, "Charmer"),
+            (55, "Silver-Tongued"), (75, "Magnetic"), (100, "Legendary Presence")),
+    "DIS": ((10, "Consistent"), (25, "Focused"), (40, "Iron Habit"),
+            (55, "Unwavering"), (75, "Unstoppable"), (100, "Relentless")),
+    "CRE": ((10, "Doodler"), (25, "Maker"), (40, "Artisan"),
+            (55, "Visionary"), (75, "Virtuoso"), (100, "Muse")),
 }
 
 

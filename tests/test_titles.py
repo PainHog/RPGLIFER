@@ -15,22 +15,23 @@ def test_ladders_are_sorted_ascending():
 
 def test_no_title_below_first_milestone():
     assert title_for("STR", 1) is None
-    assert title_for("STR", 2) is None
+    assert title_for("STR", 9) is None
 
 
 def test_title_at_and_above_milestone():
-    assert title_for("STR", 3) == "Gym Rookie"
-    assert title_for("STR", 4) == "Gym Rookie"  # holds until the next rung
-    assert title_for("STR", 5) == "Weight Hauler"
+    assert title_for("STR", 10) == "Gym Rookie"
+    assert title_for("STR", 24) == "Gym Rookie"  # holds until the next rung
+    assert title_for("STR", 25) == "Weight Hauler"
 
 
 def test_title_caps_at_top_rung():
+    assert title_for("STR", 100) == "Colossus"
     assert title_for("STR", 999) == "Colossus"
 
 
 def test_next_title_points_forward():
-    assert next_title("INT", 1) == (3, "Curious")
-    assert next_title("INT", 3) == (5, "Bookworm")
+    assert next_title("INT", 1) == (10, "Curious")
+    assert next_title("INT", 10) == (25, "Bookworm")
 
 
 def test_next_title_none_when_maxed():

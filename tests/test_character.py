@@ -10,12 +10,12 @@ def test_new_character_starts_at_zero_xp():
     assert c.total_xp() == 0
     for key in STAT_KEYS:
         assert c.stat_xp[key] == 0.0
-        assert c.level(key) == 1
+        assert c.level(key) == 0  # untrained stats start at 0 on the 0–100 scale
 
 
 def test_overall_level_is_sum_of_stat_levels():
     c = Character()
-    assert c.overall_level() == len(STAT_KEYS)  # every stat at level 1
+    assert c.overall_level() == 0  # a blank-slate hero
 
 
 def test_logging_awards_xp_by_weight():

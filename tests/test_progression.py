@@ -88,9 +88,9 @@ def test_consistency_preview_matches_logging():
 
 def test_reaching_a_milestone_unlocks_a_title():
     c = Character()
-    # 120 min of Studying (INT 1.0 @ 2 xp/min) = 240 XP = exactly level 3.
-    result = c.log_activity(activity_by_name("Studying"), 120)
-    assert c.level("INT") == 3
+    # 200 min of Studying (INT 1.0 @ 2 xp/min) = 400 XP -> past level 10.
+    result = c.log_activity(activity_by_name("Studying"), 200)
+    assert c.level("INT") >= 10
     assert any(t.stat == "INT" and t.title == "Curious" for t in result.titles)
     assert c.title("INT") == "Curious"
 
