@@ -1840,9 +1840,19 @@ class RPGLiferApp:
         self.level_value = ctk.CTkLabel(bar, text="Lv 0", text_color=GOLD,
                                         font=self.fonts["levelbadge"])
         self.level_value.pack(side="right", padx=(0, 4))
+        Tooltip(self.level_value,
+                lambda: "Overall level — the sum of every stat's level. Prestige "
+                        "★s keep it climbing, so it's never capped.",
+                self.fonts["tip"])
         self.points_lbl = ctk.CTkLabel(bar, text="", text_color=MUTED,
                                        font=self.fonts["section"])
         self.points_lbl.pack(side="right", padx=(14, 18))
+        Tooltip(self.points_lbl,
+                lambda: "◆ Hero points — earned from progress, reaching out, and "
+                        "Adventures; spent on Shop boosts.\n"
+                        "✦ Overachiever points — from the weekly well-rounded "
+                        "challenge; spent on cosmetics.",
+                self.fonts["tip"])
         self.streak_holder = ctk.CTkFrame(bar, fg_color="transparent")
         self.streak_flame = line_icon(self.streak_holder, "flame", size=18,
                                       color=STREAK, bg=BG)
