@@ -104,8 +104,7 @@
    "DEX": 0.6,
    "CHA": 0.3,
    "CON": 0.1,
-   "DIS": 0.25,
-   "CRE": 0.45
+   "DIS": 0.25
   },
   "aliases": [
    "dance"
@@ -135,6 +134,7 @@
    "DEX": 0.6,
    "INT": 0.2,
    "WIS": 0.2,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -151,7 +151,7 @@
    "DEX": 0.4,
    "INT": 0.4,
    "WIS": 0.2,
-   "DIS": 0.3,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -168,6 +168,7 @@
   "weights": {
    "DEX": 0.6,
    "INT": 0.4,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -182,8 +183,7 @@
   "category": "Leisure",
   "weights": {
    "DEX": 0.7,
-   "INT": 0.3,
-   "CRE": 0.45
+   "INT": 0.3
   },
   "aliases": [
    "gaming",
@@ -196,8 +196,7 @@
   "weights": {
    "DEX": 0.7,
    "INT": 0.3,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.2
   },
   "aliases": [
    "typing"
@@ -377,7 +376,7 @@
   "weights": {
    "INT": 0.8,
    "WIS": 0.2,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "read",
@@ -390,7 +389,7 @@
   "category": "Learning",
   "weights": {
    "INT": 1.0,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "study",
@@ -404,7 +403,7 @@
   "weights": {
    "INT": 0.9,
    "DEX": 0.1,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "coding",
@@ -420,6 +419,7 @@
    "INT": 0.6,
    "WIS": 0.2,
    "CHA": 0.2,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -433,7 +433,7 @@
   "category": "Learning",
   "weights": {
    "INT": 1.0,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "course",
@@ -448,7 +448,7 @@
   "weights": {
    "INT": 0.7,
    "CHA": 0.3,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "language learning",
@@ -751,7 +751,7 @@
    "STR": 0.5,
    "CON": 0.5,
    "WIS": 0.1,
-   "DIS": 0.3
+   "DIS": 0.28
   },
   "aliases": [
    "plank hold",
@@ -793,7 +793,7 @@
    "STR": 0.5,
    "CON": 0.3,
    "DEX": 0.15,
-   "DIS": 0.3
+   "DIS": 0.28
   },
   "aliases": [
    "band workout",
@@ -863,7 +863,7 @@
    "CON": 1.0,
    "STR": 0.2,
    "WIS": 0.2,
-   "DIS": 0.3
+   "DIS": 0.25
   },
   "aliases": [
    "long-distance training",
@@ -933,7 +933,7 @@
    "CON": 0.7,
    "STR": 0.15,
    "DEX": 0.05,
-   "DIS": 0.3
+   "DIS": 0.25
   },
   "aliases": [
    "elliptical machine",
@@ -1033,7 +1033,7 @@
    "DEX": 0.5,
    "STR": 0.2,
    "CHA": 0.2,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "hoops",
@@ -1049,7 +1049,7 @@
    "DEX": 0.5,
    "STR": 0.15,
    "CHA": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "football",
@@ -1065,7 +1065,7 @@
    "CON": 0.5,
    "STR": 0.2,
    "WIS": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "playing tennis",
@@ -1080,7 +1080,7 @@
    "WIS": 0.3,
    "STR": 0.15,
    "CON": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "playing golf",
@@ -1095,7 +1095,7 @@
    "STR": 0.3,
    "CON": 0.2,
    "CHA": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "playing baseball",
@@ -1110,7 +1110,7 @@
    "CON": 0.4,
    "STR": 0.2,
    "CHA": 0.2,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "beach volleyball",
@@ -1125,7 +1125,7 @@
    "CON": 0.2,
    "WIS": 0.1,
    "INT": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "ping pong",
@@ -1139,7 +1139,7 @@
    "DEX": 0.6,
    "CON": 0.45,
    "STR": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "playing badminton",
@@ -1154,7 +1154,7 @@
    "STR": 0.15,
    "CHA": 0.15,
    "WIS": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "ten-pin bowling",
@@ -1169,7 +1169,7 @@
    "CON": 0.3,
    "STR": 0.2,
    "WIS": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "playing cricket",
@@ -1184,7 +1184,7 @@
    "CON": 0.6,
    "DEX": 0.3,
    "CHA": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "playing rugby",
@@ -1199,7 +1199,7 @@
    "CON": 0.55,
    "DEX": 0.35,
    "CHA": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "gridiron",
@@ -1213,7 +1213,7 @@
    "DEX": 0.6,
    "CON": 0.6,
    "STR": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "playing squash",
@@ -1228,7 +1228,7 @@
    "DEX": 0.5,
    "STR": 0.15,
    "CHA": 0.2,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "ultimate",
@@ -1244,7 +1244,7 @@
    "DEX": 0.55,
    "STR": 0.35,
    "CHA": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "hockey",
@@ -1259,7 +1259,7 @@
    "STR": 0.5,
    "DEX": 0.4,
    "WIS": 0.15,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "sparring",
@@ -1276,7 +1276,7 @@
    "STR": 0.4,
    "WIS": 0.25,
    "INT": 0.2,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "bjj",
@@ -1292,7 +1292,7 @@
    "CON": 0.4,
    "STR": 0.35,
    "WIS": 0.25,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "karate class",
@@ -1307,7 +1307,7 @@
    "CON": 0.45,
    "STR": 0.3,
    "WIS": 0.2,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "tae kwon do",
@@ -1322,7 +1322,7 @@
    "STR": 0.5,
    "DEX": 0.4,
    "WIS": 0.15,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "thai boxing",
@@ -1337,7 +1337,7 @@
    "DEX": 0.45,
    "CON": 0.45,
    "WIS": 0.2,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "judo throws",
@@ -1352,7 +1352,7 @@
    "STR": 0.45,
    "DEX": 0.4,
    "WIS": 0.1,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "cardio kickboxing",
@@ -1367,7 +1367,7 @@
    "CON": 0.55,
    "DEX": 0.35,
    "WIS": 0.15,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "freestyle wrestling",
@@ -1383,7 +1383,7 @@
    "STR": 0.4,
    "WIS": 0.2,
    "INT": 0.1,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "self-defense training",
@@ -1398,7 +1398,7 @@
    "WIS": 0.4,
    "CON": 0.3,
    "INT": 0.15,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "aikido practice",
@@ -1413,7 +1413,7 @@
    "CON": 0.4,
    "STR": 0.3,
    "WIS": 0.3,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "wushu",
@@ -1429,7 +1429,7 @@
    "CON": 0.4,
    "WIS": 0.2,
    "INT": 0.15,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "sword fighting",
@@ -1445,7 +1445,7 @@
    "CON": 0.5,
    "STR": 0.25,
    "CHA": 0.2,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "brazilian martial art",
@@ -1460,7 +1460,7 @@
    "DEX": 0.35,
    "CON": 0.25,
    "CHA": 0.05,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "tai chi chuan",
@@ -1476,7 +1476,7 @@
    "CON": 0.4,
    "WIS": 0.3,
    "STR": 0.2,
-   "DIS": 0.28
+   "DIS": 0.3
   },
   "aliases": [
    "japanese fencing",
@@ -1594,8 +1594,7 @@
    "DEX": 0.6,
    "WIS": 0.25,
    "CON": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.25
   },
   "aliases": [
    "front splits",
@@ -1638,8 +1637,7 @@
    "DEX": 0.8,
    "WIS": 0.3,
    "CON": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.25
   },
   "aliases": [
    "backbending",
@@ -1684,7 +1682,7 @@
    "STR": 0.8,
    "CON": 0.3,
    "DEX": 0.1,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "woodcutting",
@@ -1700,7 +1698,7 @@
    "STR": 0.4,
    "WIS": 0.25,
    "INT": 0.15,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "thru-hiking",
@@ -1717,7 +1715,7 @@
    "CON": 0.4,
    "WIS": 0.2,
    "INT": 0.15,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "climbing",
@@ -1733,7 +1731,7 @@
    "STR": 0.55,
    "CON": 0.3,
    "INT": 0.2,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "boulder problems",
@@ -1748,7 +1746,7 @@
    "STR": 0.5,
    "WIS": 0.3,
    "INT": 0.2,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "alpinism",
@@ -1763,7 +1761,7 @@
    "DEX": 0.3,
    "WIS": 0.15,
    "CON": 0.1,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "ziplining",
@@ -1779,7 +1777,7 @@
    "STR": 0.2,
    "CON": 0.2,
    "DEX": 0.15,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "tent camping",
@@ -1795,7 +1793,7 @@
    "CON": 0.5,
    "WIS": 0.25,
    "DEX": 0.1,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "map and compass",
@@ -1810,7 +1808,7 @@
    "CON": 0.35,
    "WIS": 0.2,
    "DEX": 0.1,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "gps treasure hunt",
@@ -1826,7 +1824,7 @@
    "DEX": 0.4,
    "WIS": 0.2,
    "INT": 0.15,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "spelunking",
@@ -1841,7 +1839,7 @@
    "DEX": 0.5,
    "CON": 0.3,
    "WIS": 0.2,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "abseiling",
@@ -1856,7 +1854,7 @@
    "WIS": 0.35,
    "CON": 0.3,
    "STR": 0.15,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "slackline",
@@ -1871,7 +1869,7 @@
    "STR": 0.5,
    "CON": 0.5,
    "WIS": 0.25,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "iron path",
@@ -1886,7 +1884,7 @@
    "INT": 0.25,
    "WIS": 0.15,
    "STR": 0.1,
-   "DIS": 0.15
+   "DIS": 0.1
   },
   "aliases": [
    "making a fire",
@@ -1900,8 +1898,7 @@
   "weights": {
    "WIS": 0.5,
    "INT": 0.3,
-   "CON": 0.05,
-   "DIS": 0.12
+   "CON": 0.05
   },
   "aliases": [
    "birding",
@@ -1915,8 +1912,7 @@
    "INT": 0.4,
    "WIS": 0.35,
    "DEX": 0.2,
-   "CON": 0.2,
-   "DIS": 0.12
+   "CON": 0.2
   },
   "aliases": [
    "mushroom hunting",
@@ -1930,8 +1926,7 @@
   "weights": {
    "WIS": 0.5,
    "INT": 0.35,
-   "CON": 0.05,
-   "DIS": 0.12
+   "CON": 0.05
   },
   "aliases": [
    "astronomy",
@@ -1945,9 +1940,7 @@
    "DEX": 0.35,
    "WIS": 0.4,
    "INT": 0.25,
-   "CON": 0.15,
-   "DIS": 0.12,
-   "CRE": 0.45
+   "CON": 0.15
   },
   "aliases": [
    "landscape photography",
@@ -1961,8 +1954,7 @@
    "WIS": 0.35,
    "CON": 0.2,
    "DEX": 0.1,
-   "INT": 0.1,
-   "DIS": 0.12
+   "INT": 0.1
   },
   "aliases": [
    "shell collecting",
@@ -1974,8 +1966,7 @@
   "category": "Nature",
   "weights": {
    "WIS": 0.7,
-   "CON": 0.1,
-   "DIS": 0.12
+   "CON": 0.1
   },
   "aliases": [
    "shinrin-yoku",
@@ -1990,8 +1981,7 @@
    "INT": 0.4,
    "WIS": 0.4,
    "CON": 0.3,
-   "DEX": 0.15,
-   "DIS": 0.3
+   "DEX": 0.15
   },
   "aliases": [
    "animal tracking",
@@ -2004,8 +1994,7 @@
   "weights": {
    "WIS": 0.3,
    "INT": 0.3,
-   "DEX": 0.15,
-   "DIS": 0.12
+   "DEX": 0.15
   },
   "aliases": [
    "pressing leaves",
@@ -2019,8 +2008,7 @@
    "WIS": 0.35,
    "INT": 0.3,
    "DEX": 0.15,
-   "CON": 0.15,
-   "DIS": 0.12
+   "CON": 0.15
   },
   "aliases": [
    "rock pooling",
@@ -2033,8 +2021,7 @@
   "weights": {
    "WIS": 0.45,
    "INT": 0.35,
-   "DEX": 0.25,
-   "DIS": 0.3
+   "DEX": 0.25
   },
   "aliases": [
    "field sketching",
@@ -2047,8 +2034,7 @@
   "weights": {
    "WIS": 0.45,
    "INT": 0.25,
-   "DEX": 0.05,
-   "DIS": 0.12
+   "DEX": 0.05
   },
   "aliases": [
    "butterfly spotting",
@@ -2063,8 +2049,7 @@
    "CON": 0.25,
    "STR": 0.2,
    "WIS": 0.25,
-   "DEX": 0.1,
-   "DIS": 0.12
+   "DEX": 0.1
   },
   "aliases": [
    "rock collecting",
@@ -2077,8 +2062,7 @@
   "category": "Nature",
   "weights": {
    "WIS": 0.6,
-   "CON": 0.05,
-   "DIS": 0.12
+   "CON": 0.05
   },
   "aliases": [
    "dawn watching",
@@ -2090,8 +2074,7 @@
   "category": "Nature",
   "weights": {
    "WIS": 0.55,
-   "INT": 0.1,
-   "DIS": 0.12
+   "INT": 0.1
   },
   "aliases": [
    "sky gazing",
@@ -2104,8 +2087,7 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.35,
-   "DEX": 0.1,
-   "DIS": 0.12
+   "DEX": 0.1
   },
   "aliases": [
    "botany walk",
@@ -2120,8 +2102,7 @@
    "CON": 0.55,
    "STR": 0.35,
    "WIS": 0.2,
-   "INT": 0.1,
-   "DIS": 0.15
+   "INT": 0.1
   },
   "aliases": [
    "catching waves",
@@ -2135,8 +2116,7 @@
    "CON": 0.55,
    "STR": 0.45,
    "DEX": 0.3,
-   "WIS": 0.15,
-   "DIS": 0.15
+   "WIS": 0.15
   },
   "aliases": [
    "sea kayaking",
@@ -2150,8 +2130,7 @@
    "STR": 0.5,
    "CON": 0.5,
    "DEX": 0.25,
-   "WIS": 0.15,
-   "DIS": 0.15
+   "WIS": 0.15
   },
   "aliases": [
    "paddling a canoe",
@@ -2165,8 +2144,7 @@
    "DEX": 0.5,
    "CON": 0.45,
    "STR": 0.3,
-   "WIS": 0.2,
-   "DIS": 0.15
+   "WIS": 0.2
   },
   "aliases": [
    "sup",
@@ -2181,8 +2159,7 @@
    "CON": 0.4,
    "WIS": 0.35,
    "INT": 0.35,
-   "DEX": 0.25,
-   "DIS": 0.15
+   "DEX": 0.25
   },
   "aliases": [
    "diving",
@@ -2196,8 +2173,7 @@
   "weights": {
    "CON": 0.4,
    "WIS": 0.3,
-   "DEX": 0.15,
-   "DIS": 0.15
+   "DEX": 0.15
   },
   "aliases": [
    "reef snorkeling",
@@ -2211,8 +2187,7 @@
    "CON": 0.7,
    "STR": 0.4,
    "DEX": 0.4,
-   "CHA": 0.15,
-   "DIS": 0.15
+   "CHA": 0.15
   },
   "aliases": [
    "playing water polo"
@@ -2225,8 +2200,7 @@
    "CON": 0.75,
    "STR": 0.55,
    "DEX": 0.15,
-   "CHA": 0.15,
-   "DIS": 0.15
+   "CHA": 0.15
   },
   "aliases": [
    "sculling",
@@ -2241,8 +2215,7 @@
    "DEX": 0.55,
    "CON": 0.5,
    "STR": 0.35,
-   "WIS": 0.15,
-   "DIS": 0.15
+   "WIS": 0.15
   },
   "aliases": [
    "sailboarding",
@@ -2257,8 +2230,7 @@
    "DEX": 0.35,
    "WIS": 0.3,
    "STR": 0.25,
-   "CON": 0.2,
-   "DIS": 0.15
+   "CON": 0.2
   },
   "aliases": [
    "yachting",
@@ -2272,8 +2244,7 @@
    "CON": 0.6,
    "STR": 0.2,
    "DEX": 0.2,
-   "CHA": 0.1,
-   "DIS": 0.15
+   "CHA": 0.1
   },
   "aliases": [
    "aqua aerobics",
@@ -2286,8 +2257,7 @@
   "weights": {
    "CON": 0.5,
    "DEX": 0.4,
-   "STR": 0.25,
-   "DIS": 0.15
+   "STR": 0.25
   },
   "aliases": [
    "boogie boarding",
@@ -2302,8 +2272,7 @@
    "CON": 0.55,
    "DEX": 0.35,
    "WIS": 0.2,
-   "CHA": 0.15,
-   "DIS": 0.15
+   "CHA": 0.15
   },
   "aliases": [
    "whitewater rafting",
@@ -2316,8 +2285,7 @@
   "weights": {
    "CON": 0.5,
    "WIS": 0.5,
-   "DEX": 0.2,
-   "DIS": 0.15
+   "DEX": 0.2
   },
   "aliases": [
    "breath-hold diving",
@@ -2331,8 +2299,7 @@
    "CON": 0.6,
    "DEX": 0.55,
    "STR": 0.3,
-   "WIS": 0.15,
-   "DIS": 0.15
+   "WIS": 0.15
   },
   "aliases": [
    "downhill skiing",
@@ -2347,8 +2314,7 @@
    "DEX": 0.6,
    "CON": 0.5,
    "STR": 0.3,
-   "WIS": 0.15,
-   "DIS": 0.15
+   "WIS": 0.15
   },
   "aliases": [
    "riding the mountain",
@@ -2362,8 +2328,7 @@
    "DEX": 0.6,
    "CON": 0.4,
    "STR": 0.2,
-   "WIS": 0.1,
-   "DIS": 0.15
+   "WIS": 0.1
   },
   "aliases": [
    "skating",
@@ -2376,8 +2341,7 @@
   "weights": {
    "CON": 0.85,
    "STR": 0.4,
-   "DEX": 0.3,
-   "DIS": 0.15
+   "DEX": 0.3
   },
   "aliases": [
    "nordic skiing",
@@ -2391,8 +2355,7 @@
    "CON": 0.3,
    "STR": 0.25,
    "DEX": 0.2,
-   "CHA": 0.1,
-   "DIS": 0.15
+   "CHA": 0.1
   },
   "aliases": [
    "sledging",
@@ -2405,8 +2368,7 @@
   "weights": {
    "CON": 0.7,
    "STR": 0.3,
-   "DEX": 0.15,
-   "DIS": 0.15
+   "DEX": 0.15
   },
   "aliases": [
    "snowshoe hiking",
@@ -2420,8 +2382,7 @@
    "STR": 0.6,
    "DEX": 0.5,
    "CON": 0.5,
-   "WIS": 0.25,
-   "DIS": 0.15
+   "WIS": 0.25
   },
   "aliases": [
    "frozen waterfall climbing",
@@ -2434,8 +2395,7 @@
   "weights": {
    "STR": 0.6,
    "CON": 0.5,
-   "DEX": 0.05,
-   "DIS": 0.15
+   "DEX": 0.05
   },
   "aliases": [
    "snow shoveling",
@@ -2449,8 +2409,7 @@
    "STR": 0.25,
    "DEX": 0.25,
    "CHA": 0.15,
-   "WIS": 0.1,
-   "DIS": 0.15
+   "WIS": 0.1
   },
   "aliases": [
    "making a snowman",
@@ -2465,8 +2424,7 @@
    "CON": 0.45,
    "STR": 0.25,
    "CHA": 0.2,
-   "WIS": 0.1,
-   "DIS": 0.15
+   "WIS": 0.1
   },
   "aliases": [
    "ice dancing",
@@ -2481,8 +2439,7 @@
    "WIS": 0.25,
    "INT": 0.2,
    "STR": 0.15,
-   "CHA": 0.15,
-   "DIS": 0.15
+   "CHA": 0.15
   },
   "aliases": [
    "playing curling",
@@ -2496,8 +2453,7 @@
    "CON": 0.8,
    "STR": 0.4,
    "DEX": 0.3,
-   "WIS": 0.2,
-   "DIS": 0.15
+   "WIS": 0.2
   },
   "aliases": [
    "backcountry skiing",
@@ -2510,8 +2466,7 @@
   "weights": {
    "CON": 0.3,
    "STR": 0.25,
-   "DEX": 0.2,
-   "DIS": 0.15
+   "DEX": 0.2
   },
   "aliases": [
    "toboggan run",
@@ -2525,8 +2480,7 @@
    "WIS": 0.4,
    "CON": 0.25,
    "INT": 0.2,
-   "DEX": 0.15,
-   "DIS": 0.15
+   "DEX": 0.15
   },
   "aliases": [
    "fishing on ice",
@@ -2540,8 +2494,7 @@
    "DEX": 0.4,
    "CON": 0.35,
    "CHA": 0.2,
-   "STR": 0.15,
-   "DIS": 0.15
+   "STR": 0.15
   },
   "aliases": [
    "snowball battle",
@@ -2767,8 +2720,8 @@
    "CON": 0.3,
    "STR": 0.3,
    "WIS": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "wall painting",
@@ -2784,8 +2737,8 @@
    "INT": 0.35,
    "STR": 0.2,
    "WIS": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "flat-pack assembly",
@@ -2800,8 +2753,8 @@
    "DEX": 0.5,
    "INT": 0.4,
    "STR": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "repairing a tap",
@@ -2817,8 +2770,8 @@
    "DEX": 0.4,
    "CON": 0.35,
    "INT": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "installing drywall",
@@ -2832,8 +2785,8 @@
    "DEX": 0.45,
    "INT": 0.3,
    "STR": 0.25,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "mounting shelves",
@@ -2848,8 +2801,8 @@
    "INT": 0.35,
    "STR": 0.25,
    "WIS": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "laying tile",
@@ -2864,8 +2817,8 @@
    "INT": 0.4,
    "STR": 0.25,
    "WIS": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "carpentry",
@@ -2880,8 +2833,8 @@
    "DEX": 0.6,
    "INT": 0.5,
    "WIS": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "circuit soldering",
@@ -2896,8 +2849,8 @@
    "CON": 0.25,
    "STR": 0.3,
    "INT": 0.3,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "installing flooring",
@@ -2911,8 +2864,8 @@
    "INT": 0.55,
    "DEX": 0.45,
    "WIS": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "electrical wiring",
@@ -2927,8 +2880,8 @@
    "INT": 0.4,
    "STR": 0.25,
    "WIS": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "making a bookcase",
@@ -2943,8 +2896,8 @@
    "STR": 0.3,
    "DEX": 0.35,
    "WIS": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "refinishing furniture",
@@ -2958,8 +2911,8 @@
    "DEX": 0.5,
    "INT": 0.2,
    "WIS": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "sealing a tub",
@@ -2974,8 +2927,8 @@
    "INT": 0.25,
    "WIS": 0.2,
    "STR": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "wallpapering",
@@ -2989,8 +2942,8 @@
    "DEX": 0.35,
    "INT": 0.3,
    "STR": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "clearing a blocked drain",
@@ -3004,8 +2957,8 @@
    "DEX": 0.45,
    "INT": 0.25,
    "STR": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.2
+   "DIS": 0.28,
+   "CRE": 0.25
   },
   "aliases": [
    "spackling",
@@ -3021,8 +2974,8 @@
    "INT": 0.3,
    "WIS": 0.2,
    "CHA": 0.1,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "making dinner",
@@ -3038,8 +2991,8 @@
    "DEX": 0.3,
    "CON": 0.15,
    "WIS": 0.15,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "meal prepping",
@@ -3055,8 +3008,8 @@
    "INT": 0.35,
    "WIS": 0.3,
    "STR": 0.15,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "breadmaking",
@@ -3072,8 +3025,8 @@
    "INT": 0.25,
    "WIS": 0.15,
    "CHA": 0.15,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "barbecuing",
@@ -3088,8 +3041,8 @@
    "DEX": 0.5,
    "WIS": 0.1,
    "CON": 0.1,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "knife work",
@@ -3105,8 +3058,8 @@
    "INT": 0.3,
    "WIS": 0.2,
    "STR": 0.1,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "fresh pasta",
@@ -3121,8 +3074,8 @@
    "INT": 0.2,
    "WIS": 0.2,
    "CHA": 0.1,
-   "DIS": 0.2,
-   "CRE": 0.45
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "cake decorating",
@@ -3137,8 +3090,8 @@
    "INT": 0.4,
    "WIS": 0.3,
    "DEX": 0.15,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "making sauerkraut",
@@ -3153,8 +3106,8 @@
    "DEX": 0.6,
    "INT": 0.35,
    "WIS": 0.25,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "rolling sushi",
@@ -3168,8 +3121,8 @@
    "DEX": 0.3,
    "INT": 0.25,
    "WIS": 0.15,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "making coffee",
@@ -3185,8 +3138,8 @@
    "DEX": 0.25,
    "WIS": 0.25,
    "CON": 0.1,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "homebrewing",
@@ -3202,8 +3155,8 @@
    "DEX": 0.3,
    "CON": 0.2,
    "WIS": 0.2,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "jarring food",
@@ -3219,8 +3172,8 @@
    "DEX": 0.35,
    "CON": 0.2,
    "WIS": 0.15,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "working dough",
@@ -3235,8 +3188,8 @@
    "DEX": 0.3,
    "WIS": 0.3,
    "CON": 0.1,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "cheesemaking",
@@ -3251,8 +3204,8 @@
    "INT": 0.35,
    "DEX": 0.2,
    "CON": 0.15,
-   "DIS": 0.2,
-   "CRE": 0.25
+   "DIS": 0.15,
+   "CRE": 0.28
   },
   "aliases": [
    "smoking meat",
@@ -3268,8 +3221,8 @@
    "STR": 0.25,
    "DEX": 0.2,
    "WIS": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "pulling weeds",
@@ -3283,8 +3236,8 @@
    "CON": 0.45,
    "STR": 0.35,
    "DEX": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "mowing",
@@ -3299,8 +3252,8 @@
    "CON": 0.45,
    "STR": 0.35,
    "DEX": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "leaf raking",
@@ -3315,8 +3268,8 @@
    "WIS": 0.3,
    "INT": 0.25,
    "CON": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "sowing seeds",
@@ -3331,8 +3284,8 @@
    "INT": 0.25,
    "WIS": 0.2,
    "STR": 0.2,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "pruning",
@@ -3347,8 +3300,8 @@
    "WIS": 0.25,
    "DEX": 0.15,
    "CON": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "watering the garden",
@@ -3363,8 +3316,8 @@
    "CON": 0.2,
    "WIS": 0.2,
    "STR": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.45
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "making compost",
@@ -3380,8 +3333,8 @@
    "INT": 0.25,
    "WIS": 0.2,
    "STR": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "potting plants",
@@ -3396,8 +3349,8 @@
    "STR": 0.6,
    "CON": 0.5,
    "DEX": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "digging",
@@ -3414,8 +3367,8 @@
    "INT": 0.3,
    "DEX": 0.2,
    "WIS": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "yard landscaping",
@@ -3431,8 +3384,8 @@
    "WIS": 0.3,
    "CON": 0.25,
    "DEX": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "vegetable gardening",
@@ -3448,8 +3401,8 @@
    "WIS": 0.5,
    "INT": 0.35,
    "CON": 0.05,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "bonsai",
@@ -3464,8 +3417,8 @@
    "STR": 0.45,
    "CON": 0.4,
    "DEX": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "spreading mulch",
@@ -3480,8 +3433,8 @@
    "CON": 0.3,
    "STR": 0.3,
    "INT": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.18
+   "DIS": 0.18,
+   "CRE": 0.12
   },
   "aliases": [
    "hedge trimming",
@@ -3496,7 +3449,7 @@
    "WIS": 0.2,
    "CHA": 0.15,
    "DEX": 0.05,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "dog walking",
@@ -3510,7 +3463,7 @@
    "WIS": 0.2,
    "DEX": 0.1,
    "CHA": 0.1,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "feeding the cat",
@@ -3526,7 +3479,7 @@
    "WIS": 0.25,
    "CHA": 0.2,
    "CON": 0.1,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "brushing the dog",
@@ -3542,7 +3495,7 @@
    "WIS": 0.35,
    "INT": 0.35,
    "DEX": 0.15,
-   "DIS": 0.3
+   "DIS": 0.2
   },
   "aliases": [
    "dog training",
@@ -3558,7 +3511,7 @@
    "DEX": 0.3,
    "CON": 0.2,
    "CHA": 0.15,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "washing the dog",
@@ -3572,7 +3525,7 @@
    "DEX": 0.15,
    "CON": 0.1,
    "WIS": 0.05,
-   "DIS": 0.3
+   "DIS": 0.2
   },
   "aliases": [
    "scooping litter",
@@ -3587,7 +3540,7 @@
    "DEX": 0.3,
    "CHA": 0.2,
    "STR": 0.15,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "throwing the ball",
@@ -3603,7 +3556,7 @@
    "STR": 0.25,
    "WIS": 0.25,
    "CHA": 0.15,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "horse riding",
@@ -3618,7 +3571,7 @@
    "STR": 0.55,
    "CON": 0.55,
    "DEX": 0.1,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "cleaning stables",
@@ -3633,7 +3586,7 @@
    "DEX": 0.35,
    "INT": 0.25,
    "WIS": 0.15,
-   "DIS": 0.3
+   "DIS": 0.2
   },
   "aliases": [
    "aquarium maintenance",
@@ -3647,7 +3600,7 @@
    "DEX": 0.5,
    "WIS": 0.3,
    "CHA": 0.15,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "trimming dog nails",
@@ -3662,7 +3615,7 @@
    "WIS": 0.45,
    "INT": 0.2,
    "CON": 0.15,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "animal fostering",
@@ -3676,7 +3629,7 @@
    "DEX": 0.25,
    "CON": 0.15,
    "WIS": 0.1,
-   "DIS": 0.3
+   "DIS": 0.2
   },
   "aliases": [
    "birdcage cleaning",
@@ -3692,7 +3645,7 @@
    "INT": 0.3,
    "DEX": 0.15,
    "CON": 0.15,
-   "DIS": 0.3
+   "DIS": 0.2
   },
   "aliases": [
    "puppy training",
@@ -3707,7 +3660,7 @@
    "CHA": 0.3,
    "INT": 0.2,
    "CON": 0.15,
-   "DIS": 0.25
+   "DIS": 0.2
   },
   "aliases": [
    "vet visit",
@@ -3807,8 +3760,7 @@
    "DEX": 0.25,
    "WIS": 0.15,
    "CON": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "flossing teeth",
@@ -3878,8 +3830,7 @@
   "weights": {
    "WIS": 0.6,
    "CHA": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "gratitude journaling",
@@ -3908,7 +3859,8 @@
    "DEX": 0.4,
    "WIS": 0.1,
    "CON": 0.05,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "shaving my face",
@@ -3923,7 +3875,8 @@
    "CHA": 0.2,
    "WIS": 0.15,
    "INT": 0.15,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "doing makeup",
@@ -3938,7 +3891,8 @@
    "DEX": 0.45,
    "CHA": 0.2,
    "WIS": 0.1,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "doing my hair",
@@ -3953,7 +3907,8 @@
    "DEX": 0.55,
    "WIS": 0.2,
    "CHA": 0.15,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "manicure",
@@ -3968,8 +3923,8 @@
    "DEX": 0.55,
    "WIS": 0.2,
    "CHA": 0.1,
-   "DIS": 0.28,
-   "CRE": 0.45
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "doing nails",
@@ -3984,7 +3939,8 @@
    "DEX": 0.45,
    "WIS": 0.1,
    "CHA": 0.15,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "beard trim",
@@ -3998,7 +3954,8 @@
    "DEX": 0.35,
    "STR": 0.05,
    "CHA": 0.1,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "blow dry",
@@ -4012,7 +3969,8 @@
    "DEX": 0.2,
    "WIS": 0.3,
    "CON": 0.1,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "face mask",
@@ -4026,7 +3984,8 @@
   "weights": {
    "DEX": 0.55,
    "WIS": 0.2,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "tweezing eyebrows",
@@ -4041,7 +4000,8 @@
    "INT": 0.2,
    "CHA": 0.2,
    "WIS": 0.15,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "haircutting",
@@ -4056,7 +4016,8 @@
    "DEX": 0.6,
    "WIS": 0.15,
    "CHA": 0.15,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "hair braiding",
@@ -4071,7 +4032,8 @@
    "CHA": 0.2,
    "DEX": 0.1,
    "WIS": 0.05,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "spraying perfume",
@@ -4085,7 +4047,8 @@
    "DEX": 0.25,
    "WIS": 0.15,
    "CON": 0.15,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "scrubbing skin",
@@ -4099,7 +4062,8 @@
   "weights": {
    "CHA": 0.15,
    "WIS": 0.15,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "salon visit",
@@ -4114,7 +4078,8 @@
    "DEX": 0.2,
    "WIS": 0.15,
    "CON": 0.1,
-   "DIS": 0.28
+   "DIS": 0.15,
+   "CRE": 0.1
   },
   "aliases": [
    "applying lotion",
@@ -4130,7 +4095,7 @@
    "DEX": 0.15,
    "CON": 0.15,
    "INT": 0.15,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "the commute",
@@ -4147,7 +4112,7 @@
    "DEX": 0.2,
    "INT": 0.2,
    "CHA": 0.1,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "long drive",
@@ -4163,7 +4128,7 @@
    "DEX": 0.35,
    "INT": 0.2,
    "CON": 0.15,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "changing a flat",
@@ -4178,7 +4143,7 @@
    "DEX": 0.5,
    "INT": 0.25,
    "WIS": 0.15,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "parking the car",
@@ -4193,7 +4158,7 @@
    "WIS": 0.3,
    "CON": 0.25,
    "INT": 0.15,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "motorcycling",
@@ -4209,7 +4174,7 @@
    "DEX": 0.25,
    "STR": 0.15,
    "WIS": 0.1,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "bike commuting",
@@ -4223,7 +4188,7 @@
    "INT": 0.35,
    "DEX": 0.3,
    "STR": 0.15,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "jump starting a battery",
@@ -4238,7 +4203,7 @@
    "INT": 0.35,
    "WIS": 0.2,
    "CON": 0.1,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "driving manual",
@@ -4252,7 +4217,7 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.3,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "map reading",
@@ -4267,7 +4232,7 @@
    "DEX": 0.5,
    "INT": 0.35,
    "WIS": 0.25,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "reversing a trailer",
@@ -4280,7 +4245,7 @@
   "weights": {
    "DEX": 0.25,
    "INT": 0.25,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "inflating tires",
@@ -4293,7 +4258,7 @@
   "weights": {
    "DEX": 0.15,
    "INT": 0.05,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "filling up the tank",
@@ -4309,7 +4274,7 @@
    "DEX": 0.3,
    "INT": 0.2,
    "CON": 0.15,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "rush hour driving",
@@ -4324,7 +4289,7 @@
    "WIS": 0.2,
    "INT": 0.2,
    "CON": 0.1,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "riding the bus",
@@ -4339,7 +4304,7 @@
    "DEX": 0.4,
    "CON": 0.25,
    "WIS": 0.15,
-   "DIS": 0.18
+   "DIS": 0.1
   },
   "aliases": [
    "kick scooter",
@@ -4355,7 +4320,7 @@
    "CON": 0.2,
    "WIS": 0.15,
    "DEX": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "food shopping",
@@ -4370,7 +4335,7 @@
    "INT": 0.25,
    "CON": 0.2,
    "WIS": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "doing errands",
@@ -4385,7 +4350,7 @@
    "STR": 0.5,
    "CON": 0.35,
    "DEX": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "hauling groceries",
@@ -4398,7 +4363,7 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.25,
-   "DIS": 0.3
+   "DIS": 0.12
   },
   "aliases": [
    "planning meals",
@@ -4413,7 +4378,7 @@
    "INT": 0.15,
    "WIS": 0.15,
    "DEX": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "shopping for clothes",
@@ -4428,7 +4393,7 @@
    "INT": 0.4,
    "WIS": 0.25,
    "CHA": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "thrifting",
@@ -4442,7 +4407,7 @@
   "weights": {
    "INT": 0.45,
    "WIS": 0.2,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "price comparison",
@@ -4456,7 +4421,7 @@
    "CHA": 0.3,
    "INT": 0.2,
    "WIS": 0.2,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "making a return",
@@ -4472,7 +4437,7 @@
    "CHA": 0.25,
    "INT": 0.2,
    "CON": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "farmers market",
@@ -4487,7 +4452,7 @@
    "INT": 0.2,
    "DEX": 0.15,
    "CON": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "shipping a parcel",
@@ -4501,7 +4466,7 @@
   "weights": {
    "INT": 0.2,
    "WIS": 0.2,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "pharmacy pickup",
@@ -4516,7 +4481,7 @@
    "CHA": 0.15,
    "WIS": 0.15,
    "STR": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "furniture shopping",
@@ -4529,7 +4494,7 @@
   "weights": {
    "INT": 0.3,
    "WIS": 0.15,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "shopping online",
@@ -4545,7 +4510,7 @@
    "CON": 0.2,
    "DEX": 0.15,
    "STR": 0.1,
-   "DIS": 0.2
+   "DIS": 0.12
   },
   "aliases": [
    "stocking up",
@@ -4560,7 +4525,7 @@
    "CON": 0.1,
    "WIS": 0.05,
    "INT": 0.05,
-   "DIS": 0.3
+   "DIS": 0.12
   },
   "aliases": [
    "dry cleaner run",
@@ -4574,7 +4539,8 @@
    "WIS": 0.3,
    "CON": 0.25,
    "INT": 0.2,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "CRE": 0.05
   },
   "aliases": [
    "flying",
@@ -4589,7 +4555,8 @@
    "WIS": 0.35,
    "CON": 0.3,
    "INT": 0.3,
-   "CHA": 0.1
+   "CHA": 0.1,
+   "CRE": 0.05
   },
   "aliases": [
    "seeing the sights",
@@ -4604,7 +4571,8 @@
    "WIS": 0.35,
    "INT": 0.35,
    "CON": 0.35,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "CRE": 0.05
   },
   "aliases": [
    "city exploring",
@@ -4618,7 +4586,8 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.35,
-   "CHA": 0.05
+   "CHA": 0.05,
+   "CRE": 0.05
   },
   "aliases": [
    "museum visit",
@@ -4632,7 +4601,8 @@
   "weights": {
    "INT": 0.5,
    "CHA": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "CRE": 0.05
   },
   "aliases": [
    "practicing a language abroad",
@@ -4645,7 +4615,8 @@
   "weights": {
    "INT": 0.35,
    "DEX": 0.2,
-   "WIS": 0.15
+   "WIS": 0.15,
+   "CRE": 0.05
   },
   "aliases": [
    "packing for a trip",
@@ -4658,7 +4629,8 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.3,
-   "CON": 0.15
+   "CON": 0.15,
+   "CRE": 0.05
   },
   "aliases": [
    "riding the metro abroad",
@@ -4671,7 +4643,8 @@
   "weights": {
    "WIS": 0.3,
    "CHA": 0.2,
-   "INT": 0.15
+   "INT": 0.15,
+   "CRE": 0.05
   },
   "aliases": [
    "food tourism",
@@ -4687,7 +4660,8 @@
    "WIS": 0.4,
    "INT": 0.35,
    "CHA": 0.25,
-   "STR": 0.2
+   "STR": 0.2,
+   "CRE": 0.05
   },
   "aliases": [
    "backpacking overseas",
@@ -4701,7 +4675,8 @@
   "weights": {
    "WIS": 0.35,
    "INT": 0.25,
-   "CHA": 0.25
+   "CHA": 0.25,
+   "CRE": 0.05
   },
   "aliases": [
    "vineyard tour",
@@ -4715,7 +4690,8 @@
   "weights": {
    "INT": 0.35,
    "WIS": 0.25,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.05
   },
   "aliases": [
    "guided tour",
@@ -4731,7 +4707,8 @@
    "WIS": 0.3,
    "INT": 0.25,
    "STR": 0.2,
-   "CHA": 0.15
+   "CHA": 0.15,
+   "CRE": 0.05
   },
   "aliases": [
    "overlanding",
@@ -4746,7 +4723,7 @@
    "DEX": 0.35,
    "WIS": 0.3,
    "INT": 0.3,
-   "CRE": 0.45
+   "CRE": 0.05
   },
   "aliases": [
    "travel photography",
@@ -4760,7 +4737,8 @@
   "weights": {
    "WIS": 0.25,
    "CHA": 0.25,
-   "CON": 0.15
+   "CON": 0.15,
+   "CRE": 0.05
   },
   "aliases": [
    "taking a cruise",
@@ -4773,7 +4751,8 @@
   "weights": {
    "CON": 0.45,
    "WIS": 0.4,
-   "INT": 0.2
+   "INT": 0.2,
+   "CRE": 0.05
   },
   "aliases": [
    "national park trip",
@@ -4789,7 +4768,8 @@
    "WIS": 0.35,
    "CHA": 0.25,
    "CON": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "baby bath",
@@ -4804,7 +4784,8 @@
    "DEX": 0.4,
    "WIS": 0.2,
    "CON": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "diaper change",
@@ -4820,7 +4801,8 @@
    "CON": 0.3,
    "WIS": 0.3,
    "DEX": 0.2,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "playing with children",
@@ -4836,7 +4818,8 @@
    "DEX": 0.3,
    "CHA": 0.25,
    "CON": 0.1,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "spoon-feeding a toddler",
@@ -4850,7 +4833,8 @@
    "CHA": 0.4,
    "WIS": 0.35,
    "INT": 0.2,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "bedtime reading",
@@ -4865,7 +4849,8 @@
    "INT": 0.5,
    "CHA": 0.3,
    "WIS": 0.3,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "homework help",
@@ -4880,7 +4865,8 @@
    "CON": 0.35,
    "STR": 0.15,
    "WIS": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "stroller walk",
@@ -4896,7 +4882,8 @@
    "WIS": 0.35,
    "DEX": 0.25,
    "CON": 0.2,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "bike lessons for kids",
@@ -4910,7 +4897,8 @@
    "WIS": 0.55,
    "CHA": 0.35,
    "CON": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "calming a baby",
@@ -4924,7 +4912,8 @@
    "STR": 0.5,
    "CON": 0.3,
    "DEX": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "shoulder ride",
@@ -4940,7 +4929,8 @@
    "DEX": 0.3,
    "INT": 0.25,
    "WIS": 0.2,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "playing with blocks",
@@ -4956,7 +4946,8 @@
    "CHA": 0.35,
    "INT": 0.2,
    "CON": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "toilet training",
@@ -4971,7 +4962,8 @@
    "DEX": 0.25,
    "WIS": 0.15,
    "CON": 0.1,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "making lunchboxes",
@@ -4987,7 +4979,8 @@
    "CON": 0.3,
    "INT": 0.2,
    "DEX": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "coaching youth sports",
@@ -5002,7 +4995,8 @@
    "CHA": 0.3,
    "CON": 0.25,
    "STR": 0.15,
-   "DIS": 0.35
+   "DIS": 0.35,
+   "CRE": 0.05
   },
   "aliases": [
    "rocking the baby",
@@ -5108,8 +5102,7 @@
   "weights": {
    "CHA": 0.4,
    "WIS": 0.4,
-   "INT": 0.25,
-   "CRE": 0.45
+   "INT": 0.25
   },
   "aliases": [
    "letter to a loved one",
@@ -5161,8 +5154,7 @@
   "weights": {
    "CHA": 0.4,
    "WIS": 0.35,
-   "INT": 0.15,
-   "CRE": 0.45
+   "INT": 0.15
   },
   "aliases": [
    "gift giving",
@@ -5188,8 +5180,7 @@
   "weights": {
    "WIS": 0.55,
    "CHA": 0.4,
-   "INT": 0.05,
-   "DIS": 0.3
+   "INT": 0.05
   },
   "aliases": [
    "apology",
@@ -5214,7 +5205,9 @@
   "weights": {
    "CHA": 0.55,
    "INT": 0.35,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "slide deck talk",
@@ -5227,7 +5220,9 @@
   "weights": {
    "CHA": 0.6,
    "WIS": 0.3,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "toast",
@@ -5240,7 +5235,9 @@
   "weights": {
    "INT": 0.5,
    "CHA": 0.45,
-   "WIS": 0.2
+   "WIS": 0.2,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "debating",
@@ -5254,7 +5251,8 @@
    "CHA": 0.6,
    "WIS": 0.35,
    "INT": 0.15,
-   "CRE": 0.45
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "storytelling",
@@ -5268,7 +5266,8 @@
    "CHA": 0.6,
    "INT": 0.3,
    "WIS": 0.15,
-   "CRE": 0.45
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "podcast hosting",
@@ -5281,7 +5280,9 @@
   "weights": {
    "CHA": 0.5,
    "INT": 0.3,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "panel moderator",
@@ -5294,7 +5295,9 @@
   "weights": {
    "CHA": 0.55,
    "INT": 0.4,
-   "WIS": 0.1
+   "WIS": 0.1,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "startup pitch",
@@ -5307,7 +5310,9 @@
   "weights": {
    "CHA": 0.5,
    "INT": 0.4,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "teaching",
@@ -5321,7 +5326,9 @@
   "weights": {
    "CHA": 0.5,
    "INT": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "negotiation",
@@ -5335,7 +5342,8 @@
    "INT": 0.5,
    "CHA": 0.35,
    "WIS": 0.15,
-   "CRE": 0.45
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "speechwriting",
@@ -5348,7 +5356,9 @@
   "weights": {
    "CHA": 0.5,
    "INT": 0.3,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "interviewing someone",
@@ -5361,7 +5371,9 @@
   "weights": {
    "WIS": 0.45,
    "CHA": 0.4,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "feedback",
@@ -5374,7 +5386,9 @@
   "weights": {
    "CHA": 0.7,
    "WIS": 0.1,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "mc",
@@ -5389,7 +5403,8 @@
    "CHA": 0.45,
    "INT": 0.35,
    "DEX": 0.1,
-   "CRE": 0.45
+   "DIS": 0.1,
+   "CRE": 0.15
   },
   "aliases": [
    "explainer",
@@ -5404,7 +5419,8 @@
    "CHA": 0.4,
    "WIS": 0.35,
    "CON": 0.25,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.12
   },
   "aliases": [
    "homeless shelter",
@@ -5416,7 +5432,8 @@
   "category": "Community & Volunteering",
   "weights": {
    "CON": 0.5,
-   "WIS": 0.35
+   "WIS": 0.35,
+   "DIS": 0.12
   },
   "aliases": [
    "blood donation",
@@ -5430,7 +5447,8 @@
    "CON": 0.4,
    "STR": 0.3,
    "WIS": 0.25,
-   "DEX": 0.2
+   "DEX": 0.2,
+   "DIS": 0.12
   },
   "aliases": [
    "community garden",
@@ -5444,7 +5462,7 @@
    "CON": 0.45,
    "STR": 0.3,
    "WIS": 0.25,
-   "DIS": 0.3
+   "DIS": 0.12
   },
   "aliases": [
    "litter pickup",
@@ -5459,7 +5477,8 @@
    "CHA": 0.4,
    "CON": 0.3,
    "STR": 0.2,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.12
   },
   "aliases": [
    "soup kitchen",
@@ -5472,7 +5491,8 @@
   "weights": {
    "CHA": 0.45,
    "WIS": 0.4,
-   "INT": 0.2
+   "INT": 0.2,
+   "DIS": 0.12
   },
   "aliases": [
    "youth mentoring",
@@ -5486,7 +5506,7 @@
    "INT": 0.4,
    "CHA": 0.4,
    "WIS": 0.2,
-   "DIS": 0.3
+   "DIS": 0.12
   },
   "aliases": [
    "fundraiser",
@@ -5499,7 +5519,8 @@
   "weights": {
    "INT": 0.45,
    "CHA": 0.35,
-   "WIS": 0.25
+   "WIS": 0.25,
+   "DIS": 0.12
   },
   "aliases": [
    "free tutoring",
@@ -5513,7 +5534,8 @@
    "STR": 0.5,
    "CON": 0.35,
    "DEX": 0.3,
-   "INT": 0.1
+   "INT": 0.1,
+   "DIS": 0.12
   },
   "aliases": [
    "habitat for humanity",
@@ -5526,7 +5548,7 @@
   "weights": {
    "CHA": 0.5,
    "WIS": 0.45,
-   "CRE": 0.45
+   "DIS": 0.12
   },
   "aliases": [
    "nursing home visit",
@@ -5540,7 +5562,8 @@
    "CHA": 0.35,
    "WIS": 0.3,
    "CON": 0.3,
-   "STR": 0.2
+   "STR": 0.2,
+   "DIS": 0.12
   },
   "aliases": [
    "animal shelter",
@@ -5554,7 +5577,8 @@
    "STR": 0.45,
    "CON": 0.45,
    "WIS": 0.3,
-   "CHA": 0.2
+   "CHA": 0.2,
+   "DIS": 0.12
   },
   "aliases": [
    "disaster response",
@@ -5568,7 +5592,8 @@
    "CHA": 0.45,
    "WIS": 0.3,
    "CON": 0.25,
-   "STR": 0.15
+   "STR": 0.15,
+   "DIS": 0.12
   },
   "aliases": [
    "volunteer coach",
@@ -5582,7 +5607,7 @@
    "CHA": 0.5,
    "CON": 0.3,
    "WIS": 0.2,
-   "CRE": 0.45
+   "DIS": 0.12
   },
   "aliases": [
    "door knocking",
@@ -5598,7 +5623,7 @@
    "CHA": 0.35,
    "WIS": 0.2,
    "CON": 0.15,
-   "DIS": 0.3
+   "DIS": 0.12
   },
   "aliases": [
    "food drive",
@@ -5687,8 +5712,7 @@
    "INT": 0.4,
    "WIS": 0.35,
    "CHA": 0.25,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "performance review",
@@ -5894,8 +5918,7 @@
    "INT": 0.55,
    "WIS": 0.3,
    "CHA": 0.1,
-   "DIS": 0.4,
-   "CRE": 0.45
+   "DIS": 0.4
   },
   "aliases": [
    "business plan",
@@ -6041,7 +6064,7 @@
    "INT": 0.55,
    "CON": 0.3,
    "WIS": 0.25,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "exam prep",
@@ -6056,7 +6079,7 @@
   "weights": {
    "INT": 0.55,
    "CON": 0.3,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "mooc",
@@ -6072,7 +6095,7 @@
    "INT": 0.5,
    "CON": 0.35,
    "WIS": 0.1,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "anki",
@@ -6087,7 +6110,7 @@
    "INT": 0.45,
    "WIS": 0.3,
    "DEX": 0.1,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "note taking",
@@ -6101,7 +6124,7 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.35,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "documentary",
@@ -6115,7 +6138,7 @@
    "INT": 0.45,
    "WIS": 0.3,
    "CON": 0.1,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "lecture",
@@ -6129,7 +6152,7 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.25,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "academic paper",
@@ -6144,7 +6167,7 @@
    "INT": 0.4,
    "DEX": 0.3,
    "CON": 0.25,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "youtube tutorial",
@@ -6159,7 +6182,7 @@
    "INT": 0.5,
    "WIS": 0.3,
    "DEX": 0.1,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "mind map",
@@ -6174,8 +6197,7 @@
    "INT": 0.5,
    "WIS": 0.3,
    "CON": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.35
   },
   "aliases": [
    "memorizing",
@@ -6189,8 +6211,7 @@
   "weights": {
    "INT": 0.75,
    "CON": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.35
   },
   "aliases": [
    "math practice",
@@ -6205,7 +6226,7 @@
    "INT": 0.5,
    "CON": 0.35,
    "WIS": 0.25,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "deep work",
@@ -6220,7 +6241,7 @@
    "INT": 0.4,
    "CHA": 0.35,
    "WIS": 0.15,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "study group",
@@ -6234,7 +6255,7 @@
    "INT": 0.55,
    "CON": 0.3,
    "WIS": 0.2,
-   "DIS": 0.3
+   "DIS": 0.35
   },
   "aliases": [
    "certification prep",
@@ -6248,8 +6269,7 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.35,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.35
   },
   "aliases": [
    "history reading",
@@ -6279,8 +6299,7 @@
    "CHA": 0.45,
    "INT": 0.35,
    "WIS": 0.25,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "language partner",
@@ -6296,8 +6315,7 @@
    "DEX": 0.3,
    "WIS": 0.2,
    "CON": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "japanese",
@@ -6314,8 +6332,7 @@
    "DEX": 0.25,
    "WIS": 0.2,
    "CON": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "mandarin",
@@ -6330,8 +6347,7 @@
   "weights": {
    "INT": 0.45,
    "CON": 0.35,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "duolingo",
@@ -6360,8 +6376,7 @@
    "INT": 0.4,
    "DEX": 0.3,
    "CHA": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "french",
@@ -6376,8 +6391,7 @@
    "INT": 0.4,
    "WIS": 0.3,
    "CHA": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "subtitles",
@@ -6477,8 +6491,7 @@
    "INT": 0.35,
    "CHA": 0.25,
    "CON": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "shadowing",
@@ -6492,7 +6505,7 @@
   "weights": {
    "INT": 0.4,
    "WIS": 0.4,
-   "CRE": 0.45
+   "DIS": 0.15
   },
   "aliases": [
    "novel",
@@ -6505,7 +6518,8 @@
   "category": "Reading & Writing",
   "weights": {
    "INT": 0.55,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.15
   },
   "aliases": [
    "nonfiction",
@@ -6520,6 +6534,7 @@
    "INT": 0.4,
    "WIS": 0.4,
    "CHA": 0.15,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -6535,7 +6550,7 @@
    "INT": 0.4,
    "CHA": 0.3,
    "WIS": 0.25,
-   "DIS": 0.3,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -6551,6 +6566,7 @@
    "WIS": 0.5,
    "INT": 0.35,
    "CHA": 0.15,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -6565,7 +6581,7 @@
   "weights": {
    "WIS": 0.5,
    "INT": 0.35,
-   "CRE": 0.45
+   "DIS": 0.15
   },
   "aliases": [
    "poems",
@@ -6579,6 +6595,7 @@
    "INT": 0.45,
    "WIS": 0.35,
    "CHA": 0.15,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -6592,7 +6609,8 @@
   "weights": {
    "INT": 0.5,
    "WIS": 0.3,
-   "DEX": 0.1
+   "DEX": 0.1,
+   "DIS": 0.15
   },
   "aliases": [
    "proofreading",
@@ -6605,7 +6623,8 @@
   "category": "Reading & Writing",
   "weights": {
    "INT": 0.5,
-   "WIS": 0.45
+   "WIS": 0.45,
+   "DIS": 0.15
   },
   "aliases": [
    "philosophy",
@@ -6617,7 +6636,8 @@
   "category": "Reading & Writing",
   "weights": {
    "WIS": 0.6,
-   "INT": 0.15
+   "INT": 0.15,
+   "DIS": 0.15
   },
   "aliases": [
    "diary",
@@ -6632,6 +6652,7 @@
    "INT": 0.45,
    "WIS": 0.3,
    "CHA": 0.2,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -6646,7 +6667,8 @@
   "weights": {
    "CHA": 0.45,
    "INT": 0.35,
-   "WIS": 0.3
+   "WIS": 0.3,
+   "DIS": 0.15
   },
   "aliases": [
    "book club",
@@ -6660,6 +6682,7 @@
    "WIS": 0.45,
    "INT": 0.4,
    "CHA": 0.15,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -6675,8 +6698,7 @@
    "INT": 0.5,
    "CON": 0.2,
    "DEX": 0.1,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.15
   },
   "aliases": [
    "speed reading",
@@ -6691,7 +6713,7 @@
    "CON": 0.2,
    "DEX": 0.15,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "programming",
@@ -6708,7 +6730,7 @@
    "WIS": 0.3,
    "CON": 0.2,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "debugging",
@@ -6725,7 +6747,7 @@
    "CHA": 0.15,
    "WIS": 0.1,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "web development",
@@ -6740,7 +6762,7 @@
    "INT": 0.6,
    "CON": 0.25,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "learn to code",
@@ -6757,7 +6779,7 @@
    "CON": 0.2,
    "WIS": 0.15,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "open source",
@@ -6773,7 +6795,7 @@
    "DEX": 0.25,
    "WIS": 0.1,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "home server",
@@ -6789,7 +6811,7 @@
    "WIS": 0.15,
    "DEX": 0.1,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "automation",
@@ -6804,7 +6826,7 @@
    "INT": 0.65,
    "WIS": 0.25,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "data science",
@@ -6819,8 +6841,8 @@
    "INT": 0.65,
    "WIS": 0.2,
    "CON": 0.15,
-   "DIS": 0.3,
-   "CRE": 0.25
+   "DIS": 0.22,
+   "CRE": 0.2
   },
   "aliases": [
    "machine learning",
@@ -6837,7 +6859,7 @@
    "WIS": 0.25,
    "CHA": 0.2,
    "DIS": 0.22,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "docs",
@@ -6853,7 +6875,7 @@
    "WIS": 0.3,
    "CHA": 0.2,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "code review",
@@ -6868,7 +6890,7 @@
    "DEX": 0.2,
    "WIS": 0.1,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "linux",
@@ -6886,7 +6908,7 @@
    "CHA": 0.15,
    "WIS": 0.1,
    "DIS": 0.22,
-   "CRE": 0.25
+   "CRE": 0.2
   },
   "aliases": [
    "app development",
@@ -6901,8 +6923,8 @@
    "INT": 0.55,
    "WIS": 0.25,
    "CON": 0.2,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.22,
+   "CRE": 0.2
   },
   "aliases": [
    "cybersecurity",
@@ -6918,7 +6940,7 @@
    "INT": 0.65,
    "WIS": 0.2,
    "DIS": 0.22,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "database design",
@@ -6933,8 +6955,8 @@
    "INT": 0.45,
    "DEX": 0.4,
    "WIS": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "pc build",
@@ -6949,8 +6971,8 @@
    "INT": 0.4,
    "DEX": 0.35,
    "WIS": 0.2,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "3d print",
@@ -6965,8 +6987,8 @@
    "INT": 0.5,
    "DEX": 0.35,
    "WIS": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "arduino",
@@ -6983,8 +7005,8 @@
    "DEX": 0.3,
    "WIS": 0.2,
    "CON": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "chemistry experiment",
@@ -6999,8 +7021,8 @@
    "WIS": 0.45,
    "INT": 0.35,
    "CON": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "astronomy",
@@ -7015,8 +7037,8 @@
    "INT": 0.5,
    "DEX": 0.35,
    "WIS": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "robotics",
@@ -7032,8 +7054,8 @@
    "STR": 0.3,
    "INT": 0.25,
    "WIS": 0.2,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "woodworking",
@@ -7048,8 +7070,8 @@
    "DEX": 0.5,
    "INT": 0.35,
    "WIS": 0.2,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "electronics repair",
@@ -7064,8 +7086,8 @@
    "STR": 0.35,
    "DEX": 0.35,
    "INT": 0.3,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "home improvement",
@@ -7081,8 +7103,8 @@
    "INT": 0.45,
    "DEX": 0.3,
    "WIS": 0.2,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "model rockets",
@@ -7098,8 +7120,8 @@
    "DEX": 0.2,
    "CHA": 0.2,
    "WIS": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "ham radio",
@@ -7115,8 +7137,8 @@
    "INT": 0.35,
    "CON": 0.25,
    "DEX": 0.1,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "hydroponics",
@@ -7132,8 +7154,8 @@
    "CON": 0.3,
    "INT": 0.25,
    "DEX": 0.2,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "bees",
@@ -7149,8 +7171,8 @@
    "WIS": 0.3,
    "DEX": 0.2,
    "CON": 0.15,
-   "DIS": 0.22,
-   "CRE": 0.3
+   "DIS": 0.2,
+   "CRE": 0.35
   },
   "aliases": [
    "homebrew",
@@ -7167,6 +7189,7 @@
    "WIS": 0.3,
    "INT": 0.12,
    "CHA": 0.03,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7183,6 +7206,7 @@
    "INT": 0.3,
    "WIS": 0.25,
    "CHA": 0.03,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7198,6 +7222,7 @@
    "WIS": 0.22,
    "INT": 0.18,
    "CHA": 0.03,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7213,6 +7238,7 @@
    "INT": 0.35,
    "WIS": 0.15,
    "CHA": 0.05,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7228,6 +7254,7 @@
    "DEX": 0.55,
    "WIS": 0.35,
    "INT": 0.18,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7242,6 +7269,7 @@
    "DEX": 0.7,
    "INT": 0.2,
    "WIS": 0.2,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7257,6 +7285,7 @@
    "DEX": 0.62,
    "INT": 0.22,
    "WIS": 0.2,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7272,6 +7301,7 @@
    "DEX": 0.6,
    "WIS": 0.28,
    "INT": 0.15,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7287,6 +7317,7 @@
    "DEX": 0.55,
    "INT": 0.3,
    "WIS": 0.25,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7301,6 +7332,7 @@
    "DEX": 0.5,
    "INT": 0.28,
    "WIS": 0.3,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7316,6 +7348,7 @@
    "DEX": 0.58,
    "WIS": 0.24,
    "INT": 0.2,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7331,6 +7364,7 @@
    "STR": 0.25,
    "CHA": 0.2,
    "INT": 0.15,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7345,7 +7379,7 @@
   "weights": {
    "INT": 0.65,
    "WIS": 0.25,
-   "DIS": 0.3,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7361,6 +7395,7 @@
    "INT": 0.3,
    "WIS": 0.2,
    "CHA": 0.15,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7376,6 +7411,7 @@
    "INT": 0.45,
    "DEX": 0.4,
    "WIS": 0.2,
+   "DIS": 0.1,
    "CRE": 0.6
   },
   "aliases": [
@@ -7391,6 +7427,7 @@
    "DEX": 0.65,
    "WIS": 0.3,
    "INT": 0.15,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7407,6 +7444,7 @@
    "WIS": 0.3,
    "STR": 0.15,
    "CON": 0.15,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7422,6 +7460,7 @@
    "DEX": 0.55,
    "WIS": 0.3,
    "INT": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7438,6 +7477,7 @@
    "STR": 0.2,
    "WIS": 0.25,
    "INT": 0.15,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7451,6 +7491,7 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.35,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7465,6 +7506,7 @@
    "DEX": 0.6,
    "WIS": 0.3,
    "CON": 0.1,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7478,6 +7520,7 @@
   "weights": {
    "DEX": 0.6,
    "WIS": 0.3,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7492,6 +7535,7 @@
    "DEX": 0.55,
    "INT": 0.25,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7506,6 +7550,7 @@
   "weights": {
    "DEX": 0.65,
    "WIS": 0.3,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7520,6 +7565,7 @@
    "DEX": 0.55,
    "INT": 0.3,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7534,6 +7580,7 @@
    "DEX": 0.6,
    "WIS": 0.2,
    "INT": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7550,6 +7597,7 @@
    "STR": 0.2,
    "INT": 0.2,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7565,6 +7613,7 @@
    "DEX": 0.4,
    "INT": 0.3,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7581,6 +7630,7 @@
    "DEX": 0.35,
    "WIS": 0.2,
    "CON": 0.1,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7596,6 +7646,7 @@
    "INT": 0.25,
    "WIS": 0.25,
    "CON": 0.1,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7610,6 +7661,7 @@
    "DEX": 0.6,
    "WIS": 0.3,
    "INT": 0.1,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7624,6 +7676,7 @@
    "DEX": 0.55,
    "INT": 0.25,
    "WIS": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7639,6 +7692,7 @@
    "DEX": 0.55,
    "INT": 0.3,
    "WIS": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7655,6 +7709,7 @@
    "CON": 0.3,
    "DEX": 0.25,
    "WIS": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7670,6 +7725,7 @@
    "DEX": 0.45,
    "INT": 0.3,
    "CHA": 0.3,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7687,6 +7743,7 @@
    "INT": 0.25,
    "WIS": 0.2,
    "CON": 0.1,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7702,6 +7759,7 @@
    "CON": 0.3,
    "STR": 0.2,
    "INT": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7717,6 +7775,7 @@
    "INT": 0.45,
    "DEX": 0.3,
    "WIS": 0.25,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7733,6 +7792,7 @@
    "WIS": 0.45,
    "INT": 0.35,
    "CHA": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7747,7 +7807,7 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.25,
-   "DIS": 0.3,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7763,6 +7823,7 @@
    "DEX": 0.5,
    "INT": 0.25,
    "WIS": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7777,6 +7838,7 @@
    "DEX": 0.5,
    "CON": 0.3,
    "INT": 0.25,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7791,6 +7853,7 @@
    "DEX": 0.55,
    "CON": 0.25,
    "INT": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7805,6 +7868,7 @@
    "CHA": 0.35,
    "INT": 0.2,
    "WIS": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7820,6 +7884,7 @@
    "INT": 0.5,
    "DEX": 0.35,
    "WIS": 0.1,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7834,6 +7899,7 @@
    "DEX": 0.5,
    "INT": 0.2,
    "WIS": 0.2,
+   "DIS": 0.15,
    "CRE": 0.55
   },
   "aliases": [
@@ -7849,6 +7915,7 @@
    "WIS": 0.3,
    "INT": 0.2,
    "DEX": 0.15,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7865,6 +7932,7 @@
    "CHA": 0.55,
    "WIS": 0.3,
    "INT": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7879,6 +7947,7 @@
    "CHA": 0.55,
    "WIS": 0.3,
    "INT": 0.25,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7895,6 +7964,7 @@
    "CON": 0.3,
    "DEX": 0.3,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7910,6 +7980,7 @@
    "DEX": 0.5,
    "CHA": 0.35,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7924,6 +7995,7 @@
    "DEX": 0.6,
    "CHA": 0.3,
    "INT": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7940,6 +8012,7 @@
    "CHA": 0.45,
    "DEX": 0.3,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7955,6 +8028,7 @@
    "DEX": 0.5,
    "CHA": 0.35,
    "WIS": 0.25,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7969,6 +8043,7 @@
    "CHA": 0.45,
    "WIS": 0.4,
    "INT": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7984,6 +8059,7 @@
    "INT": 0.4,
    "CHA": 0.35,
    "WIS": 0.3,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -7998,6 +8074,7 @@
    "DEX": 0.6,
    "CON": 0.25,
    "STR": 0.15,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -8014,6 +8091,7 @@
    "STR": 0.3,
    "CON": 0.25,
    "INT": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -8029,6 +8107,7 @@
    "CON": 0.35,
    "DEX": 0.25,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -8044,6 +8123,7 @@
    "DEX": 0.45,
    "CHA": 0.4,
    "WIS": 0.2,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -8059,6 +8139,7 @@
    "CHA": 0.5,
    "WIS": 0.3,
    "INT": 0.15,
+   "DIS": 0.12,
    "CRE": 0.55
   },
   "aliases": [
@@ -8075,6 +8156,7 @@
    "CON": 0.3,
    "STR": 0.25,
    "WIS": 0.15,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8091,6 +8173,7 @@
    "CON": 0.3,
    "STR": 0.2,
    "CHA": 0.2,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8105,6 +8188,7 @@
    "DEX": 0.45,
    "CON": 0.3,
    "CHA": 0.3,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8120,6 +8204,7 @@
    "CHA": 0.3,
    "CON": 0.25,
    "WIS": 0.1,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8136,6 +8221,7 @@
    "WIS": 0.3,
    "CON": 0.25,
    "CHA": 0.2,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8150,6 +8236,7 @@
    "STR": 0.4,
    "DEX": 0.4,
    "CON": 0.3,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8165,6 +8252,7 @@
    "DEX": 0.5,
    "CON": 0.25,
    "INT": 0.2,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8179,6 +8267,7 @@
    "DEX": 0.45,
    "CON": 0.3,
    "CHA": 0.3,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8195,6 +8284,7 @@
    "CHA": 0.3,
    "WIS": 0.25,
    "CON": 0.2,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8208,6 +8298,7 @@
    "DEX": 0.45,
    "CON": 0.3,
    "CHA": 0.3,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8222,6 +8313,7 @@
    "DEX": 0.4,
    "CON": 0.25,
    "CHA": 0.25,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8236,6 +8328,7 @@
    "DEX": 0.5,
    "CON": 0.25,
    "CHA": 0.25,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8250,6 +8343,7 @@
    "STR": 0.45,
    "DEX": 0.35,
    "CON": 0.3,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8264,6 +8358,7 @@
    "CON": 0.45,
    "DEX": 0.3,
    "CHA": 0.2,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8279,6 +8374,7 @@
    "CON": 0.3,
    "CHA": 0.25,
    "WIS": 0.15,
+   "DIS": 0.15,
    "CRE": 0.45
   },
   "aliases": [
@@ -8520,7 +8616,7 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.3,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "chess game",
@@ -8533,7 +8629,7 @@
   "weights": {
    "INT": 0.7,
    "WIS": 0.1,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "sudoku puzzle",
@@ -8546,7 +8642,7 @@
   "weights": {
    "INT": 0.55,
    "WIS": 0.25,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "crossword",
@@ -8560,7 +8656,7 @@
    "CHA": 0.45,
    "INT": 0.3,
    "WIS": 0.3,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "dnd",
@@ -8575,7 +8671,7 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.35,
-   "CRE": 0.45
+   "CRE": 0.12
   },
   "aliases": [
    "gaming",
@@ -8590,7 +8686,7 @@
    "DEX": 0.35,
    "WIS": 0.35,
    "INT": 0.3,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "jigsaw",
@@ -8605,7 +8701,7 @@
    "INT": 0.45,
    "WIS": 0.3,
    "CHA": 0.3,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "texas holdem",
@@ -8619,7 +8715,7 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.35,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "go game",
@@ -8633,7 +8729,7 @@
   "weights": {
    "DEX": 0.45,
    "INT": 0.4,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "rubiks cube",
@@ -8648,7 +8744,7 @@
    "INT": 0.5,
    "CHA": 0.25,
    "WIS": 0.25,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "eurogames",
@@ -8663,7 +8759,7 @@
    "INT": 0.5,
    "CHA": 0.3,
    "WIS": 0.1,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "pub quiz",
@@ -8679,7 +8775,7 @@
    "CHA": 0.3,
    "WIS": 0.2,
    "DEX": 0.15,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "escape room",
@@ -8694,7 +8790,7 @@
    "INT": 0.3,
    "CON": 0.2,
    "CHA": 0.15,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "esports",
@@ -8709,7 +8805,7 @@
    "INT": 0.5,
    "CHA": 0.25,
    "WIS": 0.25,
-   "CRE": 0.45
+   "CRE": 0.12
   },
   "aliases": [
    "bridge",
@@ -8722,7 +8818,7 @@
   "weights": {
    "INT": 0.6,
    "WIS": 0.3,
-   "CRE": 0.15
+   "CRE": 0.12
   },
   "aliases": [
    "riddles",
@@ -8737,7 +8833,7 @@
    "DEX": 0.45,
    "INT": 0.35,
    "CON": 0.2,
-   "CRE": 0.45
+   "CRE": 0.12
   },
   "aliases": [
    "speedrun",
@@ -8920,7 +9016,6 @@
    "DEX": 0.4,
    "INT": 0.3,
    "CHA": 0.25,
-   "DIS": 0.3,
    "CRE": 0.15
   },
   "aliases": [
@@ -9076,8 +9171,7 @@
   "weights": {
    "WIS": 0.5,
    "INT": 0.3,
-   "DIS": 0.3,
-   "CRE": 0.45
+   "DIS": 0.3
   },
   "aliases": [
    "visualization",
@@ -9108,7 +9202,7 @@
    "DEX": 0.3,
    "WIS": 0.2,
    "CHA": 0.15,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "podcast editing",
@@ -9124,7 +9218,7 @@
    "DEX": 0.3,
    "INT": 0.2,
    "CON": 0.2,
-   "CRE": 0.3
+   "CRE": 0.2
   },
   "aliases": [
    "twitch",
@@ -9140,7 +9234,7 @@
    "INT": 0.3,
    "DEX": 0.25,
    "WIS": 0.1,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "youtube",
@@ -9155,7 +9249,7 @@
    "CHA": 0.4,
    "DEX": 0.3,
    "INT": 0.25,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "tiktok",
@@ -9172,7 +9266,7 @@
    "INT": 0.35,
    "WIS": 0.25,
    "CHA": 0.1,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "graphic design",
@@ -9187,7 +9281,7 @@
    "INT": 0.4,
    "CHA": 0.35,
    "WIS": 0.2,
-   "CRE": 0.3
+   "CRE": 0.2
   },
   "aliases": [
    "memes",
@@ -9202,7 +9296,7 @@
    "CHA": 0.45,
    "INT": 0.3,
    "WIS": 0.2,
-   "CRE": 0.3
+   "CRE": 0.2
   },
   "aliases": [
    "social media",
@@ -9217,7 +9311,7 @@
    "CHA": 0.45,
    "INT": 0.3,
    "WIS": 0.25,
-   "CRE": 0.3
+   "CRE": 0.2
   },
   "aliases": [
    "personal branding",
@@ -9231,7 +9325,7 @@
    "INT": 0.45,
    "CHA": 0.3,
    "WIS": 0.2,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "newsletter",
@@ -9247,7 +9341,7 @@
    "INT": 0.35,
    "WIS": 0.15,
    "CHA": 0.1,
-   "CRE": 0.3
+   "CRE": 0.2
   },
   "aliases": [
    "vector art",
@@ -9262,7 +9356,7 @@
    "DEX": 0.45,
    "INT": 0.3,
    "WIS": 0.25,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "animation",
@@ -9277,7 +9371,7 @@
    "INT": 0.4,
    "DEX": 0.35,
    "WIS": 0.2,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "motion graphics",
@@ -9292,7 +9386,7 @@
    "WIS": 0.4,
    "INT": 0.3,
    "CHA": 0.2,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "playlist",
@@ -9307,7 +9401,7 @@
    "INT": 0.4,
    "CHA": 0.3,
    "WIS": 0.25,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "product reviews",
@@ -9323,7 +9417,7 @@
    "DEX": 0.3,
    "WIS": 0.25,
    "CHA": 0.15,
-   "CRE": 0.45
+   "CRE": 0.2
   },
   "aliases": [
    "ux design",

@@ -12,6 +12,7 @@ this module only renders it. A window is created only in :func:`run`.
 from __future__ import annotations
 
 import math
+import random
 import tkinter as tk
 
 import customtkinter as ctk
@@ -39,6 +40,7 @@ TEAL = "#6bb39b"
 TEAL_HOVER = "#7cc4ac"
 TEAL_DEEP = "#3f6f61"
 STREAK = "#d59a63"
+AVATAR = "#3a4250"  # placeholder hero silhouette
 
 DEFAULT_MINUTES = 30
 SUGGESTION_LIMIT = 7
@@ -231,32 +233,43 @@ class RadarChart:
 
 
 class LevelRing:
-    """A circular ring with the overall level in the middle."""
+    """A hero avatar inside a gold progress ring, with a level badge."""
 
-    def __init__(self, parent, app, size=96):
+    def __init__(self, parent, app, size=104):
         self.app = app
         self.size = size
         self.canvas = tk.Canvas(parent, width=size, height=size, bg=SURFACE,
                                 highlightthickness=0, bd=0)
-        self._num = ctk.CTkLabel(self.canvas, text="1", text_color=GOLD,
-                                 font=app.fonts["ring"], fg_color="transparent")
-        self.canvas.create_window(size / 2, size / 2 + 2, window=self._num)
-        self._sub = ctk.CTkLabel(self.canvas, text="LV", text_color=FAINT,
-                                 font=app.fonts["ringsub"], fg_color="transparent")
-        self.canvas.create_window(size / 2, size / 2 - 20, window=self._sub)
+        # Level badge overlaps the bottom of the ring.
+        self._badge = ctk.CTkLabel(self.canvas, text="Lv 1", text_color=BG,
+                                   font=app.fonts["ringbadge"], fg_color=GOLD,
+                                   corner_radius=9, width=44, height=20)
+        self.canvas.create_window(size / 2, size - 8, window=self._badge)
+
+    def _avatar(self):
+        c = self.canvas
+        cx = self.size / 2
+        cy = self.size / 2 - 4
+        # head
+        c.create_oval(cx - 11, cy - 20, cx + 11, cy + 2, fill=AVATAR, outline="",
+                      tags="ring")
+        # shoulders / torso
+        round_rect(c, cx - 19, cy + 5, cx + 19, cy + 30, 12, fill=AVATAR,
+                   outline="")
 
     def set(self, level, fraction):
         c = self.canvas
         c.delete("ring")
-        pad = 8
+        pad = 7
         c.create_oval(pad, pad, self.size - pad, self.size - pad, outline=GRID,
                       width=6, tags="ring")
         if fraction > 0:
             c.create_arc(pad, pad, self.size - pad, self.size - pad, start=90,
-                         extent=-359.9 * max(0.02, min(1.0, fraction)), style="arc",
+                         extent=-359.9 * max(0.03, min(1.0, fraction)), style="arc",
                          outline=GOLD, width=6, tags="ring")
+        self._avatar()
         c.tag_lower("ring")
-        self._num.configure(text=str(level))
+        self._badge.configure(text=f"Lv {level}")
 
 
 def line_icon(parent, kind, size=64, color=GOLD, bg=BG):
@@ -348,7 +361,7 @@ class CharacterView(ctk.CTkFrame):
         header.pack(fill="x", padx=8, pady=(8, 10))
         top = ctk.CTkFrame(header, fg_color="transparent")
         top.pack(fill="x", padx=22, pady=(16, 6))
-        self.ring = LevelRing(top, app, size=88)
+        self.ring = LevelRing(top, app, size=104)
         self.ring.canvas.pack(side="left", padx=(0, 20), pady=2)
         namecol = ctk.CTkFrame(top, fg_color="transparent")
         namecol.pack(side="left", anchor="w")
@@ -396,7 +409,9 @@ class CharacterView(ctk.CTkFrame):
         self.name_lbl.configure(text=c.name)
         self.class_lbl.configure(text=derived.character_class(c))
         avg = sum(c.progress(k).fraction for k in STAT_KEYS) / len(STAT_KEYS)
-        self.ring.set(c.overall_level(), avg)
+        level = c.overall_level()
+        if not animate:
+            self.ring.set(level, avg)
 
         for w in self.chips.winfo_children():
             w.destroy()
@@ -419,6 +434,7 @@ class CharacterView(ctk.CTkFrame):
                 for r in self.rows:
                     r.shown = starts[id(r)] + (r.target - starts[id(r)]) * t
                     r.bar.set(r.shown)
+                self.ring.set(level, avg * t)
 
             def done():
                 if gen != self._gen:
@@ -426,6 +442,7 @@ class CharacterView(ctk.CTkFrame):
                 for r in self.rows:
                     r.shown = r.target
                     r.bar.set(r.target)
+                self.ring.set(level, avg)
 
             tween(self, 420, frame, on_done=done)
         else:
@@ -554,6 +571,7 @@ class ActivitiesView(ctk.CTkFrame):
 
         result = self.app.log_activity(activity, minutes)
         self._burst(activity, minutes, result)
+        self.app.celebrate(result)  # no-op unless a level-up / new title happened
         self.activity_var.set("")
         self.selected = None
         self._show_explore()
@@ -586,12 +604,14 @@ class ActivitiesView(ctk.CTkFrame):
         pad = ctk.CTkLabel(pop, text="", font=self.app.fonts["small"])
         pad.pack(pady=1)
 
-        start_y = 0.60
+        start_y = 0.80
         pop.place(relx=0.5, rely=start_y, anchor="center")
+
         def frame(t):
-            pop.place_configure(rely=start_y - 0.10 * t)
+            pop.place_configure(rely=start_y - 0.08 * t)
+
         tween(self, 260, frame)
-        self.after(1500, pop.destroy)
+        self.after(1500, lambda: pop.winfo_exists() and pop.destroy())
 
 
 # ---------------------------------------------------------------------------
@@ -674,6 +694,7 @@ class RPGLiferApp:
             "hero_class": ctk.CTkFont(f, 14),
             "ring": ctk.CTkFont(f, 26, weight="bold"),
             "ringsub": ctk.CTkFont(f, 9, weight="bold"),
+            "ringbadge": ctk.CTkFont(f, 12, weight="bold"),
             "chip_k": ctk.CTkFont(f, 11),
             "chip_v": ctk.CTkFont(f, 13, weight="bold"),
             "radar": ctk.CTkFont(f, 11),
@@ -796,6 +817,42 @@ class RPGLiferApp:
         self.views["Character"].refresh(animate=False)
         self.views["History"].refresh()
         return result
+
+    def celebrate(self, result):
+        """A centered pop with a gold particle burst for level-ups / new titles."""
+        if not (result.level_ups or result.titles):
+            return
+        f = "Segoe UI"
+        if result.titles:
+            head, detail = "NEW TITLE!", f"“{result.titles[0].title}”"
+            sub = stat(result.titles[0].stat).name
+        else:
+            lu = result.level_ups[0]
+            head, detail, sub = "LEVEL UP!", f"{stat(lu.stat).name}  {lu.to_level}", ""
+
+        card = ctk.CTkFrame(self.content, corner_radius=20, fg_color=SURFACE_2)
+        cv = tk.Canvas(card, width=340, height=170, bg=SURFACE_2,
+                       highlightthickness=0, bd=0)
+        cv.pack(padx=6, pady=6)
+        parts = [(random.uniform(0, 2 * math.pi), random.uniform(45, 105))
+                 for _ in range(20)]
+        dots = [cv.create_oval(170, 70, 170, 70, fill=GOLD, outline="")
+                for _ in parts]
+        cv.create_text(170, 60, text=head, fill=GOLD, font=(f, 26, "bold"))
+        cv.create_text(170, 98, text=detail, fill=TEXT, font=(f, 19, "bold"))
+        if sub:
+            cv.create_text(170, 126, text=sub, fill=MUTED, font=(f, 12))
+
+        def frame(t):
+            for (ang, dist), d in zip(parts, dots):
+                r = dist * t
+                x, y = 170 + r * math.cos(ang), 70 + r * math.sin(ang)
+                cv.coords(d, x - 2, y - 2, x + 2, y + 2)
+
+        tween(card, 520, frame)
+        card.place(relx=0.5, rely=0.46, anchor="center")
+        card.bind("<Button-1>", lambda e: card.destroy())
+        self.root.after(1600, lambda: card.winfo_exists() and card.destroy())
 
     def _on_name_change(self, *_):
         self.character.name = self.name_var.get().strip() or "Adventurer"

@@ -23,10 +23,11 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   Wisdom, Charisma, **Discipline**, and **Creativity** — shown as a character
   **web (radar)** so your shape is obvious at a glance. Hover any stat to see
   what it means and how to raise it.
-- **A living character.** A **level ring**, and a **class that evolves** with
-  your two strongest stats (a *Steadfast Scholar* today, an *Inventive Rogue*
-  next month). Logging an activity throws up a juicy **"+XP" burst** with any
-  level-ups and new titles.
+- **A living character.** A hero **avatar in a level ring**, and a **class that
+  evolves** with your two strongest stats (a *Steadfast Sage* today, an
+  *Inventive Rogue* next month). Logging throws up a juicy **"+XP" burst**, and
+  crossing a level or earning a title triggers a **celebration** with a gold
+  particle burst.
 - **Two stat layers.** The eight core stats are trained *only* by real
   activities. From them we compute **derived combat/shop stats** — Vitality,
   Power, Focus, Insight, Influence, Luck — which future gear and adventures will
