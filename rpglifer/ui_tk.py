@@ -20,7 +20,7 @@ import customtkinter as ctk
 from . import achievements as achievements_mod
 from . import adventure, derived, dungeon, economy, fuzzy, shop, storage, ventures
 from .activities import ACTIVITIES, Activity, activity_by_name
-from .character import ARENA_RUNS_PER_DAY, Character
+from .character import Character
 from .recommend import recommendations, top_activities_for_stat
 from .stats import STAT_KEYS, STATS, stat
 from .titles import TITLES, next_title
@@ -707,6 +707,10 @@ class ActivitiesView(ctk.CTkFrame):
         if pts:
             ctk.CTkLabel(pop, text="   ".join(pts), text_color=HERO,
                          font=self.app.fonts["small"]).pack(padx=22)
+        if result.tickets_earned:
+            n = result.tickets_earned
+            ctk.CTkLabel(pop, text=f"+{n} Adventure ticket{'s' if n != 1 else ''}",
+                         text_color=TEAL, font=self.app.fonts["small"]).pack(padx=22)
         # First activity of the day → celebrate the daily streak you just kept.
         import datetime as _dt
         c = self.app.character
@@ -1054,7 +1058,7 @@ class AdventureView(ctk.CTkFrame):
 
     def refresh(self):
         c = self.app.character
-        self.energy_lbl.configure(text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+        self.energy_lbl.configure(text=f"{c.adventure_tickets} tickets")
         for panel in (self.arena, self.vault, self.dungeon):
             panel.pack_forget()
         if self.mode == "arena":
@@ -1089,8 +1093,8 @@ class AdventureView(ctk.CTkFrame):
             self._hp(self.you_lbl, self.you_bar, c.name, d["HP"], d["HP"], HP_YOU)
             self.foe_lbl.configure(text="A foe awaits…")
             self.foe_bar.set(0)
-            if c.arena_energy() <= 0:
-                self.fight_btn.configure(text="No energy — resets tomorrow",
+            if c.adventure_tickets <= 0:
+                self.fight_btn.configure(text="No tickets — log activities to earn plays",
                                          state="disabled", fg_color=SURFACE_2)
             else:
                 self.fight_btn.configure(text="Enter the Arena", state="normal",
@@ -1099,14 +1103,14 @@ class AdventureView(ctk.CTkFrame):
     # --- Vault ---
     def _refresh_vault(self):
         c = self.app.character
-        if self._chests is None and c.arena_energy() > 0:
+        if self._chests is None and c.adventure_tickets > 0:
             self._chests = ventures.roll_vault(c)
             self._vault_done = False
         if self._chests is None:  # no energy and nothing rolled
             for b in self.chest_btns:
                 b.configure(text="—", state="disabled", fg_color=SURFACE_2,
                             text_color=FAINT)
-            self.vault_result.configure(text="No energy — the vault resets tomorrow.",
+            self.vault_result.configure(text="No tickets — log activities to earn plays.",
                                         text_color=FAINT)
         elif self._vault_done:
             self._reveal_chests()
@@ -1127,9 +1131,9 @@ class AdventureView(ctk.CTkFrame):
 
     def _open_chest(self, i):
         c = self.app.character
-        if self._vault_done or self._chests is None or c.arena_energy() <= 0:
+        if self._vault_done or self._chests is None or c.adventure_tickets <= 0:
             return
-        c.spend_arena_energy()
+        c.spend_ticket()
         ch = self._chests[i]
         c.hero_points += ch.hero
         msg = f"Chest {ROMAN[i]} opened —  +{ch.hero} Hero"
@@ -1142,11 +1146,11 @@ class AdventureView(ctk.CTkFrame):
         c.check_achievements()
         storage.save(c)
         self.app.refresh_points()
-        self.energy_lbl.configure(text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+        self.energy_lbl.configure(text=f"{c.adventure_tickets} tickets")
         self.vault_result.configure(text=msg, text_color=GOLD)
 
     def _new_chests(self):
-        if self.app.character.arena_energy() <= 0:
+        if self.app.character.adventure_tickets <= 0:
             return
         self._chests = None
         self._vault_done = False
@@ -1154,10 +1158,10 @@ class AdventureView(ctk.CTkFrame):
 
     def _go(self):
         c = self.app.character
-        if self._playing or c.arena_energy() <= 0:
+        if self._playing or c.adventure_tickets <= 0:
             return
-        c.spend_arena_energy()
-        self.energy_lbl.configure(text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+        c.spend_ticket()
+        self.energy_lbl.configure(text=f"{c.adventure_tickets} tickets")
         combat = c.consume_combat_bonuses()
         self._battle = adventure.simulate(c, combat_bonus=combat)
         b = self._battle
@@ -1244,9 +1248,9 @@ class AdventureView(ctk.CTkFrame):
             self.dive_bank.configure(
                 text=f"Best depth: {best}" if best else "")
             self.cash_btn.configure(state="disabled", fg_color=SURFACE)
-            if c.arena_energy() <= 0:
-                self.dive_risk.configure(text="No energy — the dungeon resets tomorrow.")
-                self.descend_btn.configure(text="No energy", state="disabled",
+            if c.adventure_tickets <= 0:
+                self.dive_risk.configure(text="No tickets — log activities to earn plays.")
+                self.descend_btn.configure(text="No tickets", state="disabled",
                                            fg_color=SURFACE_2)
             else:
                 self.dive_risk.configure(text="Your Luck lowers the trap odds. "
@@ -1257,13 +1261,13 @@ class AdventureView(ctk.CTkFrame):
     def _dive_action(self):
         c = self.app.character
         if self._dive is None or self._dive.over:
-            if c.arena_energy() <= 0:
+            if c.adventure_tickets <= 0:
                 return
-            c.spend_arena_energy()
+            c.spend_ticket()
             self._dive = dungeon.DungeonRun.for_character(c)
             self._dlog("🕯  You step into the dark…", clear=True)
             self.energy_lbl.configure(
-                text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+                text=f"{c.adventure_tickets} tickets")
             self._refresh_dungeon()
             return
         step = self._dive.descend()
@@ -1301,7 +1305,7 @@ class AdventureView(ctk.CTkFrame):
         self.app.refresh_points()
         self._refresh_dungeon()
         self.energy_lbl.configure(
-            text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+            text=f"{c.adventure_tickets} tickets")
 
 
 # ---------------------------------------------------------------------------

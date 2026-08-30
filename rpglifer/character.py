@@ -25,8 +25,12 @@ SCHEMA_VERSION = 2
 # resets the visible bar to 0 and grants a star; XP itself is never lost.
 STAR_XP = leveling.XP_TO_MAX
 
-# Adventure: free Arena battles refill to this each day.
-ARENA_RUNS_PER_DAY = 5
+# Adventure is a *reward for tracking*, not a free daily toy: you earn tickets by
+# logging real activities (and more from bonus/stretch tasks + quests), then
+# spend one ticket to play the Arena / Vault / Dungeon.
+TICKETS_PER_LOG = 1        # every logged activity earns a play
+TICKETS_REACH_BONUS = 1    # extra for a "reach" task (new, or a weakest stat)
+TICKETS_PER_QUEST = 2      # each daily quest you complete is a bonus task
 
 # --- Consistency (weekly-streak) rewards -----------------------------------
 # Doing the same activity in consecutive calendar weeks builds a streak. Each
@@ -172,6 +176,7 @@ class LogResult:
     overachiever_gain: int = 0
     quests_done: list = field(default_factory=list)
     achievements: list = field(default_factory=list)
+    tickets_earned: int = 0
 
 
 class Character:
@@ -186,8 +191,7 @@ class Character:
         overachiever_points: int = 0,
         bonuses: list["Bonus"] | None = None,
         challenges_claimed: list[str] | None = None,
-        arena_day: str = "",
-        arena_used: int = 0,
+        adventure_tickets: int = 0,
         inventory: list["Gear"] | None = None,
         equipped: dict[str, str] | None = None,
         daily: dict | None = None,
@@ -212,8 +216,7 @@ class Character:
         self.overachiever_points = int(overachiever_points)
         self.bonuses: list[Bonus] = list(bonuses or [])
         self.challenges_claimed: list[str] = list(challenges_claimed or [])
-        self.arena_day = str(arena_day)  # ISO date of the last Arena run
-        self.arena_used = int(arena_used)  # runs used on arena_day
+        self.adventure_tickets = max(0, int(adventure_tickets))  # earned by tracking
         self.inventory: list[Gear] = list(inventory or [])
         self.equipped: dict[str, str] = dict(equipped or {})  # slot -> gear id
         # Per-day counters the log can't show (level-ups, Arena wins) + claimed
@@ -300,19 +303,11 @@ class Character:
         self.bonuses = [b for b in self.bonuses if self._bonus_active(b, now)]
 
     # --- Adventure energy --------------------------------------------------
-    def arena_energy(self, at: datetime | None = None) -> int:
-        today = (at or _now()).date().isoformat()
-        used = self.arena_used if self.arena_day == today else 0
-        return max(0, ARENA_RUNS_PER_DAY - used)
-
-    def spend_arena_energy(self, at: datetime | None = None) -> bool:
-        today = (at or _now()).date().isoformat()
-        if self.arena_day != today:
-            self.arena_day = today
-            self.arena_used = 0
-        if self.arena_used >= ARENA_RUNS_PER_DAY:
+    def spend_ticket(self) -> bool:
+        """Spend one Adventure ticket to play a game. False if you have none."""
+        if self.adventure_tickets <= 0:
             return False
-        self.arena_used += 1
+        self.adventure_tickets -= 1
         return True
 
     # --- Weekly well-rounded challenge -------------------------------------
@@ -557,8 +552,8 @@ class Character:
 
         # Points — Hero for progress + reaching out, Overachiever for the weekly
         # well-rounded challenge (once per calendar week).
-        hero_gain = (economy.points_for_events(level_ups, titles, star_ups)
-                     + economy.reach_bonus(self, activity, was_new))
+        reach = economy.reach_bonus(self, activity, was_new)
+        hero_gain = economy.points_for_events(level_ups, titles, star_ups) + reach
         self.hero_points += hero_gain
 
         overachiever_gain = 0
@@ -574,12 +569,20 @@ class Character:
         hero_gain += sum(q.reward for q in quests_done)
         unlocked = self.check_achievements()
 
+        # Adventure tickets — the games are earned by tracking, never free. A
+        # base ticket per log, more for a reach/bonus task and each quest cleared.
+        tickets_earned = (TICKETS_PER_LOG
+                          + (TICKETS_REACH_BONUS if reach > 0 else 0)
+                          + TICKETS_PER_QUEST * len(quests_done))
+        self.adventure_tickets += tickets_earned
+
         self.prune_bonuses(ref_dt)
 
         return LogResult(activity.name, float(minutes), dict(gains), level_ups,
                          streak=streak, bonus=bonus, titles=titles, star_ups=star_ups,
                          hero_gain=hero_gain, overachiever_gain=overachiever_gain,
-                         quests_done=quests_done, achievements=unlocked)
+                         quests_done=quests_done, achievements=unlocked,
+                         tickets_earned=tickets_earned)
 
     def recent(self, count: int = 10) -> list[LogEntry]:
         return list(reversed(self.log[-count:]))
@@ -647,8 +650,7 @@ class Character:
             "overachiever_points": self.overachiever_points,
             "bonuses": [b.to_dict() for b in self.bonuses],
             "challenges_claimed": list(self.challenges_claimed),
-            "arena_day": self.arena_day,
-            "arena_used": self.arena_used,
+            "adventure_tickets": self.adventure_tickets,
             "inventory": [g.to_dict() for g in self.inventory],
             "equipped": dict(self.equipped),
             "daily": dict(self.daily),
@@ -671,8 +673,7 @@ class Character:
             overachiever_points=int(data.get("overachiever_points", 0)),
             bonuses=[Bonus.from_dict(b) for b in data.get("bonuses", [])],
             challenges_claimed=[str(w) for w in data.get("challenges_claimed", [])],
-            arena_day=str(data.get("arena_day", "")),
-            arena_used=int(data.get("arena_used", 0)),
+            adventure_tickets=int(data.get("adventure_tickets", 0)),
             inventory=[Gear.from_dict(g) for g in data.get("inventory", [])],
             equipped={str(k): str(v) for k, v in dict(data.get("equipped", {})).items()},
             daily={str(k): dict(v) for k, v in dict(data.get("daily", {})).items()},
