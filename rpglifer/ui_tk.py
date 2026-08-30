@@ -432,14 +432,18 @@ class CharacterView(ctk.CTkFrame):
         self.rows = [StatRow(inner, s, i, fonts, app) for i, s in enumerate(STATS)]
         self._gen = 0
 
-    def _chip(self, name, value):
+    def _chip(self, name, value, tip=None):
         f = ctk.CTkFrame(self.chips, corner_radius=12, fg_color=SURFACE_2)
         f.pack(side="left", padx=(0, 10))
-        ctk.CTkLabel(f, text=name, text_color=MUTED,
-                     font=self.app.fonts["chip_k"]).pack(side="left", padx=(11, 6),
-                                                         pady=5)
-        ctk.CTkLabel(f, text=str(value), text_color=TEAL,
-                     font=self.app.fonts["chip_v"]).pack(side="left", padx=(0, 11))
+        kl = ctk.CTkLabel(f, text=name, text_color=MUTED,
+                          font=self.app.fonts["chip_k"])
+        kl.pack(side="left", padx=(11, 6), pady=5)
+        vl = ctk.CTkLabel(f, text=str(value), text_color=TEAL,
+                          font=self.app.fonts["chip_v"])
+        vl.pack(side="left", padx=(0, 11))
+        if tip:
+            for w in (f, kl, vl):
+                Tooltip(w, lambda t=tip: t, self.app.fonts["tip"])
 
     def refresh(self, animate=False):
         c = self.app.character
@@ -454,7 +458,7 @@ class CharacterView(ctk.CTkFrame):
             w.destroy()
         d = derived.compute(c)
         for ds in derived.DERIVED:
-            self._chip(ds.name, d[ds.key])
+            self._chip(ds.name, d[ds.key], f"{ds.name} — {ds.blurb}")
 
         for row in self.rows:
             row.update_labels(c)
