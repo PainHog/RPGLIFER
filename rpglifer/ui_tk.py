@@ -693,6 +693,16 @@ class ActivitiesView(ctk.CTkFrame):
         if pts:
             ctk.CTkLabel(pop, text="   ".join(pts), text_color=HERO,
                          font=self.app.fonts["small"]).pack(padx=22)
+        # First activity of the day → celebrate the daily streak you just kept.
+        import datetime as _dt
+        c = self.app.character
+        today = _dt.datetime.now(_dt.timezone.utc).date().isoformat()
+        if c.daily_metrics(today)["count"] == 1:
+            ds = c.daily_streak()
+            if ds >= 2:
+                ctk.CTkLabel(pop, text=f"{ds} days in a row — streak alive!",
+                             text_color=STREAK, font=self.app.fonts["small"]).pack(
+                                 padx=22)
         for q in result.quests_done:
             ctk.CTkLabel(pop, text=f"✔  Quest complete: {q.text}", text_color=OVER,
                          font=self.app.fonts["small"]).pack(padx=22)
