@@ -48,4 +48,4 @@ def test_save_is_valid_json(tmp_path, monkeypatch):
     storage.save(c)
     data = json.loads(storage.save_path().read_text(encoding="utf-8"))
     assert data["name"] == "JSON"
-    assert data["schema"] == 1
+    assert data["schema"] == 2

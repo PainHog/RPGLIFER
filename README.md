@@ -40,9 +40,14 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 - **Type-ahead search.** Start typing and the closest activities pop up even if
   you don't type the exact words — `dsh` → **Dishes**, `wrk` → **Strength
   workout**, `woodcut` → **Chopping firewood**.
+- **A reward loop.** Earn **Hero points** (from level-ups, titles, ★s, and
+  reaching outside your comfort zone) and **Overachiever points** (from a weekly
+  *well-rounded* challenge). Spend them in the **Shop** on temporary boosts
+  (never on stats), and fight in the **Arena** — an auto-battle that uses your
+  derived combat stats to win more Hero points.
 - **A clean, sectioned interface.** Navigation lives behind a hamburger menu;
-  sections for **Character, Activities, History**, and (coming) **Shop,
-  Adventure, Gear**.
+  sections for **Character, Activities, History, Shop, Adventure**, and (coming)
+  **Gear**.
 - **Time → XP → levels.** Dedicate minutes to an activity; that time becomes XP,
   split across the activity's stats by weight. Each stat levels on its own
   curve — the first level is quick, but real growth takes *weeks* of dedication,
@@ -183,7 +188,11 @@ rpglifer/
   data/activities.json  the 600+ activity catalog (editable)
   fuzzy.py              type-ahead / closest-match search
   recommend.py          "explore" suggestions + per-stat activity lookups
-  character.py          the character model: XP, logging, streaks, save shape
+  economy.py            Hero / Overachiever point rules
+  adventure.py          the Arena auto-battle engine (seedable, pure)
+  shop.py               the Shop catalog + purchase logic
+  character.py          the character model: XP, logging, streaks, points,
+                        bonuses, prestige, save shape
   storage.py            where and how the save is written
   cli.py                text-mode front-end
   ui_tk.py              the gamified desktop GUI (CustomTkinter): radar,
@@ -207,18 +216,20 @@ python -m pytest -q
 ## Roadmap
 
 Already in: the core, the Windows `.exe` build, a **600+ multi-stat activity
-catalog**, **eight core stats** with a radar/web, **derived combat/shop stats**
-and an **evolving class**, **consistency streaks**, **milestone titles**, a
-slow-and-earned XP curve, and a gamified GUI (level ring, XP bursts, hamburger nav).
+catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
+combat/shop stats** and an **evolving class**, **consistency streaks**,
+**milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
+(Hero + Overachiever), the **Arena** auto-battle, a working **Shop** of boosts,
+and a gamified GUI (level ring, XP bursts, mastery celebrations, hamburger nav).
 
 Planned next:
 
-- **Shop** — spend Hero / Overachiever points on boosts and cosmetics.
-- **Adventure** — quests, runs, and mini-games that grant bonuses (never raw
-  stats) for reaching outside your comfort zone.
-- **Gear** — equippable items that buff your *derived* combat stats.
-- **Weekly challenges & battles** — nudges to hit *all* areas of life, using
-  the derived combat stats.
+- **Gear** — equippable items, found on adventures, that buff your *derived*
+  combat stats (never your real-life stats).
+- **More Adventure content** — varied foes, quests/runs, and mini-games beyond
+  the Arena.
+- **Weekly challenge board** — surface the well-rounded challenge and its
+  progress in-app, plus more challenge types.
 - **A real installer** — Start-menu shortcut and an icon.
 
 ## License

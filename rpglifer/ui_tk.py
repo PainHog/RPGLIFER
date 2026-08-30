@@ -17,9 +17,9 @@ import tkinter as tk
 
 import customtkinter as ctk
 
-from . import derived, fuzzy, storage
+from . import adventure, derived, fuzzy, shop, storage
 from .activities import ACTIVITIES, Activity
-from .character import Character
+from .character import ARENA_RUNS_PER_DAY, Character
 from .recommend import recommendations, top_activities_for_stat
 from .stats import STAT_KEYS, STATS, stat
 from .titles import next_title
@@ -41,6 +41,10 @@ TEAL_HOVER = "#7cc4ac"
 TEAL_DEEP = "#3f6f61"
 STREAK = "#d59a63"
 AVATAR = "#3a4250"  # placeholder hero silhouette
+HERO = "#d9b26a"   # Hero points (gold)
+OVER = "#6bb39b"   # Overachiever points (teal)
+HP_YOU = "#6bb39b"
+HP_FOE = "#d9574f"
 
 DEFAULT_MINUTES = 30
 SUGGESTION_LIMIT = 7
@@ -119,8 +123,8 @@ class Tooltip:
 
 
 class RoundedBar:
-    def __init__(self, parent, width, height, bg, segments=12):
-        self.w, self.h, self.segments = width, height, segments
+    def __init__(self, parent, width, height, bg, segments=12, fill=TEAL):
+        self.w, self.h, self.segments, self.fill = width, height, segments, fill
         self.canvas = tk.Canvas(parent, width=width, height=height, bg=bg,
                                 highlightthickness=0, bd=0)
 
@@ -132,10 +136,11 @@ class RoundedBar:
         round_rect(c, 1, 1, w - 1, h - 1, r, fill=TRACK, outline="")
         if frac > 0:
             round_rect(c, 1, 1, 1 + max(h, (w - 2) * frac), h - 1, r,
-                       fill=TEAL, outline="")
-        seg = (w - 2) / self.segments
-        for i in range(1, self.segments):
-            c.create_line(1 + i * seg, 4, 1 + i * seg, h - 4, fill=TICK, width=1)
+                       fill=self.fill, outline="")
+        if self.segments:
+            seg = (w - 2) / self.segments
+            for i in range(1, self.segments):
+                c.create_line(1 + i * seg, 4, 1 + i * seg, h - 4, fill=TICK, width=1)
 
 
 class RadarChart:
@@ -603,6 +608,14 @@ class ActivitiesView(ctk.CTkFrame):
             ctk.CTkLabel(pop, text=f"🔥  {result.streak}-week streak  ·  "
                          f"+{int(result.bonus*100)}% XP", text_color=STREAK,
                          font=self.app.fonts["small"]).pack(padx=22)
+        pts = []
+        if result.hero_gain:
+            pts.append(f"◆ +{result.hero_gain} Hero")
+        if result.overachiever_gain:
+            pts.append(f"✦ +{result.overachiever_gain} Overachiever")
+        if pts:
+            ctk.CTkLabel(pop, text="   ".join(pts), text_color=HERO,
+                         font=self.app.fonts["small"]).pack(padx=22)
         for su in result.star_ups:
             ctk.CTkLabel(pop, text=f"★  MASTERY —  {stat(su.stat).name}  ★{su.star}",
                          text_color=GOLD, font=self.app.fonts["burst"]).pack(padx=22)
@@ -669,6 +682,223 @@ class HistoryView(ctk.CTkFrame):
                     side="left", padx=(10, 0), pady=7)
 
 
+# ---------------------------------------------------------------------------
+# Adventure — the Arena auto-battle
+# ---------------------------------------------------------------------------
+class AdventureView(ctk.CTkFrame):
+    def __init__(self, parent, app):
+        super().__init__(parent, fg_color="transparent")
+        self.app = app
+        fonts = app.fonts
+        self._battle = None
+        self._round_i = 0
+        self._playing = False
+
+        card = ctk.CTkFrame(self, corner_radius=18, fg_color=SURFACE)
+        card.place(relx=0.5, rely=0.03, anchor="n", relwidth=0.8)
+
+        head = ctk.CTkFrame(card, fg_color="transparent")
+        head.pack(fill="x", padx=24, pady=(18, 6))
+        ctk.CTkLabel(head, text="THE ARENA", text_color=MUTED,
+                     font=fonts["kicker"]).pack(side="left")
+        self.energy_lbl = ctk.CTkLabel(head, text="", text_color=HERO,
+                                       font=fonts["kicker"])
+        self.energy_lbl.pack(side="right")
+
+        # Foe row
+        self.foe_lbl = ctk.CTkLabel(card, text="", text_color=TEXT, font=fonts["stat"],
+                                    anchor="w")
+        self.foe_lbl.pack(fill="x", padx=24, pady=(8, 2))
+        self.foe_bar = RoundedBar(card, width=560, height=14, bg=SURFACE,
+                                  segments=0, fill=HP_FOE)
+        self.foe_bar.canvas.pack(padx=24, anchor="w")
+        # You row
+        self.you_lbl = ctk.CTkLabel(card, text="", text_color=TEXT, font=fonts["stat"],
+                                    anchor="w")
+        self.you_lbl.pack(fill="x", padx=24, pady=(12, 2))
+        self.you_bar = RoundedBar(card, width=560, height=14, bg=SURFACE,
+                                  segments=0, fill=HP_YOU)
+        self.you_bar.canvas.pack(padx=24, anchor="w")
+
+        self.fight_btn = ctk.CTkButton(card, text="Enter the Arena", command=self._go,
+                                       height=46, corner_radius=14, fg_color=HERO,
+                                       hover_color="#e6c079", text_color=BG,
+                                       font=fonts["btn"])
+        self.fight_btn.pack(pady=16)
+
+        self.log = ctk.CTkTextbox(card, height=150, fg_color=TRACK, text_color=MUTED,
+                                  font=fonts["list"], corner_radius=12,
+                                  activate_scrollbars=True)
+        self.log.pack(fill="x", padx=24, pady=(0, 20))
+        self.log.configure(state="disabled")
+
+    def _log(self, text, clear=False):
+        self.log.configure(state="normal")
+        if clear:
+            self.log.delete("1.0", "end")
+        self.log.insert("end", text + "\n")
+        self.log.see("end")
+        self.log.configure(state="disabled")
+
+    def _hp(self, who_lbl, bar, name, hp, mx, color):
+        who_lbl.configure(text=f"{name}    {max(0, hp)} / {mx}")
+        bar.set(hp / mx if mx else 0)
+
+    def refresh(self):
+        c = self.app.character
+        energy = c.arena_energy()
+        self.energy_lbl.configure(text=f"⚡ {energy}/{ARENA_RUNS_PER_DAY} today")
+        d = derived.compute(c)
+        if not self._playing:
+            self._hp(self.you_lbl, self.you_bar, c.name, d["HP"], d["HP"], HP_YOU)
+            self.foe_lbl.configure(text="A foe awaits…")
+            self.foe_bar.set(0)
+        if energy <= 0 and not self._playing:
+            self.fight_btn.configure(text="No energy — resets tomorrow", state="disabled",
+                                     fg_color=SURFACE_2)
+        elif not self._playing:
+            self.fight_btn.configure(text="Enter the Arena", state="normal",
+                                     fg_color=HERO)
+
+    def _go(self):
+        c = self.app.character
+        if self._playing or c.arena_energy() <= 0:
+            return
+        c.spend_arena_energy()
+        self.energy_lbl.configure(text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+        combat = c.consume_combat_bonuses()
+        self._battle = adventure.simulate(c, combat_bonus=combat)
+        b = self._battle
+        self._playing = True
+        self._round_i = 0
+        self.fight_btn.configure(state="disabled", fg_color=SURFACE_2)
+        boost = "   (+Power boost!)" if combat else ""
+        self._log(f"⚔  You face a {b.foe_name}  (Lv {b.foe_level}){boost}", clear=True)
+        self._hp(self.foe_lbl, self.foe_bar, b.foe_name, b.foe_max_hp, b.foe_max_hp, HP_FOE)
+        self._hp(self.you_lbl, self.you_bar, c.name, b.you_max_hp, b.you_max_hp, HP_YOU)
+        self.app.root.after(500, self._step)
+
+    def _step(self):
+        b = self._battle
+        if self._round_i >= len(b.rounds):
+            return self._finish()
+        r = b.rounds[self._round_i]
+        self._round_i += 1
+        if r.attacker == "you":
+            self._hp(self.foe_lbl, self.foe_bar, b.foe_name, r.foe_hp, b.foe_max_hp, HP_FOE)
+            crit = "  CRIT!" if r.crit else ""
+            self._log(f"  You hit for {r.damage}{crit}")
+        else:
+            self._hp(self.you_lbl, self.you_bar, self.app.character.name, r.you_hp,
+                     b.you_max_hp, HP_YOU)
+            crit = "  CRIT!" if r.crit else ""
+            self._log(f"  {b.foe_name} hits you for {r.damage}{crit}")
+        self.app.root.after(360, self._step)
+
+    def _finish(self):
+        b = self._battle
+        c = self.app.character
+        self._playing = False
+        if b.won:
+            c.hero_points += b.reward
+            self._log(f"★  Victory!  +{b.reward} Hero points")
+        else:
+            c.hero_points += b.reward
+            self._log(f"✕  Defeated…  +{b.reward} Hero points for trying")
+        storage.save(c)
+        self.app.refresh_points()
+        self.refresh()
+
+
+# ---------------------------------------------------------------------------
+# Shop
+# ---------------------------------------------------------------------------
+class ShopView(ctk.CTkFrame):
+    def __init__(self, parent, app):
+        super().__init__(parent, fg_color="transparent")
+        self.app = app
+        fonts = app.fonts
+        outer = ctk.CTkScrollableFrame(self, fg_color="transparent")
+        outer.pack(fill="both", expand=True, padx=8, pady=6)
+        self.outer = outer
+
+        head = ctk.CTkFrame(outer, fg_color="transparent")
+        head.pack(fill="x", padx=6, pady=(4, 2))
+        ctk.CTkLabel(head, text="SHOP", text_color=MUTED,
+                     font=fonts["kicker"]).pack(side="left")
+        self.bal_lbl = ctk.CTkLabel(head, text="", text_color=TEXT,
+                                    font=fonts["kicker"])
+        self.bal_lbl.pack(side="right")
+        ctk.CTkLabel(outer, text="Spend points on temporary boosts — never on stats.",
+                     text_color=FAINT, font=fonts["small"], anchor="w").pack(
+            fill="x", padx=6, pady=(0, 8))
+
+        self.items_box = ctk.CTkFrame(outer, fg_color="transparent")
+        self.items_box.pack(fill="x")
+        self.active_head = ctk.CTkLabel(outer, text="", text_color=MUTED,
+                                        font=fonts["kicker"], anchor="w")
+        self.active_head.pack(fill="x", padx=6, pady=(16, 4))
+        self.active_box = ctk.CTkFrame(outer, fg_color="transparent")
+        self.active_box.pack(fill="x")
+        self.status = ctk.CTkLabel(outer, text="", text_color=MUTED,
+                                   font=fonts["small"], anchor="w")
+        self.status.pack(fill="x", padx=6, pady=(8, 0))
+
+    def _buy(self, item):
+        if shop.purchase(self.app.character, item):
+            storage.save(self.app.character)
+            self.app.refresh_points()
+            self.status.configure(text=f"Bought {item.name}.", text_color=OVER)
+            self.refresh()
+        else:
+            self.status.configure(text=f"Not enough {item.currency} points for "
+                                  f"{item.name}.", text_color=HERO)
+
+    def refresh(self):
+        c = self.app.character
+        fonts = self.app.fonts
+        self.bal_lbl.configure(
+            text=f"◆ {c.hero_points} Hero      ✦ {c.overachiever_points} Overachiever")
+        for w in self.items_box.winfo_children():
+            w.destroy()
+        for item in shop.ITEMS:
+            row = ctk.CTkFrame(self.items_box, corner_radius=14, fg_color=SURFACE)
+            row.pack(fill="x", padx=6, pady=5)
+            left = ctk.CTkFrame(row, fg_color="transparent")
+            left.pack(side="left", fill="x", expand=True, padx=16, pady=12)
+            ctk.CTkLabel(left, text=item.name, text_color=TEXT,
+                         font=fonts["list_b"], anchor="w").pack(anchor="w")
+            ctk.CTkLabel(left, text=item.desc, text_color=MUTED, font=fonts["small"],
+                         anchor="w").pack(anchor="w")
+            cur_col = HERO if item.currency == "hero" else OVER
+            sym = "◆" if item.currency == "hero" else "✦"
+            ctk.CTkButton(row, text=f"{sym} {item.cost}", width=90, height=40,
+                          corner_radius=12,
+                          fg_color=cur_col if shop.can_afford(c, item) else SURFACE_2,
+                          text_color=BG if shop.can_afford(c, item) else FAINT,
+                          hover_color=cur_col, font=fonts["btn"],
+                          command=lambda it=item: self._buy(it)).pack(
+                side="right", padx=16)
+
+        for w in self.active_box.winfo_children():
+            w.destroy()
+        active = c.active_bonuses()
+        self.active_head.configure(text=f"ACTIVE BOOSTS ({len(active)})")
+        if not active:
+            ctk.CTkLabel(self.active_box, text="None active — buy one above.",
+                         text_color=FAINT, font=fonts["small"], anchor="w").pack(
+                fill="x", padx=6)
+        for b in active:
+            if b.kind == "xp_mult":
+                tail = "time-limited"
+            else:
+                tail = f"{b.uses_left} fights left"
+            ctk.CTkLabel(self.active_box,
+                         text=f"◆  {b.name}  ·  +{int(b.magnitude*100)}%  ·  {tail}",
+                         text_color=OVER, font=fonts["small"], anchor="w").pack(
+                fill="x", padx=6, pady=1)
+
+
 class PlaceholderView(ctk.CTkFrame):
     def __init__(self, parent, app, icon, title, blurb):
         super().__init__(parent, fg_color="transparent")
@@ -720,6 +950,7 @@ class RPGLiferApp:
             "kicker": ctk.CTkFont(f, 11, weight="bold"),
             "tip": ctk.CTkFont(f, 12),
             "list": ctk.CTkFont(f, 13),
+            "list_b": ctk.CTkFont(f, 13, weight="bold"),
             "burger": ctk.CTkFont(f, 20),
             "levelbadge": ctk.CTkFont(f, 16, weight="bold"),
         }
@@ -739,12 +970,8 @@ class RPGLiferApp:
             "Character": CharacterView(self.content, self),
             "Activities": ActivitiesView(self.content, self),
             "History": HistoryView(self.content, self),
-            "Shop": PlaceholderView(self.content, self, "shop", "Shop",
-                "Spend Hero and Overachiever points on boosts, cosmetics, and new "
-                "activity packs."),
-            "Adventure": PlaceholderView(self.content, self, "map", "Adventure",
-                "Quests, runs, and mini-games that grant bonuses for reaching "
-                "beyond your comfort zone."),
+            "Shop": ShopView(self.content, self),
+            "Adventure": AdventureView(self.content, self),
             "Gear": PlaceholderView(self.content, self, "gear", "Gear",
                 "Equip what you find on adventures — bonuses to your combat stats, "
                 "never to your real-life stats."),
@@ -770,6 +997,9 @@ class RPGLiferApp:
         self.level_value = ctk.CTkLabel(bar, text="Lv 0", text_color=GOLD,
                                         font=self.fonts["levelbadge"])
         self.level_value.pack(side="right", padx=(0, 4))
+        self.points_lbl = ctk.CTkLabel(bar, text="", text_color=MUTED,
+                                       font=self.fonts["section"])
+        self.points_lbl.pack(side="right", padx=(0, 18))
         self.name_var = tk.StringVar(value=self.character.name)
         ctk.CTkEntry(bar, textvariable=self.name_var, width=170, height=40,
                      corner_radius=12, fg_color=SURFACE, border_width=0,
@@ -820,11 +1050,17 @@ class RPGLiferApp:
             view.refresh()
         view.tkraise()
         self.level_value.configure(text=f"Lv {self.character.overall_level()}")
+        self.refresh_points()
+
+    def refresh_points(self):
+        c = self.character
+        self.points_lbl.configure(text=f"◆ {c.hero_points}   ✦ {c.overachiever_points}")
 
     def log_activity(self, activity, minutes):
         result = self.character.log_activity(activity, minutes)
         storage.save(self.character)
         self.level_value.configure(text=f"Lv {self.character.overall_level()}")
+        self.refresh_points()
         self.views["Character"].refresh(animate=False)
         self.views["History"].refresh()
         return result
