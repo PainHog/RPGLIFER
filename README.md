@@ -230,7 +230,8 @@ gamified GUI (level ring, XP bursts, mastery celebrations, hamburger nav).
 Planned next:
 
 - **More Adventure content** — quests/runs and other mini-games beyond the Arena.
-- **A real installer** — Start-menu shortcut and an icon.
+- **A real installer** — a Start-menu shortcut and uninstall entry (the app
+  already ships a window/taskbar icon).
 - **Weekly challenge board** — surface the well-rounded challenge and its
   progress in-app, plus more challenge types.
 - **A real installer** — Start-menu shortcut and an icon.

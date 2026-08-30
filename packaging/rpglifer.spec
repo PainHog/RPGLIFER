@@ -29,6 +29,8 @@ a = Analysis(
     # Bundle the activity catalog so the frozen app can find it at runtime
     # (activities.py looks under sys._MEIPASS/rpglifer/data first).
     datas=[(os.path.join(ROOT, "rpglifer", "data", "activities.json"),
+            "rpglifer/data"),
+           (os.path.join(ROOT, "rpglifer", "data", "icon.png"),
             "rpglifer/data")] + ctk_datas,
     hiddenimports=["tkinter", "darkdetect"] + ctk_hidden,
     hookspath=[],
@@ -58,5 +60,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,  # TODO: add packaging/rpglifer.ico for a custom icon
+    icon=os.path.join(SPECPATH, "rpglifer.ico"),  # noqa: F821 - SPECPATH provided
 )

@@ -1443,9 +1443,30 @@ class RPGLiferApp:
         self.root.destroy()
 
 
+def _set_window_icon(root):
+    """Set the taskbar/window icon from the bundled PNG (frozen-safe)."""
+    import sys
+    from pathlib import Path
+    base = getattr(sys, "_MEIPASS", None)
+    candidates = []
+    if base:
+        candidates.append(Path(base) / "rpglifer" / "data" / "icon.png")
+    candidates.append(Path(__file__).resolve().parent / "data" / "icon.png")
+    for p in candidates:
+        if p.exists():
+            try:
+                img = tk.PhotoImage(file=str(p))
+                root._icon_ref = img  # keep a reference alive
+                root.iconphoto(True, img)
+            except Exception:
+                pass
+            return
+
+
 def run(character=None):
     character = character if character is not None else storage.load()
     root = ctk.CTk()
+    _set_window_icon(root)
     RPGLiferApp(root, character)
     root.mainloop()
     return 0
