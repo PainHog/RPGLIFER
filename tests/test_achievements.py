@@ -37,3 +37,19 @@ def test_achievements_survive_roundtrip():
     c.log_activity(activity_by_name("Reading"), 30)
     c2 = Character.from_dict(c.to_dict())
     assert set(c2.achievements) == set(c.achievements)
+
+
+def test_boss_and_vault_achievements_use_counters():
+    c = Character()
+    c.bump_counter("bosses", 1)
+    assert "boss_slayer" in {a.id for a in c.check_achievements()}
+    c.bump_counter("vaults", 15)
+    assert "vault_raider" in {a.id for a in c.check_achievements()}
+
+
+def test_counters_survive_roundtrip():
+    c = Character()
+    c.bump_counter("bosses", 3)
+    c.bump_counter("vaults", 7)
+    c2 = Character.from_dict(c.to_dict())
+    assert c2.counters == {"bosses": 3, "vaults": 7}

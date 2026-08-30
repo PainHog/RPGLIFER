@@ -193,6 +193,7 @@ class Character:
         daily: dict | None = None,
         quests_claimed: list[str] | None = None,
         achievements: list[str] | None = None,
+        counters: dict | None = None,
     ) -> None:
         self.name = name or "Adventurer"
         # Always keep an entry for every known stat so the UI can render all of
@@ -218,6 +219,11 @@ class Character:
         self.daily: dict[str, dict] = dict(daily or {})
         self.quests_claimed: list[str] = list(quests_claimed or [])
         self.achievements: list[str] = list(achievements or [])
+        # Lifetime tallies (e.g. bosses defeated, vault chests opened).
+        self.counters: dict[str, int] = {k: int(v) for k, v in dict(counters or {}).items()}
+
+    def bump_counter(self, name: str, n: int = 1) -> None:
+        self.counters[name] = self.counters.get(name, 0) + n
 
     # --- Derived views -----------------------------------------------------
     # Prestige: a stat's XP never resets. Each full 0→100 climb (STAR_XP worth of
@@ -557,6 +563,7 @@ class Character:
             "daily": dict(self.daily),
             "quests_claimed": list(self.quests_claimed),
             "achievements": list(self.achievements),
+            "counters": dict(self.counters),
         }
 
     @classmethod
@@ -578,4 +585,5 @@ class Character:
             daily={str(k): dict(v) for k, v in dict(data.get("daily", {})).items()},
             quests_claimed=[str(q) for q in data.get("quests_claimed", [])],
             achievements=[str(a) for a in data.get("achievements", [])],
+            counters={str(k): int(v) for k, v in dict(data.get("counters", {})).items()},
         )

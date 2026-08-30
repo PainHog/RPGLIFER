@@ -978,6 +978,7 @@ class AdventureView(ctk.CTkFrame):
             c.add_gear(ch.gear)
             msg += f"\n🎁  {ch.gear.summary()}   (equip it in Gear)"
         self._vault_done = True
+        c.bump_counter("vaults")
         self._reveal_chests(picked=i)
         c.check_achievements()
         storage.save(c)
@@ -1038,6 +1039,8 @@ class AdventureView(ctk.CTkFrame):
         self._playing = False
         c.hero_points += b.reward
         if b.won:
+            if b.is_boss:
+                c.bump_counter("bosses")
             head = "☠  BOSS DEFEATED!" if b.is_boss else "★  Victory!"
             self._log(f"{head}  +{b.reward} Hero points")
             if b.loot is not None:

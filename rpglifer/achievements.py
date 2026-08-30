@@ -76,4 +76,10 @@ ACHIEVEMENTS: tuple[Achievement, ...] = (
     Achievement("well_rounded", "Well-Rounded",
                 "Complete the weekly well-rounded challenge.",
                 lambda c: len(c.challenges_claimed) >= 1),
+    Achievement("boss_slayer", "Boss Slayer", "Defeat an Arena boss.",
+                lambda c: c.counters.get("bosses", 0) >= 1),
+    Achievement("warlord", "Warlord", "Defeat 10 Arena bosses.",
+                lambda c: c.counters.get("bosses", 0) >= 10),
+    Achievement("vault_raider", "Vault Raider", "Open 15 Treasure Vault chests.",
+                lambda c: c.counters.get("vaults", 0) >= 15),
 )
