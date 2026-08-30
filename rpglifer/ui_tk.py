@@ -18,7 +18,7 @@ import tkinter as tk
 import customtkinter as ctk
 
 from . import achievements as achievements_mod
-from . import adventure, derived, economy, fuzzy, shop, storage
+from . import adventure, derived, economy, fuzzy, shop, storage, ventures
 from .activities import ACTIVITIES, Activity, activity_by_name
 from .character import ARENA_RUNS_PER_DAY, Character
 from .recommend import recommendations, top_activities_for_stat
@@ -785,55 +785,116 @@ class HistoryView(ctk.CTkFrame):
 
 
 # ---------------------------------------------------------------------------
-# Adventure — the Arena auto-battle
+# Adventure — a hub of mini-games (Arena auto-battle + Treasure Vault)
 # ---------------------------------------------------------------------------
+ROMAN = ["I", "II", "III"]
+TIER_COL = {"common": MUTED, "rare": "#5aa9e6", "jackpot": GOLD}
+
+
 class AdventureView(ctk.CTkFrame):
     def __init__(self, parent, app):
         super().__init__(parent, fg_color="transparent")
         self.app = app
         fonts = app.fonts
+        self.mode = "arena"
         self._battle = None
         self._round_i = 0
         self._playing = False
+        self._chests = None
+        self._vault_done = False
 
         card = ctk.CTkFrame(self, corner_radius=18, fg_color=SURFACE)
-        card.place(relx=0.5, rely=0.03, anchor="n", relwidth=0.8)
+        card.place(relx=0.5, rely=0.03, anchor="n", relwidth=0.82)
 
         head = ctk.CTkFrame(card, fg_color="transparent")
-        head.pack(fill="x", padx=24, pady=(18, 6))
-        ctk.CTkLabel(head, text="THE ARENA", text_color=MUTED,
-                     font=fonts["kicker"]).pack(side="left")
+        head.pack(fill="x", padx=24, pady=(16, 6))
+        self.arena_btn = ctk.CTkButton(head, text="⚔  Arena", width=120, height=34,
+                                       corner_radius=10, fg_color=HERO, text_color=BG,
+                                       hover_color="#e6c079", font=fonts["btn"],
+                                       command=lambda: self._switch("arena"))
+        self.arena_btn.pack(side="left")
+        self.vault_btn = ctk.CTkButton(head, text="🗝  Vault", width=120, height=34,
+                                       corner_radius=10, fg_color=SURFACE_2,
+                                       text_color=MUTED, hover_color=SURFACE,
+                                       font=fonts["btn"],
+                                       command=lambda: self._switch("vault"))
+        self.vault_btn.pack(side="left", padx=8)
         self.energy_lbl = ctk.CTkLabel(head, text="", text_color=HERO,
                                        font=fonts["kicker"])
         self.energy_lbl.pack(side="right")
 
-        # Foe row
-        self.foe_lbl = ctk.CTkLabel(card, text="", text_color=TEXT, font=fonts["stat"],
-                                    anchor="w")
+        # --- Arena panel ---
+        self.arena = ctk.CTkFrame(card, fg_color="transparent")
+        self.foe_lbl = ctk.CTkLabel(self.arena, text="", text_color=TEXT,
+                                    font=fonts["stat"], anchor="w")
         self.foe_lbl.pack(fill="x", padx=24, pady=(8, 2))
-        self.foe_bar = RoundedBar(card, width=560, height=14, bg=SURFACE,
+        self.foe_bar = RoundedBar(self.arena, width=560, height=14, bg=SURFACE,
                                   segments=0, fill=HP_FOE)
         self.foe_bar.canvas.pack(padx=24, anchor="w")
-        # You row
-        self.you_lbl = ctk.CTkLabel(card, text="", text_color=TEXT, font=fonts["stat"],
-                                    anchor="w")
+        self.you_lbl = ctk.CTkLabel(self.arena, text="", text_color=TEXT,
+                                    font=fonts["stat"], anchor="w")
         self.you_lbl.pack(fill="x", padx=24, pady=(12, 2))
-        self.you_bar = RoundedBar(card, width=560, height=14, bg=SURFACE,
+        self.you_bar = RoundedBar(self.arena, width=560, height=14, bg=SURFACE,
                                   segments=0, fill=HP_YOU)
         self.you_bar.canvas.pack(padx=24, anchor="w")
-
-        self.fight_btn = ctk.CTkButton(card, text="Enter the Arena", command=self._go,
-                                       height=46, corner_radius=14, fg_color=HERO,
-                                       hover_color="#e6c079", text_color=BG,
-                                       font=fonts["btn"])
+        self.fight_btn = ctk.CTkButton(self.arena, text="Enter the Arena",
+                                       command=self._go, height=46, corner_radius=14,
+                                       fg_color=HERO, hover_color="#e6c079",
+                                       text_color=BG, font=fonts["btn"])
         self.fight_btn.pack(pady=16)
-
-        self.log = ctk.CTkTextbox(card, height=150, fg_color=TRACK, text_color=MUTED,
-                                  font=fonts["list"], corner_radius=12,
-                                  activate_scrollbars=True)
+        self.log = ctk.CTkTextbox(self.arena, height=150, fg_color=TRACK,
+                                  text_color=MUTED, font=fonts["list"],
+                                  corner_radius=12, activate_scrollbars=True)
         self.log.pack(fill="x", padx=24, pady=(0, 20))
         self.log.configure(state="disabled")
 
+        # --- Vault panel ---
+        self.vault = ctk.CTkFrame(card, fg_color="transparent")
+        ctk.CTkLabel(self.vault, text="Pick a chest — your Luck improves the odds.",
+                     text_color=MUTED, font=fonts["section"]).pack(padx=24,
+                                                                   pady=(16, 12))
+        chest_row = ctk.CTkFrame(self.vault, fg_color="transparent")
+        chest_row.pack(pady=6)
+        self.chest_btns = []
+        for i in range(3):
+            b = ctk.CTkButton(chest_row, text=f"Chest {ROMAN[i]}", width=150,
+                              height=96, corner_radius=16, fg_color=SURFACE_2,
+                              hover_color=SURFACE, text_color=GOLD, font=fonts["h1"],
+                              command=lambda i=i: self._open_chest(i))
+            b.pack(side="left", padx=10)
+            self.chest_btns.append(b)
+        self.vault_result = ctk.CTkLabel(self.vault, text="", text_color=TEXT,
+                                         font=fonts["section"], wraplength=560,
+                                         justify="center")
+        self.vault_result.pack(pady=(14, 6))
+        self.vault_again = ctk.CTkButton(self.vault, text="New chests",
+                                         command=self._new_chests, height=40,
+                                         corner_radius=12, fg_color=SURFACE_2,
+                                         hover_color=SURFACE, text_color=MUTED,
+                                         font=fonts["btn"])
+        self.vault_again.pack(pady=(4, 20))
+
+    def _switch(self, mode):
+        self.mode = mode
+        self.arena_btn.configure(fg_color=HERO if mode == "arena" else SURFACE_2,
+                                 text_color=BG if mode == "arena" else MUTED)
+        self.vault_btn.configure(fg_color=HERO if mode == "vault" else SURFACE_2,
+                                 text_color=BG if mode == "vault" else MUTED)
+        self.refresh()
+
+    def refresh(self):
+        c = self.app.character
+        self.energy_lbl.configure(text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+        if self.mode == "arena":
+            self.vault.pack_forget()
+            self.arena.pack(fill="both", expand=True)
+            self._refresh_arena()
+        else:
+            self.arena.pack_forget()
+            self.vault.pack(fill="both", expand=True)
+            self._refresh_vault()
+
+    # --- Arena ---
     def _log(self, text, clear=False):
         self.log.configure(state="normal")
         if clear:
@@ -846,21 +907,74 @@ class AdventureView(ctk.CTkFrame):
         who_lbl.configure(text=f"{name}    {max(0, hp)} / {mx}")
         bar.set(hp / mx if mx else 0)
 
-    def refresh(self):
+    def _refresh_arena(self):
         c = self.app.character
-        energy = c.arena_energy()
-        self.energy_lbl.configure(text=f"⚡ {energy}/{ARENA_RUNS_PER_DAY} today")
         d = derived.compute(c)
         if not self._playing:
             self._hp(self.you_lbl, self.you_bar, c.name, d["HP"], d["HP"], HP_YOU)
             self.foe_lbl.configure(text="A foe awaits…")
             self.foe_bar.set(0)
-        if energy <= 0 and not self._playing:
-            self.fight_btn.configure(text="No energy — resets tomorrow", state="disabled",
-                                     fg_color=SURFACE_2)
-        elif not self._playing:
-            self.fight_btn.configure(text="Enter the Arena", state="normal",
-                                     fg_color=HERO)
+            if c.arena_energy() <= 0:
+                self.fight_btn.configure(text="No energy — resets tomorrow",
+                                         state="disabled", fg_color=SURFACE_2)
+            else:
+                self.fight_btn.configure(text="Enter the Arena", state="normal",
+                                         fg_color=HERO)
+
+    # --- Vault ---
+    def _refresh_vault(self):
+        c = self.app.character
+        if self._chests is None and c.arena_energy() > 0:
+            self._chests = ventures.roll_vault(c)
+            self._vault_done = False
+        if self._chests is None:  # no energy and nothing rolled
+            for b in self.chest_btns:
+                b.configure(text="—", state="disabled", fg_color=SURFACE_2,
+                            text_color=FAINT)
+            self.vault_result.configure(text="No energy — the vault resets tomorrow.",
+                                        text_color=FAINT)
+        elif self._vault_done:
+            self._reveal_chests()
+        else:
+            for i, b in enumerate(self.chest_btns):
+                b.configure(text=f"Chest {ROMAN[i]}", state="normal",
+                            fg_color=SURFACE_2, text_color=GOLD)
+            self.vault_result.configure(text="", text_color=TEXT)
+
+    def _reveal_chests(self, picked=None):
+        for j, b in enumerate(self.chest_btns):
+            cj = self._chests[j]
+            sym = "★" if cj.tier == "jackpot" else ("◆" if cj.tier == "rare" else "•")
+            extra = "\n+ gear" if cj.gear is not None else ""
+            b.configure(text=f"{sym}  +{cj.hero}{extra}", state="disabled",
+                        fg_color=SURFACE if j == picked else TRACK,
+                        text_color=TIER_COL[cj.tier])
+
+    def _open_chest(self, i):
+        c = self.app.character
+        if self._vault_done or self._chests is None or c.arena_energy() <= 0:
+            return
+        c.spend_arena_energy()
+        ch = self._chests[i]
+        c.hero_points += ch.hero
+        msg = f"Chest {ROMAN[i]} opened —  +{ch.hero} Hero"
+        if ch.gear is not None:
+            c.add_gear(ch.gear)
+            msg += f"\n🎁  {ch.gear.summary()}   (equip it in Gear)"
+        self._vault_done = True
+        self._reveal_chests(picked=i)
+        c.check_achievements()
+        storage.save(c)
+        self.app.refresh_points()
+        self.energy_lbl.configure(text=f"⚡ {c.arena_energy()}/{ARENA_RUNS_PER_DAY} today")
+        self.vault_result.configure(text=msg, text_color=GOLD)
+
+    def _new_chests(self):
+        if self.app.character.arena_energy() <= 0:
+            return
+        self._chests = None
+        self._vault_done = False
+        self.refresh()
 
     def _go(self):
         c = self.app.character

@@ -43,10 +43,10 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 - **A reward loop.** Earn **Hero points** (from level-ups, titles, ★s, and
   reaching outside your comfort zone) and **Overachiever points** (from a weekly
   *well-rounded* challenge). Spend them in the **Shop** on temporary boosts
-  (never on stats), fight in the **Arena** — an auto-battle that uses your
-  derived combat stats to win more Hero points — and equip the **Gear** it
-  drops for combat bonuses. **Daily quests** and the weekly challenge give you
-  goals that pay out.
+  (never on stats), and play the **Adventure** mini-games — the **Arena**
+  auto-battle (uses your derived combat stats) and the **Treasure Vault** (pick a
+  chest; your Luck skews the odds) — for Hero points and the **Gear** they drop.
+  **Daily quests** and the weekly challenge give you goals that pay out.
 - **A clean, sectioned interface.** Navigation lives behind a hamburger menu;
   sections for **Character, Activities, History, Shop, Adventure**, and (coming)
   **Gear**.
@@ -221,9 +221,10 @@ Already in: the core, the Windows `.exe` build, a **600+ multi-stat activity
 catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
 combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
-(Hero + Overachiever), the **Arena** auto-battle (foe archetypes + **boss
-battles**) with **Gear/loot drops**, a working **Shop** of boosts, **daily
-quests** + a weekly challenge board,
+(Hero + Overachiever), two **Adventure** mini-games (the **Arena** auto-battle
+with foe archetypes + **boss battles**, and a **Treasure Vault**) with
+**Gear/loot drops**, a working **Shop** of boosts, **daily quests** + a weekly
+challenge board,
 **achievement trophies**, **first-run onboarding**, **one-tap quick-log**, a
 **journey heatmap** of your consistency, and a gamified GUI (level ring, XP
 bursts, mastery celebrations, hamburger nav).
