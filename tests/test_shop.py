@@ -50,3 +50,39 @@ def test_xp_bonus_actually_scales_logged_xp():
     shop.purchase(c, item)
     with_boost = c.log_activity(reading, 30).gains["INT"]
     assert with_boost > without
+
+
+def test_cosmetic_buy_select_and_default():
+    from rpglifer.character import Character
+    c = Character()
+    c.overachiever_points = 100
+    emerald = next(x for x in shop.COSMETICS if x.id == "ring_emerald")
+    assert not shop.owns_cosmetic(c, emerald)
+    assert shop.buy_cosmetic(c, emerald)
+    assert emerald.id in c.owned_cosmetics
+    assert c.overachiever_points == 100 - emerald.cost
+    assert shop.select_cosmetic(c, emerald)
+    assert c.ring_color == emerald.color
+    gold = next(x for x in shop.COSMETICS if x.id == "ring_gold")
+    assert shop.owns_cosmetic(c, gold)  # default is always owned
+    shop.select_cosmetic(c, gold)
+    assert c.ring_color == ""
+
+
+def test_cosmetic_cannot_afford():
+    from rpglifer.character import Character
+    c = Character()
+    c.overachiever_points = 0
+    amethyst = next(x for x in shop.COSMETICS if x.id == "ring_amethyst")
+    assert not shop.buy_cosmetic(c, amethyst)
+    assert amethyst.id not in c.owned_cosmetics
+
+
+def test_cosmetics_roundtrip():
+    from rpglifer.character import Character
+    c = Character()
+    c.owned_cosmetics = ["ring_emerald"]
+    c.ring_color = "#6bb39b"
+    c2 = Character.from_dict(c.to_dict())
+    assert c2.owned_cosmetics == ["ring_emerald"]
+    assert c2.ring_color == "#6bb39b"

@@ -271,16 +271,17 @@ class LevelRing:
     def set(self, level, fraction):
         c = self.canvas
         c.delete("ring")
+        color = getattr(self.app.character, "ring_color", "") or GOLD
         pad = 7
         c.create_oval(pad, pad, self.size - pad, self.size - pad, outline=GRID,
                       width=6, tags="ring")
         if fraction > 0:
             c.create_arc(pad, pad, self.size - pad, self.size - pad, start=90,
                          extent=-359.9 * max(0.03, min(1.0, fraction)), style="arc",
-                         outline=GOLD, width=6, tags="ring")
+                         outline=color, width=6, tags="ring")
         self._avatar()
         c.tag_lower("ring")
-        self._badge.configure(text=f"Lv {level}")
+        self._badge.configure(text=f"Lv {level}", fg_color=color)
 
 
 def line_icon(parent, kind, size=64, color=GOLD, bg=BG):
@@ -1100,9 +1101,35 @@ class ShopView(ctk.CTkFrame):
         self.active_head.pack(fill="x", padx=6, pady=(16, 4))
         self.active_box = ctk.CTkFrame(outer, fg_color="transparent")
         self.active_box.pack(fill="x")
+        self.cos_head = ctk.CTkLabel(outer, text="COSMETICS — level-ring themes",
+                                     text_color=MUTED, font=fonts["kicker"],
+                                     anchor="w")
+        self.cos_head.pack(fill="x", padx=6, pady=(18, 4))
+        self.cos_box = ctk.CTkFrame(outer, fg_color="transparent")
+        self.cos_box.pack(fill="x")
+
         self.status = ctk.CTkLabel(outer, text="", text_color=MUTED,
                                    font=fonts["small"], anchor="w")
-        self.status.pack(fill="x", padx=6, pady=(8, 0))
+        self.status.pack(fill="x", padx=6, pady=(10, 0))
+
+    def _buy_cosmetic(self, item):
+        if shop.buy_cosmetic(self.app.character, item):
+            shop.select_cosmetic(self.app.character, item)
+            self._after_cosmetic(f"Equipped {item.name}.")
+        else:
+            self.status.configure(text=f"Not enough Overachiever points for "
+                                  f"{item.name}.", text_color=HERO)
+
+    def _select_cosmetic(self, item):
+        shop.select_cosmetic(self.app.character, item)
+        self._after_cosmetic(f"Equipped {item.name}.")
+
+    def _after_cosmetic(self, msg):
+        storage.save(self.app.character)
+        self.app.refresh_points()
+        self.app.views["Character"].refresh()  # recolor the level ring
+        self.status.configure(text=msg, text_color=OVER)
+        self.refresh()
 
     def _buy(self, item):
         if shop.purchase(self.app.character, item):
@@ -1157,6 +1184,35 @@ class ShopView(ctk.CTkFrame):
                          text=f"◆  {b.name}  ·  +{int(b.magnitude*100)}%  ·  {tail}",
                          text_color=OVER, font=fonts["small"], anchor="w").pack(
                 fill="x", padx=6, pady=1)
+
+        for w in self.cos_box.winfo_children():
+            w.destroy()
+        for cm in shop.COSMETICS:
+            row = ctk.CTkFrame(self.cos_box, corner_radius=12, fg_color=SURFACE)
+            row.pack(fill="x", padx=6, pady=3)
+            swatch = ctk.CTkLabel(row, text="", width=22, height=22, corner_radius=11,
+                                  fg_color=cm.color)
+            swatch.pack(side="left", padx=(14, 10), pady=10)
+            ctk.CTkLabel(row, text=cm.name, text_color=TEXT, font=fonts["list_b"],
+                         anchor="w").pack(side="left")
+            if shop.is_selected(c, cm):
+                ctk.CTkLabel(row, text="Equipped", text_color=OVER,
+                             font=fonts["small"]).pack(side="right", padx=16)
+            elif shop.owns_cosmetic(c, cm):
+                ctk.CTkButton(row, text="Select", width=84, height=36,
+                              corner_radius=12, fg_color=SURFACE_2, hover_color=TRACK,
+                              text_color=MUTED, font=fonts["btn"],
+                              command=lambda it=cm: self._select_cosmetic(it)).pack(
+                    side="right", padx=16)
+            else:
+                afford = c.overachiever_points >= cm.cost
+                ctk.CTkButton(row, text=f"✦ {cm.cost}", width=84, height=36,
+                              corner_radius=12,
+                              fg_color=OVER if afford else SURFACE_2,
+                              text_color=BG if afford else FAINT, hover_color=OVER,
+                              font=fonts["btn"],
+                              command=lambda it=cm: self._buy_cosmetic(it)).pack(
+                    side="right", padx=16)
 
 
 # ---------------------------------------------------------------------------

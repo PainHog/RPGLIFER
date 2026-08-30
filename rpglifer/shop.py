@@ -43,6 +43,52 @@ ITEMS: tuple[ShopItem, ...] = (
 )
 
 
+@dataclass(frozen=True)
+class Cosmetic:
+    id: str
+    name: str
+    color: str  # hex for the level-ring arc
+    cost: int  # Overachiever points (0 = owned by default)
+
+
+COSMETICS: tuple[Cosmetic, ...] = (
+    Cosmetic("ring_gold", "Gold Ring", "#d9b26a", 0),
+    Cosmetic("ring_emerald", "Emerald Ring", "#6bb39b", 30),
+    Cosmetic("ring_crimson", "Crimson Ring", "#d9574f", 30),
+    Cosmetic("ring_amethyst", "Amethyst Ring", "#b07de0", 40),
+    Cosmetic("ring_azure", "Azure Ring", "#5aa9e6", 40),
+)
+
+
+def owns_cosmetic(character, item: Cosmetic) -> bool:
+    return item.cost == 0 or item.id in character.owned_cosmetics
+
+
+def is_selected(character, item: Cosmetic) -> bool:
+    if item.id == "ring_gold":
+        return not character.ring_color
+    return character.ring_color == item.color
+
+
+def buy_cosmetic(character, item: Cosmetic) -> bool:
+    """Unlock a cosmetic with Overachiever points (idempotent if already owned)."""
+    if owns_cosmetic(character, item):
+        return True
+    if character.overachiever_points < item.cost:
+        return False
+    character.overachiever_points -= item.cost
+    character.owned_cosmetics.append(item.id)
+    return True
+
+
+def select_cosmetic(character, item: Cosmetic) -> bool:
+    """Equip an owned cosmetic (free to switch)."""
+    if not owns_cosmetic(character, item):
+        return False
+    character.ring_color = "" if item.id == "ring_gold" else item.color
+    return True
+
+
 def balance(character, currency: str) -> int:
     return (character.hero_points if currency == "hero"
             else character.overachiever_points)

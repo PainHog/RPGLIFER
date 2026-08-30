@@ -194,6 +194,8 @@ class Character:
         quests_claimed: list[str] | None = None,
         achievements: list[str] | None = None,
         counters: dict | None = None,
+        owned_cosmetics: list[str] | None = None,
+        ring_color: str = "",
     ) -> None:
         self.name = name or "Adventurer"
         # Always keep an entry for every known stat so the UI can render all of
@@ -221,6 +223,9 @@ class Character:
         self.achievements: list[str] = list(achievements or [])
         # Lifetime tallies (e.g. bosses defeated, vault chests opened).
         self.counters: dict[str, int] = {k: int(v) for k, v in dict(counters or {}).items()}
+        # Cosmetics: owned unlocks + the selected level-ring color ("" = default).
+        self.owned_cosmetics: list[str] = list(owned_cosmetics or [])
+        self.ring_color = str(ring_color)
 
     def bump_counter(self, name: str, n: int = 1) -> None:
         self.counters[name] = self.counters.get(name, 0) + n
@@ -564,6 +569,8 @@ class Character:
             "quests_claimed": list(self.quests_claimed),
             "achievements": list(self.achievements),
             "counters": dict(self.counters),
+            "owned_cosmetics": list(self.owned_cosmetics),
+            "ring_color": self.ring_color,
         }
 
     @classmethod
@@ -586,4 +593,6 @@ class Character:
             quests_claimed=[str(q) for q in data.get("quests_claimed", [])],
             achievements=[str(a) for a in data.get("achievements", [])],
             counters={str(k): int(v) for k, v in dict(data.get("counters", {})).items()},
+            owned_cosmetics=[str(x) for x in data.get("owned_cosmetics", [])],
+            ring_color=str(data.get("ring_color", "")),
         )
