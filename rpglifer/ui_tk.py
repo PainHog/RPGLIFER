@@ -49,8 +49,14 @@ HP_FOE = "#d9574f"
 
 DEFAULT_MINUTES = 30
 SUGGESTION_LIMIT = 7
-SECTIONS = ["Character", "Activities", "Quests", "Trophies", "History", "Shop",
-            "Adventure", "Gear"]
+# The app is TRACK-first: logging your real life and watching your character
+# grow is the whole point. REWARDS (the games, gear, and shop) are optional
+# extras you earn by tracking — grouped separately so the hierarchy is obvious.
+MENU_GROUPS = [
+    ("TRACK", ["Activities", "Character", "Quests", "History", "Trophies"]),
+    ("REWARDS", ["Adventure", "Gear", "Shop"]),
+]
+SECTIONS = [name for _group, items in MENU_GROUPS for name in items]
 
 ctk.set_appearance_mode("dark")
 
@@ -1882,15 +1888,19 @@ class RPGLiferApp:
         m.wm_geometry(f"+{x}+{y}")
         panel = ctk.CTkFrame(m, corner_radius=14, fg_color=SURFACE_2)
         panel.pack()
-        for section in SECTIONS:
-            ctk.CTkButton(panel, text=section, width=180, height=38, anchor="w",
-                          corner_radius=10, fg_color="transparent",
-                          hover_color=SURFACE, text_color=TEXT,
-                          font=self.fonts["menu"],
-                          command=lambda s=section: self._menu_pick(s)).pack(
-                fill="x", padx=8, pady=2)
+        for gi, (group, items) in enumerate(MENU_GROUPS):
+            ctk.CTkLabel(panel, text=group, text_color=FAINT,
+                         font=self.fonts["kicker"], anchor="w").pack(
+                fill="x", padx=16, pady=((10 if gi else 10), 2))
+            for section in items:
+                ctk.CTkButton(panel, text=section, width=180, height=36, anchor="w",
+                              corner_radius=10, fg_color="transparent",
+                              hover_color=SURFACE, text_color=TEXT,
+                              font=self.fonts["menu"],
+                              command=lambda s=section: self._menu_pick(s)).pack(
+                    fill="x", padx=8, pady=1)
         ctk.CTkFrame(panel, height=1, fg_color=SURFACE).pack(fill="x", padx=12,
-                                                             pady=4)
+                                                             pady=(8, 4))
         ctk.CTkButton(panel, text="⚙  Settings", width=180, height=38, anchor="w",
                       corner_radius=10, fg_color="transparent", hover_color=SURFACE,
                       text_color=MUTED, font=self.fonts["menu"],
