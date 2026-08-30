@@ -9425,5 +9425,4546 @@
    "product design",
    "wireframing"
   ]
+ },
+ {
+  "name": "Wiring a circuit breaker panel",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.5,
+   "WIS": 0.2,
+   "STR": 0.1,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "electrical panel work",
+   "wiring a breaker box"
+  ]
+ },
+ {
+  "name": "Installing a ceiling fan",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.35,
+   "STR": 0.2,
+   "WIS": 0.1,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "mounting a ceiling fan"
+  ]
+ },
+ {
+  "name": "Soldering copper pipes",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.65,
+   "INT": 0.25,
+   "CON": 0.1,
+   "WIS": 0.1,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "sweating pipe",
+   "plumbing solder"
+  ]
+ },
+ {
+  "name": "Replacing a toilet",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.45,
+   "STR": 0.4,
+   "INT": 0.2,
+   "CON": 0.15,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "swapping a toilet",
+   "installing a toilet"
+  ]
+ },
+ {
+  "name": "Installing a kitchen faucet",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.55,
+   "INT": 0.25,
+   "STR": 0.15,
+   "WIS": 0.1,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "replacing a faucet",
+   "fitting a tap"
+  ]
+ },
+ {
+  "name": "MIG welding a steel joint",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.3,
+   "CON": 0.15,
+   "STR": 0.15,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "welding metal",
+   "arc welding"
+  ]
+ },
+ {
+  "name": "Framing a wall",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "STR": 0.5,
+   "DEX": 0.35,
+   "INT": 0.25,
+   "CON": 0.2,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "stud framing",
+   "building a wall frame"
+  ]
+ },
+ {
+  "name": "Hanging an interior door",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.55,
+   "INT": 0.3,
+   "STR": 0.25,
+   "WIS": 0.1,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "installing a door",
+   "hanging a door"
+  ]
+ },
+ {
+  "name": "Laying bricks",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "DEX": 0.5,
+   "STR": 0.4,
+   "CON": 0.35,
+   "INT": 0.15,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "bricklaying",
+   "masonry"
+  ]
+ },
+ {
+  "name": "Pouring a concrete slab",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "STR": 0.6,
+   "CON": 0.5,
+   "DEX": 0.25,
+   "INT": 0.1,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "concrete pour",
+   "laying concrete"
+  ]
+ },
+ {
+  "name": "Installing insulation",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "CON": 0.35,
+   "STR": 0.35,
+   "DEX": 0.35,
+   "INT": 0.15,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "insulating a wall",
+   "fitting insulation"
+  ]
+ },
+ {
+  "name": "Roofing a house",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "CON": 0.5,
+   "STR": 0.5,
+   "DEX": 0.35,
+   "WIS": 0.15,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "laying shingles",
+   "reroofing"
+  ]
+ },
+ {
+  "name": "Painting a house exterior",
+  "category": "Home Improvement & DIY",
+  "weights": {
+   "CON": 0.4,
+   "DEX": 0.4,
+   "STR": 0.3,
+   "WIS": 0.15,
+   "DIS": 0.28,
+   "CRE": 0.25
+  },
+  "aliases": [
+   "exterior painting",
+   "painting the outside of a house"
+  ]
+ },
+ {
+  "name": "Diagnosing an engine problem",
+  "category": "Driving & Transport",
+  "weights": {
+   "INT": 0.6,
+   "DEX": 0.3,
+   "WIS": 0.2,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "car troubleshooting",
+   "engine diagnostics"
+  ]
+ },
+ {
+  "name": "Replacing brake pads",
+  "category": "Driving & Transport",
+  "weights": {
+   "DEX": 0.5,
+   "STR": 0.35,
+   "INT": 0.3,
+   "CON": 0.1,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "changing brakes",
+   "brake job"
+  ]
+ },
+ {
+  "name": "Changing the engine oil",
+  "category": "Driving & Transport",
+  "weights": {
+   "DEX": 0.45,
+   "STR": 0.2,
+   "INT": 0.2,
+   "CON": 0.1,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "oil change",
+   "changing motor oil"
+  ]
+ },
+ {
+  "name": "Rotating tires",
+  "category": "Driving & Transport",
+  "weights": {
+   "STR": 0.4,
+   "DEX": 0.35,
+   "CON": 0.15,
+   "INT": 0.1,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "tire rotation"
+  ]
+ },
+ {
+  "name": "Replacing a car battery",
+  "category": "Driving & Transport",
+  "weights": {
+   "STR": 0.35,
+   "DEX": 0.35,
+   "INT": 0.2,
+   "CON": 0.1,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "swapping a car battery"
+  ]
+ },
+ {
+  "name": "Detailing a car",
+  "category": "Driving & Transport",
+  "weights": {
+   "DEX": 0.4,
+   "CON": 0.35,
+   "STR": 0.15,
+   "WIS": 0.15,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "car detailing",
+   "auto detailing"
+  ]
+ },
+ {
+  "name": "Driving a delivery route",
+  "category": "Driving & Transport",
+  "weights": {
+   "CON": 0.35,
+   "DEX": 0.35,
+   "WIS": 0.25,
+   "STR": 0.15,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "package delivery route",
+   "courier run"
+  ]
+ },
+ {
+  "name": "Driving a long-haul truck",
+  "category": "Driving & Transport",
+  "weights": {
+   "CON": 0.5,
+   "WIS": 0.35,
+   "DEX": 0.3,
+   "STR": 0.1,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "trucking",
+   "semi driving"
+  ]
+ },
+ {
+  "name": "Running a food delivery shift",
+  "category": "Driving & Transport",
+  "weights": {
+   "CON": 0.4,
+   "DEX": 0.35,
+   "WIS": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "delivering takeout",
+   "food courier shift"
+  ]
+ },
+ {
+  "name": "Working a nursing shift",
+  "category": "Work & Career",
+  "weights": {
+   "CON": 0.55,
+   "CHA": 0.4,
+   "INT": 0.4,
+   "WIS": 0.3,
+   "DEX": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "hospital shift",
+   "nursing rounds"
+  ]
+ },
+ {
+  "name": "Taking a patient's vital signs",
+  "category": "Health",
+  "weights": {
+   "DEX": 0.4,
+   "INT": 0.4,
+   "CHA": 0.25,
+   "WIS": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "checking vitals",
+   "measuring vital signs"
+  ]
+ },
+ {
+  "name": "Drawing blood from a patient",
+  "category": "Health",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.3,
+   "CHA": 0.2,
+   "WIS": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "phlebotomy",
+   "taking a blood sample"
+  ]
+ },
+ {
+  "name": "Giving a patient their medication",
+  "category": "Health",
+  "weights": {
+   "INT": 0.4,
+   "DEX": 0.35,
+   "WIS": 0.35,
+   "CHA": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "med pass",
+   "administering medication"
+  ]
+ },
+ {
+  "name": "Grading student papers",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.5,
+   "WIS": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "marking papers",
+   "grading assignments"
+  ]
+ },
+ {
+  "name": "Planning a lesson",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.55,
+   "WIS": 0.3,
+   "CHA": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "lesson planning",
+   "preparing a class"
+  ]
+ },
+ {
+  "name": "Delivering a university lecture",
+  "category": "Communication & Public Speaking",
+  "weights": {
+   "CHA": 0.6,
+   "INT": 0.45,
+   "WIS": 0.2,
+   "CON": 0.15,
+   "DIS": 0.1,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "lecturing",
+   "giving a lecture"
+  ]
+ },
+ {
+  "name": "Loading a moving truck",
+  "category": "Chores & Housework",
+  "weights": {
+   "STR": 0.6,
+   "CON": 0.4,
+   "DEX": 0.2,
+   "INT": 0.15,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "loading a moving van",
+   "hauling boxes"
+  ]
+ },
+ {
+  "name": "Baling hay",
+  "category": "Work & Career",
+  "weights": {
+   "STR": 0.6,
+   "CON": 0.5,
+   "DEX": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "haymaking",
+   "stacking hay bales"
+  ]
+ },
+ {
+  "name": "Milking cows",
+  "category": "Animals & Pets",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.3,
+   "STR": 0.15,
+   "WIS": 0.1,
+   "DIS": 0.2
+  },
+  "aliases": [
+   "dairy milking",
+   "milking the herd"
+  ]
+ },
+ {
+  "name": "Herding cattle",
+  "category": "Animals & Pets",
+  "weights": {
+   "CON": 0.45,
+   "STR": 0.3,
+   "WIS": 0.3,
+   "DEX": 0.2,
+   "DIS": 0.2
+  },
+  "aliases": [
+   "mustering",
+   "droving"
+  ]
+ },
+ {
+  "name": "Harvesting crops by hand",
+  "category": "Gardening & Plants",
+  "weights": {
+   "CON": 0.5,
+   "STR": 0.45,
+   "DEX": 0.25,
+   "WIS": 0.1,
+   "DIS": 0.18,
+   "CRE": 0.12
+  },
+  "aliases": [
+   "picking produce",
+   "crop harvest"
+  ]
+ },
+ {
+  "name": "Feeding livestock",
+  "category": "Animals & Pets",
+  "weights": {
+   "STR": 0.35,
+   "CON": 0.35,
+   "WIS": 0.15,
+   "DEX": 0.1,
+   "DIS": 0.2
+  },
+  "aliases": [
+   "feeding farm animals",
+   "feeding the herd"
+  ]
+ },
+ {
+  "name": "Stocking warehouse shelves",
+  "category": "Work & Career",
+  "weights": {
+   "STR": 0.45,
+   "CON": 0.45,
+   "DEX": 0.25,
+   "WIS": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "warehouse stocking",
+   "picking and stowing"
+  ]
+ },
+ {
+  "name": "Operating a forklift",
+  "category": "Work & Career",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.25,
+   "WIS": 0.25,
+   "STR": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "forklift driving",
+   "running a forklift"
+  ]
+ },
+ {
+  "name": "Scanning items at a checkout",
+  "category": "Work & Career",
+  "weights": {
+   "DEX": 0.35,
+   "CHA": 0.35,
+   "CON": 0.25,
+   "INT": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "cashiering",
+   "working a register"
+  ]
+ },
+ {
+  "name": "Restocking a store's shelves",
+  "category": "Work & Career",
+  "weights": {
+   "CON": 0.35,
+   "STR": 0.35,
+   "DEX": 0.3,
+   "WIS": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "shelf restocking",
+   "facing shelves"
+  ]
+ },
+ {
+  "name": "Pulling espresso shots",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.25,
+   "INT": 0.2,
+   "CON": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "making espresso",
+   "barista work"
+  ]
+ },
+ {
+  "name": "Bartending a busy shift",
+  "category": "Work & Career",
+  "weights": {
+   "CHA": 0.5,
+   "DEX": 0.45,
+   "CON": 0.35,
+   "INT": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "tending bar",
+   "working the bar"
+  ]
+ },
+ {
+  "name": "Coloring a client's hair",
+  "category": "Beauty & Grooming",
+  "weights": {
+   "DEX": 0.55,
+   "INT": 0.25,
+   "CHA": 0.25,
+   "WIS": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.1
+  },
+  "aliases": [
+   "hair dye",
+   "hair coloring"
+  ]
+ },
+ {
+  "name": "Giving a barbershop shave",
+  "category": "Beauty & Grooming",
+  "weights": {
+   "DEX": 0.65,
+   "WIS": 0.2,
+   "CHA": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.1
+  },
+  "aliases": [
+   "straight razor shave",
+   "barber shave"
+  ]
+ },
+ {
+  "name": "Reconciling a bank statement",
+  "category": "Business & Finance",
+  "weights": {
+   "INT": 0.55,
+   "WIS": 0.3,
+   "CON": 0.1,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "account reconciliation",
+   "balancing the books"
+  ]
+ },
+ {
+  "name": "Preparing payroll",
+  "category": "Business & Finance",
+  "weights": {
+   "INT": 0.5,
+   "WIS": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "running payroll",
+   "processing payroll"
+  ]
+ },
+ {
+  "name": "Auditing financial records",
+  "category": "Business & Finance",
+  "weights": {
+   "INT": 0.6,
+   "WIS": 0.35,
+   "CON": 0.1,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "financial audit",
+   "auditing the books"
+  ]
+ },
+ {
+  "name": "Filing expense reports",
+  "category": "Business & Finance",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.25,
+   "CON": 0.1,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "expense reporting",
+   "filing expenses"
+  ]
+ },
+ {
+  "name": "Invoicing clients",
+  "category": "Business & Finance",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "sending invoices",
+   "billing clients"
+  ]
+ },
+ {
+  "name": "Researching case law",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.6,
+   "WIS": 0.35,
+   "CON": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "legal research",
+   "paralegal research"
+  ]
+ },
+ {
+  "name": "Drafting a legal contract",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.6,
+   "WIS": 0.35,
+   "CHA": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "writing a contract",
+   "contract drafting"
+  ]
+ },
+ {
+  "name": "Working the line during dinner rush",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.5,
+   "STR": 0.2,
+   "WIS": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "line cooking",
+   "kitchen rush"
+  ]
+ },
+ {
+  "name": "Plating restaurant dishes",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.55,
+   "INT": 0.2,
+   "WIS": 0.2,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "food plating",
+   "plating dishes"
+  ]
+ },
+ {
+  "name": "Operating an excavator",
+  "category": "Work & Career",
+  "weights": {
+   "DEX": 0.55,
+   "INT": 0.3,
+   "WIS": 0.25,
+   "STR": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "running an excavator",
+   "digging with heavy machinery"
+  ]
+ },
+ {
+  "name": "Reading construction blueprints",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.6,
+   "WIS": 0.25,
+   "DEX": 0.05,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "reading blueprints",
+   "interpreting plans"
+  ]
+ },
+ {
+  "name": "Installing sod",
+  "category": "Gardening & Plants",
+  "weights": {
+   "STR": 0.5,
+   "CON": 0.45,
+   "DEX": 0.2,
+   "WIS": 0.1,
+   "DIS": 0.18,
+   "CRE": 0.12
+  },
+  "aliases": [
+   "laying turf",
+   "turf installation"
+  ]
+ },
+ {
+  "name": "Edging a lawn",
+  "category": "Gardening & Plants",
+  "weights": {
+   "DEX": 0.35,
+   "STR": 0.3,
+   "CON": 0.3,
+   "WIS": 0.1,
+   "DIS": 0.18,
+   "CRE": 0.12
+  },
+  "aliases": [
+   "lawn edging",
+   "trimming lawn edges"
+  ]
+ },
+ {
+  "name": "Pruning trees professionally",
+  "category": "Gardening & Plants",
+  "weights": {
+   "DEX": 0.4,
+   "STR": 0.35,
+   "CON": 0.35,
+   "WIS": 0.15,
+   "DIS": 0.18,
+   "CRE": 0.12
+  },
+  "aliases": [
+   "tree trimming",
+   "arborist work"
+  ]
+ },
+ {
+  "name": "Assembling parts on a production line",
+  "category": "Work & Career",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.4,
+   "WIS": 0.15,
+   "INT": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "assembly line work",
+   "factory assembly"
+  ]
+ },
+ {
+  "name": "Quality-checking products",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.4,
+   "DEX": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "quality inspection",
+   "QC inspection"
+  ]
+ },
+ {
+  "name": "Doing a factory safety check",
+  "category": "Work & Career",
+  "weights": {
+   "WIS": 0.4,
+   "INT": 0.35,
+   "DEX": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "safety inspection",
+   "equipment safety check"
+  ]
+ },
+ {
+  "name": "Fielding customer support tickets",
+  "category": "Work & Career",
+  "weights": {
+   "CHA": 0.45,
+   "INT": 0.4,
+   "WIS": 0.3,
+   "CON": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "support tickets",
+   "help desk work"
+  ]
+ },
+ {
+  "name": "Troubleshooting a customer's issue",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.5,
+   "CHA": 0.4,
+   "WIS": 0.25,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "tech support call",
+   "helping a customer troubleshoot"
+  ]
+ },
+ {
+  "name": "Closing a sales deal",
+  "category": "Work & Career",
+  "weights": {
+   "CHA": 0.65,
+   "INT": 0.3,
+   "WIS": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "closing a deal",
+   "sealing a sale"
+  ]
+ },
+ {
+  "name": "Demoing a product to a client",
+  "category": "Work & Career",
+  "weights": {
+   "CHA": 0.55,
+   "INT": 0.35,
+   "DEX": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "product demo",
+   "sales demo"
+  ]
+ },
+ {
+  "name": "Running a project stand-up",
+  "category": "Work & Career",
+  "weights": {
+   "CHA": 0.45,
+   "INT": 0.35,
+   "WIS": 0.3,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "daily standup",
+   "scrum meeting"
+  ]
+ },
+ {
+  "name": "Planning a sprint",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.5,
+   "WIS": 0.35,
+   "CHA": 0.25,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "sprint planning",
+   "backlog planning"
+  ]
+ },
+ {
+  "name": "Writing a project status report",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.5,
+   "WIS": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "status update",
+   "progress report"
+  ]
+ },
+ {
+  "name": "Sorting and delivering mail",
+  "category": "Work & Career",
+  "weights": {
+   "CON": 0.4,
+   "DEX": 0.3,
+   "WIS": 0.2,
+   "STR": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "mail delivery",
+   "postal route"
+  ]
+ },
+ {
+  "name": "Directing traffic",
+  "category": "Work & Career",
+  "weights": {
+   "WIS": 0.45,
+   "CON": 0.35,
+   "CHA": 0.25,
+   "DEX": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "traffic control",
+   "flagging a work site"
+  ]
+ },
+ {
+  "name": "Inspecting a building site",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.45,
+   "WIS": 0.4,
+   "DEX": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "site inspection",
+   "building inspection"
+  ]
+ },
+ {
+  "name": "Surveying a plot of land",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.45,
+   "DEX": 0.3,
+   "WIS": 0.25,
+   "CON": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "land surveying",
+   "site survey"
+  ]
+ },
+ {
+  "name": "Renewing a passport",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.3,
+   "CON": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "passport renewal"
+  ]
+ },
+ {
+  "name": "Applying for a passport",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.3,
+   "CON": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "passport application"
+  ]
+ },
+ {
+  "name": "Renewing a driver's license",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.3,
+   "WIS": 0.3,
+   "CON": 0.2,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "license renewal",
+   "DMV visit"
+  ]
+ },
+ {
+  "name": "Voting in an election",
+  "category": "Admin",
+  "weights": {
+   "WIS": 0.4,
+   "INT": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "casting a vote",
+   "going to the polls"
+  ]
+ },
+ {
+  "name": "Registering to vote",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.25,
+   "WIS": 0.25,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "voter registration"
+  ]
+ },
+ {
+  "name": "Serving jury duty",
+  "category": "Admin",
+  "weights": {
+   "WIS": 0.5,
+   "INT": 0.35,
+   "CON": 0.2,
+   "CHA": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "jury service",
+   "sitting on a jury"
+  ]
+ },
+ {
+  "name": "Filing an insurance claim",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.45,
+   "WIS": 0.35,
+   "CHA": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "insurance claim",
+   "submitting a claim"
+  ]
+ },
+ {
+  "name": "Setting up a will",
+  "category": "Admin",
+  "weights": {
+   "WIS": 0.5,
+   "INT": 0.4,
+   "CHA": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "estate planning",
+   "writing a will"
+  ]
+ },
+ {
+  "name": "Signing a lease",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.35,
+   "CHA": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "signing a rental agreement"
+  ]
+ },
+ {
+  "name": "Apartment hunting",
+  "category": "Shopping & Errands",
+  "weights": {
+   "WIS": 0.35,
+   "INT": 0.3,
+   "CON": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "flat hunting",
+   "apartment search"
+  ]
+ },
+ {
+  "name": "Moving to a new home",
+  "category": "Admin",
+  "weights": {
+   "CON": 0.45,
+   "STR": 0.35,
+   "INT": 0.3,
+   "WIS": 0.25,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "moving house",
+   "relocating"
+  ]
+ },
+ {
+  "name": "Packing boxes for a move",
+  "category": "Chores & Housework",
+  "weights": {
+   "CON": 0.35,
+   "STR": 0.3,
+   "DEX": 0.3,
+   "INT": 0.2,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "packing to move",
+   "boxing up belongings"
+  ]
+ },
+ {
+  "name": "Taking a grocery inventory",
+  "category": "Chores & Housework",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.25,
+   "DEX": 0.15,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "pantry inventory",
+   "stocktaking food"
+  ]
+ },
+ {
+  "name": "Backing up computer files",
+  "category": "Technology & Coding",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "DIS": 0.22,
+   "CRE": 0.2
+  },
+  "aliases": [
+   "file backup",
+   "backing up data"
+  ]
+ },
+ {
+  "name": "Disputing a credit card charge",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.3,
+   "CHA": 0.25,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "disputing a charge",
+   "challenging a transaction"
+  ]
+ },
+ {
+  "name": "Opening a bank account",
+  "category": "Business & Finance",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "setting up a bank account"
+  ]
+ },
+ {
+  "name": "Applying for a loan",
+  "category": "Business & Finance",
+  "weights": {
+   "INT": 0.45,
+   "WIS": 0.35,
+   "CHA": 0.2,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "loan application",
+   "applying for a mortgage"
+  ]
+ },
+ {
+  "name": "Renewing car registration",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.3,
+   "WIS": 0.25,
+   "CON": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "registering a vehicle",
+   "car registration"
+  ]
+ },
+ {
+  "name": "Canceling a subscription",
+  "category": "Admin",
+  "weights": {
+   "WIS": 0.3,
+   "INT": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "cancelling a subscription",
+   "unsubscribing"
+  ]
+ },
+ {
+  "name": "Shredding old documents",
+  "category": "Chores & Housework",
+  "weights": {
+   "DEX": 0.25,
+   "WIS": 0.2,
+   "CON": 0.15,
+   "DIS": 0.4
+  },
+  "aliases": [
+   "shredding paperwork",
+   "destroying documents"
+  ]
+ },
+ {
+  "name": "Organizing important documents",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "DEX": 0.1,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "filing paperwork",
+   "sorting documents"
+  ]
+ },
+ {
+  "name": "Comparing insurance quotes",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.45,
+   "WIS": 0.35,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "shopping for insurance",
+   "comparing policies"
+  ]
+ },
+ {
+  "name": "Filling out a job application",
+  "category": "Work & Career",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "CHA": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "applying for a job",
+   "submitting an application"
+  ]
+ },
+ {
+  "name": "Scheduling a doctor's appointment",
+  "category": "Admin",
+  "weights": {
+   "WIS": 0.3,
+   "INT": 0.25,
+   "CHA": 0.2,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "booking a doctor visit",
+   "making an appointment"
+  ]
+ },
+ {
+  "name": "Setting up autopay for bills",
+  "category": "Admin",
+  "weights": {
+   "INT": 0.3,
+   "WIS": 0.3,
+   "DIS": 0.45
+  },
+  "aliases": [
+   "setting up automatic payments",
+   "enabling autopay"
+  ]
+ },
+ {
+  "name": "Creating a weekly meal plan",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "CHA": 0.05,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "planning weekly meals",
+   "weekly meal planning"
+  ]
+ },
+ {
+  "name": "Doing physical therapy exercises",
+  "category": "Health",
+  "weights": {
+   "CON": 0.4,
+   "STR": 0.3,
+   "WIS": 0.3,
+   "DEX": 0.25,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "PT exercises",
+   "rehab exercises"
+  ]
+ },
+ {
+  "name": "Going to a dentist appointment",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.25,
+   "CON": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "dentist visit",
+   "dental checkup"
+  ]
+ },
+ {
+  "name": "Getting a dental cleaning",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.2,
+   "CON": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "teeth cleaning",
+   "hygienist visit"
+  ]
+ },
+ {
+  "name": "Getting an annual physical",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.25,
+   "CON": 0.2,
+   "INT": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "doctor checkup",
+   "annual checkup"
+  ]
+ },
+ {
+  "name": "Getting an eye exam",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.2,
+   "INT": 0.15,
+   "CON": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "vision test",
+   "optometrist visit"
+  ]
+ },
+ {
+  "name": "Getting a flu shot",
+  "category": "Health",
+  "weights": {
+   "CON": 0.15,
+   "WIS": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "flu vaccine",
+   "getting vaccinated"
+  ]
+ },
+ {
+  "name": "Taking a CPR course",
+  "category": "Health",
+  "weights": {
+   "INT": 0.35,
+   "DEX": 0.3,
+   "CON": 0.25,
+   "WIS": 0.25,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "CPR training",
+   "learning CPR"
+  ]
+ },
+ {
+  "name": "Taking a first-aid course",
+  "category": "Health",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "DEX": 0.25,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "first aid training",
+   "learning first aid"
+  ]
+ },
+ {
+  "name": "Tracking symptoms in a health journal",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.4,
+   "INT": 0.35,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "symptom tracking",
+   "health journaling"
+  ]
+ },
+ {
+  "name": "Taking medication on schedule",
+  "category": "Self-Care & Health",
+  "weights": {
+   "WIS": 0.45,
+   "CON": 0.2,
+   "INT": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "taking meds on time",
+   "medication adherence"
+  ]
+ },
+ {
+  "name": "Doing a mental-health check-in",
+  "category": "Self-Care & Health",
+  "weights": {
+   "WIS": 0.55,
+   "INT": 0.2,
+   "CHA": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "emotional check-in",
+   "mental health check"
+  ]
+ },
+ {
+  "name": "Recovering from an illness",
+  "category": "Self-Care & Health",
+  "weights": {
+   "CON": 0.5,
+   "WIS": 0.35,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "resting to recover",
+   "convalescing"
+  ]
+ },
+ {
+  "name": "Icing a sports injury",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.3,
+   "CON": 0.2,
+   "DEX": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "icing an injury",
+   "applying an ice pack"
+  ]
+ },
+ {
+  "name": "Changing a wound dressing",
+  "category": "Health",
+  "weights": {
+   "DEX": 0.45,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "changing a bandage",
+   "wound care"
+  ]
+ },
+ {
+  "name": "Checking blood pressure",
+  "category": "Health",
+  "weights": {
+   "DEX": 0.25,
+   "INT": 0.25,
+   "WIS": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "taking blood pressure",
+   "monitoring BP"
+  ]
+ },
+ {
+  "name": "Testing blood sugar",
+  "category": "Health",
+  "weights": {
+   "DEX": 0.35,
+   "INT": 0.25,
+   "WIS": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "checking glucose",
+   "blood glucose test"
+  ]
+ },
+ {
+  "name": "Getting a massage",
+  "category": "Self-Care & Health",
+  "weights": {
+   "WIS": 0.35,
+   "CON": 0.3,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "having a massage",
+   "massage therapy"
+  ]
+ },
+ {
+  "name": "Attending a support group",
+  "category": "Self-Care & Health",
+  "weights": {
+   "WIS": 0.45,
+   "CHA": 0.4,
+   "INT": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "group therapy",
+   "peer support meeting"
+  ]
+ },
+ {
+  "name": "Getting a health screening",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.25,
+   "CON": 0.2,
+   "INT": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "medical screening",
+   "preventive screening"
+  ]
+ },
+ {
+  "name": "Fasting for a blood test",
+  "category": "Health",
+  "weights": {
+   "CON": 0.35,
+   "WIS": 0.3,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "fasting bloodwork",
+   "fasting labs"
+  ]
+ },
+ {
+  "name": "Using crutches to get around",
+  "category": "Health",
+  "weights": {
+   "CON": 0.4,
+   "STR": 0.35,
+   "DEX": 0.3,
+   "WIS": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "walking on crutches",
+   "getting around injured"
+  ]
+ },
+ {
+  "name": "Doing rehab after surgery",
+  "category": "Health",
+  "weights": {
+   "CON": 0.45,
+   "WIS": 0.35,
+   "STR": 0.25,
+   "DEX": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "post-surgery rehab",
+   "surgical recovery exercises"
+  ]
+ },
+ {
+  "name": "Applying sunscreen",
+  "category": "Self-Care & Health",
+  "weights": {
+   "WIS": 0.25,
+   "DEX": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "putting on sunscreen",
+   "sun protection"
+  ]
+ },
+ {
+  "name": "Getting an X-ray",
+  "category": "Health",
+  "weights": {
+   "WIS": 0.15,
+   "CON": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "having an X-ray",
+   "radiology visit"
+  ]
+ },
+ {
+  "name": "Teaching a child to swim",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.4,
+   "WIS": 0.35,
+   "CON": 0.3,
+   "STR": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "swim lessons for a kid",
+   "teaching swimming"
+  ]
+ },
+ {
+  "name": "Teaching a child to read",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.4,
+   "CHA": 0.4,
+   "INT": 0.35,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "reading practice with a child",
+   "teaching reading"
+  ]
+ },
+ {
+  "name": "Teaching a kid to tie their shoes",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.35,
+   "WIS": 0.35,
+   "DEX": 0.2,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "shoe-tying lesson"
+  ]
+ },
+ {
+  "name": "Quizzing a child for a spelling test",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.35,
+   "INT": 0.3,
+   "WIS": 0.3,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "spelling practice",
+   "test prep with a kid"
+  ]
+ },
+ {
+  "name": "Caring for an elderly parent",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.5,
+   "CHA": 0.4,
+   "CON": 0.35,
+   "STR": 0.2,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "eldercare",
+   "looking after an aging parent"
+  ]
+ },
+ {
+  "name": "Taking an elderly parent to the doctor",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.4,
+   "CHA": 0.35,
+   "CON": 0.25,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "driving a parent to appointments"
+  ]
+ },
+ {
+  "name": "Bathing an elderly relative",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.35,
+   "CON": 0.3,
+   "STR": 0.3,
+   "CHA": 0.25,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "helping a parent bathe",
+   "assisting with bathing"
+  ]
+ },
+ {
+  "name": "Planning a family vacation",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "CHA": 0.3,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "planning a family trip",
+   "family trip planning"
+  ]
+ },
+ {
+  "name": "Attending a parent-teacher conference",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.45,
+   "WIS": 0.35,
+   "INT": 0.2,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "parent-teacher meeting"
+  ]
+ },
+ {
+  "name": "Dropping the kids at school",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.3,
+   "CON": 0.25,
+   "DEX": 0.2,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "school run",
+   "school drop-off"
+  ]
+ },
+ {
+  "name": "Babyproofing the house",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "DEX": 0.35,
+   "INT": 0.3,
+   "WIS": 0.3,
+   "STR": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "childproofing",
+   "baby-proofing"
+  ]
+ },
+ {
+  "name": "Assembling a crib",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.3,
+   "STR": 0.2,
+   "WIS": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "putting together a crib",
+   "building a cot"
+  ]
+ },
+ {
+  "name": "Teaching a teenager to drive",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.5,
+   "CHA": 0.4,
+   "CON": 0.2,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "driving lessons for a teen"
+  ]
+ },
+ {
+  "name": "Comforting a sick child",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.45,
+   "WIS": 0.45,
+   "CON": 0.25,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "caring for a sick kid",
+   "nursing a sick child"
+  ]
+ },
+ {
+  "name": "Hosting a kid's birthday party",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.45,
+   "CON": 0.35,
+   "INT": 0.25,
+   "STR": 0.1,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "throwing a birthday party"
+  ]
+ },
+ {
+  "name": "Doing a craft project with kids",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "DEX": 0.4,
+   "CHA": 0.3,
+   "WIS": 0.2,
+   "INT": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "kids crafts",
+   "crafting with children"
+  ]
+ },
+ {
+  "name": "Taking the kids to the playground",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CON": 0.3,
+   "CHA": 0.25,
+   "WIS": 0.2,
+   "STR": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "playground trip",
+   "taking kids to the park"
+  ]
+ },
+ {
+  "name": "Refereeing a sibling squabble",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.45,
+   "CHA": 0.4,
+   "INT": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "mediating a kids argument",
+   "breaking up a sibling fight"
+  ]
+ },
+ {
+  "name": "Getting the kids ready for school",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.35,
+   "CHA": 0.3,
+   "CON": 0.25,
+   "DEX": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "morning school routine"
+  ]
+ },
+ {
+  "name": "Singing lullabies to a baby",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.35,
+   "WIS": 0.3,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "singing a lullaby"
+  ]
+ },
+ {
+  "name": "Feeding a baby a bottle",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.3,
+   "CHA": 0.25,
+   "DEX": 0.2,
+   "CON": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "bottle-feeding"
+  ]
+ },
+ {
+  "name": "Caring for a newborn overnight",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CON": 0.5,
+   "WIS": 0.4,
+   "CHA": 0.3,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "night feedings",
+   "overnight baby care"
+  ]
+ },
+ {
+  "name": "Teaching a child table manners",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.4,
+   "CHA": 0.4,
+   "INT": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "teaching manners"
+  ]
+ },
+ {
+  "name": "Enforcing a bedtime routine",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "WIS": 0.45,
+   "CHA": 0.35,
+   "CON": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "bedtime routine",
+   "putting kids to bed"
+  ]
+ },
+ {
+  "name": "Helping a child learn to walk",
+  "category": "Childcare & Parenting",
+  "weights": {
+   "CHA": 0.35,
+   "WIS": 0.35,
+   "CON": 0.2,
+   "STR": 0.15,
+   "DIS": 0.35,
+   "CRE": 0.05
+  },
+  "aliases": [
+   "teaching a baby to walk"
+  ]
+ },
+ {
+  "name": "Visiting a grandparent",
+  "category": "Relationships & Social",
+  "weights": {
+   "CHA": 0.45,
+   "WIS": 0.35
+  },
+  "aliases": [
+   "visiting grandma",
+   "seeing grandparents"
+  ]
+ },
+ {
+  "name": "Planning a family reunion",
+  "category": "Relationships & Social",
+  "weights": {
+   "INT": 0.4,
+   "CHA": 0.4,
+   "WIS": 0.25
+  },
+  "aliases": [
+   "organizing a family reunion"
+  ]
+ },
+ {
+  "name": "Making a family photo album",
+  "category": "Relationships & Social",
+  "weights": {
+   "WIS": 0.35,
+   "DEX": 0.3,
+   "INT": 0.25,
+   "CHA": 0.15
+  },
+  "aliases": [
+   "scrapbooking family photos",
+   "building a photo album"
+  ]
+ },
+ {
+  "name": "Watching a child's school recital",
+  "category": "Relationships & Social",
+  "weights": {
+   "WIS": 0.35,
+   "CHA": 0.3
+  },
+  "aliases": [
+   "attending a school play",
+   "watching a recital"
+  ]
+ },
+ {
+  "name": "Cheering at a kid's sports game",
+  "category": "Relationships & Social",
+  "weights": {
+   "CHA": 0.35,
+   "WIS": 0.2,
+   "CON": 0.15
+  },
+  "aliases": [
+   "watching a child's game",
+   "cheering from the sidelines"
+  ]
+ },
+ {
+  "name": "Building model airplanes",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.3,
+   "WIS": 0.35,
+   "STR": 0.05,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "model airplanes",
+   "building model planes"
+  ]
+ },
+ {
+  "name": "Model railroading",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.3,
+   "WIS": 0.35,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "model trains",
+   "model railway"
+  ]
+ },
+ {
+  "name": "Racing RC cars",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "DEX": 0.7,
+   "INT": 0.2,
+   "WIS": 0.15,
+   "CON": 0.05,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "RC cars",
+   "radio control cars"
+  ]
+ },
+ {
+  "name": "Flying a drone",
+  "category": "Science & Making",
+  "weights": {
+   "DEX": 0.7,
+   "INT": 0.25,
+   "WIS": 0.2,
+   "DIS": 0.2,
+   "CRE": 0.35
+  },
+  "aliases": [
+   "drone flying",
+   "piloting a drone"
+  ]
+ },
+ {
+  "name": "FPV drone racing",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "DEX": 0.75,
+   "INT": 0.2,
+   "WIS": 0.2,
+   "CON": 0.08,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "FPV racing",
+   "drone racing"
+  ]
+ },
+ {
+  "name": "Metal detecting",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "WIS": 0.4,
+   "CON": 0.25,
+   "INT": 0.2,
+   "DEX": 0.1,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "detecting",
+   "treasure hunting"
+  ]
+ },
+ {
+  "name": "Building a terrarium",
+  "category": "Gardening & Plants",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.25,
+   "WIS": 0.35,
+   "DIS": 0.18,
+   "CRE": 0.12
+  },
+  "aliases": [
+   "terrarium building"
+  ]
+ },
+ {
+  "name": "Aquascaping a planted tank",
+  "category": "Gardening & Plants",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.3,
+   "WIS": 0.35,
+   "DIS": 0.18,
+   "CRE": 0.12
+  },
+  "aliases": [
+   "aquascaping",
+   "planted aquarium"
+  ]
+ },
+ {
+  "name": "Reef aquarium keeping",
+  "category": "Animals & Pets",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.35,
+   "DEX": 0.2,
+   "CON": 0.05,
+   "DIS": 0.2
+  },
+  "aliases": [
+   "reef tank",
+   "saltwater aquarium"
+  ]
+ },
+ {
+  "name": "Blacksmithing",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "STR": 0.5,
+   "DEX": 0.5,
+   "CON": 0.35,
+   "INT": 0.2,
+   "WIS": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "forging",
+   "smithing"
+  ]
+ },
+ {
+  "name": "Glassblowing",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.65,
+   "CON": 0.3,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "STR": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "glass blowing"
+  ]
+ },
+ {
+  "name": "Bookbinding",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.25,
+   "WIS": 0.35,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "binding books"
+  ]
+ },
+ {
+  "name": "Wood turning on a lathe",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.2,
+   "INT": 0.2,
+   "WIS": 0.3,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "woodturning",
+   "lathe turning"
+  ]
+ },
+ {
+  "name": "Resin art",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.2,
+   "WIS": 0.3,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "epoxy resin art",
+   "resin pouring"
+  ]
+ },
+ {
+  "name": "Macrame",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "macrame knotting",
+   "knotting"
+  ]
+ },
+ {
+  "name": "Punch needle embroidery",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.3,
+   "INT": 0.1,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "punch needle"
+  ]
+ },
+ {
+  "name": "Sashiko stitching",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "sashiko"
+  ]
+ },
+ {
+  "name": "Wire-wrapping jewelry",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.65,
+   "INT": 0.2,
+   "WIS": 0.25,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "wire wrapping",
+   "wire jewelry"
+  ]
+ },
+ {
+  "name": "Beading bracelets",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.25,
+   "INT": 0.1,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "beading",
+   "bead work"
+  ]
+ },
+ {
+  "name": "Building a ship in a bottle",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "DEX": 0.7,
+   "WIS": 0.4,
+   "INT": 0.2,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "ship in a bottle"
+  ]
+ },
+ {
+  "name": "Painting miniatures",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.65,
+   "WIS": 0.35,
+   "INT": 0.15,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "miniature painting",
+   "mini painting"
+  ]
+ },
+ {
+  "name": "Assembling Gunpla model kits",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.2,
+   "WIS": 0.3,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "gunpla",
+   "gundam models",
+   "plastic model kits"
+  ]
+ },
+ {
+  "name": "Pyrography wood burning",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "wood burning",
+   "pyrography"
+  ]
+ },
+ {
+  "name": "Weaving on a loom",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "loom weaving",
+   "weaving"
+  ]
+ },
+ {
+  "name": "Needle felting",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.3,
+   "INT": 0.1,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "felting",
+   "wool felting"
+  ]
+ },
+ {
+  "name": "Paper quilling",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.65,
+   "WIS": 0.3,
+   "INT": 0.1,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "quilling"
+  ]
+ },
+ {
+  "name": "Scrapbooking",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.4,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "CHA": 0.05,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "scrapbook"
+  ]
+ },
+ {
+  "name": "Tie-dyeing fabric",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.4,
+   "INT": 0.2,
+   "WIS": 0.2,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "tie dye",
+   "tie-dye"
+  ]
+ },
+ {
+  "name": "Batik fabric dyeing",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.25,
+   "WIS": 0.3,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "batik"
+  ]
+ },
+ {
+  "name": "Spinning yarn",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "hand spinning",
+   "yarn spinning"
+  ]
+ },
+ {
+  "name": "Building a birdhouse",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.2,
+   "WIS": 0.2,
+   "STR": 0.1,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "birdhouse building"
+  ]
+ },
+ {
+  "name": "Making a diorama",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.25,
+   "WIS": 0.3,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "diorama"
+  ]
+ },
+ {
+  "name": "Fossil hunting",
+  "category": "Nature",
+  "weights": {
+   "INT": 0.3,
+   "WIS": 0.3,
+   "CON": 0.25,
+   "DEX": 0.1
+  },
+  "aliases": [
+   "fossicking",
+   "hunting fossils"
+  ]
+ },
+ {
+  "name": "Growing crystals",
+  "category": "Science & Making",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.35,
+   "DEX": 0.1,
+   "DIS": 0.2,
+   "CRE": 0.35
+  },
+  "aliases": [
+   "crystal growing"
+  ]
+ },
+ {
+  "name": "Building electronic circuits",
+  "category": "Science & Making",
+  "weights": {
+   "INT": 0.5,
+   "DEX": 0.4,
+   "WIS": 0.25,
+   "DIS": 0.2,
+   "CRE": 0.35
+  },
+  "aliases": [
+   "circuit building",
+   "electronics tinkering"
+  ]
+ },
+ {
+  "name": "Growing mushrooms at home",
+  "category": "Gardening & Plants",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.3,
+   "DEX": 0.15,
+   "DIS": 0.18,
+   "CRE": 0.12
+  },
+  "aliases": [
+   "mushroom cultivation",
+   "growing mushrooms"
+  ]
+ },
+ {
+  "name": "Observing planets through a telescope",
+  "category": "Nature",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.35,
+   "DEX": 0.1
+  },
+  "aliases": [
+   "telescope observing",
+   "planetary observation"
+  ]
+ },
+ {
+  "name": "Brewing kombucha",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.3,
+   "DEX": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "kombucha"
+  ]
+ },
+ {
+  "name": "Making mead",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "DEX": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "mead making",
+   "honey wine"
+  ]
+ },
+ {
+  "name": "Making wine at home",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.4,
+   "WIS": 0.3,
+   "DEX": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "home winemaking",
+   "winemaking"
+  ]
+ },
+ {
+  "name": "Flying a kite",
+  "category": "Leisure",
+  "weights": {
+   "DEX": 0.5,
+   "WIS": 0.2,
+   "CON": 0.15
+  },
+  "aliases": [
+   "kite flying"
+  ]
+ },
+ {
+  "name": "Antique hunting",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "INT": 0.25,
+   "WIS": 0.2,
+   "CON": 0.1,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "antiquing",
+   "hunting antiques"
+  ]
+ },
+ {
+  "name": "Trading card collecting",
+  "category": "Collecting & Hobbies",
+  "weights": {
+   "INT": 0.25,
+   "WIS": 0.15,
+   "CRE": 0.15
+  },
+  "aliases": [
+   "card collecting",
+   "TCG collecting"
+  ]
+ },
+ {
+  "name": "Archery",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.3,
+   "WIS": 0.35,
+   "CON": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "target archery",
+   "shooting a bow"
+  ]
+ },
+ {
+  "name": "Racquetball",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.5,
+   "STR": 0.2,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "racquetball"
+  ]
+ },
+ {
+  "name": "Team handball",
+  "category": "Sports",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.45,
+   "STR": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "handball"
+  ]
+ },
+ {
+  "name": "Lacrosse",
+  "category": "Sports",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.45,
+   "STR": 0.3,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "lax"
+  ]
+ },
+ {
+  "name": "Triathlon training",
+  "category": "Cardio & Endurance",
+  "weights": {
+   "CON": 0.9,
+   "STR": 0.3,
+   "WIS": 0.25,
+   "DEX": 0.1,
+   "DIS": 0.25
+  },
+  "aliases": [
+   "triathlon",
+   "tri training"
+  ]
+ },
+ {
+  "name": "Parkour",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "DEX": 0.7,
+   "STR": 0.4,
+   "CON": 0.4,
+   "WIS": 0.2,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "freerunning",
+   "free running"
+  ]
+ },
+ {
+  "name": "Lead climbing",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "STR": 0.5,
+   "DEX": 0.5,
+   "CON": 0.4,
+   "WIS": 0.3,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "sport climbing",
+   "lead climbing"
+  ]
+ },
+ {
+  "name": "Disc golf",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.25,
+   "WIS": 0.25,
+   "STR": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "frisbee golf"
+  ]
+ },
+ {
+  "name": "Skateboarding",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.65,
+   "STR": 0.2,
+   "CON": 0.25,
+   "WIS": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "skating",
+   "skateboard"
+  ]
+ },
+ {
+  "name": "BMX riding",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.3,
+   "CON": 0.3,
+   "WIS": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "bmx",
+   "bmx biking"
+  ]
+ },
+ {
+  "name": "Wakeboarding",
+  "category": "Water Activities",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.3,
+   "CON": 0.3
+  },
+  "aliases": [
+   "wakeboard"
+  ]
+ },
+ {
+  "name": "Kitesurfing",
+  "category": "Water Activities",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.35,
+   "CON": 0.4,
+   "WIS": 0.15
+  },
+  "aliases": [
+   "kiteboarding",
+   "kitesurf"
+  ]
+ },
+ {
+  "name": "Biathlon",
+  "category": "Winter Sports",
+  "weights": {
+   "CON": 0.7,
+   "DEX": 0.4,
+   "WIS": 0.3,
+   "STR": 0.15
+  },
+  "aliases": [
+   "biathlon"
+  ]
+ },
+ {
+  "name": "Inline skating",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.4,
+   "STR": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "rollerblading",
+   "inline skates"
+  ]
+ },
+ {
+  "name": "Roller skating",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.35,
+   "STR": 0.1,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "roller skates",
+   "quad skating"
+  ]
+ },
+ {
+  "name": "Mountain biking",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "CON": 0.55,
+   "DEX": 0.45,
+   "STR": 0.25,
+   "WIS": 0.15,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "mtb",
+   "trail biking"
+  ]
+ },
+ {
+  "name": "Softball",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.45,
+   "CON": 0.3,
+   "STR": 0.25,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "softball"
+  ]
+ },
+ {
+  "name": "Field hockey",
+  "category": "Sports",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.4,
+   "STR": 0.25,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "field hockey"
+  ]
+ },
+ {
+  "name": "Pickleball",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.35,
+   "STR": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "pickleball"
+  ]
+ },
+ {
+  "name": "Padel",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.4,
+   "STR": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "padel tennis",
+   "paddle tennis"
+  ]
+ },
+ {
+  "name": "Beach volleyball",
+  "category": "Sports",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.45,
+   "STR": 0.25,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "beach volley"
+  ]
+ },
+ {
+  "name": "Futsal",
+  "category": "Sports",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.45,
+   "STR": 0.15,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "indoor soccer"
+  ]
+ },
+ {
+  "name": "Dodgeball",
+  "category": "Sports",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.35,
+   "STR": 0.2,
+   "DIS": 0.12
+  },
+  "aliases": [
+   "dodgeball"
+  ]
+ },
+ {
+  "name": "Water skiing",
+  "category": "Water Activities",
+  "weights": {
+   "DEX": 0.5,
+   "STR": 0.35,
+   "CON": 0.35
+  },
+  "aliases": [
+   "waterskiing"
+  ]
+ },
+ {
+  "name": "Jet skiing",
+  "category": "Water Activities",
+  "weights": {
+   "DEX": 0.45,
+   "STR": 0.2,
+   "CON": 0.25
+  },
+  "aliases": [
+   "jetski",
+   "personal watercraft"
+  ]
+ },
+ {
+  "name": "Whitewater kayaking",
+  "category": "Water Activities",
+  "weights": {
+   "DEX": 0.55,
+   "STR": 0.4,
+   "CON": 0.45,
+   "WIS": 0.2
+  },
+  "aliases": [
+   "white-water kayaking",
+   "river kayaking"
+  ]
+ },
+ {
+  "name": "Dragon boat racing",
+  "category": "Water Activities",
+  "weights": {
+   "CON": 0.55,
+   "STR": 0.5,
+   "DEX": 0.2,
+   "CHA": 0.15
+  },
+  "aliases": [
+   "dragon boat",
+   "dragon boating"
+  ]
+ },
+ {
+  "name": "Synchronized swimming",
+  "category": "Water Activities",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.5,
+   "WIS": 0.25,
+   "CHA": 0.2
+  },
+  "aliases": [
+   "artistic swimming",
+   "synchro"
+  ]
+ },
+ {
+  "name": "Springboard diving",
+  "category": "Water Activities",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.2,
+   "CON": 0.2,
+   "WIS": 0.25
+  },
+  "aliases": [
+   "platform diving",
+   "competitive diving"
+  ]
+ },
+ {
+  "name": "Spearfishing",
+  "category": "Water Activities",
+  "weights": {
+   "CON": 0.4,
+   "DEX": 0.45,
+   "WIS": 0.3,
+   "STR": 0.15
+  },
+  "aliases": [
+   "spear fishing"
+  ]
+ },
+ {
+  "name": "Speed skating",
+  "category": "Winter Sports",
+  "weights": {
+   "CON": 0.6,
+   "DEX": 0.45,
+   "STR": 0.25
+  },
+  "aliases": [
+   "speed skating"
+  ]
+ },
+ {
+  "name": "Ski jumping",
+  "category": "Winter Sports",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.3,
+   "WIS": 0.3,
+   "CON": 0.2
+  },
+  "aliases": [
+   "ski jump"
+  ]
+ },
+ {
+  "name": "Luge",
+  "category": "Winter Sports",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.3,
+   "CON": 0.2,
+   "STR": 0.1
+  },
+  "aliases": [
+   "luge"
+  ]
+ },
+ {
+  "name": "Bobsledding",
+  "category": "Winter Sports",
+  "weights": {
+   "STR": 0.45,
+   "CON": 0.4,
+   "DEX": 0.35
+  },
+  "aliases": [
+   "bobsled",
+   "bobsleigh"
+  ]
+ },
+ {
+  "name": "Telemark skiing",
+  "category": "Winter Sports",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.5,
+   "STR": 0.3
+  },
+  "aliases": [
+   "telemark",
+   "tele skiing"
+  ]
+ },
+ {
+  "name": "Snowmobiling",
+  "category": "Winter Sports",
+  "weights": {
+   "DEX": 0.45,
+   "STR": 0.2,
+   "CON": 0.25
+  },
+  "aliases": [
+   "snowmobile",
+   "sledding machine"
+  ]
+ },
+ {
+  "name": "Splitboarding",
+  "category": "Winter Sports",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.5,
+   "STR": 0.25,
+   "WIS": 0.15
+  },
+  "aliases": [
+   "splitboard",
+   "backcountry snowboarding"
+  ]
+ },
+ {
+  "name": "Skydiving",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "WIS": 0.35,
+   "DEX": 0.3,
+   "CON": 0.2,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "skydive",
+   "parachuting"
+  ]
+ },
+ {
+  "name": "Paragliding",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "DEX": 0.5,
+   "WIS": 0.35,
+   "CON": 0.2,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "paraglide"
+  ]
+ },
+ {
+  "name": "Hang gliding",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "DEX": 0.5,
+   "STR": 0.2,
+   "WIS": 0.3,
+   "CON": 0.25,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "hang glide"
+  ]
+ },
+ {
+  "name": "Hot air ballooning",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "WIS": 0.3,
+   "INT": 0.2,
+   "DEX": 0.1,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "ballooning",
+   "hot air balloon"
+  ]
+ },
+ {
+  "name": "Bungee jumping",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "WIS": 0.3,
+   "CON": 0.15,
+   "DEX": 0.1,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "bungee jump",
+   "bungy jumping"
+  ]
+ },
+ {
+  "name": "Highlining",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "DEX": 0.7,
+   "WIS": 0.4,
+   "CON": 0.3,
+   "STR": 0.2,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "highline",
+   "high-lining"
+  ]
+ },
+ {
+  "name": "Canyoneering",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "CON": 0.5,
+   "DEX": 0.45,
+   "STR": 0.35,
+   "WIS": 0.25,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "canyoning"
+  ]
+ },
+ {
+  "name": "Sandboarding",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.3,
+   "STR": 0.15,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "sand boarding"
+  ]
+ },
+ {
+  "name": "Dog sledding",
+  "category": "Outdoor & Adventure",
+  "weights": {
+   "STR": 0.4,
+   "CON": 0.5,
+   "DEX": 0.3,
+   "CHA": 0.15,
+   "DIS": 0.1
+  },
+  "aliases": [
+   "mushing",
+   "dog sled"
+  ]
+ },
+ {
+  "name": "Sumo wrestling",
+  "category": "Martial Arts",
+  "weights": {
+   "STR": 0.6,
+   "CON": 0.4,
+   "DEX": 0.3,
+   "WIS": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "sumo"
+  ]
+ },
+ {
+  "name": "Hapkido",
+  "category": "Martial Arts",
+  "weights": {
+   "DEX": 0.5,
+   "STR": 0.35,
+   "CON": 0.35,
+   "WIS": 0.25,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "hapkido"
+  ]
+ },
+ {
+  "name": "Wing Chun",
+  "category": "Martial Arts",
+  "weights": {
+   "DEX": 0.55,
+   "STR": 0.3,
+   "WIS": 0.3,
+   "CON": 0.25,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "wing chun",
+   "ving tsun"
+  ]
+ },
+ {
+  "name": "Escrima stick fighting",
+  "category": "Martial Arts",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.3,
+   "CON": 0.3,
+   "WIS": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "escrima",
+   "arnis",
+   "kali"
+  ]
+ },
+ {
+  "name": "Mixed martial arts",
+  "category": "Martial Arts",
+  "weights": {
+   "STR": 0.45,
+   "CON": 0.5,
+   "DEX": 0.45,
+   "WIS": 0.2,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "mma",
+   "cage fighting"
+  ]
+ },
+ {
+  "name": "Kyudo",
+  "category": "Martial Arts",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.5,
+   "STR": 0.25,
+   "CON": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "kyudo",
+   "japanese archery"
+  ]
+ },
+ {
+  "name": "Iaido",
+  "category": "Martial Arts",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.45,
+   "STR": 0.2,
+   "CON": 0.15,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "iaido",
+   "sword drawing"
+  ]
+ },
+ {
+  "name": "Qigong",
+  "category": "Mindfulness",
+  "weights": {
+   "WIS": 0.5,
+   "CON": 0.2,
+   "DEX": 0.15,
+   "INT": 0.1,
+   "DIS": 0.3
+  },
+  "aliases": [
+   "qigong",
+   "chi kung"
+  ]
+ },
+ {
+  "name": "Playing the cello",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.35,
+   "INT": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "cello"
+  ]
+ },
+ {
+  "name": "Playing the double bass",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.55,
+   "STR": 0.2,
+   "WIS": 0.3,
+   "CHA": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "double bass",
+   "upright bass",
+   "contrabass"
+  ]
+ },
+ {
+  "name": "Playing the clarinet",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.25,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "clarinet"
+  ]
+ },
+ {
+  "name": "Playing the trumpet",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.35,
+   "WIS": 0.3,
+   "CHA": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "trumpet"
+  ]
+ },
+ {
+  "name": "Playing the trombone",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.3,
+   "WIS": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "trombone"
+  ]
+ },
+ {
+  "name": "Playing the harmonica",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.45,
+   "CON": 0.2,
+   "WIS": 0.25,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "harmonica",
+   "mouth organ"
+  ]
+ },
+ {
+  "name": "Playing the banjo",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "banjo"
+  ]
+ },
+ {
+  "name": "Playing the mandolin",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "mandolin"
+  ]
+ },
+ {
+  "name": "Playing the accordion",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.25,
+   "WIS": 0.3,
+   "CHA": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "accordion"
+  ]
+ },
+ {
+  "name": "Playing the harp",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.65,
+   "WIS": 0.35,
+   "INT": 0.2,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "harp"
+  ]
+ },
+ {
+  "name": "Playing the synthesizer",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.45,
+   "INT": 0.35,
+   "WIS": 0.3,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "synth",
+   "synthesizer",
+   "keyboards"
+  ]
+ },
+ {
+  "name": "Playing hand drums",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.3,
+   "WIS": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "djembe",
+   "bongos",
+   "hand percussion"
+  ]
+ },
+ {
+  "name": "Playing the oboe",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.3,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "oboe"
+  ]
+ },
+ {
+  "name": "Playing the French horn",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.3,
+   "WIS": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "french horn"
+  ]
+ },
+ {
+  "name": "Playing the tuba",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.4,
+   "CON": 0.35,
+   "STR": 0.15,
+   "WIS": 0.25,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "tuba"
+  ]
+ },
+ {
+  "name": "Playing the viola",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.35,
+   "INT": 0.25,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "viola"
+  ]
+ },
+ {
+  "name": "Playing the sitar",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.35,
+   "INT": 0.25,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "sitar"
+  ]
+ },
+ {
+  "name": "Playing the tin whistle",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.5,
+   "CON": 0.2,
+   "WIS": 0.25,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "tin whistle",
+   "penny whistle"
+  ]
+ },
+ {
+  "name": "Playing the pipe organ",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.25,
+   "WIS": 0.3,
+   "CON": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "pipe organ",
+   "church organ"
+  ]
+ },
+ {
+  "name": "Making beats",
+  "category": "Music",
+  "weights": {
+   "INT": 0.35,
+   "DEX": 0.35,
+   "WIS": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "beat making",
+   "beatmaking"
+  ]
+ },
+ {
+  "name": "Turntablism scratching",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.55,
+   "INT": 0.2,
+   "WIS": 0.25,
+   "CHA": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "turntablism",
+   "scratching",
+   "turntables"
+  ]
+ },
+ {
+  "name": "Singing in harmony",
+  "category": "Music",
+  "weights": {
+   "WIS": 0.4,
+   "CHA": 0.35,
+   "INT": 0.2,
+   "CON": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "harmony singing",
+   "vocal harmony"
+  ]
+ },
+ {
+  "name": "Beatboxing",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.45,
+   "CON": 0.3,
+   "WIS": 0.25,
+   "CHA": 0.3,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "beatbox"
+  ]
+ },
+ {
+  "name": "Playing in an orchestra",
+  "category": "Music",
+  "weights": {
+   "DEX": 0.5,
+   "WIS": 0.35,
+   "INT": 0.25,
+   "CHA": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "orchestra",
+   "orchestral playing"
+  ]
+ },
+ {
+  "name": "Singing in a choir",
+  "category": "Music",
+  "weights": {
+   "WIS": 0.4,
+   "CHA": 0.3,
+   "CON": 0.2,
+   "INT": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "choir",
+   "choral singing"
+  ]
+ },
+ {
+  "name": "Linocut printmaking",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.2,
+   "WIS": 0.3,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "linocut",
+   "lino printing",
+   "block printing"
+  ]
+ },
+ {
+  "name": "Screen printing",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.55,
+   "INT": 0.25,
+   "WIS": 0.25,
+   "STR": 0.1,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "silk screening",
+   "screenprinting"
+  ]
+ },
+ {
+  "name": "Etching prints",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.25,
+   "WIS": 0.3,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "etching",
+   "intaglio printmaking"
+  ]
+ },
+ {
+  "name": "Making a mosaic",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.35,
+   "INT": 0.2,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "mosaic art",
+   "mosaics"
+  ]
+ },
+ {
+  "name": "Stained glass making",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.25,
+   "WIS": 0.35,
+   "STR": 0.1,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "stained glass"
+  ]
+ },
+ {
+  "name": "Tattooing",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.7,
+   "INT": 0.25,
+   "WIS": 0.35,
+   "CHA": 0.15,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "tattoo art",
+   "tattoo work"
+  ]
+ },
+ {
+  "name": "Drawing manga",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.2,
+   "WIS": 0.35,
+   "CHA": 0.1,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "manga drawing",
+   "drawing anime"
+  ]
+ },
+ {
+  "name": "Storyboarding",
+  "category": "Visual Arts",
+  "weights": {
+   "INT": 0.35,
+   "DEX": 0.35,
+   "WIS": 0.3,
+   "CHA": 0.1,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "storyboards",
+   "storyboard art"
+  ]
+ },
+ {
+  "name": "Stop-motion animation",
+  "category": "Photography & Film",
+  "weights": {
+   "DEX": 0.5,
+   "INT": 0.3,
+   "WIS": 0.4,
+   "CHA": 0.1,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "stop motion",
+   "claymation"
+  ]
+ },
+ {
+  "name": "Airbrushing",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.2,
+   "WIS": 0.3,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "airbrush art",
+   "airbrushing"
+  ]
+ },
+ {
+  "name": "Ice sculpting",
+  "category": "Crafts & Handwork",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.3,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "ice carving",
+   "ice sculpture"
+  ]
+ },
+ {
+  "name": "Balloon twisting",
+  "category": "Performing Arts",
+  "weights": {
+   "DEX": 0.6,
+   "CHA": 0.3,
+   "WIS": 0.2,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "balloon animals",
+   "balloon art"
+  ]
+ },
+ {
+  "name": "Face painting",
+  "category": "Visual Arts",
+  "weights": {
+   "DEX": 0.6,
+   "CHA": 0.25,
+   "WIS": 0.2,
+   "DIS": 0.1,
+   "CRE": 0.6
+  },
+  "aliases": [
+   "face paint"
+  ]
+ },
+ {
+  "name": "Poi spinning",
+  "category": "Performing Arts",
+  "weights": {
+   "DEX": 0.6,
+   "CON": 0.25,
+   "WIS": 0.25,
+   "CHA": 0.25,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "poi",
+   "flow arts"
+  ]
+ },
+ {
+  "name": "Hula hoop dance",
+  "category": "Dance",
+  "weights": {
+   "DEX": 0.55,
+   "CON": 0.35,
+   "WIS": 0.2,
+   "CHA": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.45
+  },
+  "aliases": [
+   "hooping",
+   "hoop dance"
+  ]
+ },
+ {
+  "name": "Unicycling",
+  "category": "Performing Arts",
+  "weights": {
+   "DEX": 0.7,
+   "CON": 0.3,
+   "STR": 0.15,
+   "WIS": 0.2,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "unicycle"
+  ]
+ },
+ {
+  "name": "Ventriloquism",
+  "category": "Performing Arts",
+  "weights": {
+   "CHA": 0.5,
+   "WIS": 0.3,
+   "INT": 0.2,
+   "DEX": 0.1,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "ventriloquist act"
+  ]
+ },
+ {
+  "name": "Writing a stand-up comedy set",
+  "category": "Performing Arts",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.35,
+   "CHA": 0.35,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "comedy writing",
+   "writing jokes"
+  ]
+ },
+ {
+  "name": "Aerial hoop",
+  "category": "Performing Arts",
+  "weights": {
+   "STR": 0.5,
+   "DEX": 0.55,
+   "CON": 0.35,
+   "WIS": 0.2,
+   "CHA": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "lyra",
+   "aerial ring"
+  ]
+ },
+ {
+  "name": "Stilt walking",
+  "category": "Performing Arts",
+  "weights": {
+   "DEX": 0.6,
+   "STR": 0.25,
+   "CON": 0.25,
+   "WIS": 0.2,
+   "CHA": 0.2,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "stilts",
+   "stilt-walking"
+  ]
+ },
+ {
+  "name": "Cardistry flourishing",
+  "category": "Performing Arts",
+  "weights": {
+   "DEX": 0.7,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "DIS": 0.12,
+   "CRE": 0.55
+  },
+  "aliases": [
+   "cardistry",
+   "card flourishing"
+  ]
+ },
+ {
+  "name": "Yo-yo tricks",
+  "category": "Leisure",
+  "weights": {
+   "DEX": 0.7,
+   "WIS": 0.25,
+   "INT": 0.1
+  },
+  "aliases": [
+   "yoyo",
+   "yo-yo"
+  ]
+ },
+ {
+  "name": "Pickling vegetables",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.3,
+   "WIS": 0.3,
+   "DEX": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "pickling",
+   "making pickles"
+  ]
+ },
+ {
+  "name": "Tempering chocolate",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.4,
+   "INT": 0.35,
+   "WIS": 0.35,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "chocolate tempering",
+   "chocolatier work"
+  ]
+ },
+ {
+  "name": "Practicing knife skills",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.25,
+   "INT": 0.2,
+   "CON": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "knife skills",
+   "knife work"
+  ]
+ },
+ {
+  "name": "Making a pan sauce reduction",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.3,
+   "DEX": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "reducing a sauce",
+   "pan sauce"
+  ]
+ },
+ {
+  "name": "Laminating croissant dough",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.5,
+   "WIS": 0.4,
+   "INT": 0.3,
+   "STR": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "making croissants",
+   "laminated dough"
+  ]
+ },
+ {
+  "name": "Making macarons",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.5,
+   "WIS": 0.4,
+   "INT": 0.3,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "macarons",
+   "french macarons"
+  ]
+ },
+ {
+  "name": "Making pizza from scratch",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.45,
+   "WIS": 0.3,
+   "INT": 0.25,
+   "STR": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "homemade pizza",
+   "pizza making"
+  ]
+ },
+ {
+  "name": "Folding dumplings",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.55,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "making dumplings",
+   "pleating dumplings"
+  ]
+ },
+ {
+  "name": "Stir-frying in a wok",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.4,
+   "STR": 0.2,
+   "CON": 0.2,
+   "INT": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "wok cooking",
+   "stir fry"
+  ]
+ },
+ {
+  "name": "Making kimchi",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.3,
+   "WIS": 0.3,
+   "DEX": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "kimchi",
+   "fermenting kimchi"
+  ]
+ },
+ {
+  "name": "Curing charcuterie",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.35,
+   "DEX": 0.2,
+   "CON": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "charcuterie",
+   "curing meat"
+  ]
+ },
+ {
+  "name": "Filleting a fish",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.6,
+   "INT": 0.2,
+   "WIS": 0.25,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "filleting fish",
+   "fish filleting"
+  ]
+ },
+ {
+  "name": "Making latte art",
+  "category": "Cooking & Food",
+  "weights": {
+   "DEX": 0.6,
+   "WIS": 0.3,
+   "INT": 0.15,
+   "CHA": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "latte art"
+  ]
+ },
+ {
+  "name": "Whisking matcha tea",
+  "category": "Cooking & Food",
+  "weights": {
+   "WIS": 0.45,
+   "DEX": 0.35,
+   "INT": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "matcha",
+   "tea ceremony"
+  ]
+ },
+ {
+  "name": "Maintaining a sourdough starter",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.3,
+   "WIS": 0.35,
+   "DEX": 0.1,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "sourdough starter",
+   "feeding sourdough"
+  ]
+ },
+ {
+  "name": "Making ramen from scratch",
+  "category": "Cooking & Food",
+  "weights": {
+   "INT": 0.35,
+   "WIS": 0.35,
+   "DEX": 0.3,
+   "CON": 0.2,
+   "DIS": 0.15,
+   "CRE": 0.28
+  },
+  "aliases": [
+   "homemade ramen",
+   "ramen making"
+  ]
  }
 ]

@@ -30,9 +30,9 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   particle burst.
 - **Two stat layers.** The eight core stats are trained *only* by real
   activities. From them we compute **derived combat/shop stats** — Vitality,
-  Power, Focus, Insight, Influence, Luck — which future gear and adventures will
-  buff, keeping your real-life stats pure.
-- **600+ activities, and every one is multi-stat.** From dishes and deadlifts to
+  Power, Focus, Insight, Influence, Luck — which gear and adventures buff,
+  keeping your real-life stats pure.
+- **900+ activities, and every one is multi-stat.** From dishes and deadlifts to
   woodcarving, watercolor, photography, commuting, and public speaking — each
   activity feeds *several* stats at different amounts (watercolor: mostly Agility,
   some Wisdom and Creativity, a trace of Intellect). The full catalog lives in an
@@ -47,9 +47,8 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   auto-battle (uses your derived combat stats) and the **Treasure Vault** (pick a
   chest; your Luck skews the odds) — for Hero points and the **Gear** they drop.
   **Daily quests** and the weekly challenge give you goals that pay out.
-- **A clean, sectioned interface.** Navigation lives behind a hamburger menu;
-  sections for **Character, Activities, History, Shop, Adventure**, and (coming)
-  **Gear**.
+- **A clean, sectioned interface.** Navigation lives behind a hamburger menu:
+  **Character, Activities, Quests, Trophies, History, Shop, Adventure, Gear**.
 - **Time → XP → levels.** Dedicate minutes to an activity; that time becomes XP,
   split across the activity's stats by weight. Each stat levels on its own
   curve — the first level is quick, but real growth takes *weeks* of dedication,
@@ -161,7 +160,7 @@ is mastery. See [`rpglifer/titles.py`](rpglifer/titles.py) to tune them.
 ## Add your own activities
 
 The catalog lives in [`rpglifer/data/activities.json`](rpglifer/data/activities.json)
-(600+ entries and counting). Adding one is a single object:
+(900+ entries and counting). Adding one is a single object:
 
 ```json
 {
@@ -200,7 +199,7 @@ rpglifer/
   titles.py             milestone titles unlocked per stat
   derived.py            combat/shop stats + evolving class, from core stats
   activities.py         loads + models the activity catalog
-  data/activities.json  the 600+ activity catalog (editable)
+  data/activities.json  the 900+ activity catalog (editable)
   fuzzy.py              type-ahead / closest-match search
   recommend.py          "explore" suggestions + per-stat activity lookups
   economy.py            Hero / Overachiever point rules
@@ -230,7 +229,7 @@ python -m pytest -q
 
 ## Roadmap
 
-Already in: the core, the Windows `.exe` build, a **600+ multi-stat activity
+Already in: the core, the Windows `.exe` build, a **900+ multi-stat activity
 catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
 combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
