@@ -63,6 +63,19 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 - **Your save is yours.** Everything is stored locally in a plain JSON file. No
   account, no cloud, no tracking.
 
+## A tour
+
+<p align="center">
+  <img src="docs/quests.png" width="32%" alt="Daily quests" />
+  <img src="docs/trophies.png" width="32%" alt="Achievement trophies" />
+  <img src="docs/gear.png" width="32%" alt="Gear" />
+</p>
+<p align="center">
+  <img src="docs/arena.png" width="32%" alt="The Arena" />
+  <img src="docs/vault.png" width="32%" alt="Treasure Vault" />
+  <img src="docs/shop.png" width="32%" alt="Shop" />
+</p>
+
 ## Get the Windows app (`.exe`)
 
 You don't need Python to *run* the app — just a `.exe`.
