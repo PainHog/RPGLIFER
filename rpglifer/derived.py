@@ -34,13 +34,15 @@ DERIVED: tuple[DerivedStat, ...] = (
 
 
 def compute(character) -> dict[str, int]:
-    """Compute all derived stats from a character's core stat levels.
+    """Your **innate** adventure power, from your core stats *only*.
 
-    Uses *effective* levels (stars × 100 + level), so prestige keeps your combat
-    stats climbing past mastery.
+    Uses *effective* levels (stars × 100 + level), so prestige keeps this
+    climbing past mastery. This is gear-free on purpose: it reflects the life
+    you've actually lived. Gear is a separate loadout applied only inside the
+    Adventure games — see :func:`with_gear`.
     """
     L = {k: character.effective_level(k) for k in STAT_KEYS}
-    base = {
+    return {
         "HP": 20 + 6 * L["CON"] + 3 * L["STR"] + 2 * L["DIS"],
         "PWR": 5 + 2 * (L["STR"] + L["DEX"]),
         "FOC": 5 + 2 * L["DEX"] + L["INT"] + L["DIS"],
@@ -48,12 +50,21 @@ def compute(character) -> dict[str, int]:
         "INF": 5 + 2 * L["CHA"] + L["WIS"],
         "LCK": 3 + L["CRE"] + L["CHA"],
     }
-    # Equipped gear adds flat bonuses to these — never to real-life stats.
+
+
+def with_gear(character) -> dict[str, int]:
+    """Adventure loadout: innate power (:func:`compute`) plus equipped gear.
+
+    Used **only** by the Arena / Vault / Dungeon engines. Equipped gear adds
+    flat bonuses here and *nowhere else* — never to your life stats and never to
+    the character sheet, so the sheet stays a pure mirror of what you do.
+    """
+    stats = compute(character)
     gear = getattr(character, "gear_bonuses", lambda: {})()
     for k, v in gear.items():
-        if k in base:
-            base[k] += int(v)
-    return base
+        if k in stats:
+            stats[k] += int(v)
+    return stats
 
 
 # Flavor for the evolving class name.

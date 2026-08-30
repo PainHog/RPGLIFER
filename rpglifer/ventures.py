@@ -30,7 +30,7 @@ def roll_vault(character, seed: int | None = None) -> list[Chest]:
     """Roll three hidden chests. Higher Luck skews tiers and drop rates up."""
     rng = random.Random(seed)
     level = max(1, round(_avg_level(character)))
-    lck = derived.compute(character)["LCK"]
+    lck = derived.with_gear(character)["LCK"]
     luck = min(0.45, lck / 300.0)
     base = 8 + level
 

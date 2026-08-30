@@ -19,13 +19,17 @@ def test_roll_gear_is_deterministic():
     assert a.to_dict() == b.to_dict()
 
 
-def test_equip_applies_bonus_to_derived():
+def test_gear_boosts_adventure_loadout_not_life_stats():
     c = Character()
     c.stat_xp["STR"] = 15000
-    before = derived.compute(c)["PWR"]
+    innate = derived.compute(c)["PWR"]          # life-only (character sheet)
+    loadout = derived.with_gear(c)["PWR"]        # adventure games
+    assert loadout == innate                     # nothing equipped yet
     c.add_gear(gear.Gear("w1", "Sword", "Weapon", "Epic", {"PWR": 10}))
     c.equip("w1")
-    assert derived.compute(c)["PWR"] == before + 10
+    # Gear lifts the adventure loadout only; the life-derived sheet is untouched.
+    assert derived.with_gear(c)["PWR"] == innate + 10
+    assert derived.compute(c)["PWR"] == innate
 
 
 def test_equipping_same_slot_replaces():

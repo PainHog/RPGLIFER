@@ -66,7 +66,7 @@ def _avg_level(character) -> float:
 def simulate(character, combat_bonus: float = 0.0, seed: int | None = None) -> Battle:
     """Resolve one Arena battle and return the full round-by-round record."""
     rng = random.Random(seed)
-    d = derived.compute(character)
+    d = derived.with_gear(character)
     you_max = max(10, d["HP"])
     you_pwr = max(2, d["PWR"]) * (1.0 + combat_bonus)
     crit_chance = min(0.4, d["FOC"] / 400.0)

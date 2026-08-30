@@ -39,7 +39,7 @@ def _avg_level(character) -> int:
 
 def _luck_factor(character) -> float:
     """0.0–~0.45: how strongly Luck helps, from the derived LCK stat."""
-    return min(0.45, derived.compute(character)["LCK"] / 300.0)
+    return min(0.45, derived.with_gear(character)["LCK"] / 300.0)
 
 
 def trap_chance(floor: int, luck: float) -> float:

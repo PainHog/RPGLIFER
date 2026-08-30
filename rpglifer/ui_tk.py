@@ -408,7 +408,8 @@ class CharacterView(ctk.CTkFrame):
         self.class_lbl = ctk.CTkLabel(namecol, text="", text_color=GOLD,
                                       font=fonts["hero_class"], anchor="w")
         self.class_lbl.pack(anchor="w")
-        # Derived combat stats — a compact horizontal chip row.
+        # A compact "your life so far" summary — the sheet mirrors what you do,
+        # not combat power (that lives in the Adventure area).
         self.chips = ctk.CTkFrame(header, fg_color="transparent")
         self.chips.pack(fill="x", padx=22, pady=(2, 16))
 
@@ -456,9 +457,18 @@ class CharacterView(ctk.CTkFrame):
 
         for w in self.chips.winfo_children():
             w.destroy()
-        d = derived.compute(c)
-        for ds in derived.DERIVED:
-            self._chip(ds.name, d[ds.key], f"{ds.name} — {ds.blurb}")
+        hours = sum(e.minutes for e in c.log) / 60.0
+        stars = sum(c.stars(k) for k in STAT_KEYS)
+        summary = [
+            ("Activities", len(c.log), "How many sessions you've logged."),
+            ("Hours", f"{hours:.0f}", "Total time you've invested."),
+            ("Day streak", c.daily_streak(), "Days in a row with something logged."),
+        ]
+        if stars:
+            summary.append(("Prestige", f"★{stars}", "Total prestige stars earned "
+                            "across all stats."))
+        for name, value, tip in summary:
+            self._chip(name, value, f"{name} — {tip}")
 
         for row in self.rows:
             row.update_labels(c)
@@ -1072,7 +1082,7 @@ class AdventureView(ctk.CTkFrame):
 
     def _refresh_arena(self):
         c = self.app.character
-        d = derived.compute(c)
+        d = derived.with_gear(c)  # innate power + equipped gear (Adventure only)
         if not self._playing:
             self.power_lbl.configure(text=f"Your power —  {d['HP']} HP   ·   "
                                      f"{d['PWR']} Power   ·   {d['FOC']} Focus")
