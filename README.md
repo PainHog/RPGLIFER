@@ -79,20 +79,22 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 
 You don't need Python to *run* the app — just a `.exe`.
 
-**Option A — download a pre-built `.exe` (no tools needed).**
-Every push builds the executable on a Windows machine via GitHub Actions:
+**Option A — download a pre-built build (no tools needed).**
+Every push builds on a Windows machine via GitHub Actions. Open the repo's
+**Actions** tab → the latest **Build Windows EXE** run, then grab either
+artifact at the bottom:
 
-1. Open the repo's **Actions** tab → the latest **Build Windows EXE** run.
-2. Download the **`RPGLifer-windows`** artifact at the bottom of the run.
-3. Unzip it and double-click **`RPGLifer.exe`**.
+- **`RPGLifer-installer`** → an installer (`RPGLifer-Setup.exe`) that adds a
+  Start-menu shortcut, an optional desktop shortcut, and an uninstall entry.
+- **`RPGLifer-windows`** → the portable single-file `RPGLifer.exe` (no install;
+  run from anywhere).
 
 **Option B — build it yourself on Windows.**
 Install [Python 3.9+](https://www.python.org/downloads/) (tick *"Add Python to
 PATH"*), then double-click **`build.bat`**. When it finishes, your app is at
-`dist\RPGLifer.exe` — copy it anywhere.
-
-> The `.exe` is a single self-contained file (~12 MB). A friendlier one-click
-> *installer* (Start-menu shortcut, uninstall entry) is on the roadmap.
+`dist\RPGLifer.exe` — copy it anywhere. (The installer is produced by
+[Inno Setup](https://jrsoftware.org/isinfo.php) from
+`packaging/installer.iss`.)
 
 ## Run from source (any OS)
 
@@ -229,7 +231,7 @@ python -m pytest -q
 
 ## Roadmap
 
-Already in: the core, the Windows `.exe` build, a **900+ multi-stat activity
+Already in: the core, a Windows `.exe` **and installer** build, a **900+ multi-stat activity
 catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
 combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
@@ -244,8 +246,8 @@ bursts, mastery celebrations, hamburger nav).
 Planned next:
 
 - **More Adventure content** — quests/runs and other mini-games beyond the Arena.
-- **A real installer** — a Start-menu shortcut and uninstall entry (the app
-  already ships a window/taskbar icon).
+- **Signed builds** — code-sign the `.exe`/installer so Windows SmartScreen is
+  friendlier.
 - **Weekly challenge board** — surface the well-rounded challenge and its
   progress in-app, plus more challenge types.
 - **A real installer** — Start-menu shortcut and an icon.

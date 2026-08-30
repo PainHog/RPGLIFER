@@ -13,6 +13,7 @@ env/
 # PyInstaller build output
 /build/
 /dist/
+/installer/
 *.manifest
 
 # OS / editor cruft
