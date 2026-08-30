@@ -1157,67 +1157,54 @@ class AdventureView(ctk.CTkFrame):
         self.refresh()
 
     def _go(self):
+        """Resolve one Arena fight instantly — one tap, see the result."""
         c = self.app.character
-        if self._playing or c.adventure_tickets <= 0:
+        if c.adventure_tickets <= 0:
             return
         c.spend_ticket()
-        self.energy_lbl.configure(text=f"{c.adventure_tickets} tickets")
         combat = c.consume_combat_bonuses()
-        self._battle = adventure.simulate(c, combat_bonus=combat)
-        b = self._battle
-        self._playing = True
-        self._round_i = 0
-        self.fight_btn.configure(state="disabled", fg_color=SURFACE_2)
+        b = adventure.simulate(c, combat_bonus=combat)
+
         boost = "   (+Power boost!)" if combat else ""
-        if b.is_boss:
-            self._log(f"☠  BOSS BATTLE —  {b.foe_name}!  (Lv {b.foe_level}){boost}",
-                      clear=True)
+        self._log((f"☠  BOSS BATTLE — {b.foe_name}  (Lv {b.foe_level}){boost}"
+                   if b.is_boss else
+                   f"⚔  {b.foe_name}  (Lv {b.foe_level}){boost}"), clear=True)
+        # Jump straight to the final state — no round-by-round waiting.
+        if b.rounds:
+            you_end, foe_end = b.rounds[-1].you_hp, b.rounds[-1].foe_hp
         else:
-            self._log(f"⚔  You face a {b.foe_name}  (Lv {b.foe_level}){boost}",
-                      clear=True)
-        self._hp(self.foe_lbl, self.foe_bar, b.foe_name, b.foe_max_hp, b.foe_max_hp, HP_FOE)
-        self._hp(self.you_lbl, self.you_bar, c.name, b.you_max_hp, b.you_max_hp, HP_YOU)
-        self.app.root.after(500, self._step)
+            you_end, foe_end = b.you_max_hp, b.foe_max_hp
+        self._hp(self.foe_lbl, self.foe_bar, b.foe_name, max(0, foe_end),
+                 b.foe_max_hp, HP_FOE)
+        self._hp(self.you_lbl, self.you_bar, c.name, max(0, you_end),
+                 b.you_max_hp, HP_YOU)
 
-    def _step(self):
-        b = self._battle
-        if self._round_i >= len(b.rounds):
-            return self._finish()
-        r = b.rounds[self._round_i]
-        self._round_i += 1
-        if r.attacker == "you":
-            self._hp(self.foe_lbl, self.foe_bar, b.foe_name, r.foe_hp, b.foe_max_hp, HP_FOE)
-            crit = "  CRIT!" if r.crit else ""
-            self._log(f"  You hit for {r.damage}{crit}")
-        else:
-            self._hp(self.you_lbl, self.you_bar, self.app.character.name, r.you_hp,
-                     b.you_max_hp, HP_YOU)
-            crit = "  CRIT!" if r.crit else ""
-            self._log(f"  {b.foe_name} hits you for {r.damage}{crit}")
-        self.app.root.after(360, self._step)
-
-    def _finish(self):
-        b = self._battle
-        c = self.app.character
-        self._playing = False
         c.hero_points += b.reward
         if b.won:
             if b.is_boss:
                 c.bump_counter("bosses")
-            head = "☠  BOSS DEFEATED!" if b.is_boss else "★  Victory!"
-            self._log(f"{head}  +{b.reward} Hero points")
+            self._log(f"{'☠  BOSS DEFEATED!' if b.is_boss else '★  Victory!'}"
+                      f"   +{b.reward} Hero")
             if b.loot is not None:
                 c.add_gear(b.loot)
                 self._log(f"🎁  Loot!  {b.loot.summary()}   (equip it in Gear)")
             for q in c.record_arena_win():
                 self._log(f"✔  Quest complete: {q.text}  (+{q.reward} Hero)")
             for ach in c.check_achievements():
-                self._log(f"🏆  Achievement unlocked: {ach.name}")
+                self._log(f"🏆  Achievement: {ach.name}")
         else:
-            self._log(f"✕  Defeated…  +{b.reward} Hero points for trying")
+            self._log(f"✕  Defeated…  +{b.reward} Hero for trying")
+
         storage.save(c)
         self.app.refresh_points()
-        self.refresh()
+        # Update the ticket count + button WITHOUT wiping the result on screen.
+        self.energy_lbl.configure(text=f"{c.adventure_tickets} tickets")
+        if c.adventure_tickets <= 0:
+            self.fight_btn.configure(text="No tickets — earn plays by logging",
+                                     state="disabled", fg_color=SURFACE_2)
+        else:
+            self.fight_btn.configure(text="Fight again", state="normal",
+                                     fg_color=HERO)
 
     # --- Dungeon Dive ---
     def _dlog(self, text, clear=False):
