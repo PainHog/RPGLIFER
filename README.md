@@ -30,10 +30,15 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   *Inventive Rogue* next month). Logging throws up a juicy **"+XP" burst**, and
   crossing a level or earning a title triggers a **celebration** with a gold
   particle burst.
-- **Two stat layers.** The eight core stats are trained *only* by real
-  activities. From them we compute **derived combat/shop stats** — Vitality,
-  Power, Focus, Insight, Influence, Luck — which gear and adventures buff,
-  keeping your real-life stats pure.
+- **Tracking is the whole point.** RPG Lifer is a life *tracker* first: the
+  character sheet is a pure mirror of what you actually do. The games, gear, and
+  cosmetics are optional **rewards you earn by tracking** — they can never
+  replace the real work, and none of them ever touch your life stats.
+- **Your sheet is pure; the games are separate.** The eight core stats are
+  trained *only* by real activities. Inside the **Adventure** area those stats
+  give you an **innate power** (Vitality, Power, Focus, Insight, Influence, Luck)
+  used by the mini-games — and **gear buffs that power for the games only**,
+  never your character sheet or your life stats.
 - **900+ activities, and every one is multi-stat.** From dishes and deadlifts to
   woodcarving, watercolor, photography, commuting, and public speaking — each
   activity feeds *several* stats at different amounts (watercolor: mostly Agility,
@@ -42,19 +47,25 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 - **Type-ahead search.** Start typing and the closest activities pop up even if
   you don't type the exact words — `dsh` → **Dishes**, `wrk` → **Strength
   workout**, `woodcut` → **Chopping firewood**.
-- **A reward loop.** Earn **Hero points** (from level-ups, titles, ★s, and
-  reaching outside your comfort zone) and **Overachiever points** (from a weekly
-  *well-rounded* challenge). Spend them in the **Shop** on temporary boosts
-  (never on stats), and play the **Adventure** mini-games — the **Arena**
-  auto-battle (uses your derived combat stats), the **Treasure Vault** (pick a
-  chest; your Luck skews the odds), and the **Dungeon Dive** (a push-your-luck
-  descent: go deeper for escalating loot or cash out before a trap takes it
-  all) — for Hero points and the **Gear** they drop. **Daily quests** and the
-  weekly challenge give you goals that pay out.
-- **A clean, sectioned interface.** Navigation lives behind a hamburger menu:
-  **Character, Activities, Quests, Trophies, History, Shop, Adventure, Gear**.
-  The **History** screen shows a journey heatmap and every session — and lets
-  you **undo a mis-logged entry** (its XP is rolled back too).
+- **Rewards you earn by tracking.** Logging earns **Adventure tickets** — a
+  base ticket per activity, more for a *reach* task (something new or a weakest
+  stat) and for each daily quest you clear. Spend a ticket to play the
+  **Adventure** mini-games: the **Arena** (one tap, instant result), the
+  **Treasure Vault** (pick a chest; your Luck skews the odds), and the **Dungeon
+  Dive** (push-your-luck: go deeper for loot or cash out before a trap). They pay
+  **Hero points** and drop **Gear** (a loadout for the games only). You also earn
+  **Hero points** from progress and **Overachiever points** from the weekly
+  *well-rounded* challenge — spend those in the **Shop** on temporary boosts and
+  **cosmetics**.
+- **Cosmetics you earn (or buy).** Purely-visual level-ring themes make your
+  character look better over time — some **unlocked by playing** (a 7-day streak,
+  your first ★, clearing quests), others bought with Overachiever points. Never
+  a stat in sight.
+- **A clean, TRACK-first interface.** The hamburger menu is grouped: **TRACK**
+  (Activities, Character, Quests, History, Trophies) is the heart; **REWARDS**
+  (Adventure, Gear, Shop) is the optional extras. The **History** screen shows a
+  journey heatmap, a level-climb sparkline, and every session — and lets you
+  **undo a mis-logged entry** (its XP is rolled back too).
 - **Time → XP → levels.** Dedicate minutes to an activity; that time becomes XP,
   split across the activity's stats by weight. Each stat levels on its own
   curve — the first level is quick, but real growth takes *weeks* of dedication,
@@ -243,14 +254,16 @@ python -m pytest -q
 
 ## Roadmap
 
-Already in: the core, a Windows `.exe` **and installer** build, a **900+ multi-stat activity
-catalog**, **eight core stats** with a radar/web and **clickable title ladders**,
-**prestige stars**, **derived combat/shop stats** and an **evolving class**, a
+Already in: the tracking core, a Windows `.exe` **and installer** build, a
+**900+ multi-stat activity catalog**, **eight core stats** with a radar/web and
+**clickable title ladders**, **prestige stars** and an **evolving class**, a
 **daily streak** plus per-activity **consistency streaks**, **milestone titles**,
-a front-loaded 1–100 XP curve, a **points economy** (Hero + Overachiever), three
-**Adventure** mini-games (the **Arena** auto-battle with foe archetypes +
-**boss battles**, a **Treasure Vault**, and a **Dungeon Dive** push-your-luck
-run) with **Gear/loot drops**, a working **Shop** of boosts and cosmetics,
+a front-loaded 1–100 XP curve, a **points economy** (Hero + Overachiever),
+**Adventure tickets earned by tracking**, three **Adventure** mini-games (the
+**Arena** with foe archetypes + **boss battles** and one-tap instant resolve, a
+**Treasure Vault**, and a **Dungeon Dive** push-your-luck run) that drop
+**Gear** used *only in the games*, a working **Shop** of boosts and **earnable
+cosmetics**,
 **daily quests** + a **weekly well-rounded challenge** that shows what you still
 need to train, **achievement trophies** with progress bars, **first-run
 onboarding**, **one-tap quick-log**, **undo** for mis-logged entries, a one-click

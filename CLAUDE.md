@@ -30,7 +30,9 @@ rpglifer/
   leveling.py     0–100 mastery curve (front-loaded: level = 100*(xp/XP_TO_MAX)^0.4)
   stats.py        the 8 core stats (STR DEX CON INT WIS CHA DIS CRE; plain-life names)
   titles.py       per-stat title ladders (levels 10/25/40/55/75/100)
-  derived.py      combat/shop stats (HP/PWR/FOC/INS/INF/LCK) + evolving class, from core
+  derived.py      innate adventure power (HP/PWR/FOC/INS/INF/LCK) from core stats;
+                  compute() is gear-free (character sheet), with_gear() adds the
+                  equipped loadout for the Adventure games only; + evolving class
   activities.py   loads data/activities.json into Activity objects
   data/activities.json   940 multi-stat activities (editable; weights are per-stat multipliers)
   fuzzy.py        type-ahead / closest-match search (stdlib only)
@@ -44,8 +46,9 @@ rpglifer/
   gear.py         loot generation (3 slots, 4 rarities)
   shop.py         Shop catalog + purchase -> Bonus; cosmetics (ring colors)
   character.py    THE model: XP, prestige (★), weekly + daily streaks, points,
-                  bonuses, quests, achievements, gear, undo (delete_log_entry),
-                  level_trajectory. Levels are always derived from XP.
+                  adventure_tickets (earned by logging), bonuses, quests,
+                  achievements, gear, undo (delete_log_entry), level_trajectory.
+                  Levels are always derived from XP.
   storage.py      JSON save in the per-user data dir (RPGLIFER_DATA_DIR overrides);
                   backup() writes a timestamped copy
   cli.py          text-mode front-end
@@ -65,12 +68,20 @@ rpglifer/
 - **Streaks:** two kinds. Per-activity *weekly* streak drives the XP bonus;
   the global *daily* streak (`daily_streak`) is the headline habit flame (grace
   day: counts today, or yesterday if today is still empty).
-- **Adventure:** three seedable/pure mini-games share one daily energy pool —
-  Arena (adventure.py), Vault (ventures.py), Dungeon Dive (dungeon.py). They pay
-  points + gear, never stats.
+- **Adventure = a reward for tracking.** Three seedable/pure mini-games — Arena
+  (adventure.py, resolves instantly), Vault (ventures.py), Dungeon Dive
+  (dungeon.py) — cost one **Adventure ticket** each. Tickets are *earned by
+  logging* (`TICKETS_PER_LOG` + reach + `TICKETS_PER_QUEST`), never free; a new
+  user has zero. The games pay points + gear, never stats.
+- **Gear:** a loadout for the games *only* — `derived.with_gear()` adds it inside
+  Arena/Vault/Dungeon. It never touches the character sheet or life stats.
 - **Bonuses (Shop):** temporary — `xp_mult` (time-limited, folds into logging)
   or `combat_power` (per-fight, spent in the Arena). Never buy stats.
-- **Gear:** equipped items add flat bonuses to *derived* stats only.
+- **Cosmetics:** purely-visual ring colors. Earned by playing (`shop.Cosmetic.
+  unlock` predicate — streak/★/quests; persisted via `check_cosmetic_unlocks`)
+  or bought with Overachiever points. Never affect stats or the games.
+- **Nav:** grouped TRACK (Activities/Character/Quests/History/Trophies) vs
+  REWARDS (Adventure/Gear/Shop) — tracking is the hero, games are extras.
 - **Undo:** `delete_log_entry` subtracts the entry's recorded XP (clamped at 0)
   and drops it — stat_xp stays the single source of truth.
 - **Save schema is v2**, additive; `from_dict` tolerates old/missing fields, so
