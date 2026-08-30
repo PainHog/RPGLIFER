@@ -799,11 +799,13 @@ class AdventureView(ctk.CTkFrame):
         b = self._battle
         c = self.app.character
         self._playing = False
+        c.hero_points += b.reward
         if b.won:
-            c.hero_points += b.reward
             self._log(f"★  Victory!  +{b.reward} Hero points")
+            if b.loot is not None:
+                c.add_gear(b.loot)
+                self._log(f"🎁  Loot!  {b.loot.summary()}   (equip it in Gear)")
         else:
-            c.hero_points += b.reward
             self._log(f"✕  Defeated…  +{b.reward} Hero points for trying")
         storage.save(c)
         self.app.refresh_points()
@@ -899,6 +901,115 @@ class ShopView(ctk.CTkFrame):
                 fill="x", padx=6, pady=1)
 
 
+# ---------------------------------------------------------------------------
+# Gear — equip loot found in the Arena
+# ---------------------------------------------------------------------------
+class GearView(ctk.CTkFrame):
+    RARITY_COL = {"Common": MUTED, "Rare": "#5aa9e6", "Epic": "#b07de0",
+                  "Legendary": GOLD}
+
+    def __init__(self, parent, app):
+        super().__init__(parent, fg_color="transparent")
+        self.app = app
+        fonts = app.fonts
+        outer = ctk.CTkScrollableFrame(self, fg_color="transparent")
+        outer.pack(fill="both", expand=True, padx=8, pady=6)
+
+        head = ctk.CTkFrame(outer, fg_color="transparent")
+        head.pack(fill="x", padx=6, pady=(4, 2))
+        ctk.CTkLabel(head, text="GEAR", text_color=MUTED,
+                     font=fonts["kicker"]).pack(side="left")
+        self.bonus_lbl = ctk.CTkLabel(head, text="", text_color=OVER,
+                                      font=fonts["kicker"])
+        self.bonus_lbl.pack(side="right")
+        ctk.CTkLabel(outer, text="Loot found in the Arena. Bonuses apply to combat "
+                     "stats only — never to your real-life stats.", text_color=FAINT,
+                     font=fonts["small"], anchor="w").pack(fill="x", padx=6, pady=(0, 8))
+
+        self.slots_box = ctk.CTkFrame(outer, fg_color="transparent")
+        self.slots_box.pack(fill="x", pady=(0, 10))
+        ctk.CTkLabel(outer, text="INVENTORY", text_color=FAINT, font=fonts["kicker"],
+                     anchor="w").pack(fill="x", padx=6, pady=(6, 4))
+        self.inv_box = ctk.CTkFrame(outer, fg_color="transparent")
+        self.inv_box.pack(fill="x")
+
+    def _rcol(self, rarity):
+        return self.RARITY_COL.get(rarity, MUTED)
+
+    def _equip(self, gid):
+        self.app.character.equip(gid)
+        self._after_change()
+
+    def _unequip(self, slot):
+        self.app.character.unequip(slot)
+        self._after_change()
+
+    def _after_change(self):
+        storage.save(self.app.character)
+        self.app.views["Character"].refresh()  # derived combat stats changed
+        self.refresh()
+
+    def refresh(self):
+        from .gear import SLOTS
+        c = self.app.character
+        fonts = self.app.fonts
+        gb = c.gear_bonuses()
+        self.bonus_lbl.configure(
+            text="Gear adds  " + "  ".join(f"+{v} {k}" for k, v in gb.items())
+            if gb else "No gear equipped")
+
+        for w in self.slots_box.winfo_children():
+            w.destroy()
+        for slot in SLOTS:
+            card = ctk.CTkFrame(self.slots_box, corner_radius=14, fg_color=SURFACE)
+            card.pack(side="left", expand=True, fill="both", padx=5, pady=2)
+            ctk.CTkLabel(card, text=slot.upper(), text_color=FAINT,
+                         font=fonts["kicker"]).pack(anchor="w", padx=14, pady=(12, 2))
+            g = c.gear_by_id(c.equipped.get(slot))
+            if g is None:
+                ctk.CTkLabel(card, text="— empty —", text_color=FAINT,
+                             font=fonts["small"]).pack(anchor="w", padx=14, pady=(0, 14))
+            else:
+                ctk.CTkLabel(card, text=f"{g.rarity} {g.name}",
+                             text_color=self._rcol(g.rarity),
+                             font=fonts["list_b"]).pack(anchor="w", padx=14)
+                ctk.CTkLabel(card, text=", ".join(f"+{v} {k}" for k, v in g.bonuses.items()),
+                             text_color=MUTED, font=fonts["small"]).pack(anchor="w", padx=14)
+                ctk.CTkButton(card, text="Unequip", height=28, width=90,
+                              corner_radius=10, fg_color=SURFACE_2, hover_color=TRACK,
+                              text_color=MUTED, font=fonts["small"],
+                              command=lambda s=slot: self._unequip(s)).pack(
+                    anchor="w", padx=14, pady=(6, 12))
+
+        for w in self.inv_box.winfo_children():
+            w.destroy()
+        if not c.inventory:
+            ctk.CTkLabel(self.inv_box, text="No gear yet — win Arena battles to find loot.",
+                         text_color=FAINT, font=fonts["small"], anchor="w").pack(
+                fill="x", padx=6, pady=8)
+            return
+        order = {"Legendary": 0, "Epic": 1, "Rare": 2, "Common": 3}
+        for g in sorted(c.inventory, key=lambda x: (order.get(x.rarity, 9), x.slot)):
+            row = ctk.CTkFrame(self.inv_box, corner_radius=12, fg_color=SURFACE)
+            row.pack(fill="x", padx=6, pady=3)
+            left = ctk.CTkFrame(row, fg_color="transparent")
+            left.pack(side="left", fill="x", expand=True, padx=14, pady=10)
+            ctk.CTkLabel(left, text=f"{g.rarity} {g.name}  ·  {g.slot}",
+                         text_color=self._rcol(g.rarity), font=fonts["list_b"],
+                         anchor="w").pack(anchor="w")
+            ctk.CTkLabel(left, text=", ".join(f"+{v} {k}" for k, v in g.bonuses.items()),
+                         text_color=MUTED, font=fonts["small"], anchor="w").pack(anchor="w")
+            if c.equipped.get(g.slot) == g.id:
+                ctk.CTkLabel(row, text="Equipped", text_color=OVER,
+                             font=fonts["small"]).pack(side="right", padx=16)
+            else:
+                ctk.CTkButton(row, text="Equip", width=84, height=36, corner_radius=12,
+                              fg_color=OVER, hover_color=TEAL_HOVER, text_color=BG,
+                              font=fonts["btn"],
+                              command=lambda gid=g.id: self._equip(gid)).pack(
+                    side="right", padx=16)
+
+
 class PlaceholderView(ctk.CTkFrame):
     def __init__(self, parent, app, icon, title, blurb):
         super().__init__(parent, fg_color="transparent")
@@ -972,9 +1083,7 @@ class RPGLiferApp:
             "History": HistoryView(self.content, self),
             "Shop": ShopView(self.content, self),
             "Adventure": AdventureView(self.content, self),
-            "Gear": PlaceholderView(self.content, self, "gear", "Gear",
-                "Equip what you find on adventures — bonuses to your combat stats, "
-                "never to your real-life stats."),
+            "Gear": GearView(self.content, self),
         }
         for v in self.views.values():
             v.grid(row=0, column=0, sticky="nsew")

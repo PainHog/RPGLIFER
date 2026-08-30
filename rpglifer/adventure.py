@@ -14,7 +14,7 @@ from __future__ import annotations
 import random
 from dataclasses import dataclass, field
 
-from . import derived
+from . import derived, gear
 from .stats import STAT_KEYS
 
 FOES = [
@@ -43,6 +43,7 @@ class Battle:
     rounds: list = field(default_factory=list)
     won: bool = False
     reward: int = 0
+    loot: object = None  # a gear.Gear dropped on victory, or None
 
 
 def _avg_level(character) -> float:
@@ -80,4 +81,8 @@ def simulate(character, combat_bonus: float = 0.0, seed: int | None = None) -> B
 
     won = foe_hp <= 0 and you_hp > 0
     reward = (5 + level) if won else 2
-    return Battle(rng.choice(FOES), level, you_max, foe_max, rounds, won, reward)
+    loot = None
+    if won and rng.random() < 0.45:  # victors sometimes find gear
+        loot = gear.roll_gear(level, rng)
+    return Battle(rng.choice(FOES), level, you_max, foe_max, rounds, won, reward,
+                  loot=loot)

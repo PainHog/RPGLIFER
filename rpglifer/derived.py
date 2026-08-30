@@ -40,7 +40,7 @@ def compute(character) -> dict[str, int]:
     stats climbing past mastery.
     """
     L = {k: character.effective_level(k) for k in STAT_KEYS}
-    return {
+    base = {
         "HP": 20 + 6 * L["CON"] + 3 * L["STR"] + 2 * L["DIS"],
         "PWR": 5 + 2 * (L["STR"] + L["DEX"]),
         "FOC": 5 + 2 * L["DEX"] + L["INT"] + L["DIS"],
@@ -48,6 +48,12 @@ def compute(character) -> dict[str, int]:
         "INF": 5 + 2 * L["CHA"] + L["WIS"],
         "LCK": 3 + L["CRE"] + L["CHA"],
     }
+    # Equipped gear adds flat bonuses to these — never to real-life stats.
+    gear = getattr(character, "gear_bonuses", lambda: {})()
+    for k, v in gear.items():
+        if k in base:
+            base[k] += int(v)
+    return base
 
 
 # Flavor for the evolving class name.

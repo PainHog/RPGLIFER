@@ -43,8 +43,9 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
 - **A reward loop.** Earn **Hero points** (from level-ups, titles, ★s, and
   reaching outside your comfort zone) and **Overachiever points** (from a weekly
   *well-rounded* challenge). Spend them in the **Shop** on temporary boosts
-  (never on stats), and fight in the **Arena** — an auto-battle that uses your
-  derived combat stats to win more Hero points.
+  (never on stats), fight in the **Arena** — an auto-battle that uses your
+  derived combat stats to win more Hero points — and equip the **Gear** it
+  drops for combat bonuses.
 - **A clean, sectioned interface.** Navigation lives behind a hamburger menu;
   sections for **Character, Activities, History, Shop, Adventure**, and (coming)
   **Gear**.
@@ -219,13 +220,14 @@ Already in: the core, the Windows `.exe` build, a **600+ multi-stat activity
 catalog**, **eight core stats** with a radar/web, **prestige stars**, **derived
 combat/shop stats** and an **evolving class**, **consistency streaks**,
 **milestone titles**, a front-loaded 1–100 XP curve, a **points economy**
-(Hero + Overachiever), the **Arena** auto-battle, a working **Shop** of boosts,
-and a gamified GUI (level ring, XP bursts, mastery celebrations, hamburger nav).
+(Hero + Overachiever), the **Arena** auto-battle with **Gear/loot drops**, a
+working **Shop** of boosts, and a gamified GUI (level ring, XP bursts, mastery
+celebrations, hamburger nav).
 
 Planned next:
 
-- **Gear** — equippable items, found on adventures, that buff your *derived*
-  combat stats (never your real-life stats).
+- **Daily quests & a challenge board** — surface goals in-app that pay points.
+- **Achievements** — collectible badges for milestones.
 - **More Adventure content** — varied foes, quests/runs, and mini-games beyond
   the Arena.
 - **Weekly challenge board** — surface the well-rounded challenge and its

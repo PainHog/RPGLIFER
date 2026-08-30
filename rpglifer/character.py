@@ -13,6 +13,7 @@ from datetime import date, datetime, timedelta, timezone
 
 from . import economy, leveling
 from .activities import Activity
+from .gear import SLOTS, Gear
 from .stats import STAT_KEYS
 from .titles import title_for
 
@@ -183,6 +184,8 @@ class Character:
         challenges_claimed: list[str] | None = None,
         arena_day: str = "",
         arena_used: int = 0,
+        inventory: list["Gear"] | None = None,
+        equipped: dict[str, str] | None = None,
     ) -> None:
         self.name = name or "Adventurer"
         # Always keep an entry for every known stat so the UI can render all of
@@ -201,6 +204,8 @@ class Character:
         self.challenges_claimed: list[str] = list(challenges_claimed or [])
         self.arena_day = str(arena_day)  # ISO date of the last Arena run
         self.arena_used = int(arena_used)  # runs used on arena_day
+        self.inventory: list[Gear] = list(inventory or [])
+        self.equipped: dict[str, str] = dict(equipped or {})  # slot -> gear id
 
     # --- Derived views -----------------------------------------------------
     # Prestige: a stat's XP never resets. Each full 0→100 climb (STAR_XP worth of
@@ -303,6 +308,39 @@ class Character:
         key = f"{wk[0]}-W{wk[1]:02d}"
         return covered, economy.WEEKLY_TARGET_STATS, \
             covered >= economy.WEEKLY_TARGET_STATS, key
+
+    # --- Gear --------------------------------------------------------------
+    def add_gear(self, g: "Gear") -> None:
+        self.inventory.append(g)
+
+    def gear_by_id(self, gid: str | None) -> "Gear | None":
+        return next((x for x in self.inventory if x.id == gid), None)
+
+    def equip(self, gid: str) -> bool:
+        g = self.gear_by_id(gid)
+        if g is None:
+            return False
+        self.equipped[g.slot] = g.id
+        return True
+
+    def unequip(self, slot: str) -> None:
+        self.equipped.pop(slot, None)
+
+    def equipped_gear(self) -> list["Gear"]:
+        out = []
+        for slot in SLOTS:
+            g = self.gear_by_id(self.equipped.get(slot))
+            if g is not None:
+                out.append(g)
+        return out
+
+    def gear_bonuses(self) -> dict[str, int]:
+        """Total flat bonus to each derived stat from equipped gear."""
+        total: dict[str, int] = {}
+        for g in self.equipped_gear():
+            for k, v in g.bonuses.items():
+                total[k] = total.get(k, 0) + int(v)
+        return total
 
     # --- Consistency -------------------------------------------------------
     def _activity_weeks(self, activity_name: str) -> set[tuple[int, int]]:
@@ -425,6 +463,8 @@ class Character:
             "challenges_claimed": list(self.challenges_claimed),
             "arena_day": self.arena_day,
             "arena_used": self.arena_used,
+            "inventory": [g.to_dict() for g in self.inventory],
+            "equipped": dict(self.equipped),
         }
 
     @classmethod
@@ -441,4 +481,6 @@ class Character:
             challenges_claimed=[str(w) for w in data.get("challenges_claimed", [])],
             arena_day=str(data.get("arena_day", "")),
             arena_used=int(data.get("arena_used", 0)),
+            inventory=[Gear.from_dict(g) for g in data.get("inventory", [])],
+            equipped={str(k): str(v) for k, v in dict(data.get("equipped", {})).items()},
         )
