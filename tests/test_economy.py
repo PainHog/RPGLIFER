@@ -40,6 +40,24 @@ def test_weekly_wellrounded_awards_once_per_week():
     assert again == 0
 
 
+def test_stats_trained_this_week_reports_covered_set():
+    from rpglifer.stats import STAT_KEYS
+    c = Character()
+    at = datetime(2026, 3, 3, 9, tzinfo=UTC)  # a Tuesday
+    assert c.stats_trained_this_week(at) == set()
+    r1 = c.log_activity(activity_by_name("Reading"), 30, when=_iso(at))
+    r2 = c.log_activity(activity_by_name("Strength workout"), 30, when=_iso(at))
+    expected = {k for k, v in {**r1.gains, **r2.gains}.items()
+                if v > 0 and k in STAT_KEYS}
+    got = c.stats_trained_this_week(at)
+    assert got == expected
+    assert got <= set(STAT_KEYS)
+    # An activity logged in a different week is not counted here.
+    c.log_activity(activity_by_name("Dishes"), 20,
+                   when=_iso(at + timedelta(days=14)))
+    assert c.stats_trained_this_week(at) == expected
+
+
 def test_points_for_events_counts_each_kind():
     class E:  # minimal stand-ins
         pass

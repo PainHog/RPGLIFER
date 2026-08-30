@@ -1281,7 +1281,26 @@ class QuestsView(ctk.CTkFrame):
         bar.set(min(1.0, covered / target if target else 0))
         ctk.CTkLabel(self.week_card, text=f"{covered} / {target} stats trained "
                      "this week", text_color=MUTED, font=fonts["small"],
-                     anchor="w").pack(fill="x", padx=18, pady=(0, 14))
+                     anchor="w").pack(fill="x", padx=18, pady=(0, 6))
+
+        # Nudge: which core groups are still untouched this week.
+        trained = c.stats_trained_this_week()
+        missing = [k for k in STAT_KEYS if k not in trained]
+        if _complete:
+            ctk.CTkLabel(self.week_card, text="✓ Every core group covered — "
+                         "beautifully well-rounded this week.",
+                         text_color=OVER, font=fonts["small"], anchor="w").pack(
+                             fill="x", padx=18, pady=(0, 14))
+        elif missing:
+            ctk.CTkLabel(self.week_card, text="Reach outside your comfort zone:",
+                         text_color=FAINT, font=fonts["small"], anchor="w").pack(
+                             fill="x", padx=18, pady=(0, 2))
+            chips = ctk.CTkFrame(self.week_card, fg_color="transparent")
+            chips.pack(fill="x", padx=14, pady=(0, 14))
+            for k in missing:
+                ctk.CTkLabel(chips, text=stat(k).name, text_color=MUTED,
+                             font=fonts["small"], fg_color=TRACK, corner_radius=10,
+                             padx=10, pady=3).pack(side="left", padx=4)
 
 
 # ---------------------------------------------------------------------------

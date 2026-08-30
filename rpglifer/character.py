@@ -324,6 +324,10 @@ class Character:
                 trained.update(k for k, v in e.xp.items() if v > 0)
         return trained
 
+    def stats_trained_this_week(self, at: datetime | None = None) -> set[str]:
+        """The core stat keys trained so far in the current calendar week."""
+        return self.stats_trained_in_week(_week_key(at or _now())) & set(STAT_KEYS)
+
     def weekly_wellrounded(self, at: datetime | None = None):
         """Return ``(stats_covered, target, complete, week_key_str)``."""
         wk = _week_key(at or _now())
