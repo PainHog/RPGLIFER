@@ -34,33 +34,41 @@ BG = "#1b1e28"
 PANEL = "#242a38"
 PANEL_2 = "#2c3345"
 TRACK = "#161923"
+BORDER = "#414a61"  # outline so an empty XP bar still reads as a bar
 TEXT = "#e8eaf0"
 MUTED = "#9aa0b4"
+FAINT = "#6b7285"  # placeholder color for a not-yet-earned title
 ACCENT = "#e9c46a"  # gold
 GOOD = "#7ed08f"
+STREAK = "#f0883e"  # streak / consistency flame
 
 SUGGESTION_LIMIT = 7
 DEFAULT_MINUTES = 30
 
 
 class StatRow:
-    """One stat's display: name, level, a colored XP bar, and XP text."""
+    """One stat's display: name + earned title, level, a colored XP bar, XP text."""
 
     def __init__(self, parent: tk.Widget, s, row: int, fonts: dict):
         self.stat = s
         self.bar_w = 170
-        self.bar_h = 16
+        self.bar_h = 15
 
-        name = tk.Label(parent, text=f"{s.emoji}  {s.name}", bg=PANEL, fg=TEXT,
-                        font=fonts["label"], anchor="w")
-        name.grid(row=row, column=0, sticky="w", padx=(14, 8), pady=6)
+        # Name + title stacked in a two-line cell.
+        cell = tk.Frame(parent, bg=PANEL)
+        cell.grid(row=row, column=0, sticky="w", padx=(14, 8), pady=6)
+        tk.Label(cell, text=f"{s.emoji}  {s.name}", bg=PANEL, fg=TEXT,
+                 font=fonts["label"], anchor="w").pack(anchor="w")
+        self.title_lbl = tk.Label(cell, text="Unranked", bg=PANEL, fg=FAINT,
+                                  font=fonts["title_small"], anchor="w")
+        self.title_lbl.pack(anchor="w")
 
         self.level_lbl = tk.Label(parent, text="Lv 1", bg=PANEL, fg=s.color,
                                   font=fonts["level"], anchor="w", width=6)
         self.level_lbl.grid(row=row, column=1, sticky="w", pady=6)
 
         self.canvas = tk.Canvas(parent, width=self.bar_w, height=self.bar_h,
-                                bg=TRACK, highlightthickness=0, bd=0)
+                                bg=PANEL, highlightthickness=0, bd=0)
         self.canvas.grid(row=row, column=2, sticky="w", padx=8, pady=6)
 
         self.xp_lbl = tk.Label(parent, text="", bg=PANEL, fg=MUTED,
@@ -71,15 +79,22 @@ class StatRow:
         p = character.progress(self.stat.key)
         self.level_lbl.config(text=f"Lv {p.level}")
         self.xp_lbl.config(text=f"{p.xp_into_level} / {p.xp_for_level}")
+
+        title = character.title(self.stat.key)
+        if title:
+            self.title_lbl.config(text=title, fg=self.stat.color)
+        else:
+            self.title_lbl.config(text="Unranked", fg=FAINT)
+
+        # Draw an always-visible outlined track, then the colored fill inside it.
+        w, h = self.bar_w, self.bar_h
         self.canvas.delete("all")
-        fill_w = int(self.bar_w * p.fraction)
-        if fill_w > 0:
-            self.canvas.create_rectangle(0, 0, fill_w, self.bar_h,
+        self.canvas.create_rectangle(0, 0, w - 1, h - 1, fill=TRACK,
+                                     outline=BORDER, width=1)
+        fill_w = int((w - 2) * p.fraction)
+        if fill_w >= 1:
+            self.canvas.create_rectangle(1, 1, 1 + fill_w, h - 1,
                                          fill=self.stat.color, width=0)
-        # thin top highlight for a touch of depth
-        if fill_w > 1:
-            self.canvas.create_rectangle(0, 0, fill_w, 2, fill="#ffffff", width=0,
-                                         stipple="gray25")
 
 
 class RPGLiferApp:
@@ -94,6 +109,7 @@ class RPGLiferApp:
             "badge": tkfont.Font(family=base_family, size=13, weight="bold"),
             "badge_big": tkfont.Font(family=base_family, size=22, weight="bold"),
             "label": tkfont.Font(family=base_family, size=12),
+            "title_small": tkfont.Font(family=base_family, size=9, slant="italic"),
             "level": tkfont.Font(family=base_family, size=12, weight="bold"),
             "xp": tkfont.Font(family=base_family, size=10),
             "heading": tkfont.Font(family=base_family, size=13, weight="bold"),
@@ -104,8 +120,8 @@ class RPGLiferApp:
 
         root.title("RPG Lifer")
         root.configure(bg=BG)
-        root.geometry("940x600")
-        root.minsize(860, 540)
+        root.geometry("960x660")
+        root.minsize(880, 580)
 
         self._build_header()
         body = tk.Frame(root, bg=BG)
@@ -257,7 +273,15 @@ class RPGLiferApp:
         matches = getattr(self, "_current_matches", [])
         if 0 <= idx < len(matches):
             self.selected = matches[idx]
-            self.set_status(f"Selected: {self.selected.name}", MUTED)
+            streak, bonus = self.character.consistency(self.selected.name)
+            if bonus > 0:
+                self.set_status(
+                    f"{self.selected.name} — 🔥 logging now makes it {streak} weeks "
+                    f"running: +{int(bonus * 100)}% XP", STREAK)
+            else:
+                self.set_status(
+                    f"{self.selected.name} — first week. Repeat it next week to "
+                    f"start a +10% streak.", MUTED)
 
     def _resolve_activity(self) -> Activity | None:
         if self.selected is not None:
@@ -286,10 +310,18 @@ class RPGLiferApp:
         gains = "   ".join(f"+{round(v)} {k}" for k, v in result.gains.items() if v)
         msg = f"Logged {int(minutes)}m of {activity.name}:  {gains}"
         color = TEXT
+        if result.bonus > 0:
+            msg += f"   🔥 {result.streak}-week streak (+{int(result.bonus * 100)}%)"
+            color = STREAK
         if result.level_ups:
             ups = ", ".join(f"{stat(lu.stat).name} → Lv {lu.to_level}"
                             for lu in result.level_ups)
             msg += f"\n⭐ Level up!  {ups}"
+            color = ACCENT
+        if result.titles:
+            tt = ", ".join(f"“{t.title}” ({stat(t.stat).name} {t.level})"
+                           for t in result.titles)
+            msg += f"\n🏅 New title unlocked: {tt}"
             color = ACCENT
         self.set_status(msg, color)
 
@@ -312,7 +344,9 @@ class RPGLiferApp:
         self.recent.delete(0, tk.END)
         for e in self.character.recent(20):
             stamp = e.when[5:16].replace("T", " ")
-            self.recent.insert(tk.END, f"{stamp}   {e.activity}  ({int(e.minutes)}m)")
+            flame = f"   🔥{e.streak}" if e.bonus > 0 else ""
+            self.recent.insert(tk.END,
+                               f"{stamp}   {e.activity}  ({int(e.minutes)}m){flame}")
 
     def on_close(self):
         self.character.name = self.name_var.get().strip() or "Adventurer"

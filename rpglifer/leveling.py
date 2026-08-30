@@ -16,8 +16,17 @@ from dataclasses import dataclass
 # BASE_XP is the cost of the very first level-up (level 1 -> 2). Each further
 # level costs GROWTH times the one before it. Bump BASE_XP up to make the whole
 # game slower; raise GROWTH to make high levels grind harder.
+#
+# Pacing goal: leveling a single stat should take *multiple weeks* of genuine
+# dedication, not a week. With the default 2 XP/minute (see activities.py), the
+# cumulative cost to reach a stat level is roughly:
+#     Lv 3  ~= 240 XP   (~2 hours of the activity)   — a first title, early on
+#     Lv 5  ~= 710 XP   (~6 hours)                    — a couple of weeks
+#     Lv 10 ~= 4,900 XP (~41 hours)                   — a couple of months
+#     Lv 20 ~= 149,000 XP                             — a long-haul grind
+# The first level-up stays quick (100 XP ~ 50 min) so day one still feels good.
 BASE_XP = 100
-GROWTH = 1.35
+GROWTH = 1.4
 # Hard ceiling so a corrupted save can never spin the loop forever.
 MAX_LEVEL = 999
 

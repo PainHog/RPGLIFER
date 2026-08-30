@@ -24,8 +24,15 @@ nothing but lift weights? You'll be a walking pile of **Strength** with a
   you don't type the exact words — `dsh` → **Dishes**, `wrk` → **Strength
   workout**, `medi` → **Meditation**.
 - **Time → XP → levels.** Dedicate minutes to an activity; that time becomes XP,
-  split across the activity's stats by weight. Each stat levels up on its own
-  curve — early levels come fast, later ones cost more.
+  split across the activity's stats by weight. Each stat levels on its own
+  curve — the first level is quick, but real growth takes *weeks* of dedication,
+  by design.
+- **Consistency pays.** Do the same activity in back-to-back weeks and it earns a
+  growing XP bonus (+10% per week, up to +50%). Your current streak is shown so
+  you can protect it. 🔥
+- **Titles to chase.** Hit milestone levels in a stat and you earn a title —
+  STR 10 → *Iron-Willed*, INT 10 → *Scholar*, WIS 20 → *Guru* — so every
+  attribute is worth pushing on its own.
 - **Your save is yours.** Everything is stored locally in a plain JSON file. No
   account, no cloud, no tracking.
 
@@ -62,13 +69,39 @@ Tkinter ships with the official python.org installers.
 ## How XP works
 
 Logging `minutes` of an activity grants `minutes × xp_per_minute` of base XP
-(default **6**/min), divided among the activity's stats by their weights. For
-example **Reading** is `INT 0.8 / WIS 0.2`, so a 30-minute session
-(30 × 6 = 180 base XP) grants **144 INT** and **36 WIS**.
+(default **2**/min), divided among the activity's stats by their weights, then
+scaled by your current consistency bonus. For example **Reading** is
+`INT 0.8 / WIS 0.2`, so a 30-minute session (30 × 2 = 60 base XP) grants
+**48 INT** and **12 WIS** — plus a streak bonus if you've been reading week
+after week.
 
 Each stat's level is derived purely from its total XP, so the numbers can never
-drift out of sync with your log. The first level costs 100 XP and each level
-after costs ~35% more than the last.
+drift out of sync with your log. The first level-up costs 100 XP and each one
+after costs 40% more than the last. That curve is deliberately slow:
+
+| Stat level | ~Total XP | ~Hours of the activity |
+| ---------: | --------: | ---------------------: |
+|          3 |       240 |   ~2 h (a first title) |
+|          5 |       710 |                  ~6 h  |
+|         10 |     4,900 |    ~41 h (weeks of it) |
+|         20 |   149,000 |     a long-haul grind  |
+
+No level-10-by-Friday. Building a real character is meant to take real time.
+
+### Consistency streaks
+
+Do an activity in consecutive **calendar weeks** and it builds a streak. Each
+week beyond the first adds **+10% XP** for that activity, capped at **+50%**
+(a 6-week streak). Miss a week and the streak resets. The app previews what
+logging now would earn ("logging now makes it 3 weeks running: +20% XP") and
+marks streak-boosted entries with 🔥.
+
+### Titles
+
+Reaching a milestone level in a stat unlocks a title — the highest one you've
+reached is shown under the stat. Every stat has its own ladder (roughly levels
+3 / 5 / 10 / 15 / 20 / 30), so there's always a next rank to chase. See
+[`rpglifer/titles.py`](rpglifer/titles.py) to tune them.
 
 ## Add your own activities
 
@@ -103,9 +136,10 @@ is set aside as `save.corrupt-<timestamp>.json` rather than lost.
 rpglifer/
   leveling.py     XP ↔ level math (pure functions)
   stats.py        the six stats (data-driven)
+  titles.py       milestone titles unlocked per stat
   activities.py   the activity catalog
   fuzzy.py        type-ahead / closest-match search
-  character.py    the character model: XP, logging, save/load shape
+  character.py    the character model: XP, logging, streaks, save/load shape
   storage.py      where and how the save is written
   cli.py          text-mode front-end
   ui_tk.py        the Tkinter desktop GUI
@@ -127,7 +161,10 @@ python -m pytest -q
 
 ## Roadmap
 
-This is the foundation. Planned next:
+Already in: the core, the Windows `.exe` build, **consistency streaks**,
+**milestone titles**, and a slow-and-earned XP curve.
+
+Planned next:
 
 - **A longer catalog** — many more activities across every stat.
 - **Refined stats & weights** — the six above are a starting point, not gospel.

@@ -33,9 +33,11 @@ def format_sheet(character: Character) -> str:
     ]
     for s in STATS:
         p = character.progress(s.key)
+        title = character.title(s.key)
+        tag = f"  · {title}" if title else ""
         lines.append(
             f"{s.emoji} {s.name:<13} Lv {p.level:>3}  {bar(p.fraction)} "
-            f"{p.xp_into_level:>5}/{p.xp_for_level:<5} XP"
+            f"{p.xp_into_level:>6}/{p.xp_for_level:<6} XP{tag}"
         )
     return "\n".join(lines)
 
@@ -50,7 +52,8 @@ def format_recent(character: Character, count: int = 10) -> str:
             f"+{round(v)} {stat(k).name[:3].upper()}" for k, v in e.xp.items() if v
         )
         stamp = e.when[:16].replace("T", " ")
-        lines.append(f"  {stamp}  {e.activity} ({int(e.minutes)}m)  {gained}")
+        flame = f"  🔥{e.streak}" if e.bonus > 0 else ""
+        lines.append(f"  {stamp}  {e.activity} ({int(e.minutes)}m)  {gained}{flame}")
     return "\n".join(lines)
 
 
@@ -67,8 +70,12 @@ def format_suggestions(matches: Sequence[Activity]) -> str:
 def format_log_result(result) -> str:
     gains = ", ".join(f"+{round(v)} {stat(k).name}" for k, v in result.gains.items() if v)
     msg = f"Logged {int(result.minutes)}m of {result.activity}: {gains}"
+    if result.bonus > 0:
+        msg += f"  🔥 {result.streak}-week streak (+{int(result.bonus * 100)}% XP)"
     for lu in result.level_ups:
         msg += f"\n  ⭐ {stat(lu.stat).name} reached level {lu.to_level}!"
+    for t in result.titles:
+        msg += f'\n  🏅 New title: "{t.title}" ({stat(t.stat).name} {t.level})'
     return msg
 
 

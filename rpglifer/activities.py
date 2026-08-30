@@ -16,7 +16,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 # Default XP earned per minute of an activity, before the per-stat split.
-DEFAULT_XP_PER_MINUTE = 6.0
+# Deliberately low: real growth should take weeks of dedication, not an evening.
+# See rpglifer/leveling.py for the resulting pacing.
+DEFAULT_XP_PER_MINUTE = 2.0
 
 
 @dataclass(frozen=True)
